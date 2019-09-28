@@ -131,9 +131,18 @@ Plugin 'Shougo/deol.nvim'
 Plugin 'Shougo/deoppet.nvim'
 Plugin 'Shougo/defx.nvim'
 PluginInstall
-colorscheme gruvbox
+Plugin 'joshdick/onedark.vim'
+PluginInstall
 call vundle#end()
 filetype plugin indent on
+
+colorscheme gruvbox
+sleep 0.5
+colorscheme onedark
+sleep 0.5
+colorscheme gruvbox
+sleep 0.5
+colorscheme onedark
 
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
