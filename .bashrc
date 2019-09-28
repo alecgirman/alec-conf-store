@@ -72,8 +72,8 @@ alias egrep='grep --color -E'
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 cd ~/
-tmux -f ~/.tmux.conf -c vim
 echo "Config loaded successfully!"
+echo "You may now launch tmux and/or vim."
 
 
 

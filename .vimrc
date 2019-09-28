@@ -5,7 +5,6 @@
 " Todo: Show all mappings for any given combo
 "   * run all map commands and save all outputs
 
-echo 
 echo 'Loading Vim configuration...'
 " silent !rm -r -f ~/.vim
 
@@ -80,7 +79,7 @@ noremap K <C-u>
 noremap <Space>hv viwy:help <C-R>"
 
 
-" =======================
+  =======================
 "   F U N C T I O N S
 " =======================
 
@@ -91,7 +90,9 @@ noremap <Space>hv viwy:help <C-R>"
 " =======================
 
 " function installVundle {
-"   silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+"
+"   "silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+"   set rtp+=~/.vim/bundle/Vundle.vim
 "   source VundleVim/Vundle.vim
 "}
 
@@ -102,17 +103,14 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-PluginInstall! 
-
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'roxma/vim-hug-neovim-rpc'
+Plugin 'roxma/nvim-yarp'
 Plugin 'flazz/vim-colorschemes'
-" Plugin 'ColorSchemeMenuMaker'
-PluginInstall 
-colorscheme gruvbox
-
+Plugin 'ColorSchemeMenuMaker'
 Plugin 'tpope/vim-surround'
-"Plugin 'gmarik/snipmate.vim'
+Plugin 'gmarik/snipmate.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kshenoy/vim-signature'
 Plugin 'sheerun/vim-polyglot'
@@ -126,10 +124,14 @@ Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular'
 Plugin 'kana/vim-textobj-user'
 Plugin 'xolox/vim-notes'
-Plugin 'vimwiki/vimwiki'
 Plugin 'Shougo/unite.vim'
-
-PluginInstall 
+Plugin 'Shougo/deoplete.nvim'
+"Plugin 'Shougo/denite.nvim'
+Plugin 'Shougo/deol.nvim'
+Plugin 'Shougo/deoppet.nvim'
+Plugin 'Shougo/defx.nvim'
+PluginInstall
+colorscheme gruvbox
 call vundle#end()
 filetype plugin indent on
 
