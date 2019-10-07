@@ -1,0 +1,36 @@
+Source: cowsay
+Section: games
+Priority: optional
+Maintainer: Tony Maillefaud <maltouzes@gmail.com>
+Uploaders: Francois Marier <francois@debian.org>
+Build-Depends: debhelper (>= 9)
+Homepage: https://web.archive.org/web/20120527202447/http://www.nog.net/~tony/warez/cowsay.shtml
+Standards-Version: 4.1.1
+Vcs-git: https://anonscm.debian.org/git/collab-maint/cowsay.git
+Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/cowsay.git/
+
+Package: cowsay
+Architecture: all
+Depends: libtext-charwidth-perl, ${misc:Depends}, ${perl:Depends}
+Suggests: filters, cowsay-off
+Description: configurable talking cow
+ Cowsay (or cowthink) will turn text into happy ASCII cows, with
+ speech (or thought) balloons. If you don't like cows, ASCII art is
+ available to replace it with some other creatures (Tux, the BSD
+ daemon, dragons, and a plethora of animals, from a turkey to
+ an elephant in a snake).
+
+Package: cowsay-off
+Architecture: all
+Depends: cowsay (>= 3.03+dfsg2-3), ${misc:Depends}
+Replaces: cowsay (<< 3.03+dfsg2-3)
+Breaks: cowsay(<< 3.03+dfsg2-3)
+Description: configurable talking cow (offensive cows)
+ Cowsay (or cowthink) will turn text into happy ASCII cows, with
+ speech (or thought) balloons. If you don't like cows, ASCII art is
+ available to replace it with some other creatures (Tux, the BSD
+ daemon, dragons, and a plethora of animals, from a turkey to
+ an elephant in a snake).
+ .
+ This package contains cows which some may consider to be offensive.
+ Please do not install this package if you or your users are easily offended.

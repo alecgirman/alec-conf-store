@@ -1,0 +1,5 @@
+ENTRY "cerebri_stm" URL "/mnt/p/cai/cerebri_stm"
+ENTRY "/mnt/g/config/" URL "/mnt/g/config/"
+ENTRY "/mnt/g/" URL "/mnt/g/"
+ENTRY "~/" URL "/home/alec"
+ENTRY "/usr/share" URL "/usr/share"

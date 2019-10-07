@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/usr/share/man/man4'
+let g:netrw_dirhist_2='/home/alec/bc-src'
+let g:netrw_dirhist_3='/home/alec'
+let g:netrw_dirhist_4='/home/alec/.config/sync/nvim'

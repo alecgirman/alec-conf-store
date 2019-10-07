@@ -1,0 +1,2 @@
+on startup
+    * run vimscript that downloads vundle and all addons
