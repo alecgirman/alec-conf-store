@@ -25,8 +25,11 @@ pac -Syu plasma
 echo 'Installing kde-applications.  Press enter on both prompts unless otherwise intended.'
 pac -Syu kde-applicaions
 
-if read 
+echo 'The next package is Qt, however at this point, you should have well over 4GB used.'
+# echo 'Would you like to still install Qt5?'
+# bash is so confusing im just going to build the yes/no prompt in C
 echo 'Installing Qt5.  Press enter on both prompts unless otherwise intended.'
+
 pac -Syu qt5
 
 # lynx, w3m, links2
