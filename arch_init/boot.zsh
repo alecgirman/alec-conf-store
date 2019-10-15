@@ -1,5 +1,5 @@
 # clear
-echo '----- ASHE Boot Insaller -----'
+echo '----- ASHE Boot Installer -----'
 echo 'Made by Alec Girman'
 
 # First, I'm going to determine which computer I am using.
@@ -17,13 +17,17 @@ cat /proc/meminfo | read _memtotstr
 
 # correctly filters output
 # note -o on grep, it makes only matched values print.
-set KBMEMTOTAL=$(echo "$_memtotstr" | egrep -o '[0-9]{8}')
+echo "memtotalstr: $_memtotstr"
+KBMEMTOTAL=$(echo "$_memtotstr" | egrep -o '[0-9]{8}')
 
 # Device detection memory threshold, since laptop is 16g, i'm going to just
 # check if its <17g since idk the exact amount of bytes.
-local devdetect_mem_threshold=$((17*1024*1024*1024)) #8gb
+local devdetect_mem_threshold=$((17*1024*1024)) #8gb
 
-if [ $KBMEMTOTAL > $devdetect_mem_threshold ]; then
+echo "threshold: $devdetect_mem_threshold"
+echo "you have: $KBMEMTOTAL"
+
+if [ $KBMEMTOTAL -gt $devdetect_mem_threshold ]; then
     echo 'ASHE has detected Desktop/Server hardware, will NOT run wifi-setup.'
 else
     echo 'ASHE has detected Laptop/Mobile hardware, opening wifi-setup.'
@@ -43,4 +47,4 @@ echo 'If prompted for installation, please confirm (press y)'
 # 10/14: added --confirm TODO TODO TODO TEST
 pacman -'pacman --color always -Syu base tmux --confirm' 
 echo 'System upgrade complete.  Launching core setup in 5s, press Ctrl+C to cancel.'
-zsh /root/data/core.sh
+zsh ./core.sh
