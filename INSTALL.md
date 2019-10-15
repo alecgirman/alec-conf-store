@@ -37,11 +37,11 @@ which machine its running on by checking if the machine has more then 17GB of RA
 
 3. Your persistent partition will alwqays be under the same drive as
 	wherever `/run/archiso/bootmnt` is mounted.  In this example, I have /fdp mounted
-	onn`dev/sda2`
+	on `dev/sda2`
 
 4. Mount your persistent partition that you found in step three to /fdp.  This can
 	be done with `mount /dev/sda2 /fdp` where /dev/sda2 is whatever your persistent
-	mount is lcoated on.
+	mount is located on.
 
 ### Now, if you run `ls /`, you should see your FDP folder.
 
