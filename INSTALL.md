@@ -37,7 +37,7 @@ which machine its running on by checking if the machine has more then 17GB of RA
 
 3. Your persistent partition will alwqays be under the same drive as
 	wherever `/run/archiso/bootmnt` is mounted.  In this example, I have /fdp mounted
-	on `dev/sda2`
+	onn`dev/sda2`
 
 4. Mount your persistent partition that you found in step three to /fdp.  This can
 	be done with `mount /dev/sda2 /fdp` where /dev/sda2 is whatever your persistent
@@ -45,19 +45,19 @@ which machine its running on by checking if the machine has more then 17GB of RA
 
 ### Now, if you run `ls /`, you should see your FDP folder.
 
->   > root@archiso /# ls /
->	bin boot dev etc **fdp** home lib lib64 mnt opt
+>       **root@archiso /#** ls /
+>	binsboot dev etc **fdp** home lib lib64 mnt opt
 >	proc root run sbin srv sys tmp usr var
 
 ### Check the contents of your FDP folder.  You should now see your ASHE directory.
-### As of 10/15, yuor directory should look like this.
+### As of 10/15, your directory should look like this.
 
->	root@archiso /# ls /fdp
-> >	ashe
-> >	lost+found
-> >	persistence.conf
-> >	pkgcache
-> >	THIS_IS_ROOT
+>	**root@archiso /#** ls /fdp
+> 	ashe
+> 	lost+found
+> 	persistence.conf
+> 	pkgcache
+> 	THIS_IS_ROOT
 
 If you see the `THIS_IS_ROOT` file, then you are in the right place.
 
