@@ -2,17 +2,17 @@
 
 ### Prequisites:
 
-	* Removable media with a copy of Arch Linux.  The more up-to-date it is, the more likely it will work
+* Removable media with a copy of Arch Linux.  The more up-to-date it is, the more likely it will work
 
-		* This drive should have persistence.  If you have 16GB or less, you should be mounting this persistent partition
+	* This drive should have persistence.  If you have 16GB or less, you should be mounting this persistent partition
 
-		* So far, I have never gone over 8GB of RAM used by the *airootfs* so it
-		likely won't be a problem however I can't guarantee that any certain PC
-		specs, even high end PC's, are guaranteed to work.
+	* So far, I have never gone over 8GB of RAM used by the *airootfs* so it
+	likely won't be a problem however I can't guarantee that any certain PC
+	specs, even high end PC's, are guaranteed to work.
 
-	* Access to a wired or wireless network.  This will be needed to install other packages.
+* Access to a wired or wireless network.  This will be needed to install other packages.
 
-	* Basic knowledge of Linux and the shell
+* Basic knowledge of Linux and the shell
 
 > DO NOT EXECUTE ANY SCRIPTS WITHOUT READING THEM FIRST.
 

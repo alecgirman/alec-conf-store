@@ -1,0 +1,3 @@
+In vim, g<C-g> gives a string that has selection info.
+In visual block, it DOES give the block dimension
+

@@ -1,50 +1,85 @@
-# clear
-echo '----- ASHE Boot Installer -----'
-echo 'Made by Alec Girman'
+# NOTE: If you are looking to implement something similar, be aware that
+# Github's API can expose your email address if it is set to public.
+# More info can be found here: https://developer.github.com/v3/users/emails/
+function set_git_config() {
+	local emailstr="avgch1@gmail.com"
+	git config --global user.name "Alec Girman"
 
-# First, I'm going to determine which computer I am using.
-# Problem is that they both boot into this same ISO so they
-# have nearly the smae information.  To solve this, I'm just going to check the
-# base specs.  My laptop has 16G and desktop has 32G (maybe 64 soon).
-# It is important for me to check which machine because my desktop does NOT
-# have to run wifi-setup as it is already connected via ethernet.
+	# avoids '@', '.com', and '.' searches
+	git config --global user.email $(printf "avgch1\x40gmail\x2e\x63om")
+	echo 'Set git config'
+}
 
-# Info read from /proc/meminfo on my desktop looks like this when 32G is active.
-# MemTotal:       32825668 kB
+function init_core() {
+	clear
+	echo '----- ASHE Boot Installer -----'
+	echo 'Made by Alec Girman'
 
-# read in the amount of total system memory
-cat /proc/meminfo | read _memtotstr
+	# First, I'm going to determine which computer I am using.  Problem is that
+	# they both boot into this same ISO so they have nearly the smae
+	# information.  To solve this, I'm just going to check the base specs.  My
+	# laptop has 16G and desktop has 32G (maybe 64 soon).  It is important for
+	# me to check which machine because my desktop does NOT have to run
+	# wifi-setup as it is already connected via ethernet.  Info read from
+	# /proc/meminfo on my desktop looks like this when 32G is active.
+	# MemTotal:       32825668 kB
 
-# correctly filters output
-# note -o on grep, it makes only matched values print.
-echo "memtotalstr: $_memtotstr"
-KBMEMTOTAL=$(echo "$_memtotstr" | egrep -o '[0-9]{8}')
+	# TODO (in C): add arguments like --nosleep
 
-# Device detection memory threshold, since laptop is 16g, i'm going to just
-# check if its <17g since idk the exact amount of bytes.
-local devdetect_mem_threshold=$((17*1024*1024)) #8gb
+	# read in the amount of total system memory from /proc/info
+	cat /proc/meminfo | read _memtotstr
 
-echo "threshold: $devdetect_mem_threshold"
-echo "you have: $KBMEMTOTAL"
+	# extract numerical size of RAM in kilobytes
+	export KBMEMTOTAL=$(echo "$_memtotstr" | egrep -o '[0-9]{8}')
 
-if [ $KBMEMTOTAL -gt $devdetect_mem_threshold ]; then
-    echo 'ASHE has detected Desktop/Server hardware, will NOT run wifi-setup.'
-else
-    echo 'ASHE has detected Laptop/Mobile hardware, opening wifi-setup.'
-fi
-exit
+	# after checking the amount of ram, this is the value that its compared against
+	local devdetect_mem_threshold=$((17*1024*1024)) #17gb
+	local devid=2
 
-sleep 1
-wifi-menu
-echo 'wifi-menu exited, assuming success.'
-# echo "Return code: $#" TODO
-echo 'will sleep for a bit to avoid DNS issues.'
-sleep 7
-echo 'Performing system update, this will take a bit.'
-echo 'If prompted for installation, please confirm (press y)' 
+	echo "Installed System Memory: $KBMEMTOTAL"
 
-# tmux is for later
-# 10/14: added --confirm TODO TODO TODO TEST
-pacman -'pacman --color always -Syu base tmux --confirm' 
-echo 'System upgrade complete.  Launching core setup in 5s, press Ctrl+C to cancel.'
-zsh ./core.sh
+	if [ $KBMEMTOTAL -gt $devdetect_mem_threshold ]; then
+		# on desktop
+		echo 'ASHE has detected Desktop/Server hardware, will NOT run wifi-setup.'
+		export HOSTENV='arch-server'
+		devid=0
+	else
+		# on laptop
+		export HOSTENV='arch-mobile'
+		wifi-menu
+		echo 'wifi-menu exited, assuming success.'
+		# echo "Return code: $#" TODO
+		echo 'It will take up to 10 seconds to resolve DNS'
+		echo 'Please hold as we give DNS time to boot up.'
+		echo 'If you experience DNS issues on the update that I am about to do, then'
+		echo 'cancel the script (Ctrl-C) and launch it when your connection is fixed.'
+		sleep 7
+		# TODO: this laptop has a 4k screen, lets show an image in the console
+		echo 'Almost there!'
+		devid=1
+		sleep 3
+	fi
+
+	# pre-update message
+	echo 'Performing system update, this will take a bit.'
+	echo 'If prompted for installation, please confirm (press y)'
+
+	echo 'analyzing existing cache...'
+	# ls /fdp/pkgcache
+	cp /fdp/pkgcache/* /var/cache/pacman/pkg/ -v
+
+
+	# install tmux
+	pacman --color=always -Sy base tmux --noconfirm --needed
+
+	# install git
+	pacman --color=always -S git --noconfirm --needed
+	set_git_config
+
+	# Call core.zsh using it's absolute path so that it is more likely to find the script
+	# if script is not found, you would need to execute it manually.
+	zsh "/fdp/ashe/arch_init/core.zsh" $devid
+
+}
+
+init_core
