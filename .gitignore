@@ -1,4 +1,3 @@
 .vars/
 logs/
-pkg/
-*.pkg
+nvim/Vundle.vim/

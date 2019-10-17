@@ -55,6 +55,6 @@ if has("syntax")
   syntax on
 endif
 
-source keybinds.vim
-source functions.vim
-source plugins.vim
+source ./keybinds.vim
+source ./functions.vim
+source ./plugins.vim

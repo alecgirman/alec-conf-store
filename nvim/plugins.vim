@@ -2,14 +2,15 @@
 "   P L U G I N S ! ! !
 " =======================
 
-" function installVundle {
-"   "silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-"   set rtp+=~/.vim/bundle/Vundle.vim
-"   source VundleVim/Vundle.vim
-"}
+function installVundle {
+   silent !git clone https://github.com/VundleVim/Vundle.vim.git ./Vundle.vim
+   set rtp+=./Vundle.vim
+   source VundleVim/Vundle.vim
+}
 
 " start loading plugins
 
+installVundle
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -42,7 +43,7 @@ Plugin 'joshdick/onedark.vim'
 Plugin 'mbbill/undotree'
 Plugin 'terryma/vim-multiple-cursors'
 
-PluginInstall!
+PluginInstall
 call vundle#end()
 
 colorscheme gruvbox
@@ -50,10 +51,10 @@ filetype plugin indent on
 
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<C-tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" let g:UltiSnipsExpandTrigger="<C-tab>"
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-call feedkeys("\<Esc>")
+" let g:UltiSnipsEditSplit="vertical"
+" call feedkeys("\<Esc>")
