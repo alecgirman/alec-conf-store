@@ -34,15 +34,15 @@ pacman-no-confirm() {
 	pacman --color=always --noconfirm -S $1 --needed
 }
 
+# TODO: modularize these
 # auto installs - no confirmation needed
 pacman-no-confirm neofetch
 pacman-no-confirm neovim
 pacman-no-confirm htop
 pacman-no-confirm binutils
 pacman-no-confirm gcc
-pacman-no-confirm python3-pip
-#pacman-no-confirm lynx
-#pacman-no-confirm docker
+pacman-no-confirm python3 python3-pip
+pacman-no-confirm lynx
 pacman-no-confirm xorg-server
 pacman-no-confirm xorg-xinit
 pacman-no-confirm neovim-qt
@@ -51,33 +51,11 @@ pacman-no-confirm qt5
 pacman-no-confirm kde-applications
 pacman-no-confirm plasma
 
-
-# echo 'Installing xorg.  Press enter on both prompts unless otherwise intended.'
-# if xorg-server is installed, we need xinit too. TODO: check if it was installed
-# pacman -S xorg-init --noconfirm --needed
+#pacman-no-confirm docker
 
 echo 'Updating persistent cache...'
 cp /var/cache/pacman/pkg/* /fdp/pkgcache/ -u
 echo 'Complete!'
-#mkdir /fdp/ashe/pkg/
-
-#echo 'Installing kde-applications.  Press enter on both prompts unless otherwise intended.'
-#pac -S kde-applications -r /fdp/ashe/pkg
-
-#echo 'Installing Qt5.  Press enter on both prompts unless otherwise intended.'
-#pac -Syu qt5 -r /fdp/ashe/pkg
-
-
-# echo 'The next package is Qt, however at this point, you should have well over 4GB used.'
-
-# echo 'Would you like to still install Qt5?'
-# bash is so confusing im just going to build the yes/no prompt in C
-
-
-# IMPORTANT: Qt5 installation disabled temporarily
-# echo 'Installing Qt5.  Press enter on both prompts unless otherwise intended.'
-# pac -Syu qt5
-
 echo "exec startplasma-x11" > /root/.xinitrc
 echo "starting xinit, please hold..."
 xinit

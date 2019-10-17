@@ -1,5 +1,4 @@
 echo 'Loading initial Vim configuration...'
-" silent !rm -r -f ~/.vim
 
 "set options
 echo 'Setting basic options'
@@ -10,7 +9,7 @@ set showmatch
 set hidden
 set autowrite
 set number
-" set relativenumber
+set relativenumber
 set noswapfile
 
 " search settings
@@ -19,8 +18,6 @@ set ignorecase
 set smartcase
 set incsearch
 set hlsearch
-
-
 
 " restrict screen movement from cursor
 set scrolloff=4
@@ -36,6 +33,7 @@ set smarttab
 set wildmenu
 set history=250
 set viminfo='1000,<500,s100
+set timeoutlen=100
 
 " Configure true color terminal output with vim 
 " set t_Co=256
