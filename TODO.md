@@ -5,6 +5,7 @@ Organization:
 Configs:
 
 [ ] Get nvim plugins setup
+	[ ] finish setting it up, its almost there!
 [ ] Customize ZSH
 [ ] Customize nvim per-language macros, scripts, and snippets
 

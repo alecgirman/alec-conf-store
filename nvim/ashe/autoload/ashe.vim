@@ -9,7 +9,7 @@ set showmatch
 set hidden
 set autowrite
 set number
-set relativenumber
+" set relativenumber
 set noswapfile
 
 " search settings
@@ -33,7 +33,7 @@ set smarttab
 set wildmenu
 set history=250
 set viminfo='1000,<500,s100
-set timeoutlen=100
+set timeoutlen=200
 
 " Configure true color terminal output with vim 
 " set t_Co=256
@@ -55,6 +55,6 @@ if has("syntax")
   syntax on
 endif
 
-source ./keybinds.vim
-source ./functions.vim
-source ./plugins.vim
+source keybinds.vim
+source functions.vim
+source plugins.vim

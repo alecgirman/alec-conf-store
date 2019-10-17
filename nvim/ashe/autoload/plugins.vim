@@ -2,17 +2,18 @@
 "   P L U G I N S ! ! !
 " =======================
 
-function installVundle {
-   silent !git clone https://github.com/VundleVim/Vundle.vim.git ./Vundle.vim
+function InstallVundle()
+   " silent !git clone https://github.com/VundleVim/Vundle.vim.git ./Vundle.vim
    set rtp+=./Vundle.vim
-   source VundleVim/Vundle.vim
-}
+   source vundle.vim
+endfunction
 
 " start loading plugins
 
-installVundle
+call InstallVundle()
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=/home/alec/ashe/nvim/after/
+source %
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
@@ -42,11 +43,12 @@ Plugin 'Shougo/unite.vim'
 Plugin 'joshdick/onedark.vim'
 Plugin 'mbbill/undotree'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin '../'
 
 PluginInstall
 call vundle#end()
 
-colorscheme gruvbox
+colorscheme onedark
 filetype plugin indent on
 
 " Trigger configuration. Do not use <tab> if you use
