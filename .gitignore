@@ -2,3 +2,4 @@
 logs/
 pkg/
 *.pkg
+Vundle.vim/*
