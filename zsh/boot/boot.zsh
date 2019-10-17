@@ -2,11 +2,9 @@
 # Github's API can expose your email address if it is set to public.
 # More info can be found here: https://developer.github.com/v3/users/emails/
 function set_git_config() {
-	local emailstr="avgch1@gmail.com"
-	git config --global user.name "Alec Girman"
-
 	# avoids '@', '.com', and '.' searches
 	git config --global user.email $(printf "avgch1\x40gmail\x2e\x63om")
+	git config --global user.name "Alec Girman"
 	echo 'Set git config'
 }
 
@@ -34,6 +32,8 @@ function init_core() {
 
 	# after checking the amount of ram, this is the value that its compared against
 	local devdetect_mem_threshold=$((17*1024*1024)) #17gb
+
+	# an id that represents the device were on.  0=desktop, 1=laptop
 	local devid=2
 
 	echo "Installed System Memory: $KBMEMTOTAL"
@@ -67,8 +67,7 @@ function init_core() {
 	echo 'analyzing existing cache...'
 	# ls /fdp/pkgcache
 	cp /fdp/pkgcache/* /var/cache/pacman/pkg/ -v
-
-
+	
 	# install tmux
 	pacman --color=always -Sy base tmux --noconfirm --needed
 
@@ -78,8 +77,7 @@ function init_core() {
 
 	# Call core.zsh using it's absolute path so that it is more likely to find the script
 	# if script is not found, you would need to execute it manually.
-	zsh "/fdp/ashe/arch_init/core.zsh" $devid
-
+	zsh "/fdp/ashe/zsh/boot/core.zsh" $devid
 }
 
 init_core
