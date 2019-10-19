@@ -70,10 +70,9 @@ function init_core() {
 	cp /fdp/pkgcache/* /var/cache/pacman/pkg/ -vun
 	
 	# install tmux
-	pacman --color=always -Syu base tmux --noconfirm --needed
+	pacman --color=always -Sy base git tmux --noconfirm --needed
 
 	# install git
-	pacman --color=always -S git --noconfirm --needed
 	set_git_config
 
 	# Call core.zsh using it's absolute path so that it is more likely to find the script

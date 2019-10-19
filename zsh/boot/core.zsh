@@ -16,8 +16,8 @@ pacman-no-confirm() {
 # TODO: modularize these
 # auto installs - no confirmation needed
 
-pacman-no-confirm nvidia
-pacman-no-confirm neofetch
+# pacman-no-confirm nvidia
+pacman-no-confirm neofet-desktop
 pacman-no-confirm htop
 pacman-no-confirm lynx
 pacman-no-confirm neovim
@@ -28,8 +28,8 @@ pacman-no-confirm python3
 pacman-no-confirm python-pip
 pacman-no-confirm ipython
 pacman-no-confirm plasma
-pacman-no-confirm kde-applications
-pacman-no-confirm qt5
+# pacman-no-confirm kde-applications
+# pacman-no-confirm qt5
 pacman-no-confirm xorg-server 
 pacman-no-confirm xorg-xinit
 pacman-no-confirm konsole
@@ -38,7 +38,7 @@ pacman-no-confirm dolphin
 
 mkdir ~/.config/nvim
 
-echo "source ~/ashe/nvim/init.vim" > ~/.config/nvim/init.vim
+echo "source ~/fdp/ashe/nvim/init.vim" > ~/.config/nvim/init.vim
 
 #pacman-no-confirm docker
 
