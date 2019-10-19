@@ -9,9 +9,10 @@ function set_git_config() {
 }
 
 function init_core() {
-	clear
-	echo '----- ASHE Boot Installer -----'
+	echo '--------------- ASHE Boot Installer ---------------'
 	echo 'Made by Alec Girman'
+	echo '--------------- ASHE Boot Installer ---------------'
+	zsh ../alias.zsh
 
 	# First, I'm going to determine which computer I am using.  Problem is that
 	# they both boot into this same ISO so they have nearly the smae
@@ -33,8 +34,8 @@ function init_core() {
 	# after checking the amount of ram, this is the value that its compared against
 	local devdetect_mem_threshold=$((17*1024*1024)) #17gb
 
-	# an id that represents the device were on.  0=desktop, 1=laptop
-	local devid=2
+	# an id that represents the device were on.  0=desktop, 1=laptop, 2=error
+	export devid=2
 
 	echo "Installed System Memory: $KBMEMTOTAL"
 
@@ -66,10 +67,10 @@ function init_core() {
 
 	echo 'analyzing existing cache...'
 	# ls /fdp/pkgcache
-	cp /fdp/pkgcache/* /var/cache/pacman/pkg/ -v
+	cp /fdp/pkgcache/* /var/cache/pacman/pkg/ -vun
 	
 	# install tmux
-	pacman --color=always -Sy base tmux --noconfirm --needed
+	pacman --color=always -Syu base tmux --noconfirm --needed
 
 	# install git
 	pacman --color=always -S git --noconfirm --needed

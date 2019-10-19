@@ -1,5 +1,7 @@
-echo 'ASHE Core Component Installer'
+printf "\n\n\n\n"
+echo '--------------- ASHE Core Component Installer --------------'
 echo 'Made by Alec Girman'
+printf "\n\n"
 echo '============================================================================'
 echo 'If you booted up using boot.sh, then you will already have tmux installed.'
 echo 'tmux can not be opened while this is running.  If you want to use tmux,'
@@ -7,27 +9,34 @@ echo 'please hit Ctrl-C now and relaunch within tmux...'
 echo '============================================================================'
 
 pacman-no-confirm() {
-	if [ $# -lt 1 ]; then
-		echo 'less than two args cant complete'
-		exit
-	fi
-
-	echo "Installing $1"
-	pacman --color=always --noconfirm -S $1 --needed
+    echo "Installing $@"
+    pacman --color=always --noconfirm -S $@ --needed
 }
 
 # TODO: modularize these
 # auto installs - no confirmation needed
+
 pacman-no-confirm nvidia
-pacman-no-confirm neofetch htop lynx
-pacman-no-confirm neovim neovim-qt
-pacman-no-confirm binutils gcc
-pacman-no-confirm python3 python-pip ipython
-pacman-no-confirm plasma kde-applications qt5
+pacman-no-confirm neofetch
+pacman-no-confirm htop
+pacman-no-confirm lynx
+pacman-no-confirm neovim
+pacman-no-confirm neovim-qt
+pacman-no-confirm binutils
+pacman-no-confirm gcc
+pacman-no-confirm python3
+pacman-no-confirm python-pip
+pacman-no-confirm ipython
+pacman-no-confirm plasma
+pacman-no-confirm kde-applications
+pacman-no-confirm qt5
 pacman-no-confirm xorg-server 
 pacman-no-confirm xorg-xinit
-pacman-no-confirm konsole dolphin 
+pacman-no-confirm konsole
 pacman-no-confirm chromium
+pacman-no-confirm dolphin
+
+mkdir ~/.config/nvim
 
 echo "source ~/ashe/nvim/init.vim" > ~/.config/nvim/init.vim
 

@@ -1,1 +1,1 @@
- 
+otf-fira-code
