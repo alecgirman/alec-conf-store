@@ -10,14 +10,15 @@ echo '==========================================================================
 
 pacman-no-confirm() {
     echo "Installing $@"
-    pacman --color=always --noconfirm -S $@ --needed
+    # pacman --color=always --noconfirm -S $@ --needed
+    pacman --noconfirm --needed -S $@
 }
 
 # TODO: modularize these
 # auto installs - no confirmation needed
 
 # pacman-no-confirm nvidia
-pacman-no-confirm neofet-desktop
+# pacman-no-confirm neofet-desktop
 pacman-no-confirm htop
 pacman-no-confirm lynx
 pacman-no-confirm neovim
@@ -36,9 +37,11 @@ pacman-no-confirm konsole
 pacman-no-confirm chromium
 pacman-no-confirm dolphin
 
+
+mkdir ~/.config
 mkdir ~/.config/nvim
 
-echo "source ~/fdp/ashe/nvim/init.vim" > ~/.config/nvim/init.vim
+echo "source /fdp/ashe/nvim/init.vim" > ~/.config/nvim/init.vim
 
 #pacman-no-confirm docker
 

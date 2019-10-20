@@ -67,6 +67,8 @@ function init_core() {
 	# ls /fdp/pkgcache
 	cp /fdp/pkgcache/* /var/cache/pacman/pkg/ -vun
 	
+	# TODO: system upgrade prompt
+
 	# install tmux
 	pacman --color=always -Sy base git tmux --noconfirm --needed
 
