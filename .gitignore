@@ -1,3 +1,4 @@
 .vars/
 logs/
 nvim/Vundle.vim/
+etc/

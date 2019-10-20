@@ -11,7 +11,7 @@ function set_git_config() {
 function init_core() {
 	echo '--------------- ASHE Boot Installer ---------------'
 	echo 'Made by Alec Girman'
-	echo '--------------- ASHE Boot Installer ---------------'
+	echo '---------------------------------------------------'
 	zsh ../alias.zsh
 
 	# First, I'm going to determine which computer I am using.  Problem is that
@@ -42,11 +42,9 @@ function init_core() {
 	if [ $KBMEMTOTAL -gt $devdetect_mem_threshold ]; then
 		# on desktop
 		echo 'ASHE has detected Desktop/Server hardware, will NOT run wifi-setup.'
-		export HOSTENV='arch-server'
 		devid=0
 	else
 		# on laptop
-		export HOSTENV='arch-mobile'
 		wifi-menu
 		echo 'wifi-menu exited, assuming success.'
 		# echo "Return code: $#" TODO

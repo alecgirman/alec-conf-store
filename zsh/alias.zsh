@@ -5,6 +5,8 @@ alias -g gits='git status'
 alias -g grep='grep --color=auto'
 alias -g rmc='rm --cached'
 
+echo 'All entries in alias.zsh have been loaded!'
+
 # dir='command ls -lSrah'
 # egrep='egrep --color=auto'
 # help-zshglob=H-Glob
@@ -39,3 +41,8 @@ alias -g rmc='rm --cached'
 # tlog='journalctl -f'
 # url-quote='autoload -U url-quote-magic ; zle -N self-insert url-quote-magic'
 # which-command=whence
+
+
+
+
+
