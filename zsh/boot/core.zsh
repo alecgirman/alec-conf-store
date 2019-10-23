@@ -37,10 +37,15 @@ pacman-no-confirm konsole
 pacman-no-confirm chromium
 pacman-no-confirm dolphin
 
+pacman-no-confirm ttf-cascadia-code
+pacman-no-confirm otf-fira-code
+fc-cache -f
 
 mkdir ~/.config
 mkdir ~/.config/nvim
 
+# TODO: copy correct source args over
+# echo ""
 echo "source /fdp/ashe/nvim/init.vim" > ~/.config/nvim/init.vim
 
 #pacman-no-confirm docker

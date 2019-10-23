@@ -42,6 +42,7 @@ function init_core() {
 	if [ $KBMEMTOTAL -gt $devdetect_mem_threshold ]; then
 		# on desktop
 		echo 'ASHE has detected Desktop/Server hardware, will NOT run wifi-setup.'
+		dhcpcd # sometimes this needs to be ran so lets run it just in case
 		devid=0
 	else
 		# on laptop

@@ -51,26 +51,18 @@ which machine its running on by checking if the machine has more then 17GB of RA
 >	proc root run sbin srv sys tmp usr var
 
 ### Check the contents of your FDP folder.  You should now see your ASHE directory.
-### As of 10/15, your directory should look like this.
+
+### In the fdp directory, you should see *at least* these folders.  There will more likely additional folders too.
 
 *root@archiso /#* **ls /fdp**
 	
 > 	ashe
-> 	lost+found
 > 	persistence.conf
 > 	pkgcache
-> 	THIS_IS_ROOT
 
-If you see the `THIS_IS_ROOT` file, then you are in the right place.
+5. Execute the boot script.  It is simply invoked by using `/fdp/init`
 
-5. Execute the boot script.  You may either `cd` to the directory or call the scripts
-from your working directory, it doesn't matter.  This is typically invoked with:
-
-*root@archiso /#* **zsh** /fdp/ashe/arch_init/boot.zsh
-
-6. If the boot script did not launch the core script, then you need to launch it manually.
-
-*root@archiso /#* **zsh** /fdp/ashe/arch_init/core.zsh
+*root@archiso /#* **zsh** /fdp/init
 
 The first thing core script does is that it will present a message that advises you to exit
 the script and open tmux if you have not already.  **core.sh may take a while to execute.**

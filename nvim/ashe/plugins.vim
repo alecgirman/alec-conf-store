@@ -3,7 +3,7 @@
 " =======================
 
 function InstallVundle()
-   " silent !git clone https://github.com/VundleVim/Vundle.vim.git ./Vundle.vim
+   silent !git clone https://github.com/VundleVim/Vundle.vim.git ./Vundle.vim
    set rtp+=./Vundle.vim
    source vundle.vim
 endfunction
