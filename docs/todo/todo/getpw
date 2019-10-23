@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-# Todo later: check out the getpw function
-# in the linux system API.  To get more information
-# just execute this file (its executable!)
-
-man getpw

@@ -9,9 +9,10 @@ function set_git_config() {
 }
 
 function init_core() {
-	clear
-	echo '----- ASHE Boot Installer -----'
+	echo '--------------- ASHE Boot Installer ---------------'
 	echo 'Made by Alec Girman'
+	echo '---------------------------------------------------'
+	zsh ../alias.zsh
 
 	# First, I'm going to determine which computer I am using.  Problem is that
 	# they both boot into this same ISO so they have nearly the smae
@@ -33,19 +34,18 @@ function init_core() {
 	# after checking the amount of ram, this is the value that its compared against
 	local devdetect_mem_threshold=$((17*1024*1024)) #17gb
 
-	# an id that represents the device were on.  0=desktop, 1=laptop
-	local devid=2
+	# an id that represents the device were on.  0=desktop, 1=laptop, 2=error
+	export devid=2
 
 	echo "Installed System Memory: $KBMEMTOTAL"
 
 	if [ $KBMEMTOTAL -gt $devdetect_mem_threshold ]; then
 		# on desktop
 		echo 'ASHE has detected Desktop/Server hardware, will NOT run wifi-setup.'
-		export HOSTENV='arch-server'
+		dhcpcd # sometimes this needs to be ran so lets run it just in case
 		devid=0
 	else
 		# on laptop
-		export HOSTENV='arch-mobile'
 		wifi-menu
 		echo 'wifi-menu exited, assuming success.'
 		# echo "Return code: $#" TODO
@@ -66,13 +66,14 @@ function init_core() {
 
 	echo 'analyzing existing cache...'
 	# ls /fdp/pkgcache
-	cp /fdp/pkgcache/* /var/cache/pacman/pkg/ -v
+	cp /fdp/pkgcache/* /var/cache/pacman/pkg/ -vun
 	
+	# TODO: system upgrade prompt
+
 	# install tmux
-	pacman --color=always -Sy base tmux --noconfirm --needed
+	pacman --color=always -Sy base git tmux --noconfirm --needed
 
 	# install git
-	pacman --color=always -S git --noconfirm --needed
 	set_git_config
 
 	# Call core.zsh using it's absolute path so that it is more likely to find the script

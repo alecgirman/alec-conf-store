@@ -1,1 +1,0 @@
-silent !rm -rf ~/.vim
