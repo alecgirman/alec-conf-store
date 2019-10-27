@@ -1,27 +1,30 @@
-echo 'Loading initial Vim configuration...'
-
-"set options
-echo 'Setting basic options'
+" Get our current directory, which is the core path of ashe.  This is returned
+" as an ABSOLUTE FILE PATH to this directory.  This is important for sourcing.
+" % expands relative path
+" p expands full path
+" h narrows t down to the head (directory)
+let g:ashe_root=expand("%:p:h") . "/"
 
 set showmode
 set showcmd
 set showmatch
 set hidden
 set autowrite
+set autoread
 set number
 set relativenumber
 set noswapfile
 set laststatus=2
+set scrolloff=10
+set nowrap
+set completeopt=longest,menuone
+set wildmode=list:longest
 
 " search settings
-echo 'Configuring search settings'
 set ignorecase
 set smartcase
 set incsearch
 set hlsearch
-
-" restrict screen movement from cursor
-set scrolloff=4
 
 " Editor tab settings
 set tabstop=4
@@ -55,5 +58,4 @@ if has("syntax")
   syntax on
 endif
 
-source autoload/keybinds.vim
-source autoload/functions.vim
+" gruvbox github: morhetz/gruvbox
