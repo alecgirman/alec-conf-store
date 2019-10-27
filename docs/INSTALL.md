@@ -47,8 +47,25 @@ which machine its running on by checking if the machine has more then 17GB of RA
 
  *root@archiso /#* **ls /**
        
->	binsboot dev etc **fdp** home lib lib64 mnt opt
->	proc root run sbin srv sys tmp usr var
+>       bin
+>       boot 
+>	dev 
+>	etc 
+>	**fdp**
+>	home 
+>	lib 
+>	lib64 
+>	mnt 
+>	opt
+>	proc 
+>	root 
+>	run 
+>	sbin 
+>	srv 
+>	sys 
+>	tmp 
+>	usr 
+>	var
 
 ### Check the contents of your FDP folder.  You should now see your ASHE directory.
 
