@@ -2,4 +2,4 @@
 logs/
 nvim/Vundle.vim/
 etc/
-Vundle.vim/
+.netrwhist
