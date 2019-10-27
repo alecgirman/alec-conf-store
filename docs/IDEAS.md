@@ -1,11 +1,18 @@
 C Programs/Modules:
-	works like man but short.  ref grep prints all of the options that i find useful in grep.  ref 3 printf shows all the printf escape codes and shit.  make up new nwumbers for sections (like scripting lnaguages, apis, etc)
+	ref - a personal tldr for manpages
 	mkalias - an autosaving alias
-	notes
+	notes - command to quickly take notes and organize them in sections
+	makemodule - automatically and interactively create modules (in c)
+
 	install pacman from file (unless bar operator permits it)
-	makezprog: creates a zsh z function template
+	
 	turns a command into a c api by analyizing arguments
 	call library functions as a command
+
+Vim Plugins
+	commit preview - when the commit message file is open, have a side panel showing the files changed and preview them when selected
+		I'd prefer to make my own
+		definitely will try out tpope/fugitive
 
 Modules
 	notes - quickly compose and organize private notes in the command line
