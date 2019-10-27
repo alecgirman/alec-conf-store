@@ -9,26 +9,25 @@ Key
 [/] = In progress or partially done
 ----
 
-[x] Separate ZSH scripts
-
 Configs:
 
-[ ] Get nvim plugins setup
-    [ ] finish setting it up, its almost there!
+[ ] Get nvim config setup
+    [x] personal config
+    [ ] third party plugins
 [ ] Customize ZSH
-    [ ] Need specifics
+    [ ] create and source custom zshrc file
 [ ] Customize nvim per-language macros, scripts, and snippets
 [ ] Add ui config files
 [ ] UI Extras pkgs 
 	[x] chromium
 		[ ] Make shortcut work (symlink)
-    [ ] otf-fira-code
-		[ ] restart font cache
+    [x] otf-fira-code
+		[x] restart font cache
 
 Misc:
 
 [ ] Make boot script clone and backup the ashe directory on boot
-[ ] shutdown script using alias auto-push to unstable/nightly
+[ ] shutdown script using zsh alias that will auto-push to /dev/pulse
 [/] backup x window config, I have chrome shortcut in /fdp/user/Desktop
 
 Long term ideas
