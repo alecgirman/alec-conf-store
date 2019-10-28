@@ -12,9 +12,10 @@ set hidden
 set autowrite
 set autoread
 set number
-set relativenumber
-set noswapfile
+"set relativenumber
+"set noswapfile
 set laststatus=2
+set showtabline=2
 set scrolloff=10
 set nowrap
 set completeopt=longest,menuone
@@ -40,7 +41,7 @@ set viminfo='1000,<500,s100
 set timeoutlen=200
 
 " Configure true color terminal output with vim 
-" set t_Co=256
+set t_Co=256
 if exists('+termguicolors')
   let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
@@ -58,4 +59,6 @@ if has("syntax")
   syntax on
 endif
 
+source autoload/keybinds.vim
+call AsheLoadDefaultKeybinds()
 " gruvbox github: morhetz/gruvbox

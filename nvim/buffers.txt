@@ -1,8 +1,0 @@
-
-2     "init.vim"                     line 1
-3  a   "autoload/keybinds.vim"        line 45
-4  a   "~/ashe/docs/IDEAS.md"         line 1
-6  h   "[No Name]"                    line 0
-10  h + "[No Name]"                    line 5
-15  h   "myfile.txt"                   line 0
-17 %a + "[No Name]"                    line 1:
