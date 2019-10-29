@@ -27,10 +27,11 @@ func! AsheEnableSpaceKeys()
     noremap <Space>vxv :w! /tmp/exec.vim<CR>:source /tmp/exec.vim<CR>
     nmap <Space>vxV <Space>vxv:call
     noremap <Space>vxp :w! /tmp/exec.py<CR>:py3file /tmp/exec.py<CR>
-    noremap <Space>vse :set ve=all<CR>
-    noremap <Space>vsh :noh<CR>
     noremap <Space>r :%s/
     noremap <Space>h :help 
+
+    noremap <C-Space>v :set ve=all<CR>
+    noremap <C-Space>h :noh<CR>
 endf
 
 func! AsheLoadDefaultKeybinds()
