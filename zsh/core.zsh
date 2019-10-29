@@ -51,7 +51,7 @@ echo "source /fdp/ashe/nvim/init.vim" > ~/.config/nvim/init.vim
 #pacman-no-confirm docker
 
 echo 'Updating persistent cache...'
-cp /var/cache/pacman/pkg/* /fdp/pkgcache/ -un
+# cp /var/cache/pacman/pkg/* /fdp/pkgcache/ -un
 echo 'Complete!'
 echo "exec startplasma-x11" > /root/.xinitrc
 echo "starting xinit, please hold..."

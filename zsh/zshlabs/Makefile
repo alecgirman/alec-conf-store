@@ -1,0 +1,2 @@
+All:
+	zsh main.zsh
