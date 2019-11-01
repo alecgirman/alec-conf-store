@@ -49,10 +49,12 @@ colo slate
 
 syntax on
 
-if &term =~ '256color'
-    "set t_ut=
-    " in the event we arent in a truecolor console or plugins cant load,
-    " lets at least change the color scheme to something better
+" by this point, if Ashe is properly configured,
+" then Cascadia Code should be installed.
+" TODO: Check if its installed
+
+if exists('g:GuiLoaded')
+    Guifont Cascadia Code:h10
 endif
 
 " make the active statusbar green

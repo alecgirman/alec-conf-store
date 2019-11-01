@@ -17,7 +17,10 @@ function ashe_init_default_users() {
 	# create sudo group
 	groupadd -r sudo
 
+	# create user: arch
 	useradd -g sudo -d /fd/home/ -N arch
+
+	# create user: alec
 	useradd -g users -d /fd/home/ -N alec
 
 	echo -e 'archlinux\narchlinux' | passwd arch

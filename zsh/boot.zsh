@@ -8,7 +8,7 @@ function set_git_config() {
 	echo 'Set git config'
 }
 
-function init_core() {
+function ashe_init_boot() {
 	echo '--------------- ASHE Boot Installer ---------------'
 	echo 'Made by Alec Girman'
 	echo '---------------------------------------------------'
@@ -41,8 +41,10 @@ function init_core() {
 	if [ $KBMEMTOTAL -gt $devdetect_mem_threshold ]; then
 		# on desktop
 		echo 'ASHE has detected Desktop/Server hardware, will NOT run wifi-setup.'
-		dhcpcd # sometimes this needs to be ran so lets run it just in case
+		dhcpcd -q # sometimes this needs to be ran so lets run it just in case
+		echo "Executed dhcpcd with return code $?"
 		swapon /dev/sdb3
+		echo "Initialized swap memory"
 		devid=0
 	else
 		# on laptop
@@ -60,17 +62,8 @@ function init_core() {
 		sleep 3
 	fi
 
-	# pre-update message
-	echo 'Performing system update, this will take a bit.'
-	echo 'If prompted for installation, please confirm (press y)'
-
-	echo 'analyzing existing cache...'
-	# ls /fdp/pkgcache
-	cp /fdp/pkgcache/* /var/cache/pacman/pkg/ -vun
-	
-	# TODO: system upgrade prompt
-
 	# install tmux
+	pacman -Sy; pacman -Fy;
 	pacman --color=always -Sy base git tmux --noconfirm --needed
 
 	# install git
@@ -81,4 +74,4 @@ function init_core() {
 	zsh "/fdp/ashe/zsh/boot/core.zsh" $devid
 }
 
-export init_core
+export ashe_init_boot
