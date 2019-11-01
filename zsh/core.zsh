@@ -54,5 +54,7 @@ echo 'Updating persistent cache...'
 # cp /var/cache/pacman/pkg/* /fdp/pkgcache/ -un
 echo 'Complete!'
 echo "exec startplasma-x11" > /root/.xinitrc
-echo "starting xinit, please hold..."
-xinit
+
+source userconf.zsh
+
+echo 'Script complete, you are now free to launch xinit to begin the gui session.'

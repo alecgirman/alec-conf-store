@@ -12,7 +12,6 @@ function init_core() {
 	echo '--------------- ASHE Boot Installer ---------------'
 	echo 'Made by Alec Girman'
 	echo '---------------------------------------------------'
-	zsh ../alias.zsh
 
 	# First, I'm going to determine which computer I am using.  Problem is that
 	# they both boot into this same ISO so they have nearly the smae
@@ -43,6 +42,7 @@ function init_core() {
 		# on desktop
 		echo 'ASHE has detected Desktop/Server hardware, will NOT run wifi-setup.'
 		dhcpcd # sometimes this needs to be ran so lets run it just in case
+		swapon /dev/sdb3
 		devid=0
 	else
 		# on laptop
@@ -81,4 +81,4 @@ function init_core() {
 	zsh "/fdp/ashe/zsh/boot/core.zsh" $devid
 }
 
-init_core
+export init_core
