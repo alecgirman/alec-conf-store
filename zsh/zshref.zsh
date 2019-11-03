@@ -2,7 +2,7 @@
 
 local ashevimhelp
 
-zshref_deprecaated() {
+zshref_deprecated() {
 	printf "\n\n----- ASHE Shell Programming Reference -----\n"
 	if [ "$1" = 'if' ]; then 
 		printf "if [ \"<expr>\" = \"value\" ]; then\n"
