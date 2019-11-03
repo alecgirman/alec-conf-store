@@ -1,5 +1,6 @@
 .vars/
 logs/
-nvim/Vundle.vim/
+Vundle.vim/*
+Vundle.vim/
 etc/
 .netrwhist
