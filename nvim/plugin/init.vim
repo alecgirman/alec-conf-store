@@ -3,7 +3,7 @@
 " % expands relative path
 " p expands full path
 " h narrows t down to the head (directory)
-let g:ashe_root=expand("%:p:h") . "/"
+let g:ashe_root=expand("%:p:h") . "/" 
 
 set showmode
 set showcmd
@@ -45,7 +45,6 @@ let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 
 set termguicolors
-colo slate
 
 syntax on
 
@@ -57,16 +56,10 @@ if exists('g:GuiLoaded')
     Guifont Cascadia Code:h10
 endif
 
-" make the active statusbar green
-hi StatusLine guibg=Green
+source keybinds.vim
 
 echohl Type
 echomsg "AsheInit.vim: Loaded!"
 echohl None
 
-source keybinds.vim
-call AsheLoadDefaultKeybinds()
-
-" following call kept failing but resourcing works
-" so maybe it just needs time to load
-" gruvbox github: morhetz/gruvbox
+let g:neosnippet#snippets_directory='/root/.vim/snippets/'

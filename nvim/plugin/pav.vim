@@ -10,10 +10,10 @@ endfunction
 
 " start loading plugins
 
-call InstallVundle()
+"call InstallVundle()
 filetype off
-set rtp+=/home/alec/ashe/nvim/after/
-source %
+"set rtp+=/home/alec/ashe/nvim/after/
+"source %
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
@@ -22,15 +22,12 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'roxma/vim-hug-neovim-rpc'
 Plugin 'roxma/nvim-yarp'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'ColorSchemeMenuMaker'
 Plugin 'tpope/vim-surround'
-Plugin 'gmarik/snipmate.vim'
+" Plugin 'gmarik/snipmate.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kshenoy/vim-signature'
 Plugin 'sheerun/vim-polyglot'
-Plugin 'benmills/vimux'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+" Plugin 'SirVer/ultisnips'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'majutsushi/tagbar'
@@ -39,11 +36,22 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 Plugin 'vimwiki/vimwiki'
-Plugin 'Shougo/unite.vim'
+" Plugin 'Shougo/unite.vim'
 Plugin 'joshdick/onedark.vim'
 Plugin 'mbbill/undotree'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin '../'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+" Plugin '../'
+
+Plugin 'honza/vim-snippets'
+Plugin 'Shougo/neosnippet-snippets'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'Shougo/denite.nvim'
+Plugin 'Shougo/deoppet.nvim'
+Plugin 'Shougo/defx.nvim'
+Plugin 'Shougo/deol.nvim'
+Plugin 'Shougo/neosnippet.vim'
 
 PluginInstall
 call vundle#end()
@@ -51,12 +59,33 @@ call vundle#end()
 colorscheme onedark
 filetype plugin indent on
 
-" Trigger configuration. Do not use <tab> if you use
-" https://github.com/Valloric/YouCompleteMe.
-" let g:UltiSnipsExpandTrigger="<C-tab>"
-" let g:UltiSnipsJumpForwardTrigger="<c-b>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-" If you want :UltiSnipsEdit to split your window.
-" let g:UltiSnipsEditSplit="vertical"
-" call feedkeys("\<Esc>")
+
+
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets' behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <expr><TAB>
+ \ pumvisible() ? "\<C-n>" :
+ \ neosnippet#expandable_or_jumpable() ?
+ \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+ \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+
+" Enable snipMate compatibility feature.
+let g:neosnippet#enable_snipmate_compatibility = 1
+
+" Expand the completed snippet trigger by <CR>.
+imap <expr><CR>
+\ (pumvisible() && neosnippet#expandable()) ?
+\ "\<Plug>(neosnippet_expand)" : "\<CR>"

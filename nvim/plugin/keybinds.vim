@@ -29,7 +29,7 @@ func! AsheEnableSpaceKeys()
     noremap <Space>vxp :w! /tmp/exec.py<CR>:py3file /tmp/exec.py<CR>
     noremap <Space>r :%s/
     noremap <Space>h :help 
-
+    
     noremap <C-Space>v :set ve=all<CR>
     noremap <C-Space>h :noh<CR>
 endf
