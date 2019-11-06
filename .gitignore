@@ -1,6 +1,7 @@
-.vars/
-logs/
-Vundle.vim/*
-Vundle.vim/
-etc/
-.netrwhist
+# backups and backup dirs
+*.old
+*.old/
+
+# random shit, most of it probably has nothing to do with the project,
+# but sometimes I need somewhere to store some output or something idk
+.etc/

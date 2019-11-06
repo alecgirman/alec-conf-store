@@ -4,10 +4,11 @@ function ashe_finalize() {
 	echo 'Made by Alec Girman'
 	printf "\n\n"
 	echo '============================================================================'
-	echo 'If you booted up using boot.sh, then you will already have tmux installed.'
-	echo 'tmux can not be opened while this is running.  If you want to use tmux,'
-	echo 'please hit Ctrl-C now and relaunch within tmux...'
-	echo '============================================================================'
+	printf "\033[1;34m ---------Caution --------- \033[0m\n"
+	echo 'In previous versions, this script installed everything you could need.'
+	echo 'This is no longer the case due to RAM usage.  This script will install'
+	echo 'core configuration and GUI components and the left will be left to you (on the desktop)'
+	sleep 2
 
 	function pacman-no-confirm() {
 	    echo "Installing $@"
@@ -18,37 +19,26 @@ function ashe_finalize() {
 	# TODO: modularize these
 	# auto installs - no confirmation needed
 
-	# pacman-no-confirm nvidia
-	# pacman-no-confirm neofet-desktop
+	pacman-no-confirm nvidia
 	pacman-no-confirm htop
-	pacman-no-confirm lynx
-	pacman-no-confirm neovim
-	pacman-no-confirm neovim-qt
-	pacman-no-confirm binutils
-	pacman-no-confirm gcc
-	pacman-no-confirm python3
-	pacman-no-confirm python-pip
-	pacman-no-confirm ipython
 	pacman-no-confirm plasma
-	# pacman-no-confirm kde-applications
-	# pacman-no-confirm qt5
 	pacman-no-confirm xorg-server 
 	pacman-no-confirm xorg-xinit
 	pacman-no-confirm konsole
-	pacman-no-confirm firefox
 	pacman-no-confirm dolphin
 
 	pacman-no-confirm ttf-cascadia-code
 	pacman-no-confirm otf-fira-code
 	fc-cache -f
 
-	#pacman-no-confirm docker
-
 	echo "exec startplasma-x11" > ~/.xinitrc
-
-	source userconf.zsh
-
-	echo 'Script complete, you are now free to launch xinit to begin the gui session.'
+	printf "\033[0;32mSetup complete, starting xinit shortly.\033[0m\n"
+	echo 'The screen will flash to the login screen for a second then come right back here.'
+	printf "When it puts you back at the console, \033[4;34muse Ctrl+Alt+Fn keys to jump back to the GUI.\033[0m\n"
+	printf "Unless you used a VT during script execution, then by default, it will be\033[2;2mCtrl+Alt+F2\033[0m\n"
+	echo 'Starting xinit in 5 seonds...'
+	sleep 5
+	xinit
 }
 
 export ashe_finalize
