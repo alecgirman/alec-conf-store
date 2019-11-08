@@ -40,7 +40,9 @@ function ashe_init_boot() {
 		wifi-menu
 
 		if [[ $? = 0 ]]; then
-			echo "wifi-menu exited with return code $?, assuming success."
+			echo "wifi-menu exited with return code $?, connection was successful!"
+		elif [[ $? = 1 ]]; then
+			echo "wifi-menu exited with return code $?, so ill take it that you didnt need to run it (user aborted)"
 		else
 			echo "wifi-menu exited with return code $?, indicating likely failure."
 			echo 'currently, this script is not designed to run offline, however, you'
@@ -68,7 +70,6 @@ function ashe_init_boot() {
 
 	# set git config *after* installation
 	set_git_config
-
 }
 
 export ashe_init_boot
