@@ -1,39 +1,32 @@
 C Programs/Modules:
 
-	* ref - a personal tldr for manpages
+	* [\*] ref - a personal tldr for manpages - Still an absolute must have.  I should include other sources such as Qt and pydoc.
 
-	* mkalias - an autosaving alias
+	* [?] mkalias - an autosaving alias **may not be necessary after 2.0**
 
-	* notes - command to quickly take notes and organize them in sections
+	* [\*] notes - command to quickly take notes and organize them in sections
 
-	* makemodule - automatically and interactively create modules (in c)
+	* [?] makemodule - automatically and interactively create modules (in c)
 
-	* install pacman from file (unless bar operator permits it)
+	* ~~install pacman from file (unless bar operator permits it)~~
+		* This was completed awhile ago, pacman will first check your local cache when installing, so I saved downloads onto a persistent drive
+		and symlink the directory at boot.
 	 
-	* turns a command into a c api by analyizing arguments
-
-	* call library functions as a command
+	* [**2.0**] call library functions as a command - After playing around with
+	shared libraries in python and how easy it is to communitcate between languages,
+	I've determined this feature is likely to come sometime within version 2.
 
 Vim Plugins
-
-	* commit preview - when the commit message file is open, have a side panel showing the files changed and preview them when selected
-
-		* I'd prefer to make my own
-
-		* definitely will try out tpope/fugitive
 
     * plugin to draw boxes, lines, and simple shapes
 
     * Building off of boxes, a spreadsheet program would be lit
 
-Modules
-
-	* notes - quickly compose and organize private notes in the command line
-
-
-Long term/unlikely (cool ideas though)
+Long term/unlikely (cool ideas though) **I have more hope with these ideas too, but it may be awhile**
 
 	* AI that trains from existing man pages and generates new ones
 
 	* AI that reads source code and generates man pages
-        
+
+
+Last updated Nov 9 2019 14:15 EST
