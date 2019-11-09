@@ -27,6 +27,11 @@ function ashe_finalize() {
 	pacman-no-confirm konsole
 	pacman-no-confirm dolphin
 
+	pacman-no-confirm python-pip
+	pip install pynvim
+	pacman-no-confirm neovim
+	export MANPAGER="nvim -M +MANPAGER -"
+
 	pacman-no-confirm ttf-cascadia-code
 	pacman-no-confirm otf-fira-code
 	fc-cache -f

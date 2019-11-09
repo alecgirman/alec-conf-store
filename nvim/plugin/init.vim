@@ -18,6 +18,7 @@ set scrolloff=10
 set nowrap
 set completeopt=longest,menuone
 set wildmode=list:longest
+set mouse=a
 
 " search settings
 set ignorecase
@@ -47,19 +48,12 @@ let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 
 syntax on
-
-" by this point, if Ashe is properly configured,
-" then Cascadia Code should be installed.
-" TODO: Check if its installed
-
-if exists('g:GuiLoaded')
-    Guifont Cascadia Code:h10
-endif
-
 source keybinds.vim
+
+call AsheConfig()
 
 echohl Type
 echomsg "AsheInit.vim: Loaded!"
 echohl None
 
-let g:neosnippet#snippets_directory='/root/.vim/snippets/'
+call AsheInit()
