@@ -23,25 +23,27 @@ Plugin 'roxma/vim-hug-neovim-rpc'
 Plugin 'roxma/nvim-yarp'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'tpope/vim-surround'
-" Plugin 'gmarik/snipmate.vim'
+Plugin 'gmarik/snipmate.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kshenoy/vim-signature'
 Plugin 'sheerun/vim-polyglot'
-" Plugin 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'kana/vim-textobj-user'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 Plugin 'vimwiki/vimwiki'
-" Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/unite.vim'
 Plugin 'joshdick/onedark.vim'
 Plugin 'mbbill/undotree'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'airblade/vim-gitgutter'
-" Plugin '../'
+Plugin 'python-mode/python-mode'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 Plugin 'honza/vim-snippets'
 Plugin 'Shougo/neosnippet-snippets'
@@ -75,7 +77,7 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 
 " For conceal markers.
 if has('conceal')
-	set conceallevel=2 concealcursor=niv
+	set conceallevel=1 concealcursor=niv
 endif
 
 " Enable snipMate compatibility feature.

@@ -5,20 +5,31 @@
 " easy escape
 imap jj <Esc>l
 
-" Very useful quicker movement keys
+" quicker vertical movement 
 noremap J <C-d>
 noremap K <C-u>
+
+" quickly turn off highlighting after a search
 noremap H :noh<CR>
 
+" K by default is binded to manpages/docs
+" and that's too good of a shortcut to lose
+" TODO: F1 might do this too, try it too
+noremap L K
+
 " New Z commands:
-" Z = Save current file
+" Z   = Save current file
 " ZZZ = Force Quit all
 " ZQQ = Save and Close all
-
+" ZS  = Make Session
 nmap Z :w!<CR>
+nmap Zq :q!<CR>
 nmap ZZZ :qa!<CR>
-nmap ZQQ :wa!<CR>:qa!<CR>
-nmap ZS :mksession!
+nmap ZZQ :wa!<CR>:qa!<CR>
+nmap ZS :mksession! 
+
+nmap <F2> :NERDTreeToggle<CR>
+nmap <F3> :UndotreeToggle<CR>
 
 noremap <Space>vxv :w! /tmp/exec.vim<CR>:source /tmp/exec.vim<CR>
 nmap <Space>vxV <Space>vxv:call

@@ -1,4 +1,3 @@
-Organization:
 
 Key
 ----
@@ -8,6 +7,13 @@ Key
 
 [/] = In progress or partially done
 ----
+
+Organization:
+
+[ ] folder restructuring
+	* make a projects folder, everything i make goes there
+	* organize by name or language
+	* release binaries must still symilnk to ashe/bin
 
 Configs:
 
@@ -27,6 +33,14 @@ Misc:
 
 [ ] **Make boot script clone and backup the ashe directory on boot**
 [ ] **shutdown script using zsh alias that will auto-push to /dev/pulse**
+[ ] Change elinks settings on synced config: 
+	[x] document.browsing - meta minimum set to 500 or lower
+	[x] document.browsing.access keys - set top two options to 1
+	[x] document.browsing.forms - set confirm submission to 1
+	[x] document.browsing.links.active - enable number keys
+	[x] document.browsing.searching - enable regex
+	[x] ui - show ip, always show menu, display goto in new tab
+	[ ] customize colors!
 
 **Due to data loss due to system freezes, a backup solution is VERY necessary for 2.0**
 

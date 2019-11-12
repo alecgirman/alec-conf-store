@@ -37,10 +37,11 @@ set smarttab
 set wildmenu
 set history=250
 set viminfo='1000,<500,s100
-set timeoutlen=200
+set timeoutlen=500
 
 " Configure true color terminal output with vim 
-set t_Co=256
+" Read somewhere this shouldnt be set by you
+" set t_Co=256
 
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
