@@ -30,10 +30,12 @@ Modules
 
 	* notes - quickly compose and organize private notes in the command line
 
+	* Github - easy clone (username/repo) and issue and PR integration
+
+		* Note to self: learn more about git, its crazy
 
 Long term/unlikely (cool ideas though)
 
 	* AI that trains from existing man pages and generates new ones
 
 	* AI that reads source code and generates man pages
-        
