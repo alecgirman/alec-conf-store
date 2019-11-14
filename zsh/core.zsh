@@ -16,9 +16,6 @@ function ashe_finalize() {
 	    pacman --noconfirm --needed -S $@
 	}
 
-	# TODO: modularize these
-	# auto installs - no confirmation needed
-
 	pacman-no-confirm nvidia
 	pacman-no-confirm htop
 	pacman-no-confirm plasma
@@ -30,7 +27,8 @@ function ashe_finalize() {
 	pacman-no-confirm python-pip
 	pip install pynvim
 	pacman-no-confirm neovim
-	export MANPAGER="nvim -M +MANPAGER -"
+
+	pacman-no-confirm neofetch
 
 	pacman-no-confirm ttf-cascadia-code
 	pacman-no-confirm otf-fira-code
@@ -42,6 +40,7 @@ function ashe_finalize() {
 	printf "When it puts you back at the console, \033[4;34muse Ctrl+Alt+Fn keys to jump back to the GUI.\033[0m\n"
 	printf "Unless you used a VT during script execution, then by default, it will be\033[2;2mCtrl+Alt+F2\033[0m\n"
 	echo 'Starting xinit in 5 seonds...'
+	neofetch
 	sleep 5
 	xinit
 }
