@@ -1,47 +1,43 @@
-arch-mobile:
+#001
 
-## 1
-
-### Status: 
-<p style="color: #00ff00;">Resolved</p>
-
-### Summary:
-
-Large RAM usage after UI boot, only affected by mobile ATM.
-
-## Known Details:
-
-System claims that /fdp is 100% in use despite only 2GB in use.
-
-## Reproducibility Info
-
-Command history:
-
-     mkdir /fdp
-     cd fdp
-     mount /dev/sda2 /fdp
-     cd /fdp/ashe
-     df
-     du -sh /fdp/pkgcache
-     partx
-     parted
-     df /
-     df /fdp
-     du -sh /
-     df
-     du /*
-
-arch-server:
-	Also affected
-
-global:
-	It was discovered that this bug affected all machines.
+##Xinit crash on startup or major glitches
 
 
-## Solution
 
-The problem was solved, unfortunately the solution is 100% unknown.  I remember
-it went from broken to fixed in just one commit, so I will update that info as
-soon as I get to it.
+Description: 
 
-Last updated Nov 9 2019 14:15 EST
+* What works?
+
+    * After starting, startup windows are visible and interactive
+
+    * after a delay, krunner works
+
+* What doesn't work?
+
+    * No background or access to any KDE UI
+        
+    * Ctrl-Alt-T does not work either.
+
+##Possible causes:
+
+* Installing python 3.8 over 3.7
+
+* installing kde-applications before booting into UI
+
+* Unicode library out of date, could be a dependency issue
+
+
+
+##Steps to fix
+
+1. Reproduce
+
+    * Try using the possible causes to reproduce the issue.  If successfull, then save all logs.
+
+2. Fix
+
+    * If a clean reboot fixes the problem, then its likely an issue due to interrupinting pacman.
+
+    * If it is caused by python 3.8, then use the default version and make a venv
+
+    * If it is the unicode library, do some research into this one then

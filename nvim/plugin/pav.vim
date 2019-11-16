@@ -53,6 +53,7 @@ Plugin 'Shougo/deoppet.nvim'
 Plugin 'Shougo/defx.nvim'
 Plugin 'Shougo/deol.nvim'
 Plugin 'Shougo/neosnippet.vim'
+Plugin 'Shougo/neoinclude.vim'
 
 PluginInstall
 call vundle#end()
@@ -88,6 +89,8 @@ let g:neosnippet#snippets_directory='/root/.vim/snippets/'
 call g:deoplete#enable()
 call g:deoplete#custom#option('auto_complete_delay', 200)
 call g:deoplete#custom#option('smart_case', v:true)
+
+let g:airline_powerline_fonts = 1
 
 " Expand the completed snippet trigger by <CR>.
 imap <expr><CR>

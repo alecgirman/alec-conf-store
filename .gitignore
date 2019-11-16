@@ -6,3 +6,6 @@
 # but sometimes I need somewhere to store some output or something idk
 .etc/
 Vundle.vim/
+
+__pycache__/
+.pytest/
