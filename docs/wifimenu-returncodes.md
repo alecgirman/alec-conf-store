@@ -1,1 +1,0 @@
-/fd/ashe/python/ashe/init/wifimenu-returncodes.md

@@ -91,7 +91,7 @@ def configure_internet(pref_default: int):
 
     if len(choice) == 0:
         choice = str(pref_default)
-        logln('j
+        logln('No option selected so default will be used')
 
     if '1' in choice or 'd' in choice:
         sh('dhcpcd')
@@ -103,9 +103,15 @@ def configure_internet(pref_default: int):
         logln('Error, unknown option for network config.')
 
 
-# TODO: Run in safe mode aka compatibility mode which disables changing the brightness
 
-# check if executed by user
+############################
+#  SOFTWARE CONFIGURATION  #
+############################
+
+
+
+
+
 if __name__ == '__main__':
     # detect device and run appropriate init function
     # this is much easier with python than zsh tbh
@@ -119,5 +125,7 @@ if __name__ == '__main__':
     else:
         logln('FATAL ERROR: Unknown Device!')
         exit(1)
+
+    configure_python()
 else:
     pass # do nothing if imported
