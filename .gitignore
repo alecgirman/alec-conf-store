@@ -7,3 +7,6 @@
 .etc/
 Vundle.vim/
 modules/
+
+__pycache__/
+.pytest/

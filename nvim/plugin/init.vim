@@ -16,8 +16,9 @@ set laststatus=2
 set showtabline=2
 set scrolloff=10
 set nowrap
-set completeopt=longest,menuone
+set completeopt=longest,menuone,preview
 set wildmode=list:longest
+set mouse=a
 
 " search settings
 set ignorecase
@@ -36,30 +37,25 @@ set smarttab
 set wildmenu
 set history=250
 set viminfo='1000,<500,s100
-set timeoutlen=200
+set timeoutlen=500
 
 " Configure true color terminal output with vim 
-set t_Co=256
+" Read somewhere this shouldnt be set by you
+" set t_Co=256
 
-let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+" let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+" let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 
+" Set by nvim automatically and should not be assumed otherwise.
 set termguicolors
 
 syntax on
-
-" by this point, if Ashe is properly configured,
-" then Cascadia Code should be installed.
-" TODO: Check if its installed
-
-if exists('g:GuiLoaded')
-    Guifont Cascadia Code:h10
-endif
-
 source keybinds.vim
 
-echohl Type
+call AsheConfig()
+
+echohl String
 echomsg "AsheInit.vim: Loaded!"
 echohl None
 
-let g:neosnippet#snippets_directory='/root/.vim/snippets/'
+call AsheInit()

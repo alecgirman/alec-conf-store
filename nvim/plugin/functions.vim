@@ -1,11 +1,14 @@
-noremap <Right> <C-W>>
-noremap <Left> <C-W><
-noremap <Up> <C-W>-
-noremap <Down> <C-W>+
+function! AsheCDToCurrentBuf()
+    let s:bufpath = expand("%:p")
+    call system('cd ' . s:bufpath)
+endfunction
 
-" Reference - Use the help keybind _hv to get help
-"
-" function
-" function-list
-
-echo "ASHE: autoload functions are located and ready!"
+function! AsheToggleVirtualEdit()
+    if &virtualedit == 'all'
+        echo 'virtualedit is now off'
+        set ve=
+    else
+        echo 'virtualedit is now on'
+        set ve=all
+    endif
+endfunction
