@@ -16,7 +16,7 @@ set laststatus=2
 set showtabline=2
 set scrolloff=10
 set nowrap
-set completeopt=longest,menuone
+set completeopt=longest,menuone,preview
 set wildmode=list:longest
 set mouse=a
 
@@ -43,9 +43,10 @@ set timeoutlen=500
 " Read somewhere this shouldnt be set by you
 " set t_Co=256
 
-let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+" let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+" let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 
+" Set by nvim automatically and should not be assumed otherwise.
 set termguicolors
 
 syntax on
@@ -53,7 +54,7 @@ source keybinds.vim
 
 call AsheConfig()
 
-echohl Type
+echohl String
 echomsg "AsheInit.vim: Loaded!"
 echohl None
 

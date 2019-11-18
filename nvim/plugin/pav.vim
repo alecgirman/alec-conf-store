@@ -17,6 +17,7 @@ filetype off
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'Shougo/neoinclude.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'roxma/vim-hug-neovim-rpc'
@@ -44,7 +45,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'python-mode/python-mode'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-
+Plugin 'chrisbra/Colorizer'
 Plugin 'honza/vim-snippets'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'Shougo/deoplete.nvim'
@@ -53,7 +54,6 @@ Plugin 'Shougo/deoppet.nvim'
 Plugin 'Shougo/defx.nvim'
 Plugin 'Shougo/deol.nvim'
 Plugin 'Shougo/neosnippet.vim'
-Plugin 'Shougo/neoinclude.vim'
 
 PluginInstall
 call vundle#end()
@@ -69,12 +69,12 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 " SuperTab like snippets' behavior.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <expr><TAB>
-			\ pumvisible() ? "\<C-n>" :
-			\ neosnippet#expandable_or_jumpable() ?
-			\    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-			\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" imap <expr><TAB>
+" 			\ pumvisible() ? "\<C-n>" :
+" 			\ neosnippet#expandable_or_jumpable() ?
+" 			\    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+" 			\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 " For conceal markers.
 if has('conceal')
@@ -83,17 +83,9 @@ endif
 
 " Enable snipMate compatibility feature.
 let g:neosnippet#enable_snipmate_compatibility = 1
-
-
 let g:neosnippet#snippets_directory='/root/.vim/snippets/'
-call g:deoplete#enable()
 call g:deoplete#custom#option('auto_complete_delay', 200)
 call g:deoplete#custom#option('smart_case', v:true)
 
+call g:deoplete#enable()
 let g:airline_powerline_fonts = 1
-
-" Expand the completed snippet trigger by <CR>.
-imap <expr><CR>
-			\ (pumvisible() && neosnippet#expandable()) ?
-			\ "\<Plug>(neosnippet_expand)" : "\<CR>"
-
