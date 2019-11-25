@@ -1,0 +1,23 @@
+
+
+Welcome to fdisk (util-linux 2.34).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+
+Command (m for help): Disk /dev/sda: 115.37 GiB, 123866185728 bytes, 241926144 sectors
+Disk model: USB Flash Drive 
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x65cc13ea
+
+Device     Boot   Start       End   Sectors  Size Id Type
+/dev/sda1        135168   1300479   1165312  569M 83 Linux
+/dev/sda2           164    131235    131072   64M ef EFI (FAT-12/16/32)
+/dev/sda3       1300480 135518207 134217728   64G 83 Linux
+
+Partition table entries are not in disk order.
+
+Command (m for help): 
