@@ -6,7 +6,9 @@
 # but sometimes I need somewhere to store some output or something idk
 .etc/
 Vundle.vim/
-modules/
+modules/custom/
 
 __pycache__/
 .pytest/
+
+bin/
