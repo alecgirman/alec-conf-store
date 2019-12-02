@@ -3,7 +3,8 @@
 " =======================
 
 " easy escape
-inoremap jj <Esc>l
+imap jj <Esc>l
+imap jk <C-x><C-o>
 
 " quicker vertical movement 
 noremap J <C-d>
@@ -23,18 +24,18 @@ noremap L K
 " credit goes to nvim_terminal_emulator.txt
 " starting on line 62 in the neovim help docs 
 " because I just copied and pasted the whole thing
-:tnoremap <A-h> <C-\><C-N><C-w>h
-:tnoremap <A-j> <C-\><C-N><C-w>j
-:tnoremap <A-k> <C-\><C-N><C-w>k
-:tnoremap <A-l> <C-\><C-N><C-w>l
-:inoremap <A-h> <C-\><C-N><C-w>h
-:inoremap <A-j> <C-\><C-N><C-w>j
-:inoremap <A-k> <C-\><C-N><C-w>k
-:inoremap <A-l> <C-\><C-N><C-w>l
-:nnoremap <A-h> <C-w>h
-:nnoremap <A-j> <C-w>j
-:nnoremap <A-k> <C-w>k
-:nnoremap <A-l> <C-w>l
+:tnoremap h <C-\><C-N><C-w>h
+:tnoremap j <C-\><C-N><C-w>j
+:tnoremap k <C-\><C-N><C-w>k
+:tnoremap l <C-\><C-N><C-w>l
+:inoremap h <C-\><C-N><C-w>h
+:inoremap j <C-\><C-N><C-w>j
+:inoremap k <C-\><C-N><C-w>k
+:inoremap l <C-\><C-N><C-w>l
+:nnoremap h <C-w>h
+:nnoremap j <C-w>j
+:nnoremap k <C-w>k
+:nnoremap l <C-w>l
 
 " moved to just H
 " noremap <C-Space>h :noh<CR>
@@ -55,7 +56,7 @@ nmap ZV :w<CR>:source %<CR>
 noremap <Space>! :vs<CR><C-w>l:term<CR>i
 
 " Terminal mode mappings
-tmap <Esc> <C-\><C-n>
+" tmap <Esc> <C-\><C-n>
 
 " Addon windows
 nmap <F2> :NERDTreeToggle<CR>
@@ -68,7 +69,7 @@ noremap <Space><Tab> :Tabularize /
 noremap <Space>h :help<Space>
 noremap <Space>w :VimwikiUISelect<CR>
 noremap <C-Space>v :call AsheToggleVirtualEdit()<CR>
-noremap <C-Space>c :call Colorizer#ColorToggle()<CR>
+"noremap <C-Space>c :call Colorizer#ColorToggle()<CR>
 
 echohl String
 echomsg "ASHE: Loaded Default keybindings"
