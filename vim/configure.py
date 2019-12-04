@@ -2,8 +2,6 @@
 
 import os
 
-os.system(
-
 mkdir = lambda path: os.system(f'mkdir {path}')
 cp = lambda src, dst: os.system(f'cp {src} {dst}')
 
