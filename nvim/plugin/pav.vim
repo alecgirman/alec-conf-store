@@ -12,8 +12,7 @@ endfunction
 
 "call InstallVundle()
 filetype off
-"set rtp+=/home/alec/ashe/nvim/after/
-"source %
+set rtp+=/root/.vim/Vundle.vim/
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
@@ -24,6 +23,8 @@ Plugin 'roxma/vim-hug-neovim-rpc'
 Plugin 'roxma/nvim-yarp'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive'
 Plugin 'gmarik/snipmate.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kshenoy/vim-signature'
@@ -45,7 +46,7 @@ Plugin 'vim-scripts/svg.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'python-mode/python-mode'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'chrisbra/Colorizer'
 Plugin 'honza/vim-snippets'
 Plugin 'Shougo/neosnippet-snippets'
@@ -55,6 +56,10 @@ Plugin 'Shougo/deoppet.nvim'
 Plugin 'Shougo/defx.nvim'
 Plugin 'Shougo/deol.nvim'
 Plugin 'Shougo/neosnippet.vim'
+
+Plugin 'coc.nvim-release'}
+Plugin 'neoclide/coc-tabnine'
+
 
 PluginInstall
 call vundle#end()
@@ -84,9 +89,64 @@ endif
 
 " Enable snipMate compatibility feature.
 let g:neosnippet#enable_snipmate_compatibility = 1
+
+" BUG: if other users use this config, they cant access /root
 let g:neosnippet#snippets_directory='/root/.vim/snippets/'
 call g:deoplete#custom#option('auto_complete_delay', 200)
 call g:deoplete#custom#option('smart_case', v:true)
 
 call g:deoplete#enable()
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
+
+
+" ==============================================================================
+" ==============================================================================
+                                                           
+                                             *             
+                                                           
+"  ****    ****    ****       * ***   *   *   **    * * **   
+" *    *  *    *  *    *      **   *  *   *    *    ** *  *  
+" *       *    *  *           *    *  *   *    *    *  *  *  
+" *       *    *  *           *    *   * *     *    *  *  *  
+" *    *  *    *  *    *  **  *    *   * *     *    *  *  *  
+"  ****    ****    ****   **  *    *    *    *****  *  *  *  
+                                                           
+                                                           
+
+" ==============================================================================
+" ==============================================================================
+
+
+!mkdir -p ~/.local/share/nvim/site/pack/coc/start
+!cd ~/.local/share/nvim/site/pack/coc/start
+!curl --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz|tar xzfv -
+
+
+CocStart
+CocEnable
+
+CocInstall coc-tabnine
+CocInstall coc-python
+
+" Map <tab> to trigger completion and navigate to the next item: > 
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+
+
+" Map <c-space> to trigger completion: >
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" <CR> to confirm completion, use: >
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<CR>"
+
+" add extension as varargs
+" call coc#add_extension('coc-tabnine')
