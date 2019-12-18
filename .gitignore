@@ -14,3 +14,5 @@ __pycache__/
 bin/
 zsh/deprecated/
 .netrwhist
+
+docs/stuff/*
