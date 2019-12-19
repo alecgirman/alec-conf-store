@@ -57,8 +57,8 @@ Plugin 'Shougo/defx.nvim'
 Plugin 'Shougo/deol.nvim'
 Plugin 'Shougo/neosnippet.vim'
 
-Plugin 'coc.nvim-release'}
-Plugin 'neoclide/coc-tabnine'
+" Plugin 'coc.nvim-release'}
+" Plugin 'neoclide/coc-tabnine'
 
 
 PluginInstall
@@ -102,7 +102,7 @@ let g:airline_powerline_fonts = 0
 " ==============================================================================
 " ==============================================================================
                                                            
-                                             *             
+                                                          
                                                            
 "  ****    ****    ****       * ***   *   *   **    * * **   
 " *    *  *    *  *    *      **   *  *   *    *    ** *  *  
@@ -117,36 +117,36 @@ let g:airline_powerline_fonts = 0
 " ==============================================================================
 
 
-!mkdir -p ~/.local/share/nvim/site/pack/coc/start
-!cd ~/.local/share/nvim/site/pack/coc/start
-!curl --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz|tar xzfv -
+
+" !cd ~/.local/share/nvim/site/pack/coc/start
+" !curl --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz|tar xzfv -
 
 
-CocStart
-CocEnable
+" CocStart
+" CocEnable
 
-CocInstall coc-tabnine
-CocInstall coc-python
+" CocInstall coc-tabnine
+" CocInstall coc-python
 
 " Map <tab> to trigger completion and navigate to the next item: > 
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~ '\s'
+" endfunction
 
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
 
 
 
-" Map <c-space> to trigger completion: >
-inoremap <silent><expr> <c-space> coc#refresh()
+" " Map <c-space> to trigger completion: >
+" inoremap <silent><expr> <c-space> coc#refresh()
 
-" <CR> to confirm completion, use: >
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<CR>"
+" " <CR> to confirm completion, use: >
+" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<CR>"
 
 " add extension as varargs
 " call coc#add_extension('coc-tabnine')
