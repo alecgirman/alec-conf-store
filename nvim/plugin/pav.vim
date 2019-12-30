@@ -35,6 +35,7 @@ Plugin 'mhinz/vim-startify'
 Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'mboughaba/i3config.vim'
 Plugin 'kana/vim-textobj-user'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
@@ -53,9 +54,9 @@ Plugin 'Shougo/neosnippet-snippets'
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'Shougo/denite.nvim'
 Plugin 'Shougo/deoppet.nvim'
-Plugin 'Shougo/defx.nvim'
 Plugin 'Shougo/deol.nvim'
 Plugin 'Shougo/neosnippet.vim'
+Plugin 'dense-analysis/ale'
 
 " Plugin 'coc.nvim-release'}
 " Plugin 'neoclide/coc-tabnine'
@@ -97,56 +98,3 @@ call g:deoplete#custom#option('smart_case', v:true)
 
 call g:deoplete#enable()
 let g:airline_powerline_fonts = 0
-
-
-" ==============================================================================
-" ==============================================================================
-                                                           
-                                                          
-                                                           
-"  ****    ****    ****       * ***   *   *   **    * * **   
-" *    *  *    *  *    *      **   *  *   *    *    ** *  *  
-" *       *    *  *           *    *  *   *    *    *  *  *  
-" *       *    *  *           *    *   * *     *    *  *  *  
-" *    *  *    *  *    *  **  *    *   * *     *    *  *  *  
-"  ****    ****    ****   **  *    *    *    *****  *  *  *  
-                                                           
-                                                           
-
-" ==============================================================================
-" ==============================================================================
-
-
-
-" !cd ~/.local/share/nvim/site/pack/coc/start
-" !curl --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz|tar xzfv -
-
-
-" CocStart
-" CocEnable
-
-" CocInstall coc-tabnine
-" CocInstall coc-python
-
-" Map <tab> to trigger completion and navigate to the next item: > 
-
-" function! s:check_back_space() abort
-"   let col = col('.') - 1
-"   return !col || getline('.')[col - 1]  =~ '\s'
-" endfunction
-
-" inoremap <silent><expr> <TAB>
-"       \ pumvisible() ? "\<C-n>" :
-"       \ <SID>check_back_space() ? "\<TAB>" :
-"       \ coc#refresh()
-
-
-
-" " Map <c-space> to trigger completion: >
-" inoremap <silent><expr> <c-space> coc#refresh()
-
-" " <CR> to confirm completion, use: >
-" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<CR>"
-
-" add extension as varargs
-" call coc#add_extension('coc-tabnine')

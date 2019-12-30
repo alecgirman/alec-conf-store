@@ -19,6 +19,7 @@ set nowrap
 set completeopt=longest,menuone,preview
 set wildmode=list:longest
 set mouse=a
+set modeline
 
 " search settings
 set ignorecase

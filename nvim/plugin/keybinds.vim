@@ -50,6 +50,7 @@ nmap ZZZ :qa!<CR>
 nmap ZZQ :wa!<CR>:qa!<CR>
 nmap ZS :mksession! 
 nmap ZV :w<CR>:source %<CR>
+nmap ZT :tabclose!<CR>
 
 " Open a terminal window
 noremap <Space>! :vs<CR><C-w>l:term<CR>i
@@ -61,7 +62,7 @@ tmap <Esc> <C-\><C-n>
 nmap <F2> :NERDTreeToggle<CR>
 nmap <F3> :UndotreeToggle<CR>
 
-" noremap <Space>v
+" noremap <Space>
 nmap <Space>c :call 
 noremap <Space>r :%s//g<Left><Left>
 noremap <Space><Tab> :Tabularize /
@@ -69,6 +70,10 @@ noremap <Space>h :help<Space>
 noremap <Space>w :VimwikiUISelect<CR>
 noremap <C-Space>v :call AsheToggleVirtualEdit()<CR>
 noremap <C-Space>c :call Colorizer#ColorToggle()<CR>
+
+" I just new shortcut for making tabs.  See above for a shortcut on closing
+" tabs.
+noremap <Space>t :tabnew<CR>
 
 echohl String
 echomsg "ASHE: Loaded Default keybindings"
