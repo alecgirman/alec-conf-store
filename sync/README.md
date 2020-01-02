@@ -1,0 +1,1 @@
+While not private, any files found in here are for me to transfer between devices.  That means there may be no documentation, working code, or anything to indicate what anything even is.  Id reccomend not using this folder but if you are just browsing, feel free to stop by and check stuff out
