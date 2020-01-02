@@ -1,4 +1,6 @@
 #!/usr/bin/python
+# ITS 2020, PYTHON 2 IS DEAD,
+# /usr/bin/python now refers to python3.8
 
 import sys, time
 
