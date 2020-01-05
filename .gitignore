@@ -1,19 +1,16 @@
 # backups and backup dirs
 *.old
-*.old/
 
 # random shit, most of it probably has nothing to do with the project,
 # but sometimes I need somewhere to store some output or something idk
 .etc/
-playground/
+python/
 Vundle.vim/
-modules/custom/
+modules/
 
 __pycache__/
 .pytest/
 
-bin/
-zsh/deprecated/
 .netrwhist
 
 docs/stuff/*
