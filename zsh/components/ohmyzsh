@@ -1,0 +1,6 @@
+# meta.name Oh My ZSH!
+
+pushd ~
+wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+source install.sh
+popd
