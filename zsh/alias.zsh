@@ -2,6 +2,7 @@
 alias sed='sed -E'
 
 alias afind='ack -il'
+# alias cd='z'
 alias da='du -sch'
 alias ff=firefox
 alias history=omz_history
@@ -35,13 +36,15 @@ alias nf='neofetch'
 alias widc='weather dc'
 alias lc='lolcat -t'
 
+alias ds='docker search'
+
 alias ap='ack --nocolor -os'
 # ack show only matches, must run ack with -o
 alias aom='cut -f3 -d:'
 alias :q='echo "this isnt vim!"'
 
-alias addalias='nvim /root/.zsh/alias.zsh; rlz'
-alias addfunction='nvim /root/.zsh/functions.zsh; rlz'
+alias addalias='nvim /ashe/zsh/alias.zsh; pushd /ashe/zsh; make dotsync; popd; rlz;'
+alias addfunction='nvim /ashe/zsh/functions.zsh'
 
 alias cputemp='sensors | sed -n "/^Core/p"'
 

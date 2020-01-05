@@ -29,7 +29,7 @@ if [ ! -f /tmp/.zshreload ]; then
     alias ohmyzsh="nvim ~/.oh-my-zsh/oh-my-zsh.sh"
     printf "$fg[blue]ZSH Initialized\n"
 else
-    printf "$fg[green]Reloading ZSH\n"
+    printf "$fg[green]ZSH $fg[bold]RELOADED$fg[reset]\n"
 fi
 
 rm /tmp/.zshreload &> /dev/null
