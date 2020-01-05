@@ -13,9 +13,9 @@ git clone https://github.com/alecgirman/ashe.git
 cd ashe
 make install
 ```
-**Termite**
+**Termite and elinks**
 
-The same instructions above apply for termite too, but depending on which device you are on, you should
-select the install method explicitly.  The desktop config uses size 14 font and surface uses size 24.
-The surface config was built for running on the Microsoft Surface Book 2 with Arch Linux and is very
-large due to its lack of DPI scaling.
+The same instructions above apply for termite, elinks, and too.
+For termite, depending on which device you are on, you should select the install method explicitly.
+The desktop config uses size 14 font and surface uses size 24.  The surface config was built for 
+running on the Microsoft Surface Book 2 with Arch Linux and is very large due to its lack of DPI scaling.
