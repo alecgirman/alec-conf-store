@@ -3,8 +3,8 @@
 " =======================
 
 function InstallVundle()
-   silent !git clone https://github.com/VundleVim/Vundle.vim.git ./Vundle.vim
-   set rtp+=./Vundle.vim
+   silent !git clone https://github.com/VundleVim/Vundle.vim.git ./vundle.vim
+   set rtp+=./vundle.vim
    source vundle.vim
 endfunction
 
@@ -12,7 +12,7 @@ endfunction
 
 "call InstallVundle()
 filetype off
-set rtp+=/root/.vim/Vundle.vim/
+set rtp+=/root/.vim/vundle.vim/
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'

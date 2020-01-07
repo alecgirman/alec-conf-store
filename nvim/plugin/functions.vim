@@ -1,3 +1,8 @@
+if not exists(g:AvX_didload_functions)
+	let g:AvX_didload_functions = 1;	
+endif
+
+
 function! AvXCDToCurrentBuf()
     let s:bufpath = expand("%:p")
     call system('cd ' . s:bufpath)

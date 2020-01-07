@@ -20,6 +20,8 @@ floating_modifier Mod1
 bindsym Mod1+Return exec termite
 bindsym Mod1+Shift+Return exec konsole --hide-menubar
 
+bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
 # kill focused window
 bindsym Mod1+Shift+q kill
 
@@ -29,8 +31,8 @@ bindsym Mod1+Shift+q kill
 default_border pixel 1
 default_floating_border none
 
-gaps outer 30
-gaps inner 20
+gaps outer 50
+gaps inner 30
 
 # exec picom -c /root/.config/picom/i3.conf
 # exec picom -s -c -f -b --blur-background --inactive-opacity=0.5
@@ -153,6 +155,5 @@ mode "resize" {
 bindsym Mod1+r mode "resize"
 
 bar {
-    status_command=/usr/bin/i3status
+    status_command i3blocks
 }
-

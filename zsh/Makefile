@@ -1,4 +1,4 @@
-.PHONY: install
+PHONY: install
 
 install:
 	@echo 'Warning: this will overwrite your .zshrc.'

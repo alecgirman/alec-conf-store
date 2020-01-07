@@ -1,3 +1,7 @@
+if ! exists(g:AvX_didload_kebinds)
+	let g:AvX_didload_kebinds = 1;	
+endif
+
 " =======================
 " K E Y B I N D I N G S
 " =======================
@@ -72,7 +76,7 @@ tmap <Esc> <C-\><C-n>
 " Addon windows
 nmap <F2> :NERDTreeToggle<CR>
 nmap <F3> :UndotreeToggle<CR>
-nmap <F4> :TagbarOpen<CR>
+nmap <F4> :TagbarToggle<CR>
 
 " noremap <Space>
 nmap <Space>c :call 

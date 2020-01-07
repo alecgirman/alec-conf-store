@@ -48,10 +48,14 @@ set timeoutlen=500
 " let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 
 " Set by nvim automatically and should not be assumed otherwise.
-set termguicolors
 
 syntax on
+let s:olddir=pwd
+cd /ashe/nvim/plugin/
+source functions.vim
 source keybinds.vim
+source pav.vim
+cd s:olddir
 
 call AsheConfig()
 
@@ -60,3 +64,8 @@ echomsg "AsheInit.vim: Loaded!"
 echohl None
 
 call AsheInit()
+
+if matchstr(system('ps -a'), 'Xorg')
+    set termguicolors
+    echo 'Autodetected termguicolors'
+endif

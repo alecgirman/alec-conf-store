@@ -8,8 +8,6 @@ alias ff=firefox
 alias history=omz_history
 alias howdoi='howdoi -c'
 alias keep='noglob keep'
-alias ls='ls --color=tty -A'
-alias lsa='ls *'
 alias md='mkdir -p'
 alias pacman='yay'
 alias plc='playerctl'
@@ -23,10 +21,15 @@ alias a='ack'
 alias c='cat'
 alias e='nvim' # edit
 alias f='fuck'
-alias l='ls -lah'
 alias m='man'
 alias q='exit'
 alias t='touch'
+
+
+alias ls='ls --color=tty -A'
+alias l='ls'
+alias lsa='ls *'
+alias ll='ls -l'
 
 alias gs='git status'
 alias gcm='git commit -m'
@@ -45,6 +48,9 @@ alias :q='echo "this isnt vim!"'
 
 alias addalias='nvim /ashe/zsh/alias.zsh; pushd /ashe/zsh; make dotsync; popd; rlz;'
 alias addfunction='nvim /ashe/zsh/functions.zsh'
+
+# im proud of this one
+alias emak='nvim Makefile'
 
 alias cputemp='sensors | sed -n "/^Core/p"'
 
