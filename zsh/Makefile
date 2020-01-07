@@ -10,6 +10,7 @@ install:
 	cp -iuv functions.zsh ~/.zsh/
 	cp -iuv vars.zsh ~/.zsh/
 	cp -iuv alias.zsh ~/.zsh/
+	cp -iuv autoload/ ~/.zsh/autoload -r
 	@echo 'Installation complete!'
 
 # same as install just without warnings.
@@ -21,4 +22,5 @@ dotsync:
 	cp -u functions.zsh ~/.zsh/
 	cp -u vars.zsh ~/.zsh/
 	cp -u alias.zsh ~/.zsh/
+	cp -u autoload/ ~/.zsh/autoload -r
 	@echo 'Installation complete!'

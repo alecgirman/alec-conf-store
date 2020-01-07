@@ -27,3 +27,9 @@ function clonerepo() {
     cd $GITEXTERN
     git clone $1
 }
+
+for file in $(find autoload); do
+    source $file
+done
+
+echo "$fg[green]Functions Loaded$fg[reset]"
