@@ -50,7 +50,7 @@ alias addalias='nvim /ashe/zsh/alias.zsh; pushd /ashe/zsh; make dotsync; popd; r
 alias addfunction='nvim /ashe/zsh/functions.zsh'
 
 # im proud of this one
-alias emak='nvim Makefile'
+alias emak="$EDITOR Makefile"
 
 alias cputemp='sensors | sed -n "/^Core/p"'
 
