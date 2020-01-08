@@ -18,7 +18,6 @@ set scrolloff=10
 set nowrap
 set completeopt=longest,menuone,preview
 set wildmode=list:longest
-set mouse=a
 set modeline
 
 " search settings
@@ -26,6 +25,10 @@ set ignorecase
 set smartcase
 set incsearch
 set hlsearch
+
+set mouse=a
+set mousemodel=popup
+
 
 " Editor tab settings
 set tabstop=4
@@ -44,18 +47,13 @@ set timeoutlen=500
 " Read somewhere this shouldnt be set by you
 " set t_Co=256
 
-" let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-" let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 
 " Set by nvim automatically and should not be assumed otherwise.
 
 syntax on
-let s:olddir=pwd
-cd /ashe/nvim/plugin/
-source functions.vim
-source keybinds.vim
-source pav.vim
-cd s:olddir
+set background=dark
+source $VIM/vimfiles/plugin/functions.vim
+source $VIM/vimfiles/plugin/keybinds.vim
 
 call AsheConfig()
 
@@ -63,9 +61,16 @@ echohl String
 echomsg "AsheInit.vim: Loaded!"
 echohl None
 
+AirlineToggleWhitespace
+AirlineTheme wombat
+
 call AsheInit()
 
-if matchstr(system('ps -a'), 'Xorg')
+if strwidth(matchstr(system('ps -a'), 'Xorg')) > 0
     set termguicolors
-    echo 'Autodetected termguicolors'
+    let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+    set t_Co=256
+    GuiColorScheme wombat256mod
+    echohl DiffText 'THIS IS NOT AN ERROR you just never see these messages anyway fullcolor mode was turned on'
 endif

@@ -64,17 +64,15 @@ Plugin 'dense-analysis/ale'
 " Plugin 'coc.nvim-release'}
 " Plugin 'neoclide/coc-tabnine'
 
-
 PluginInstall
 call vundle#end()
 close
 filetype plugin indent on
-colorscheme onedark
 
 " Plugin key-mappings.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 " SuperTab like snippets' behavior.
@@ -94,10 +92,9 @@ endif
 " Enable snipMate compatibility feature.
 let g:neosnippet#enable_snipmate_compatibility = 1
 
-" BUG: if other users use this config, they cant access /root
+" TODO: Move into /usr/share/vim/vimfiles
 let g:neosnippet#snippets_directory='/root/.vim/snippets/'
 call g:deoplete#custom#option('auto_complete_delay', 200)
 call g:deoplete#custom#option('smart_case', v:true)
 
-call g:deoplete#enable()
 let g:airline_powerline_fonts = 0

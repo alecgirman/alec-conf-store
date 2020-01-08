@@ -1,0 +1,23 @@
+any wombat colorscheme
+darkspectrum
+neon
+
+: extremely vibrant colors on a black background, what can go wrong
+vividchalk - tgc (with simple airline theme)
+
+Not too bad:
+elflord - notgc
+midnight - notgc
+tango - notgc
+xoria256 - nice blend all together but not as vibrant text
+
+
+
+For wombat ones, must do all color changes on the first window or else every window will be different.
+
+
+windo/tabdo :GuiColorScheme wombat256 (or any version of wombat)
+set bg=dark
+set tgc
+AirlineTheme wombat
+maybe another set bg=dark at the end
