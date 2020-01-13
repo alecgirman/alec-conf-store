@@ -1,9 +1,8 @@
 if [ ! -f /tmp/.zshreload ]; then
     export LANG="en_US.UTF-8"
-    ZSH=/root/.oh-my-zsh/
+    #ZSH=/root/.oh-my-zsh/
     ZSH_THEME="powerlevel9k"
     HYPHEN_INSENSITIVE="true"
-    #ENABLE_CORRECTION="true"
 
     # plugins=( colorize zsh-autosuggestions zsh-syntax-highlighting you-should-use )
 
@@ -15,7 +14,7 @@ if [ ! -f /tmp/.zshreload ]; then
         . $file end
     done
 
-    export EDITOR='nvim'
+    export EDITOR='vim'
 
     unsetopt correct
     unsetopt correctall
@@ -25,9 +24,9 @@ if [ ! -f /tmp/.zshreload ]; then
     eval $(thefuck --alias)
 
     clear
-    alias zshconfig="nvim ~/.zshrc"
-    alias ohmyzsh="nvim ~/.oh-my-zsh/oh-my-zsh.sh"
-    printf "$fg[blue]ZSH Initialized\n"
+    alias zshconfig="$EDITOR ~/.zshrc"
+    alias ohmyzsh="$EDITOR ~/.oh-my-zsh/oh-my-zsh.sh"
+    printf "$fg[blue]ZSH Initialized$fg[reset]\n"
 else
     printf "$fg[green]ZSH $fg[bold]RELOADED$fg[reset]\n"
 fi

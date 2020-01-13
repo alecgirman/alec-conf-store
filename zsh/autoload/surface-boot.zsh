@@ -6,5 +6,3 @@ function surfaceboot-default() {
     pulseaudio & dhcpcd
     startx /usr/bin/i3
 }
-
-echo "$fg[white]Loaded surface boot script"
