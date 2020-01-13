@@ -22,7 +22,13 @@ DIFFCMD = diff --color -a
 
 PLUG_URL = https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
 
-all: uninstall install
+all: purge
+	make TARGET=vim install
+	make TARGET=vim install-coc
+	make TARGET=vim install-vimplug
+	make TARGET=neovim install
+	make TARGET=neovim install-coc
+	make TARGET=neovim install-vimplug
 
 install:
 	mkdir -p ${BASE_DIR}/
@@ -39,7 +45,7 @@ install-coc: check-deps
 	#rm -rfv coc.nvim-release node_modules
 	#rm -v package-lock.json
 
-install-plug:
+install-vimplug:
 	mkdir -p ${TARGET_DIR}/autoload
 	curl -fLo ${TARGET_DIR}/autoload/plug.vim ${PLUG_URL}
 
