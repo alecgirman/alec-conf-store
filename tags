@@ -1,0 +1,693 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/3fdf28bc/
+(1) Small Bug: Xinit no longer works as usual, crashes on startup	docs/BUGS.md	/^## (1) Small Bug: Xinit no longer works as usual, crashes on startup$/;"	s
+(2) Critical Bug: plasmashell crashes on start	docs/BUGS.md	/^## (2) Critical Bug: plasmashell crashes on start$/;"	s
++vi-git-aheadbehind	zsh/components/powerlevel9k/functions/vcs.zsh	/^function +vi-git-aheadbehind() {$/;"	f
++vi-git-remotebranch	zsh/components/powerlevel9k/functions/vcs.zsh	/^function +vi-git-remotebranch() {$/;"	f
++vi-git-stash	zsh/components/powerlevel9k/functions/vcs.zsh	/^function +vi-git-stash() {$/;"	f
++vi-git-tagname	zsh/components/powerlevel9k/functions/vcs.zsh	/^function +vi-git-tagname() {$/;"	f
++vi-git-untracked	zsh/components/powerlevel9k/functions/vcs.zsh	/^function +vi-git-untracked() {$/;"	f
++vi-hg-bookmarks	zsh/components/powerlevel9k/functions/vcs.zsh	/^function +vi-hg-bookmarks() {$/;"	f
++vi-svn-detect-changes	zsh/components/powerlevel9k/functions/vcs.zsh	/^function +vi-svn-detect-changes() {$/;"	f
++vi-vcs-detect-changes	zsh/components/powerlevel9k/functions/vcs.zsh	/^function +vi-vcs-detect-changes() {$/;"	f
+--	legacy/zsh/arch-default.zsh	/^        alias -- "${key}=${val}"$/;"	a
+--	legacy/zsh/arch-default.zsh	/^        alias -- "${key}=sudo ${val}"$/;"	a
+--	zsh/components/zsh-syntax-highlighting/highlighters/main/main-highlighter.zsh	/^    REPLY="${"$(alias -- $arg)"#*=}"$/;"	a
+-Lm	zsh/components/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh	/^zsh_highlight__aliases=`builtin alias -Lm '[^+]*'`$/;"	a
+-g	zsh/components/you-should-use/you-should-use.plugin.zsh	/^    alias -g | sort | while read entry; do$/;"	a
+.PHONy	Makefile	/^.PHONy=all zsh i3 i3blocks nvim$/;"	m
+855resolution	legacy/zsh/arch-default.zsh	/^        function 855resolution () {$/;"	f
+<C-Space>C	legacy/oldnvim/keybinds.vim	/^noremap <C-Space>C :windo call Colorizer#ColorOff()<CR>:call Colorizer#ColorToggle()<CR>$/;"	m
+<C-Space>C	vim/keybinds.vim	/^    noremap <C-Space>C :windo call Colorizer#ColorOff()<CR>:call Colorizer#ColorToggle()<CR>$/;"	m
+<C-Space>CC	legacy/oldnvim/keybinds.vim	/^noremap <C-Space>CC :windo call Colorizer#ColorToggle()<CR>$/;"	m
+<C-Space>CC	vim/keybinds.vim	/^    noremap <C-Space>CC :windo call Colorizer#ColorToggle()<CR>$/;"	m
+<C-Space>c	legacy/oldnvim/keybinds.vim	/^noremap <C-Space>c :call Colorizer#ColorOff()<CR>:call Colorizer#ColorToggle()<CR>$/;"	m
+<C-Space>c	vim/keybinds.vim	/^    noremap <C-Space>c :call Colorizer#ColorOff()<CR>:call Colorizer#ColorToggle()<CR>$/;"	m
+<C-Space>cc	legacy/oldnvim/keybinds.vim	/^noremap <C-Space>cc :call Colorizer#ColorToggle()<CR>$/;"	m
+<C-Space>cc	vim/keybinds.vim	/^    noremap <C-Space>cc :call Colorizer#ColorToggle()<CR>$/;"	m
+<C-Space>v	legacy/oldnvim/keybinds.vim	/^noremap <C-Space>v :call AsheToggleVirtualEdit()<CR>$/;"	m
+<C-Space>v	legacy/vim/keybinds.vim	/^noremap <C-Space>v :call AsheToggleVirtualEdit()<CR>$/;"	m
+<C-Space>v	vim/keybinds.vim	/^    noremap <C-Space>v :call AsheToggleVirtualEdit()<CR>$/;"	m
+<Down>	legacy/oldnvim/keybinds.vim	/^nnoremap <Down> <C-w>-$/;"	m
+<Down>	vim/keybinds.vim	/^    nnoremap <Down> <C-w>-$/;"	m
+<F2>	legacy/oldnvim/keybinds.vim	/^nmap <F2> :NERDTreeToggle<CR>$/;"	m
+<F2>	legacy/vim/keybinds.vim	/^nmap <F2> :NERDTreeToggle<CR>$/;"	m
+<F2>	vim/keybinds.vim	/^    nmap <F2> :NERDTreeToggle<CR>$/;"	m
+<F3>	legacy/oldnvim/keybinds.vim	/^nmap <F3> :UndotreeToggle<CR>$/;"	m
+<F3>	legacy/vim/keybinds.vim	/^nmap <F3> :UndotreeToggle<CR>$/;"	m
+<F3>	vim/keybinds.vim	/^    nmap <F3> :UndotreeToggle<CR>$/;"	m
+<F4>	legacy/oldnvim/keybinds.vim	/^nmap <F4> :TagbarToggle<CR>$/;"	m
+<F4>	vim/keybinds.vim	/^    nmap <F4> :TagbarToggle<CR>$/;"	m
+<Left>	legacy/oldnvim/keybinds.vim	/^nnoremap <Left> <C-w><$/;"	m
+<Left>	vim/keybinds.vim	/^    nnoremap <Left> <C-w><$/;"	m
+<Right>	legacy/oldnvim/keybinds.vim	/^nnoremap <Right> <C-w>>$/;"	m
+<Right>	vim/keybinds.vim	/^    nnoremap <Right> <C-w>>$/;"	m
+<S-Down>	legacy/oldnvim/keybinds.vim	/^nnoremap <S-Down> 5<C-w>-$/;"	m
+<S-Down>	vim/keybinds.vim	/^    nnoremap <S-Down> 5<C-w>-$/;"	m
+<S-Left>	legacy/oldnvim/keybinds.vim	/^nnoremap <S-Left> 5<C-w><$/;"	m
+<S-Left>	vim/keybinds.vim	/^    nnoremap <S-Left> 5<C-w><$/;"	m
+<S-Right>	legacy/oldnvim/keybinds.vim	/^nnoremap <S-Right> 5<C-w>>$/;"	m
+<S-Right>	vim/keybinds.vim	/^    nnoremap <S-Right> 5<C-w>>$/;"	m
+<S-Up>	legacy/oldnvim/keybinds.vim	/^nnoremap <S-Up> 5<C-w>+$/;"	m
+<S-Up>	vim/keybinds.vim	/^    nnoremap <S-Up> 5<C-w>+$/;"	m
+<Space>!	legacy/oldnvim/keybinds.vim	/^noremap <Space>! :vs<CR><C-w>l:term<CR>i$/;"	m
+<Space>!	legacy/vim/keybinds.vim	/^noremap <Space>! :vs<CR><C-w>l:term<CR>i$/;"	m
+<Space>!	vim/keybinds.vim	/^    noremap <Space>! :vs<CR><C-w>l:term<CR>i$/;"	m
+<Space><Tab>	legacy/oldnvim/keybinds.vim	/^noremap <Space><Tab> :Tabularize \/$/;"	m
+<Space><Tab>	legacy/vim/keybinds.vim	/^noremap <Space><Tab> :Tabularize \/$/;"	m
+<Space><Tab>	vim/keybinds.vim	/^    noremap <Space><Tab> :Tabularize \/$/;"	m
+<Space>c	legacy/oldnvim/keybinds.vim	/^nmap <Space>c :call $/;"	m
+<Space>c	legacy/vim/keybinds.vim	/^nmap <Space>c :call $/;"	m
+<Space>c	vim/keybinds.vim	/^    nmap <Space>c :call $/;"	m
+<Space>h	legacy/oldnvim/keybinds.vim	/^noremap <Space>h :help<Space>$/;"	m
+<Space>h	legacy/vim/keybinds.vim	/^noremap <Space>h :help<Space>$/;"	m
+<Space>h	vim/keybinds.vim	/^    noremap <Space>h :help<Space>$/;"	m
+<Space>r	legacy/oldnvim/keybinds.vim	/^noremap <Space>r :%s\/\/g<Left><Left>$/;"	m
+<Space>r	legacy/vim/keybinds.vim	/^noremap <Space>r :%s\/\/g<Left><Left>$/;"	m
+<Space>r	vim/keybinds.vim	/^    noremap <Space>r :%s\/\/g<Left><Left>$/;"	m
+<Space>t	legacy/oldnvim/keybinds.vim	/^noremap <Space>t :tabnew<CR>$/;"	m
+<Space>t	vim/keybinds.vim	/^    noremap <Space>t :tabnew<CR>$/;"	m
+<Space>w	legacy/oldnvim/keybinds.vim	/^noremap <Space>w :VimwikiUISelect<CR>$/;"	m
+<Space>w	legacy/vim/keybinds.vim	/^noremap <Space>w :VimwikiUISelect<CR>$/;"	m
+<Space>w	vim/keybinds.vim	/^    noremap <Space>w :VimwikiUISelect<CR>$/;"	m
+<Up>	legacy/oldnvim/keybinds.vim	/^nnoremap <Up> <C-w>+$/;"	m
+<Up>	vim/keybinds.vim	/^    nnoremap <Up> <C-w>+$/;"	m
+Accept-Line	legacy/zsh/arch-default.zsh	/^function Accept-Line () {$/;"	f
+Accept-Line-HandleContext	legacy/zsh/arch-default.zsh	/^function Accept-Line-HandleContext () {$/;"	f
+Accept-Line-getdefault	legacy/zsh/arch-default.zsh	/^function Accept-Line-getdefault () {$/;"	f
+Alec's SHell Extensions (ASHE)	README.md	/^# Alec's SHell Extensions (ASHE)$/;"	c
+AsheCDToCurrentBuf	legacy/vim/functions.vim	/^function! AsheCDToCurrentBuf()$/;"	f
+AsheToggleVirtualEdit	legacy/vim/functions.vim	/^function! AsheToggleVirtualEdit()$/;"	f
+AvXCDToCurrentBuf	legacy/oldnvim/functions.vim	/^function! AvXCDToCurrentBuf()$/;"	f
+AvXCDToCurrentBuf	vim/functions.vim	/^function! AvXCDToCurrentBuf()$/;"	f
+AvXToggleVirtualEdit	legacy/oldnvim/functions.vim	/^function! AvXToggleVirtualEdit()$/;"	f
+AvXToggleVirtualEdit	vim/functions.vim	/^function! AvXToggleVirtualEdit()$/;"	f
+BASE_DIR	vim/Makefile	/^BASE_DIR = ${TARGET_DIR}\/plugin\/ashe$/;"	m
+BASE_FILES	vim/Makefile	/^BASE_FILES = *.vim$/;"	m
+BASE_POSTDIR	vim/Makefile	/^BASE_POSTDIR = ${TARGET_DIR}\/after\/plugin$/;"	m
+Bugs	docs/TODO.md	/^### Bugs$/;"	S
+COC_EXTDIR	vim/Makefile	/^COC_EXTDIR = ~\/.config\/coc\/extensions$/;"	m
+COC_PATH	vim/Makefile	/^COC_PATH = pack\/coc\/start$/;"	m
+COC_URL	vim/Makefile	/^COC_URL = https:\/\/github.com\/neoclide\/coc.nvim\/archive\/release.tar.gz$/;"	m
+COPYCMD	vim/Makefile	/^COPYCMD = cp -uv$/;"	m
+Configs:	docs/TODO.md	/^### Configs:$/;"	S
+ConfigureColors	vim/colors.vim	/^function! ConfigureColors()$/;"	f
+ConfigurePluginsPostload	vim/plugins.vim	/^function! ConfigurePluginsPostload()$/;"	f
+ConfigurePluginsPreload	vim/plugins.vim	/^function! ConfigurePluginsPreload()$/;"	f
+ConfigurePostload	vim/init.vim	/^function! ConfigurePostload()$/;"	f
+DIFFCMD	vim/Makefile	/^DIFFCMD = diff --color -a$/;"	m
+Development	docs/TODO.md	/^### Development$/;"	S
+ESC_print	legacy/zsh/arch-default.zsh	/^function ESC_print () {$/;"	f
+Examples	zsh/components/taskwarrior/README.md	/^## Examples$/;"	s
+Exit Codes and Python	docs/wifimenu-integration.md	/^# Exit Codes and Python$/;"	c
+Exit Codes and Python	python/ashe/init/wifimenu-returncodes.md	/^# Exit Codes and Python$/;"	c
+Exit Codes and Python	python/init/wifimenu-returncodes.md	/^# Exit Codes and Python$/;"	c
+Exit codes of wifi-menu	docs/wifimenu-integration.md	/^# Exit codes of wifi-menu$/;"	c
+Exit codes of wifi-menu	python/ashe/init/wifimenu-returncodes.md	/^# Exit codes of wifi-menu$/;"	c
+Exit codes of wifi-menu	python/init/wifimenu-returncodes.md	/^# Exit codes of wifi-menu$/;"	c
+GRML_theme_add_token_usage	legacy/zsh/arch-default.zsh	/^function GRML_theme_add_token_usage () {$/;"	f
+H	legacy/oldnvim/keybinds.vim	/^noremap H :noh<CR>$/;"	m
+H	legacy/vim/keybinds.vim	/^noremap H :noh<CR>$/;"	m
+H	vim/keybinds.vim	/^    noremap H :noh<CR>$/;"	m
+H-Glob	legacy/zsh/arch-default.zsh	/^function H-Glob () {$/;"	f
+InstallThirdPartyPlugins	vim/plugins.vim	/^function! InstallThirdPartyPlugins()$/;"	f
+InstallVundle	legacy/oldnvim/pav.vim	/^function InstallVundle()$/;"	f
+InstallVundle	legacy/vim/pav.vim	/^function! InstallVundle()$/;"	f
+J	legacy/oldnvim/keybinds.vim	/^noremap J <C-d>$/;"	m
+J	legacy/vim/keybinds.vim	/^noremap J <C-d>$/;"	m
+J	vim/keybinds.vim	/^    noremap J <C-d>$/;"	m
+K	legacy/oldnvim/keybinds.vim	/^noremap K <C-u>$/;"	m
+K	legacy/vim/keybinds.vim	/^noremap K <C-u>$/;"	m
+K	vim/keybinds.vim	/^    noremap K <C-u>$/;"	m
+Key	docs/TODO.md	/^Key$/;"	s
+L	legacy/oldnvim/keybinds.vim	/^noremap L K$/;"	m
+L	legacy/vim/keybinds.vim	/^noremap L K$/;"	m
+L	vim/keybinds.vim	/^    noremap L K$/;"	m
+Linux Special Error Code Meanings	docs/wifimenu-integration.md	/^### Linux Special Error Code Meanings$/;"	S
+Linux Special Error Code Meanings	python/ashe/init/wifimenu-returncodes.md	/^### Linux Special Error Code Meanings$/;"	S
+Linux Special Error Code Meanings	python/init/wifimenu-returncodes.md	/^### Linux Special Error Code Meanings$/;"	S
+LoadDefaultKeybinds	vim/keybinds.vim	/^function! LoadDefaultKeybinds()$/;"	f
+Misc:	docs/TODO.md	/^### Misc:$/;"	S
+NeedsVundleInstalled	legacy/vim/pav.vim	/^function! NeedsVundleInstalled()$/;"	f
+Organization:	docs/TODO.md	/^### Organization:$/;"	S
+PHONY	zsh/Makefile	/^PHONY: install$/;"	t
+PLUG_URL	vim/Makefile	/^PLUG_URL = https:\/\/raw.githubusercontent.com\/junegunn\/vim-plug\/master\/plug.vim $/;"	m
+Possible causes:	docs/BUGS.md	/^## Possible causes:$/;"	s
+Purpose: To allow scripts to detect the output of wifi-menu and be able to respond accordingly.	docs/wifimenu-integration.md	/^### Purpose: To allow scripts to detect the output of wifi-menu and be able to respond according/;"	S
+Purpose: To allow scripts to detect the output of wifi-menu and be able to respond accordingly.	python/ashe/init/wifimenu-returncodes.md	/^### Purpose: To allow scripts to detect the output of wifi-menu and be able to respond according/;"	S
+Purpose: To allow scripts to detect the output of wifi-menu and be able to respond accordingly.	python/init/wifimenu-returncodes.md	/^### Purpose: To allow scripts to detect the output of wifi-menu and be able to respond according/;"	S
+QQ	legacy/oldnvim/keybinds.vim	/^nmap QQ :q!<CR>$/;"	m
+QQ	legacy/vim/keybinds.vim	/^nmap QQ :q!<CR>$/;"	m
+QQ	vim/keybinds.vim	/^    nmap QQ :q!<CR>$/;"	m
+Reference Table	docs/wifimenu-integration.md	/^### Reference Table$/;"	S
+Reference Table	python/ashe/init/wifimenu-returncodes.md	/^### Reference Table$/;"	S
+Reference Table	python/init/wifimenu-returncodes.md	/^### Reference Table$/;"	S
+Resolution ideas	docs/BUGS.md	/^## Resolution ideas$/;"	s
+SEENINODES=	legacy/zsh/arch-default.zsh	/^        SEENINODES=()$/;"	f
+Some other useful functions from posixpath	python/ashe/cli/python-shell-ref.md	/^## Some other useful functions from posixpath$/;"	s
+Source	docs/wifimenu-integration.md	/^### Source$/;"	S
+Source	python/ashe/init/wifimenu-returncodes.md	/^### Source$/;"	S
+Source	python/init/wifimenu-returncodes.md	/^### Source$/;"	S
+Steps to reproduce	docs/BUGS.md	/^## Steps to reproduce$/;"	s
+TARGET	vim/Makefile	/^TARGET=vim$/;"	m
+TARGET_DIR	vim/Makefile	/^	TARGET_DIR=~\/.local\/share\/nvim\/site$/;"	m
+TARGET_DIR	vim/Makefile	/^	TARGET_DIR=~\/.vim$/;"	m
+The difference between this and listdir is not only does it give a summary, but calling its stat() function gives alot more details:	python/ashe/cli/python-shell-ref.md	/^## The difference between this and listdir is not only does it give a summary, but calling its s/;"	s
+The stat structure	python/ashe/cli/python-shell-ref.md	/^## The stat structure$/;"	s
+UFW plugin	zsh/components/ufw/README.md	/^# UFW plugin$/;"	c
+Usage	zsh/components/transfer/README.md	/^## Usage$/;"	s
+VCS_INFO_realpath	legacy/zsh/arch-default.zsh	/^        function VCS_INFO_realpath () {$/;"	f
+Y	legacy/oldnvim/keybinds.vim	/^noremap Y ^v$hy$/;"	m
+Y	legacy/vim/keybinds.vim	/^noremap Y ^v$hy$/;"	m
+Y	vim/keybinds.vim	/^    noremap Y ^v$hy$/;"	m
+Z	legacy/oldnvim/keybinds.vim	/^nmap Z :w!<CR>$/;"	m
+Z	legacy/vim/keybinds.vim	/^nmap Z :w!<CR>$/;"	m
+Z	vim/keybinds.vim	/^    nmap Z :w!<CR>$/;"	m
+ZS	legacy/oldnvim/keybinds.vim	/^nmap ZS :mksession! $/;"	m
+ZS	legacy/vim/keybinds.vim	/^nmap ZS :mksession! $/;"	m
+ZS	vim/keybinds.vim	/^    nmap ZS :mksession! $/;"	m
+ZT	legacy/oldnvim/keybinds.vim	/^nmap ZT :tabclose!<CR>$/;"	m
+ZT	vim/keybinds.vim	/^    nmap ZT :tabclose!<CR>$/;"	m
+ZV	legacy/oldnvim/keybinds.vim	/^nmap ZV :w<CR>:source %<CR>$/;"	m
+ZV	legacy/vim/keybinds.vim	/^nmap ZV :w<CR>:source %<CR>$/;"	m
+ZV	vim/keybinds.vim	/^    nmap ZV :w<CR>:source %<CR>$/;"	m
+ZZQ	legacy/oldnvim/keybinds.vim	/^nmap ZZQ :wa!<CR>:qa!<CR>$/;"	m
+ZZQ	legacy/vim/keybinds.vim	/^nmap ZZQ :wa!<CR>:qa!<CR>$/;"	m
+ZZQ	vim/keybinds.vim	/^    nmap ZZQ :wa!<CR>:qa!<CR>$/;"	m
+ZZZ	legacy/oldnvim/keybinds.vim	/^nmap ZZZ :qa!<CR>$/;"	m
+ZZZ	legacy/vim/keybinds.vim	/^nmap ZZZ :qa!<CR>$/;"	m
+ZZZ	vim/keybinds.vim	/^    nmap ZZZ :qa!<CR>$/;"	m
+[/] = In progress or partially done	docs/TODO.md	/^[\/] = In progress or partially done$/;"	s
+__EOF0__	legacy/zsh/arch-default.zsh	/^            <<__EOF0__$/;"	h
+__EOF0__	legacy/zsh/arch-default.zsh	/^            h) <<__EOF0__$/;"	h
+__EOF0__	legacy/zsh/arch-default.zsh	/^    <<__EOF0__$/;"	h
+__archive_or_uri	legacy/zsh/arch-default.zsh	/^function __archive_or_uri () {$/;"	f
+__start_stop	legacy/zsh/arch-default.zsh	/^    function __start_stop () {$/;"	f
+_check_aliases	zsh/components/you-should-use/you-should-use.plugin.zsh	/^function _check_aliases() {$/;"	f
+_check_git_aliases	zsh/components/you-should-use/you-should-use.plugin.zsh	/^function _check_git_aliases() {$/;"	f
+_check_global_aliases	zsh/components/you-should-use/you-should-use.plugin.zsh	/^function _check_global_aliases() {$/;"	f
+_check_ysu_hardcore	zsh/components/you-should-use/you-should-use.plugin.zsh	/^function _check_ysu_hardcore() {$/;"	f
+_complete	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^	function _complete() {$/;"	f
+_complete_screen_display	legacy/zsh/arch-default.zsh	/^    function _complete_screen_display () {$/;"	f
+_dchange	legacy/zsh/arch-default.zsh	/^    function _dchange () { _files -W \/usr\/share\/doc -\/ }$/;"	f
+_dcopyright	legacy/zsh/arch-default.zsh	/^    function _dcopyright () { _files -W \/usr\/share\/doc -\/ }$/;"	f
+_dig	legacy/zsh/arch-default.zsh	/^        function _dig () {$/;"	f
+_dnews	legacy/zsh/arch-default.zsh	/^    function _dnews () { _files -W \/usr\/share\/doc -\/ }$/;"	f
+_etc_hosts=	legacy/zsh/arch-default.zsh	/^        _etc_hosts=()$/;"	f
+_flush_ysu_buffer	zsh/components/you-should-use/you-should-use.plugin.zsh	/^function _flush_ysu_buffer() {$/;"	f
+_force_rehash	legacy/zsh/arch-default.zsh	/^    function _force_rehash () {$/;"	f
+_grmlinitd	legacy/zsh/arch-default.zsh	/^    function _grmlinitd () {$/;"	f
+_simple_extract	legacy/zsh/arch-default.zsh	/^function _simple_extract () {$/;"	f
+_ssh_config_hosts=	legacy/zsh/arch-default.zsh	/^        [[ -r ~\/.ssh\/config ]] && _ssh_config_hosts=(${${(s: :)${(ps:\\t:)${${(@M)${(f)"$(<$HO/;"	f
+_ssh_config_hosts=	legacy/zsh/arch-default.zsh	/^        _ssh_config_hosts=()$/;"	f
+_ssh_hosts=	legacy/zsh/arch-default.zsh	/^        [[ -r ~\/.ssh\/known_hosts ]] && _ssh_hosts=(${${${${(f)"$(<$HOME\/.ssh\/known_hosts)"}:/;"	f
+_ssh_hosts=	legacy/zsh/arch-default.zsh	/^        _ssh_hosts=()$/;"	f
+_uchange	legacy/zsh/arch-default.zsh	/^    function _uchange () { _files -W \/usr\/share\/doc -\/ }$/;"	f
+_ufw_app_profiles	zsh/components/ufw/ufw.zsh	/^function _ufw_app_profiles {$/;"	f
+_ufw_delete_rules	zsh/components/ufw/ufw.zsh	/^function _ufw_delete_rules {$/;"	f
+_write_ysu_buffer	zsh/components/you-should-use/you-should-use.plugin.zsh	/^function _write_ysu_buffer() {$/;"	f
+_zsh_autosuggest_accept	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_accept() {$/;"	f
+_zsh_autosuggest_async_request	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_async_request() {$/;"	f
+_zsh_autosuggest_async_response	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_async_response() {$/;"	f
+_zsh_autosuggest_bind_widget	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_bind_widget() {$/;"	f
+_zsh_autosuggest_bind_widgets	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_bind_widgets() {$/;"	f
+_zsh_autosuggest_capture_completion_async	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_capture_completion_async() {$/;"	f
+_zsh_autosuggest_capture_completion_sync	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_capture_completion_sync() {$/;"	f
+_zsh_autosuggest_capture_completion_widget	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_capture_completion_widget() {$/;"	f
+_zsh_autosuggest_capture_postcompletion	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_capture_postcompletion() {$/;"	f
+_zsh_autosuggest_capture_setup	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_capture_setup() {$/;"	f
+_zsh_autosuggest_clear	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_clear() {$/;"	f
+_zsh_autosuggest_disable	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_disable() {$/;"	f
+_zsh_autosuggest_enable	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_enable() {$/;"	f
+_zsh_autosuggest_escape_command	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_escape_command() {$/;"	f
+_zsh_autosuggest_execute	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_execute() {$/;"	f
+_zsh_autosuggest_fetch	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_fetch() {$/;"	f
+_zsh_autosuggest_fetch_suggestion	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_fetch_suggestion() {$/;"	f
+_zsh_autosuggest_highlight_apply	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_highlight_apply() {$/;"	f
+_zsh_autosuggest_highlight_reset	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_highlight_reset() {$/;"	f
+_zsh_autosuggest_incr_bind_count	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_incr_bind_count() {$/;"	f
+_zsh_autosuggest_invoke_original_widget	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_invoke_original_widget() {$/;"	f
+_zsh_autosuggest_modify	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_modify() {$/;"	f
+_zsh_autosuggest_partial_accept	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_partial_accept() {$/;"	f
+_zsh_autosuggest_start	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_start() {$/;"	f
+_zsh_autosuggest_strategy_completion	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_strategy_completion() {$/;"	f
+_zsh_autosuggest_strategy_history	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_strategy_history() {$/;"	f
+_zsh_autosuggest_strategy_match_prev_cmd	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_strategy_match_prev_cmd() {$/;"	f
+_zsh_autosuggest_suggest	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_suggest() {$/;"	f
+_zsh_autosuggest_toggle	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_toggle() {$/;"	f
+_zsh_highlight	zsh/components/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh	/^_zsh_highlight()$/;"	f
+_zsh_highlight_add_highlight	zsh/components/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh	/^_zsh_highlight_add_highlight()$/;"	f
+_zsh_highlight_apply_zle_highlight	zsh/components/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh	/^_zsh_highlight_apply_zle_highlight() {$/;"	f
+_zsh_highlight_bind_widgets	zsh/components/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh	/^_zsh_highlight_bind_widgets()$/;"	f
+_zsh_highlight_brackets_match	zsh/components/zsh-syntax-highlighting/highlighters/brackets/brackets-highlighter.zsh	/^_zsh_highlight_brackets_match()$/;"	f
+_zsh_highlight_buffer_modified	zsh/components/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh	/^_zsh_highlight_buffer_modified()$/;"	f
+_zsh_highlight_call_widget	zsh/components/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh	/^_zsh_highlight_call_widget()$/;"	f
+_zsh_highlight_cursor_moved	zsh/components/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh	/^_zsh_highlight_cursor_moved()$/;"	f
+_zsh_highlight_highlighter_brackets_paint	zsh/components/zsh-syntax-highlighting/highlighters/brackets/brackets-highlighter.zsh	/^_zsh_highlight_highlighter_brackets_paint()$/;"	f
+_zsh_highlight_highlighter_brackets_predicate	zsh/components/zsh-syntax-highlighting/highlighters/brackets/brackets-highlighter.zsh	/^_zsh_highlight_highlighter_brackets_predicate()$/;"	f
+_zsh_highlight_highlighter_cursor_paint	zsh/components/zsh-syntax-highlighting/highlighters/cursor/cursor-highlighter.zsh	/^_zsh_highlight_highlighter_cursor_paint()$/;"	f
+_zsh_highlight_highlighter_cursor_predicate	zsh/components/zsh-syntax-highlighting/highlighters/cursor/cursor-highlighter.zsh	/^_zsh_highlight_highlighter_cursor_predicate()$/;"	f
+_zsh_highlight_highlighter_line_paint	zsh/components/zsh-syntax-highlighting/highlighters/line/line-highlighter.zsh	/^_zsh_highlight_highlighter_line_paint()$/;"	f
+_zsh_highlight_highlighter_line_predicate	zsh/components/zsh-syntax-highlighting/highlighters/line/line-highlighter.zsh	/^_zsh_highlight_highlighter_line_predicate()$/;"	f
+_zsh_highlight_highlighter_main_paint	zsh/components/zsh-syntax-highlighting/highlighters/main/main-highlighter.zsh	/^_zsh_highlight_highlighter_main_paint()$/;"	f
+_zsh_highlight_highlighter_main_predicate	zsh/components/zsh-syntax-highlighting/highlighters/main/main-highlighter.zsh	/^_zsh_highlight_highlighter_main_predicate()$/;"	f
+_zsh_highlight_highlighter_pattern_paint	zsh/components/zsh-syntax-highlighting/highlighters/pattern/pattern-highlighter.zsh	/^_zsh_highlight_highlighter_pattern_paint()$/;"	f
+_zsh_highlight_highlighter_pattern_predicate	zsh/components/zsh-syntax-highlighting/highlighters/pattern/pattern-highlighter.zsh	/^_zsh_highlight_highlighter_pattern_predicate()$/;"	f
+_zsh_highlight_highlighter_root_paint	zsh/components/zsh-syntax-highlighting/highlighters/root/root-highlighter.zsh	/^_zsh_highlight_highlighter_root_paint()$/;"	f
+_zsh_highlight_highlighter_root_predicate	zsh/components/zsh-syntax-highlighting/highlighters/root/root-highlighter.zsh	/^_zsh_highlight_highlighter_root_predicate()$/;"	f
+_zsh_highlight_load_highlighters	zsh/components/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh	/^_zsh_highlight_load_highlighters()$/;"	f
+_zsh_highlight_main__command_type_cache=	zsh/components/zsh-syntax-highlighting/highlighters/main/main-highlighter.zsh	/^  _zsh_highlight_main__command_type_cache=()$/;"	f
+_zsh_highlight_main__is_redirection	zsh/components/zsh-syntax-highlighting/highlighters/main/main-highlighter.zsh	/^_zsh_highlight_main__is_redirection() {$/;"	f
+_zsh_highlight_main__precmd_hook	zsh/components/zsh-syntax-highlighting/highlighters/main/main-highlighter.zsh	/^_zsh_highlight_main__precmd_hook() {$/;"	f
+_zsh_highlight_main__resolve_alias	zsh/components/zsh-syntax-highlighting/highlighters/main/main-highlighter.zsh	/^_zsh_highlight_main__resolve_alias() {$/;"	f
+_zsh_highlight_main__stack_pop	zsh/components/zsh-syntax-highlighting/highlighters/main/main-highlighter.zsh	/^_zsh_highlight_main__stack_pop() {$/;"	f
+_zsh_highlight_main__type	zsh/components/zsh-syntax-highlighting/highlighters/main/main-highlighter.zsh	/^_zsh_highlight_main__type() {$/;"	f
+_zsh_highlight_main_add_region_highlight	zsh/components/zsh-syntax-highlighting/highlighters/main/main-highlighter.zsh	/^_zsh_highlight_main_add_region_highlight() {$/;"	f
+_zsh_highlight_main_highlighter_check_assign	zsh/components/zsh-syntax-highlighting/highlighters/main/main-highlighter.zsh	/^_zsh_highlight_main_highlighter_check_assign()$/;"	f
+_zsh_highlight_main_highlighter_check_path	zsh/components/zsh-syntax-highlighting/highlighters/main/main-highlighter.zsh	/^_zsh_highlight_main_highlighter_check_path()$/;"	f
+_zsh_highlight_main_highlighter_expand_path	zsh/components/zsh-syntax-highlighting/highlighters/main/main-highlighter.zsh	/^_zsh_highlight_main_highlighter_expand_path()$/;"	f
+_zsh_highlight_main_highlighter_highlight_dollar_string	zsh/components/zsh-syntax-highlighting/highlighters/main/main-highlighter.zsh	/^_zsh_highlight_main_highlighter_highlight_dollar_string()$/;"	f
+_zsh_highlight_main_highlighter_highlight_path_separators	zsh/components/zsh-syntax-highlighting/highlighters/main/main-highlighter.zsh	/^_zsh_highlight_main_highlighter_highlight_path_separators()$/;"	f
+_zsh_highlight_main_highlighter_highlight_string	zsh/components/zsh-syntax-highlighting/highlighters/main/main-highlighter.zsh	/^_zsh_highlight_main_highlighter_highlight_string()$/;"	f
+_zsh_highlight_pattern_highlighter_loop	zsh/components/zsh-syntax-highlighting/highlighters/pattern/pattern-highlighter.zsh	/^_zsh_highlight_pattern_highlighter_loop()$/;"	f
+_zsh_highlight_preexec_hook	zsh/components/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh	/^_zsh_highlight_preexec_hook()$/;"	f
+`transfer` plugin	zsh/components/transfer/README.md	/^# `transfer` plugin$/;"	c
+a	zsh/alias.zsh	/^alias a='ack'$/;"	a
+accept-line	legacy/zsh/arch-default.zsh	/^function accept-line () {$/;"	f
+accessed	legacy/zsh/arch-default.zsh	/^function accessed () {$/;"	f
+acp	legacy/zsh/arch-default.zsh	/^        alias acp='apt-cache policy'$/;"	a
+acs	legacy/zsh/arch-default.zsh	/^          alias acs='apt search'$/;"	a
+acs	legacy/zsh/arch-default.zsh	/^          alias acs='apt-cache search'$/;"	a
+acsh	legacy/zsh/arch-default.zsh	/^          alias acsh='apt show'$/;"	a
+acsh	legacy/zsh/arch-default.zsh	/^          alias acsh='apt-cache show'$/;"	a
+add-zsh-hook	legacy/zsh/arch-default.zsh	/^function add-zsh-hook () {$/;"	f
+addalias	zsh/alias.zsh	/^alias addalias="$EDITOR \/ashe\/zsh\/alias.zsh; pushd \/ashe\/zsh; make dotsync; popd; rlz;"$/;"	a
+addfunction	zsh/alias.zsh	/^alias addfunction="$EDITOR \/ashe\/zsh\/functions.zsh"$/;"	a
+afind	zsh/alias.zsh	/^alias afind='ack -il'$/;"	a
+all	Makefile	/^all:$/;"	t
+all	vim/Makefile	/^all: uninstall install$/;"	t
+ansi_csi	python/ashe/cli/ansi.py	/^ansi_csi = "\\x1b["$/;"	v
+ansi_reset	python/ashe/cli/ansi.py	/^ansi_reset = ansi_csi + '0m'$/;"	v
+any	legacy/zsh/arch-default.zsh	/^function any () {$/;"	f
+aom	zsh/alias.zsh	/^alias aom='cut -f3 -d:'$/;"	a
+ap	zsh/alias.zsh	/^alias ap='ack --nocolor -os'$/;"	a
+arg0	zsh/components/zsh-syntax-highlighting/highlighters/main/main-highlighter.zsh	/^        alias arg0$/;"	a
+arg0	zsh/components/zsh-syntax-highlighting/highlighters/main/main-highlighter.zsh	/^        function arg0$/;"	f
+asc	legacy/zsh/arch-default.zsh	/^  function asc () { autossh -t "$@" 'screen -RdU' }$/;"	f
+asherb	zsh/alias.zsh	/^alias asherb='pushd \/ashe\/; make rebuild; popd;'$/;"	a
+aterm	legacy/zsh/arch-default.zsh	/^            alias aterm="LANG=${LANG\/(#b)(*)[.@]*\/$match[1].iso885915} luit aterm"$/;"	a
+backgroundColor	zsh/components/powerlevel9k/functions/colors.zsh	/^function backgroundColor() {$/;"	f
+battery	legacy/zsh/arch-default.zsh	/^function battery () {$/;"	f
+batterydarwin	legacy/zsh/arch-default.zsh	/^function batterydarwin () {$/;"	f
+batteryfreebsd	legacy/zsh/arch-default.zsh	/^function batteryfreebsd () {$/;"	f
+batterylinux	legacy/zsh/arch-default.zsh	/^function batterylinux () {$/;"	f
+batteryopenbsd	legacy/zsh/arch-default.zsh	/^function batteryopenbsd () {$/;"	f
+beginning-or-end-of-somewhere	legacy/zsh/arch-default.zsh	/^function beginning-or-end-of-somewhere () {$/;"	f
+bind2maps	legacy/zsh/arch-default.zsh	/^function bind2maps () {$/;"	f
+bk	legacy/zsh/arch-default.zsh	/^function bk () {$/;"	f
+bright_colors	python/ashe/cli/ansi.py	/^bright_colors = {$/;"	v
+c	zsh/alias.zsh	/^alias c='cat'$/;"	a
+cd	legacy/zsh/arch-default.zsh	/^function cd () {$/;"	f
+cd = os.chdir()	python/ashe/cli/python-shell-ref.md	/^### cd = os.chdir()$/;"	S
+cdrecord	legacy/zsh/arch-default.zsh	/^        function cdrecord () {$/;"	f
+cdt	legacy/zsh/arch-default.zsh	/^function cdt () {$/;"	f
+centericq	legacy/zsh/arch-default.zsh	/^            alias centericq="LANG=${LANG\/(#b)(*)[.@]*\/$match[1].iso885915} luit centericq"$/;"	a
+changed	legacy/zsh/arch-default.zsh	/^function changed () {$/;"	f
+check_alias_usage	zsh/components/you-should-use/you-should-use.plugin.zsh	/^function check_alias_usage() {$/;"	f
+check_com	legacy/zsh/arch-default.zsh	/^function check_com () {$/;"	f
+checkhome	legacy/zsh/arch-default.zsh	/^isgrml && function checkhome () {$/;"	f
+chpwd	legacy/zsh/arch-default.zsh	/^    function chpwd () {$/;"	f
+chpwd_profiles	legacy/zsh/arch-default.zsh	/^function chpwd_profiles () {$/;"	f
+cl	legacy/zsh/arch-default.zsh	/^function cl () {$/;"	f
+clearcache	zsh/alias.zsh	/^alias clearcache='echo 3 > \/proc\/sys\/vm\/drop_caches'$/;"	a
+clonerepo	zsh/functions.zsh	/^function clonerepo() {$/;"	f
+cmd_help	modules/repeat/repeat.py	/^def cmd_help(infotype: str):$/;"	f
+coc-actions	vim/package.json	/^    "coc-actions": ">=1.0.2",$/;"	s	object:dependencies
+coc-calc	vim/package.json	/^    "coc-calc": ">=1.5.0",$/;"	s	object:dependencies
+coc-ccls	vim/package.json	/^    "coc-ccls": ">=0.0.5",$/;"	s	object:dependencies
+coc-dictionary	vim/package.json	/^    "coc-dictionary": ">=1.2.2",$/;"	s	object:dependencies
+coc-docker	vim/package.json	/^    "coc-docker": ">=0.2.1",$/;"	s	object:dependencies
+coc-emoji	vim/package.json	/^    "coc-emoji": ">=1.2.3",$/;"	s	object:dependencies
+coc-git	vim/package.json	/^    "coc-git": ">=1.6.16",$/;"	s	object:dependencies
+coc-github	vim/package.json	/^    "coc-github": ">=1.0.1",$/;"	s	object:dependencies
+coc-json	vim/package.json	/^    "coc-json": ">=1.2.4",$/;"	s	object:dependencies
+coc-lists	vim/package.json	/^    "coc-lists": ">=1.3.6",$/;"	s	object:dependencies
+coc-marketplace	vim/package.json	/^    "coc-marketplace": ">=1.6.0",$/;"	s	object:dependencies
+coc-omni	vim/package.json	/^    "coc-omni": ">=1.2.4",$/;"	s	object:dependencies
+coc-pairs	vim/package.json	/^    "coc-pairs": ">=1.2.20",$/;"	s	object:dependencies
+coc-pyright	vim/package.json	/^    "coc-pyright": ">=1.1.19",$/;"	s	object:dependencies
+coc-python	vim/package.json	/^    "coc-python": ">=1.2.6",$/;"	s	object:dependencies
+coc-scala	vim/package.json	/^    "coc-scala": ">=0.1.0",$/;"	s	object:dependencies
+coc-snippets	vim/package.json	/^    "coc-snippets": ">=2.1.17",$/;"	s	object:dependencies
+coc-svg	vim/package.json	/^    "coc-svg": ">=0.0.13",$/;"	s	object:dependencies
+coc-syntax	vim/package.json	/^    "coc-syntax": ">=1.2.4",$/;"	s	object:dependencies
+coc-tabnine	vim/package.json	/^    "coc-tabnine": ">=1.2.2",$/;"	s	object:dependencies
+coc-ultisnips	vim/package.json	/^    "coc-ultisnips": ">=1.2.3",$/;"	s	object:dependencies
+coc-vimlsp	vim/package.json	/^    "coc-vimlsp": ">=0.4.4",$/;"	s	object:dependencies
+coc-xml	vim/package.json	/^    "coc-xml": ">=1.9.5"$/;"	s	object:dependencies
+colbegin	python/ashe/cli/ansi.py	/^colbegin = ansi_csi + bright_colors['red']$/;"	v
+colend	python/ashe/cli/ansi.py	/^colend = ansi_reset$/;"	v
+color	i3/old/i3blocks.conf	/^color=#f12711$/;"	k	section:documentation
+color	i3/old/i3blocks.conf	/^color=#f5af19$/;"	k	section:greetings
+colorprint	python/ashe/cli/ansi.py	/^def colorprint(color, msg, *args, **kwargs):$/;"	f
+colors	python/ashe/cli/ansi.py	/^colors = {$/;"	v
+command	i3/old/i3blocks.conf	/^command=date '+%Y-%m-%d %H:%M:%S'$/;"	k	section:time
+command	i3/old/i3blocks.conf	/^command=echo "Hello, $USER!"$/;"	k	section:greetings
+command	i3/old/i3blocks.conf	/^command=xdg-open "$website"$/;"	k	section:documentation
+command_not_found_handler	legacy/zsh/arch-default.zsh	/^function command_not_found_handler () {$/;"	f
+commit-to-history	legacy/zsh/arch-default.zsh	/^function commit-to-history () {$/;"	f
+compdef	legacy/zsh/arch-default.zsh	/^    function compdef { }$/;"	f
+configure_internet	modules/init/init.py	/^def configure_internet(pref_default: int):$/;"	f
+countfiles	zsh/functions.zsh	/^function countfiles() {$/;"	f
+cp	legacy/vim/configure	/^cp = lambda src, dst: os.system(f'cp {src} {dst}')$/;"	f
+cp	legacy/vim/configure.py	/^cp = lambda src, dst: os.system(f'cp {src} {dst}')$/;"	f
+cputemp	zsh/alias.zsh	/^alias cputemp='sensors | sed -n "\/^Core\/p"'$/;"	a
+da	legacy/zsh/arch-default.zsh	/^[[ -n "$GRML_NO_SMALL_ALIASES" ]] || alias da='du -sch'$/;"	a
+da	zsh/alias.zsh	/^alias da='du -sch'$/;"	a
+dbp	legacy/zsh/arch-default.zsh	/^        alias dbp='dpkg-buildpackage'$/;"	a
+dchange	legacy/zsh/arch-default.zsh	/^    function dchange () {$/;"	f
+dcopyright	legacy/zsh/arch-default.zsh	/^    function dcopyright () {$/;"	f
+debian2hd	legacy/zsh/arch-default.zsh	/^        function debian2hd () {$/;"	f
+debs-by-size	legacy/zsh/arch-default.zsh	/^    alias debs-by-size="dpkg-query -Wf 'x \\${Installed-Size} \\${Package} \\${Status}\\n' | sed/;"	a
+defined	zsh/components/powerlevel9k/functions/utilities.zsh	/^function defined() {$/;"	f
+dependencies	vim/package.json	/^  "dependencies": {$/;"	o
+deswap	legacy/zsh/arch-default.zsh	/^function deswap () {$/;"	f
+diffs	vim/Makefile	/^diffs:$/;"	t
+dig	legacy/zsh/arch-default.zsh	/^        function dig () {$/;"	f
+dig_after_all	legacy/zsh/arch-default.zsh	/^        function dig_after_all () {$/;"	f
+dir	legacy/zsh/arch-default.zsh	/^alias dir="command ls -lSrah"$/;"	a
+disable_you_should_use	zsh/components/you-should-use/you-should-use.plugin.zsh	/^function disable_you_should_use() {$/;"	f
+dnews	legacy/zsh/arch-default.zsh	/^    function dnews () {$/;"	f
+documentation	i3/old/i3blocks.conf	/^[documentation]$/;"	s
+dotsync	zsh/Makefile	/^dotsync:$/;"	t
+ds	zsh/alias.zsh	/^alias ds='docker search'$/;"	a
+e	zsh/alias.zsh	/^alias e='nvim' # edit$/;"	a
+echo	modules/init/init.py	/^echo = print$/;"	v
+echo	python/ashe/init/laptop.py	/^echo = print$/;"	v
+echo	python/init/laptop.py	/^echo = print$/;"	v
+edalias	legacy/zsh/arch-default.zsh	/^function edalias () {$/;"	f
+edfunc	legacy/zsh/arch-default.zsh	/^function edfunc () {$/;"	f
+egrep	legacy/zsh/arch-default.zsh	/^    alias egrep='egrep '$o$/;"	a
+emak	zsh/alias.zsh	/^alias emak="$EDITOR Makefile"$/;"	a
+enable_you_should_use	zsh/components/you-should-use/you-should-use.plugin.zsh	/^function enable_you_should_use() {$/;"	f
+error	modules/init/init.py	/^error = stderr.write$/;"	v
+f	zsh/alias.zsh	/^alias f='fuck'$/;"	a
+ff	zsh/alias.zsh	/^alias ff=firefox$/;"	a
+ffile	zsh/alias.zsh	/^alias ffile='findfile'       # defined in functions$/;"	a
+ffir	zsh/alias.zsh	/^alias ffir='findfileinroot'  # defined in functions$/;"	a
+findfile	zsh/functions.zsh	/^function findfile() {$/;"	f
+findfileinroot	zsh/functions.zsh	/^function findfileinroot() {$/;"	f
+flatten_strlist	python/playground/strlist_flatten.py	/^def flatten_strlist(strlist: list, delimiter: str):$/;"	f
+foregroundColor	zsh/components/powerlevel9k/functions/colors.zsh	/^function foregroundColor() {$/;"	f
+found_aliases=	zsh/components/you-should-use/you-should-use.plugin.zsh	/^    found_aliases=()$/;"	f
+fpstat	zsh/alias.zsh	/^alias fpstat="stat --format=%a"     # file permission stat$/;"	a
+freload	legacy/zsh/arch-default.zsh	/^function freload () { while (( $# )); do; unfunction $1; autoload -U $1; shift; done }$/;"	f
+fsb	zsh/alias.zsh	/^alias fsb='du -sb'$/;"	a
+fsh	zsh/alias.zsh	/^alias fsh='du -sh'$/;"	a
+full_text	i3/old/i3blocks.conf	/^full_text=Documentation$/;"	k	section:documentation
+fwatch	zsh/alias.zsh	/^alias fwatch='tail -fs'$/;"	a
+g:AvX_didload_functions	legacy/oldnvim/functions.vim	/^	let g:AvX_didload_functions = 1;	$/;"	v
+g:AvX_didload_kebinds	legacy/oldnvim/keybinds.vim	/^	let g:AvX_didload_kebinds = 1;	$/;"	v
+g:SuperTabDefaultCompletionType	legacy/oldnvim/pav.vim	/^let g:SuperTabDefaultCompletionType = "<c-x><c-o>"$/;"	v
+g:SuperTabDefaultCompletionType	vim/plugins.vim	/^    let g:SuperTabDefaultCompletionType = "<c-x><c-o>"$/;"	v
+g:airline#extensions#tabline#enabled	legacy/oldnvim/init.vim	/^let g:airline#extensions#tabline#enabled=1$/;"	v
+g:airline#extensions#tabline#enabled	vim/plugins.vim	/^    let g:airline#extensions#tabline#enabled=1$/;"	v
+g:airline#extensions#tabline#show_close_button	legacy/oldnvim/init.vim	/^let g:airline#extensions#tabline#show_close_button=0$/;"	v
+g:airline#extensions#tabline#show_close_button	vim/plugins.vim	/^    let g:airline#extensions#tabline#show_close_button=1$/;"	v
+g:airline_powerline_fonts	legacy/oldnvim/init.vim	/^let g:airline_powerline_fonts=1$/;"	v
+g:airline_powerline_fonts	legacy/oldnvim/pav.vim	/^let g:airline_powerline_fonts = 1$/;"	v
+g:airline_powerline_fonts	vim/plugins.vim	/^    let g:airline_powerline_fonts=1$/;"	v
+g:ashe_root	legacy/oldnvim/init.vim	/^let g:ashe_root=expand("%:p:h") . "\/" $/;"	v
+g:ashe_root	legacy/vim/vimrc	/^let g:ashe_root=expand("%:p:h") . "\/" $/;"	v
+g:ashe_root	vim/init.vim	/^let g:ashe_root=expand("%:p:h") . "\/" $/;"	v
+g:miniBufExplAutoStart	vim/plugins.vim	/^    let g:miniBufExplAutoStart=0$/;"	v
+gcm	zsh/alias.zsh	/^alias gcm='git commit -m'$/;"	a
+ge	legacy/zsh/arch-default.zsh	/^        alias ge='grep-excuses'$/;"	a
+getColor	zsh/components/powerlevel9k/functions/colors.zsh	/^function getColor() {$/;"	f
+getColorCode	zsh/components/powerlevel9k/functions/colors.zsh	/^function getColorCode() {$/;"	f
+getRelevantItem	zsh/components/powerlevel9k/functions/utilities.zsh	/^function getRelevantItem() {$/;"	f
+get_icon_names	zsh/components/powerlevel9k/functions/icons.zsh	/^get_icon_names() {$/;"	f
+github-readme	modules/github-readme/github-readme.zsh	/^github-readme() {$/;"	f
+gl	vim/keybinds.vim	/^    noremap gl :CocList $/;"	m
+glc	vim/keybinds.vim	/^    noremap glc :CocList colors<CR>$/;"	m
+gls	vim/keybinds.vim	/^    noremap gls :CocList snippets<CR>$/;"	m
+greetings	i3/old/i3blocks.conf	/^[greetings]$/;"	s
+grep	legacy/zsh/arch-default.zsh	/^    alias grep='grep '$o$/;"	a
+grml-version	legacy/zsh/arch-default.zsh	/^    alias grml-version='cat \/etc\/grml_version'$/;"	a
+grml-zsh-fg	legacy/zsh/arch-default.zsh	/^function grml-zsh-fg () {$/;"	f
+grml_cmd_to_screen_title	legacy/zsh/arch-default.zsh	/^function grml_cmd_to_screen_title () {$/;"	f
+grml_control_xterm_title	legacy/zsh/arch-default.zsh	/^function grml_control_xterm_title () {$/;"	f
+grml_dirstack_filter	legacy/zsh/arch-default.zsh	/^    function grml_dirstack_filter () {$/;"	f
+grml_maintain_name	legacy/zsh/arch-default.zsh	/^function grml_maintain_name () {$/;"	f
+grml_prompt_addto	legacy/zsh/arch-default.zsh	/^function grml_prompt_addto () {$/;"	f
+grml_prompt_fallback	legacy/zsh/arch-default.zsh	/^function grml_prompt_fallback () {$/;"	f
+grml_prompt_setup	legacy/zsh/arch-default.zsh	/^function grml_prompt_setup () {$/;"	f
+grml_reset_screen_title	legacy/zsh/arch-default.zsh	/^function grml_reset_screen_title () {$/;"	f
+grml_theme_add_token	legacy/zsh/arch-default.zsh	/^function grml_theme_add_token () {$/;"	f
+grml_theme_has_token	legacy/zsh/arch-default.zsh	/^function grml_theme_has_token () {$/;"	f
+grml_vcs_info_set_formats	legacy/zsh/arch-default.zsh	/^function grml_vcs_info_set_formats () {$/;"	f
+grml_vcs_info_toggle_colour	legacy/zsh/arch-default.zsh	/^function grml_vcs_info_toggle_colour () {$/;"	f
+grml_vcs_to_screen_title	legacy/zsh/arch-default.zsh	/^function grml_vcs_to_screen_title () {$/;"	f
+grml_wrap_reply	legacy/zsh/arch-default.zsh	/^function grml_wrap_reply () {$/;"	f
+grmlcomp	legacy/zsh/arch-default.zsh	/^function grmlcomp () {$/;"	f
+grmlstuff	legacy/zsh/arch-default.zsh	/^function grmlstuff () {$/;"	f
+gs	zsh/alias.zsh	/^alias gs='git status'$/;"	a
+hbp	legacy/zsh/arch-default.zsh	/^    alias hbp='hg-buildpackage'$/;"	a
+help-show-abk	legacy/zsh/arch-default.zsh	/^function help-show-abk () {$/;"	f
+help-zle	legacy/zsh/arch-default.zsh	/^function help-zle () {$/;"	f
+help-zshglob	legacy/zsh/arch-default.zsh	/^alias help-zshglob=H-Glob$/;"	a
+help_zle_parse_keybindings	legacy/zsh/arch-default.zsh	/^function help_zle_parse_keybindings () {$/;"	f
+hgdi	legacy/zsh/arch-default.zsh	/^    function hgdi () {$/;"	f
+hgstat	legacy/zsh/arch-default.zsh	/^    function hgstat () {$/;"	f
+howdoi	zsh/alias.zsh	/^alias howdoi='howdoi -c'$/;"	a
+i3blockconfig	zsh/alias.zsh	/^alias i3blockconfig="$EDITOR \/ashe\/i3blocks\/config"$/;"	a
+i3config	zsh/alias.zsh	/^alias i3config="$EDITOR \/ashe\/i3\/config"$/;"	a
+info_print	legacy/zsh/arch-default.zsh	/^function info_print () {$/;"	f
+inplaceMkDirs	legacy/zsh/arch-default.zsh	/^function inplaceMkDirs () {$/;"	f
+insecscp	legacy/zsh/arch-default.zsh	/^alias insecscp='scp -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=\/dev\/null"'$/;"	a
+insecssh	legacy/zsh/arch-default.zsh	/^alias insecssh='ssh -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=\/dev\/null"'$/;"	a
+insert-datestamp	legacy/zsh/arch-default.zsh	/^function insert-datestamp () { LBUFFER+=${(%):-'%D{%Y-%m-%d}'}; }$/;"	f
+insert-last-typed-word	legacy/zsh/arch-default.zsh	/^function insert-last-typed-word () { zle insert-last-word -- 0 -1 };$/;"	f
+install	vim/Makefile	/^install:$/;"	t
+install	zsh/Makefile	/^install:$/;"	t
+install-blocks	i3/Makefile	/^install-blocks:$/;"	t
+install-coc	vim/Makefile	/^install-coc:$/;"	t
+install-desktop	elinks/Makefile	/^install-desktop:$/;"	t
+install-desktop	i3/Makefile	/^install-desktop: install-blocks$/;"	t
+install-desktop	termite/Makefile	/^install-desktop:$/;"	t
+install-plug	vim/Makefile	/^install-plug:$/;"	t
+install-surface	i3/Makefile	/^install-surface: install-blocks$/;"	t
+install-surface	termite/Makefile	/^install-surface:$/;"	t
+interval	i3/old/i3blocks.conf	/^interval=1$/;"	k	section:time
+interval	i3/old/i3blocks.conf	/^interval=once$/;"	k	section:greetings
+is-at-least	legacy/zsh/arch-default.zsh	/^zrcautoload is-at-least || function is-at-least () { return 1 }$/;"	f
+is4	legacy/zsh/arch-default.zsh	/^function is4 () {$/;"	f
+is41	legacy/zsh/arch-default.zsh	/^function is41 () {$/;"	f
+is42	legacy/zsh/arch-default.zsh	/^function is42 () {$/;"	f
+is425	legacy/zsh/arch-default.zsh	/^function is425 () {$/;"	f
+is43	legacy/zsh/arch-default.zsh	/^function is43 () {$/;"	f
+is433	legacy/zsh/arch-default.zsh	/^function is433 () {$/;"	f
+is437	legacy/zsh/arch-default.zsh	/^function is437 () {$/;"	f
+is439	legacy/zsh/arch-default.zsh	/^function is439 () {$/;"	f
+isSameColor	zsh/components/powerlevel9k/functions/colors.zsh	/^function isSameColor() {$/;"	f
+isdarwin	legacy/zsh/arch-default.zsh	/^function isdarwin () {$/;"	f
+isfreebsd	legacy/zsh/arch-default.zsh	/^function isfreebsd () {$/;"	f
+isgrml	legacy/zsh/arch-default.zsh	/^function isgrml () {$/;"	f
+isgrmlcd	legacy/zsh/arch-default.zsh	/^function isgrmlcd () {$/;"	f
+isgrmlsmall	legacy/zsh/arch-default.zsh	/^    function isgrmlsmall () { return 1 }$/;"	f
+isgrmlsmall	legacy/zsh/arch-default.zsh	/^    function isgrmlsmall () {$/;"	f
+islinux	legacy/zsh/arch-default.zsh	/^function islinux () {$/;"	f
+iso2utf	legacy/zsh/arch-default.zsh	/^function iso2utf () {$/;"	f
+isopenbsd	legacy/zsh/arch-default.zsh	/^function isopenbsd () {$/;"	f
+issolaris	legacy/zsh/arch-default.zsh	/^function issolaris () {$/;"	f
+isutfenv	legacy/zsh/arch-default.zsh	/^function isutfenv () {$/;"	f
+jj	legacy/oldnvim/keybinds.vim	/^inoremap jj <Esc>l$/;"	m
+jj	legacy/vim/keybinds.vim	/^imap jj <Esc>l$/;"	m
+jj	vim/keybinds.vim	/^    inoremap jj <Esc>l$/;"	m
+jk	legacy/vim/keybinds.vim	/^imap jk <C-x><C-o>$/;"	m
+jump_after_first_word	legacy/zsh/arch-default.zsh	/^function jump_after_first_word () {$/;"	f
+keep	zsh/alias.zsh	/^alias keep='noglob keep'$/;"	a
+l	legacy/zsh/arch-default.zsh	/^    alias l="command ls -l ${ls_options:+${ls_options[*]}}"$/;"	a
+l	legacy/zsh/arch-default.zsh	/^    alias l='command ls -l'$/;"	a
+l	zsh/alias.zsh	/^alias l='ls'$/;"	a
+la	legacy/zsh/arch-default.zsh	/^    alias la="command ls -la ${ls_options:+${ls_options[*]}}"$/;"	a
+la	legacy/zsh/arch-default.zsh	/^    alias la='command ls -la'$/;"	a
+lad	legacy/zsh/arch-default.zsh	/^alias lad='command ls -d .*(\/)'$/;"	a
+lc	zsh/alias.zsh	/^alias lc='lolcat -t'$/;"	a
+lh	legacy/zsh/arch-default.zsh	/^    alias lh="command ls -hAl ${ls_options:+${ls_options[*]}}"$/;"	a
+lh	legacy/zsh/arch-default.zsh	/^    alias lh='command ls -hAl'$/;"	a
+ll	legacy/zsh/arch-default.zsh	/^    alias ll="command ls -l ${ls_options:+${ls_options[*]}}"$/;"	a
+ll	legacy/zsh/arch-default.zsh	/^    alias ll='command ls -l'$/;"	a
+ll	zsh/alias.zsh	/^alias ll='ls -l'$/;"	a
+ln = `os.symlink(src, dest, target_is_dir=False, *, dir_fd=None)`	python/ashe/cli/python-shell-ref.md	/^### ln = `os.symlink(src, dest, target_is_dir=False, *, dir_fd=None)`$/;"	S
+log	modules/init/init.py	/^log = stdout.write$/;"	v
+logln	modules/init/init.py	/^logln = lambda x: stdout.write(x + '\\n')$/;"	f
+ls	legacy/zsh/arch-default.zsh	/^    alias ls="command ls ${ls_options:+${ls_options[*]}}"$/;"	a
+ls	zsh/alias.zsh	/^alias ls='lsd -Al'$/;"	a
+ls = os.listdir():	python/ashe/cli/python-shell-ref.md	/^### ls = os.listdir():$/;"	S
+lsa	legacy/zsh/arch-default.zsh	/^alias lsa='command ls -a .*(.)'$/;"	a
+lsa	zsh/alias.zsh	/^alias lsa='ls *'$/;"	a
+lsbig	legacy/zsh/arch-default.zsh	/^alias lsbig="command ls -flh *(.OL[1,10])"$/;"	a
+lsd	legacy/zsh/arch-default.zsh	/^alias lsd='command ls -d *(\/)'$/;"	a
+lse	legacy/zsh/arch-default.zsh	/^alias lse='command ls -d *(\/^F)'$/;"	a
+lsl	legacy/zsh/arch-default.zsh	/^alias lsl='command ls -l *(@)'$/;"	a
+lsnew	legacy/zsh/arch-default.zsh	/^alias lsnew="command ls -rtlh *(D.om[1,10])"$/;"	a
+lsnewdir	legacy/zsh/arch-default.zsh	/^alias lsnewdir="command ls -rthdl *(\/om[1,10]) .*(D\/om[1,10])"$/;"	a
+lsold	legacy/zsh/arch-default.zsh	/^alias lsold="command ls -rtlh *(D.Om[1,10])"$/;"	a
+lsolddir	legacy/zsh/arch-default.zsh	/^alias lsolddir="command ls -rthdl *(\/Om[1,10]) .*(D\/Om[1,10])"$/;"	a
+lsrt	zsh/alias.zsh	/^alias lsrt='ls -rt'$/;"	a
+lss	legacy/zsh/arch-default.zsh	/^alias lss='command ls -l *(s,S,t)'$/;"	a
+lssmall	legacy/zsh/arch-default.zsh	/^alias lssmall="command ls -Srl *(.oL[1,10])"$/;"	a
+lst	zsh/alias.zsh	/^alias lst='ls -t'$/;"	a
+lstree	zsh/alias.zsh	/^alias lstree='ls --tree'$/;"	a
+lstt	zsh/alias.zsh	/^alias lstt='ls -rt'$/;"	a
+lsw	legacy/zsh/arch-default.zsh	/^alias lsw='command ls -ld *(R,W,X.^ND\/)'$/;"	a
+lsx	legacy/zsh/arch-default.zsh	/^alias lsx='command ls -l *(*)'$/;"	a
+m	zsh/alias.zsh	/^alias m='man'$/;"	a
+main	lemonbar/simplestatus.py	/^def main():$/;"	f
+main	python/ashe/init/laptop.py	/^def main():$/;"	f
+main	python/init/laptop.py	/^def main():$/;"	f
+max_brightness	python/ashe/init/laptop.py	/^def max_brightness():$/;"	f
+max_brightness	python/init/laptop.py	/^def max_brightness():$/;"	f
+md	zsh/alias.zsh	/^alias md='mkdir -p'$/;"	a
+mdstat	legacy/zsh/arch-default.zsh	/^    alias mdstat='cat \/proc\/mdstat'$/;"	a
+mkcd	legacy/zsh/arch-default.zsh	/^function mkcd () {$/;"	f
+mkdir	legacy/vim/configure	/^mkdir = lambda path: os.system(f'mkdir {path}')$/;"	f
+mkdir	legacy/vim/configure.py	/^mkdir = lambda path: os.system(f'mkdir {path}')$/;"	f
+modified	legacy/zsh/arch-default.zsh	/^function modified () {$/;"	f
+mq	legacy/zsh/arch-default.zsh	/^    [[ -n "$GRML_NO_SMALL_ALIASES" ]] || alias mq='hg -R $(readlink -f $(hg root)\/.hg\/patches)/;"	a
+mrxvt	legacy/zsh/arch-default.zsh	/^            alias mrxvt="LANG=${LANG\/(#b)(*)[.@]*\/$match[1].iso885915} luit mrxvt"$/;"	a
+name	python/playground/color_generator.py	/^name = input('Enter a name for the color theme: ')$/;"	v
+ncpus	modules/init/init.py	/^    ncpus = os.cpu_count()$/;"	v
+new	legacy/zsh/arch-default.zsh	/^check_com new || alias new=modified$/;"	a
+nf	zsh/alias.zsh	/^alias nf='neofetch'$/;"	a
+nt	legacy/zsh/arch-default.zsh	/^is4 && function nt () {$/;"	f
+os.scandir() - more informative than listdir()	python/ashe/cli/python-shell-ref.md	/^### os.scandir() - more informative than listdir()$/;"	S
+out_file	python/playground/color_generator.py	/^out_file = open(f'palette_{name}.txt', 'wt+')$/;"	v
+outbuf	python/playground/color_generator.py	/^outbuf = ''$/;"	v
+p9k::parseIp	zsh/components/powerlevel9k/functions/utilities.zsh	/^function p9k::parseIp() {$/;"	f
+pacman	zsh/alias.zsh	/^alias pacman='yay'$/;"	a
+palette	python/playground/color_generator.py	/^palette = ['40', '80', 'c0']$/;"	v
+plc	zsh/alias.zsh	/^alias plc='playerctl'$/;"	a
+pm	zsh/alias.zsh	/^alias pm='pulsemixer'$/;"	a
+pre	zsh/alias.zsh	/^alias pre='head'              # preview file$/;"	a
+precmd	legacy/zsh/arch-default.zsh	/^                      preexec() and precmd() completely$/;"	f
+precmd	legacy/zsh/arch-default.zsh	/^    function precmd () { (( ${+functions[vcs_info]} )) && vcs_info; }$/;"	f
+preexec	legacy/zsh/arch-default.zsh	/^                      preexec() and precmd() completely$/;"	f
+prel	zsh/alias.zsh	/^alias prel='head -n'              # preview file$/;"	a
+printSizeHumanReadable	zsh/components/powerlevel9k/functions/utilities.zsh	/^printSizeHumanReadable() {$/;"	f
+print_deprecation_warning	zsh/components/powerlevel9k/functions/utilities.zsh	/^print_deprecation_warning() {$/;"	f
+print_icon	zsh/components/powerlevel9k/functions/icons.zsh	/^function print_icon() {$/;"	f
+profile	legacy/zsh/arch-default.zsh	/^function profile () {$/;"	f
+prompt_grml-chroot_help	legacy/zsh/arch-default.zsh	/^function prompt_grml-chroot_help () {$/;"	f
+prompt_grml-chroot_precmd	legacy/zsh/arch-default.zsh	/^function prompt_grml-chroot_precmd () {$/;"	f
+prompt_grml-chroot_setup	legacy/zsh/arch-default.zsh	/^function prompt_grml-chroot_setup () {$/;"	f
+prompt_grml-large_help	legacy/zsh/arch-default.zsh	/^function prompt_grml-large_help () {$/;"	f
+prompt_grml-large_precmd	legacy/zsh/arch-default.zsh	/^function prompt_grml-large_precmd () {$/;"	f
+prompt_grml-large_setup	legacy/zsh/arch-default.zsh	/^function prompt_grml-large_setup () {$/;"	f
+prompt_grml_help	legacy/zsh/arch-default.zsh	/^function prompt_grml_help () {$/;"	f
+prompt_grml_precmd	legacy/zsh/arch-default.zsh	/^function prompt_grml_precmd () {$/;"	f
+prompt_grml_precmd_worker	legacy/zsh/arch-default.zsh	/^function prompt_grml_precmd_worker () {$/;"	f
+prompt_grml_setup	legacy/zsh/arch-default.zsh	/^function prompt_grml_setup () {$/;"	f
+q	zsh/alias.zsh	/^alias q='exit'$/;"	a
+region_highlight=	zsh/components/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh	/^        region_highlight=()$/;"	f
+region_highlight=	zsh/components/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh	/^    region_highlight=()$/;"	f
+region_highlight=	zsh/components/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh	/^  region_highlight=();$/;"	f
+right_items=	legacy/zsh/arch-default.zsh	/^    right_items=()$/;"	f
+rlz	zsh/alias.zsh	/^alias rlz='touch \/tmp\/.zshreload; source ~\/.zshrc'$/;"	a
+rm -r = os.rmdir()	python/ashe/cli/python-shell-ref.md	/^### rm -r = os.rmdir()$/;"	S
+rmcdir	legacy/zsh/arch-default.zsh	/^alias rmcdir='cd ..; rmdir $OLDPWD || cd $OLDPWD'$/;"	a
+run-help	legacy/zsh/arch-default.zsh	/^alias run-help >&\/dev\/null && unalias run-help$/;"	a
+salias	legacy/zsh/arch-default.zsh	/^function salias () {$/;"	f
+screen	legacy/zsh/arch-default.zsh	/^                alias screen='screen -c \/etc\/grml\/screenrc'$/;"	a
+screen	legacy/zsh/arch-default.zsh	/^            alias screen='screen -c \/etc\/grml\/screenrc'$/;"	a
+screen	legacy/zsh/arch-default.zsh	/^            alias screen='screen -c \/etc\/grml\/screenrc_grml'$/;"	a
+se	legacy/zsh/arch-default.zsh	/^[[ -n "$GRML_NO_SMALL_ALIASES" ]] || alias se=simple-extract$/;"	a
+sed	zsh/alias.zsh	/^alias sed='sed -E'$/;"	a
+segmentShouldBeJoined	zsh/components/powerlevel9k/functions/utilities.zsh	/^function segmentShouldBeJoined() {$/;"	f
+segment_in_use	zsh/components/powerlevel9k/functions/utilities.zsh	/^segment_in_use() {$/;"	f
+separator	i3/old/i3blocks.conf	/^separator=true$/;"	k
+separator_block_width	i3/old/i3blocks.conf	/^separator_block_width=15$/;"	k
+set_brightness	modules/init/init.py	/^def set_brightness(brightness: int):$/;"	f
+set_default	zsh/components/powerlevel9k/functions/utilities.zsh	/^function set_default() {$/;"	f
+set_title	legacy/zsh/arch-default.zsh	/^function set_title () {$/;"	f
+sh	i3/old/date-statusbar.py	/^sh = os.system$/;"	v
+sh	modules/init/init.py	/^sh = os.system$/;"	v
+sh	python/ashe/init/laptop.py	/^sh = os.system$/;"	v
+sh	python/init/laptop.py	/^sh = os.system$/;"	v
+showlogs	zsh/alias.zsh	/^alias showlogs=journalctl$/;"	a
+simple-extract	legacy/zsh/arch-default.zsh	/^function simple-extract () {$/;"	f
+slash-backward-kill-word	legacy/zsh/arch-default.zsh	/^function slash-backward-kill-word () {$/;"	f
+sll	legacy/zsh/arch-default.zsh	/^function sll () {$/;"	f
+ssl-cert-fingerprints	legacy/zsh/arch-default.zsh	/^function ssl-cert-fingerprints () {$/;"	f
+ssl-cert-info	legacy/zsh/arch-default.zsh	/^function ssl-cert-info () {$/;"	f
+stderr	modules/init/init.py	/^stderr = sys.stderr$/;"	v
+stdin	modules/init/init.py	/^stdin = sys.stdin$/;"	v
+stdout	modules/init/init.py	/^stdout = sys.stdout$/;"	v
+style fg	tmux/.tmux.conf	/^set -g pane-border-style fg=brightyellow$/;"	k
+su	legacy/zsh/arch-default.zsh	/^       alias su="sudo su"$/;"	a
+sudo-command-line	legacy/zsh/arch-default.zsh	/^function sudo-command-line () {$/;"	f
+surfaceboot-default	zsh/autoload/surface-boot.zsh	/^function surfaceboot-default() {$/;"	f
+t	zsh/alias.zsh	/^alias t='touch'$/;"	a
+t	zsh/components/taskwarrior/taskwarrior.plugin.zsh	/^alias t=task$/;"	a
+taskwarrior	zsh/components/taskwarrior/README.md	/^# taskwarrior$/;"	c
+term2iso	legacy/zsh/arch-default.zsh	/^alias term2iso="echo 'Setting terminal to iso mode' ; print -n '\\e%@'"$/;"	a
+term2utf	legacy/zsh/arch-default.zsh	/^alias term2utf="echo 'Setting terminal to utf-8 mode'; print -n '\\e%G'"$/;"	a
+termColors	zsh/components/powerlevel9k/functions/colors.zsh	/^function termColors() {$/;"	f
+test_assert	modules/init/test_main.py	/^def test_assert():$/;"	f
+test_get_brightness	modules/init/tests/main.py	/^def test_get_brightness(expected_value, verbose=False):$/;"	f
+test_set_brightness	modules/init/tests/main.py	/^def test_set_brightness(value, verbose=False):$/;"	f
+things to check:	python/ashe/cli/python-shell-ref.md	/^### things to check:$/;"	S
+time	i3/old/i3blocks.conf	/^[time]$/;"	s
+tl	zsh/alias.zsh	/^alias tl='task list'$/;"	a
+tma	zsh/alias.zsh	/^alias tma='tmux attach -t'$/;"	a
+tmls	zsh/alias.zsh	/^alias tmls='tmux list-sessions'$/;"	a
+trans	legacy/zsh/arch-default.zsh	/^function trans () {$/;"	f
+transfer	zsh/components/transfer/transfer.plugin.zsh	/^transfer() { $/;"	f
+truncatePath	zsh/components/powerlevel9k/functions/utilities.zsh	/^function truncatePath() {$/;"	f
+truncatePathFromRight	zsh/components/powerlevel9k/functions/utilities.zsh	/^function truncatePathFromRight() {$/;"	f
+uchange	legacy/zsh/arch-default.zsh	/^    function uchange () {$/;"	f
+uninstall	vim/Makefile	/^uninstall:$/;"	t
+upsearch	zsh/components/powerlevel9k/functions/utilities.zsh	/^function upsearch () {$/;"	f
+url-quote	legacy/zsh/arch-default.zsh	/^alias url-quote='autoload -U url-quote-magic ; zle -N self-insert url-quote-magic'$/;"	a
+utf2iso	legacy/zsh/arch-default.zsh	/^function utf2iso () {$/;"	f
+verify_brt	python/ashe/init/laptop.py	/^def verify_brt():$/;"	f
+verify_brt	python/init/laptop.py	/^def verify_brt():$/;"	f
+vim	legacy/zsh/arch-default.zsh	/^    function vim () {$/;"	f
+weather	zsh/functions.zsh	/^function weather() {$/;"	f
+website	i3/old/i3blocks.conf	/^website=https:\/\/vivien.github.io\/i3blocks$/;"	k	section:documentation
+whatwhen	legacy/zsh/arch-default.zsh	/^function whatwhen () {$/;"	f
+widc	zsh/alias.zsh	/^alias widc='weather dc'$/;"	a
+wifi_setup	modules/init/init.py	/^def wifi_setup():$/;"	f
+wifi_setup	python/ashe/init/laptop.py	/^def wifi_setup():$/;"	f
+wifi_setup	python/init/laptop.py	/^def wifi_setup():$/;"	f
+xcat	legacy/zsh/arch-default.zsh	/^function xcat () {$/;"	f
+xsource	legacy/zsh/arch-default.zsh	/^function xsource () {$/;"	f
+xtrename	legacy/zsh/arch-default.zsh	/^function xtrename () {$/;"	f
+xunfunction	legacy/zsh/arch-default.zsh	/^function xunfunction () {$/;"	f
+ysu_message	zsh/components/you-should-use/you-should-use.plugin.zsh	/^function ysu_message() {$/;"	f
+ytd	zsh/alias.zsh	/^alias ytd=youtube-dl$/;"	a
+ytdi	zsh/alias.zsh	/^alias ytdi='youtube-dl --id'$/;"	a
+ytds	zsh/alias.zsh	/^alias ytds='youtube-dl --default-search "ytsearch"'$/;"	a
+zle-line-finish	legacy/zsh/arch-default.zsh	/^    function zle-line-finish () {$/;"	f
+zle-line-init	legacy/zsh/arch-default.zsh	/^    function zle-line-init () {$/;"	f
+zle-rmkx	legacy/zsh/arch-default.zsh	/^    function zle-rmkx () {$/;"	f
+zle-smkx	legacy/zsh/arch-default.zsh	/^    function zle-smkx () {$/;"	f
+zleiab	legacy/zsh/arch-default.zsh	/^function zleiab () {$/;"	f
+zrcautoload	legacy/zsh/arch-default.zsh	/^function zrcautoload () {$/;"	f
+zrcautozle	legacy/zsh/arch-default.zsh	/^function zrcautozle () {$/;"	f
+zrcbindkey	legacy/zsh/arch-default.zsh	/^function zrcbindkey () {$/;"	f
+zrcgotkeymap	legacy/zsh/arch-default.zsh	/^function zrcgotkeymap () {$/;"	f
+zrcgotwidget	legacy/zsh/arch-default.zsh	/^function zrcgotwidget () {$/;"	f
+zrclocal	legacy/zsh/arch-default.zsh	/^function zrclocal () {$/;"	f
+zsh-help	legacy/zsh/arch-default.zsh	/^function zsh-help () {$/;"	f
+zshconfig	zsh/alias.zsh	/^alias zshconfig="$EDITOR \/ashe\/zsh\/"$/;"	a
+zshexit	zsh/components/zsh-autosuggestions/zsh-autosuggestions.zsh	/^		zshexit() {$/;"	f
+zstyle	legacy/zsh/arch-default.zsh	/^    function zstyle () { : }$/;"	f
+zurl	legacy/zsh/arch-default.zsh	/^function zurl () {$/;"	f
+{cur_widget}	zsh/components/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh	/^           _zsh_highlight_widget_${cur_widget}() { :; _zsh_highlight }$/;"	f

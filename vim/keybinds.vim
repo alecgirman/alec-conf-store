@@ -12,6 +12,11 @@ function! LoadDefaultKeybinds()
 
     noremap Y ^v$hy
 
+    noremap gl :CocList 
+    noremap glc :CocList colors<CR>
+    noremap gls :CocList snippets<CR>
+    noremap glv :CocList tags<CR>
+
     " quickly turn off highlighting after a search
     noremap H :noh<CR>
 

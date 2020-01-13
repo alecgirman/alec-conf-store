@@ -24,17 +24,6 @@
 " 
 " call g:deoplete#enable()
 
-function! ConfigurePluginsPreload()
-    let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-    let g:airline_powerline_fonts=1
-    let g:airline#extensions#tabline#enabled=1
-    let g:airline#extensions#tabline#show_close_button=1
-
-    let g:miniBufExplAutoStart=0
-    call InstallThirdPartyPlugins()
-    echohl Question | echo '[Pre] Configured installed plugins' | echohl None
-endfunction
-
 function! InstallThirdPartyPlugins()
     call plug#begin('~/.vim/plugged')
     Plug 'Shougo/neoinclude.vim'
@@ -80,8 +69,19 @@ function! InstallThirdPartyPlugins()
     Plug 'Shougo/deol.nvim'
     Plug 'Shougo/neosnippet.vim'
     Plug 'dense-analysis/ale'
-    call plug#end()
+    " call plug#end()
     PlugInstall
+endfunction
+
+function! ConfigurePluginsPreload()
+    let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+    let g:airline_powerline_fonts=1
+    let g:airline#extensions#tabline#enabled=1
+    let g:airline#extensions#tabline#show_close_button=1
+
+    let g:miniBufExplAutoStart=0
+    call InstallThirdPartyPlugins()
+    echohl Question | echo '[Pre] Configured installed plugins' | echohl None
 endfunction
 
 function! ConfigurePluginsPostload()
