@@ -80,7 +80,8 @@ function! InstallThirdPartyPlugins()
     Plug 'Shougo/deol.nvim'
     Plug 'Shougo/neosnippet.vim'
     Plug 'dense-analysis/ale'
-    call plug#end()
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'hiphish/info.vim'
     PlugInstall
 endfunction
 

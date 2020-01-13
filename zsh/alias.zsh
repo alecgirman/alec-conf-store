@@ -7,6 +7,7 @@ alias sed='sed -E'
 alias afind='ack -il'
 alias cputemp='sensors | sed -n "/^Core/p"'
 alias da='du -sch'
+alias diff='diff --color=auto'
 alias ff=firefox
 alias md='mkdir -p'
 alias pacman='yay'

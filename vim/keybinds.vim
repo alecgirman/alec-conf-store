@@ -15,6 +15,10 @@ function! LoadDefaultKeybinds()
     " quickly turn off highlighting after a search
     noremap H :noh<CR>
 
+    " CocLists
+    noremap gl :CocList<Space>
+    noremap gls :CocList snippets<CR>
+
     " K by default is binded to manpages/docs
     " and that's too good of a shortcut to lose
     " TODO: F1 might do this too, try it too

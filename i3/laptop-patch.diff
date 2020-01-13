@@ -1,0 +1,10 @@
+4c4
+< font pango:FuraCode Nerd Font Mono 11
+---
+> font pango:Fira Code Retina 11
+156c156
+<     status_command=/usr/bin/i3status
+---
+>     status_command /usr/bin/i3blocks
+158d157
+< 
