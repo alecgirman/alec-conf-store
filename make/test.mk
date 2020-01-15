@@ -12,3 +12,4 @@ endef
 test: shell
 	lsoutvar=($(call shell,ls,a))  	# sets the value of lsoutvar
 	echo ${lsoutvar[0]}
+	

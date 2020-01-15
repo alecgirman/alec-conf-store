@@ -71,7 +71,6 @@ function! InstallThirdPartyPlugins()
     Plug 'dense-analysis/ale'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'hiphish/info.vim'
-    " call plug#end()
     PlugInstall!
 endfunction
 
@@ -80,7 +79,6 @@ function! ConfigurePluginsPreload()
     let g:airline_powerline_fonts=1
     let g:airline#extensions#tabline#enabled=1
     let g:airline#extensions#tabline#show_close_button=1
-
     let g:miniBufExplAutoStart=0
     call InstallThirdPartyPlugins()
     echohl Question | echo '[Pre] Configured installed plugins' | echohl None

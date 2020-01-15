@@ -12,3 +12,5 @@ function! AvXToggleVirtualEdit()
         set ve=all
     endif
 endfunction
+
+

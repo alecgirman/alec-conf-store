@@ -1,7 +1,9 @@
 # command rebinds
-alias keep='noglob keep'
+alias keep='noglob keep' # TODO wtf does this do
 alias howdoi='howdoi -c'
 alias sed='sed -E'
+alias ack='ack -i'
+alias find='find -'
 
 # Common
 alias afind='ack -il'
@@ -50,6 +52,7 @@ alias lc='lolcat -t'
 alias :q='echo "this isnt vim!"'
 
 # docker
+alias start-dockerd='dockerd &> /dev/null &'
 alias ds='docker search'
 
 # ack
@@ -77,12 +80,13 @@ alias pre='head'              # preview file
 alias prel='head -n'              # preview file
 
 # find (file) ops
-alias ffile='findfile'       # defined in functions
-alias ffir='findfileinroot'  # defined in functions
+
+# REPLACED BY 'find' and 'findhere'
+# alias ffile='findfile'       # defined in functions
+# alias ffir='findfileinroot'  # defined in functions
 
 alias clearcache='echo 3 > /proc/sys/vm/drop_caches'
 
-alias asherb='pushd /ashe/; make rebuild; popd;'
 alias zshconfig="$EDITOR /ashe/zsh/"
 alias i3config="$EDITOR /ashe/i3/config"
 alias i3blockconfig="$EDITOR /ashe/i3blocks/config"

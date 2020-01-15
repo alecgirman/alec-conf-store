@@ -1,7 +1,7 @@
 .PHONY: uninstall install
 
 # can be vim or neovim
-TARGET=vim
+TARGET ?= vim
 
 # When uninstalling, DO NOT REMOVE the $TARGET_DIR
 ifeq (${TARGET}, vim)
@@ -16,6 +16,8 @@ BASE_POSTDIR = ${TARGET_DIR}/after/plugin
 BASE_FILES = *.vim
 COC_PATH = pack/coc/start
 COC_EXTDIR = ~/.config/coc/extensions
+
+NODE_VERSION=''
 
 COPYCMD = cp -uv
 DIFFCMD = diff --color -a
@@ -49,10 +51,8 @@ install-vimplug:
 	mkdir -p ${TARGET_DIR}/autoload
 	curl -fLo ${TARGET_DIR}/autoload/plug.vim ${PLUG_URL}
 
-uninstall-vimplug:
+uninstall-extplugins:
 	rm -rfv ${TARGET_DIR}/autoload/plug.vim
-
-uninstall-coc:
 	rm -rfv ${COC_EXTDIR}
 
 uninstall:
@@ -60,12 +60,15 @@ uninstall:
 	# which could result in files that are 'stuck' there.
 	rm -rfv ${BASE_DIR}/
 
-purge: uninstall uninstall-vimplug uninstall-coc
-	rm -rfv ${COC_PATH}/
+# full uninstall
+purge: uninstall uninstall-extplugins
 
 diffs:
 	${DIFFCMD} ./ ${BASE_DIR}/ | sed '/Only in/d'
 
 check-deps:
-	node --version
-	npm --version
+	#NODE_VERSION="$(shell node --version)"
+	NODE_LOCATION=$(shell which node)
+	NPM_VERSION=$(shell npm --version)
+	@echo "Automatically detected installed NodeJS"
+	@echo "Installed version: ${NODE_VERSION}"

@@ -1,0 +1,11 @@
+M  make/log.mk
+M  make/test.mk
+A  nvim/menudata.txt
+A  nvim/taskreport.vim
+A  nvim/testfunction.vim
+A  nvim/testplugin.nvim
+ D version.txt
+M  vim/Makefile
+A  vim/ftplugin/taskwarrior.vim
+M  vim/init.vim
+?? gitstatus-simple.txt

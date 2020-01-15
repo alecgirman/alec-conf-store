@@ -10,13 +10,19 @@ if [ ! -f /tmp/.zshreload ]; then
 
     export plugindir=/ashe/zsh/components
 
+    # Set preload vars
+    # Line #1863-1864 of main theme file
+    $POWERLEVEL9K_IGNORE_TERM_LANG=true
+    $POWERLEVEL9K_IGNORE_TERM_COLORS=true
+
     for file in $(find $plugindir | ack '\.zsh$'); do
         . $file end
     done
 
-    export EDITOR='vim'
+    # export EDITOR='vim'
+    export EDITOR='nvim'
 
-    unsetopt correct
+    # unsetopt correct
     unsetopt correctall
 
     zstyle ':completion:*' rehash true
@@ -25,8 +31,7 @@ if [ ! -f /tmp/.zshreload ]; then
 
     clear
     alias zshconfig="$EDITOR ~/.zshrc"
-    alias ohmyzsh="$EDITOR ~/.oh-my-zsh/oh-my-zsh.sh"
-    printf "$fg[blue]ZSH Initialized$fg[reset]\n"
+    printf "$fg[blue]ZSH Initialized $fg[reset]\n"
 else
     printf "$fg[green]ZSH $fg[bold]RELOADED$fg[reset]\n"
 fi

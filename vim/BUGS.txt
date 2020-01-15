@@ -1,0 +1,2 @@
+# gitignore
+literally typing anything into vim (not neovim) triggers an error on each keypress
