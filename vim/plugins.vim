@@ -1,3 +1,7 @@
+if exists('did_plugins_vim') || &cp || version < 700
+    finish
+endif
+let did_plugins_vimdid_plugins_vim = 1
 
 " Warning: the line below this changes frequently and is subject to change
 " at any moments notice, be cautions when using it in your code :)
@@ -39,11 +43,11 @@ function! InstallThirdPartyPlugins()
     Plug 'scrooloose/nerdtree'
     Plug 'kshenoy/vim-signature'
     Plug 'sheerun/vim-polyglot'
-    Plug 'SirVer/ultisnips'
     Plug 'davidhalter/jedi-vim'
     Plug 'mhinz/vim-startify'
     Plug 'majutsushi/tagbar'
     Plug 'godlygeek/tabular'
+    Plug 'ervandew/supertab'
     Plug 'plasticboy/vim-markdown'
     Plug 'mboughaba/i3config.vim'
     Plug 'kana/vim-textobj-user'
@@ -71,6 +75,9 @@ function! InstallThirdPartyPlugins()
     Plug 'dense-analysis/ale'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'hiphish/info.vim'
+    Plug 'reconquest/vim-pythonx'
+    Plug 'SirVer/UltiSnips'
+    Plug 'kien/ctrlp.vim'
     PlugInstall!
 endfunction
 
@@ -80,7 +87,13 @@ function! ConfigurePluginsPreload()
     let g:airline#extensions#tabline#enabled=1
     let g:airline#extensions#tabline#show_close_button=1
     let g:miniBufExplAutoStart=0
-    call InstallThirdPartyPlugins()
+    " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+    let g:UltiSnipsExpandTrigger="<C-k>"
+    let g:UltiSnipsJumpForwardTrigger="<c-b>"
+    let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+    " If you want :UltiSnipsEdit to split your window.
+    let g:UltiSnipsEditSplit="vertical"
     echohl Question | echo '[Pre] Configured installed plugins' | echohl None
 endfunction
 
@@ -91,4 +104,5 @@ function! ConfigurePluginsPostload()
     echohl Question | echo '[Post] Configured installed plugins' | echohl None
 endfunction
 
+let did_plugins_vimdid_plugins_vim = 2
 echohl Function | echo 'Loaded script file: plugins.vim' | echohl None

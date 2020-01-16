@@ -1,3 +1,8 @@
+if exists('did_keybinds_vim') || &cp || version < 700
+    finish
+endif
+let did_keybinds_vimdid_keybinds_vim = 1
+
 function! LoadDefaultKeybinds()
     " =======================
     " K E Y B I N D I N G S
@@ -20,9 +25,9 @@ function! LoadDefaultKeybinds()
     " quickly turn off highlighting after a search
     noremap H :noh<CR>
 
-    " CocLists
-    noremap gl :CocList<Space>
-    noremap gls :CocList snippets<CR>
+    nnoremap
+    nnoremap gl :CocList --list<CR>
+    nnoremap gls :CocList snippets<CR>
 
     " K by default is binded to manpages/docs
     " and that's too good of a shortcut to lose
@@ -39,28 +44,6 @@ function! LoadDefaultKeybinds()
     nnoremap <S-Right> 5<C-w>>
     nnoremap <S-Left> 5<C-w><
 
-    " Easy window navigation - navigate windows with alt
-    " Update 1/1/20: Disabled due to conflict with i3 keybindings
-    " but it was amazing while it lasts so others may like it.
-    " -----------------------------------------------------
-    " credit goes to nvim_terminal_emulator.txt
-    " starting on line 62 in the neovim help docs 
-    " because I just copied and pasted the whole thing
-    "
-    " :tnoremap <A-h> <C-\><C-N><C-w>h
-    " :tnoremap <A-j> <C-\><C-N><C-w>j
-    " :tnoremap <A-k> <C-\><C-N><C-w>k
-    " :tnoremap <A-l> <C-\><C-N><C-w>l
-    " :inoremap <A-h> <C-\><C-N><C-w>h
-    " :inoremap <A-j> <C-\><C-N><C-w>j
-    " :inoremap <A-k> <C-\><C-N><C-w>k
-    " :inoremap <A-l> <C-\><C-N><C-w>l
-    " :nnoremap <A-h> <C-w>h
-    " :nnoremap <A-j> <C-w>j
-    " :nnoremap <A-k> <C-w>k
-    " :nnoremap <A-l> <C-w>l
-
-    " New Z commands:
     " Z   = Save current file
     " ZZZ = Force Quit all
     " ZQQ = Save and Close all
@@ -85,10 +68,11 @@ function! LoadDefaultKeybinds()
     nmap <F4> :TagbarToggle<CR>
 
     " noremap <Space>
-    nmap <Space>c :call 
-    noremap <Space>r :%s//g<Left><Left>
+    nmap <Space>c :call
+    nnoremap <Space>r :%s//g<Left><Left>
     noremap <Space><Tab> :Tabularize /
     noremap <Space>h :help<Space>
+    vnoremap <Space>h :help <C-r>"<CR>
     noremap <Space>w :VimwikiUISelect<CR>
     noremap <C-Space>v :call AsheToggleVirtualEdit()<CR>
     noremap <C-Space>c :call Colorizer#ColorOff()<CR>:call Colorizer#ColorToggle()<CR>
@@ -105,4 +89,9 @@ function! LoadDefaultKeybinds()
     echohl None
 endfunction
 
+if exists('g:is_debugging')
+    call LoadDefaultKeybinds()
+endif
+    
+let did_keybinds_vimdid_keybinds_vim = 2
 echohl Function | echo 'Loaded script file: keybinds.vim' | echohl None

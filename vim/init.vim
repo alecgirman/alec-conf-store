@@ -1,6 +1,7 @@
-if exists('ashe_didinit')
-    finish                      
+if exists('did_asheinit_vim') || &cp || version < 700
+    finish
 endif
+let did_asheinit_vim = 1
 
 function! InitCore()
     " % - current file
@@ -14,6 +15,7 @@ function! InitCore()
     set autowrite
     set autoread
     set number
+    set relativenumber
     set laststatus=2
     set showtabline=2
     set scrolloff=10
@@ -21,6 +23,7 @@ function! InitCore()
     set completeopt=longest,menuone,preview
     set wildmode=list:longest
     set modeline
+    set noswapfile
 
     " search settings
     set ignorecase      " Ignore case in search and seek commands
@@ -41,7 +44,6 @@ function! InitCore()
     set autoindent
     set expandtab
     set smarttab
-     
 
     " Misc settings
     set wildmenu
@@ -53,9 +55,6 @@ function! InitCore()
     set diffexpr+=iblank
 
     syntax on
-
-    source $VIMRUNTIME/menu.vim
-    source $VIMRUNTIME/synmenu.vim
 endfunction
 
 "ashedir = '~/.vim'
@@ -93,3 +92,5 @@ function! FullInit()
 endfunction
 
 command! -nargs=0 FullInit :call FullInit()
+
+let did_asheinit_vim-2 " init complete indicator
