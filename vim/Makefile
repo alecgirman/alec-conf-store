@@ -6,6 +6,7 @@ TARGET ?= neovim
 
 # describe (BASE_DIR) The base install directory, this is where all of the on-load scripts are put.
 # describe (BASE_FILES) All original Ashe Vim scripts
+# BASE_FTPLUGIN
 # describe (BASE_POSTDIR) This refers to 'after' directory, or the directory of scripts that is executed after everything else.
 # describe (COC_EXTDIR) The extension directory for Commander of Completion (COC).  This installation also configures all essential COC plugins.
 # describe (COPYCMD) Command and arguments used to copy files, in general, should expect any nymber of inputs and one final argument of a folder to put the files into.
@@ -22,6 +23,7 @@ endif
 BASE_DIR = ${TARGET_DIR}/plugin/ashe
 # describe (TARGET_DIR) The directory of your selected client.  You do not need to set this!
 BASE_POSTDIR = ${TARGET_DIR}/after/plugin
+BASE_FTPLUGIN = ${TARGET_DIR}/ftplugin
 BASE_FILES = *.vim
 COC_EXTDIR = ~/.config/coc/extensions
 
@@ -48,6 +50,7 @@ install:
 	mkdir -p ${BASE_DIR}/
 	${COPYCMD} ${BASE_FILES} ${BASE_DIR}/
 	mkdir -p ${BASE_POSTDIR}
+	${COPYCMD} ./ftplugin/ ${BASE_FTPLUGIN}
 	echo "call ConfigurePostload()" > ${BASE_POSTDIR}/ashe.vim
 
 # describe 

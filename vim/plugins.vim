@@ -1,7 +1,7 @@
 if exists('did_plugins_vim') || &cp || version < 700
     finish
 endif
-let did_plugins_vimdid_plugins_vim = 1
+let did_plugins_vim = 1
 
 " Warning: the line below this changes frequently and is subject to change
 " at any moments notice, be cautions when using it in your code :)
@@ -98,11 +98,13 @@ function! ConfigurePluginsPreload()
 endfunction
 
 function! ConfigurePluginsPostload()
-    AirlineToggleWhitespace
-    AirlineTheme powerlineish
-    colo onedark
-    echohl Question | echo '[Post] Configured installed plugins' | echohl None
+    if exists('did_asheinit_vim')
+        AirlineToggleWhitespace
+        AirlineTheme powerlineish
+        colo onedark
+        echohl Question | echo '[Post] Configured installed plugins' | echohl None
+    endif
 endfunction
 
-let did_plugins_vimdid_plugins_vim = 2
+let did_plugins_vim = 2
 echohl Function | echo 'Loaded script file: plugins.vim' | echohl None
