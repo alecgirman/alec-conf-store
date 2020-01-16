@@ -1,3 +1,8 @@
+if exists('did_ashecolors_vim') || &cp || version < 700
+    finish
+endif
+let did_ashecolors_vim = 1
+
 " MISC COLOR SETTINGS
 " let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 " let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
@@ -21,4 +26,5 @@ function! ConfigureColors()
     hi TabLineFill gui=NONE cterm=NONE term=NONE guibg=#404040
 endfunction
 
+let did_ashecolors_vim = 2
 echohl Function | echo 'Loaded script file: colors.vim' | echohl None

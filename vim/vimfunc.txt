@@ -1,0 +1,1 @@
+ack '^function' | tee; ack '^endf' | tee

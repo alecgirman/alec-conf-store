@@ -1,9 +1,10 @@
-function! AvXCDToCurrentBuf()
-    let s:bufpath = expand("%:p")
-    call system('cd ' . s:bufpath)
+function! CDToCurrentBuf()
+    call system("cd %:p:h")
+    let s:cwd = system("pwd")
+    cd s:cwd
 endfunction
 
-function! AvXToggleVirtualEdit()
+function! ToggleVirtualEdit()
     if &virtualedit == 'all'
         echo 'virtualedit is now off'
         set ve=
@@ -11,4 +12,8 @@ function! AvXToggleVirtualEdit()
         echo 'virtualedit is now on'
         set ve=all
     endif
+endfunction
+
+function SL_date()
+    return system('date +%T')
 endfunction

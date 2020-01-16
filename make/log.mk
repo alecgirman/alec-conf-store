@@ -1,1 +1,3 @@
-
+define log
+	
+endef

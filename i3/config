@@ -157,3 +157,5 @@ bindsym Mod1+r mode "resize"
 bar {
     status_command i3blocks
 }
+
+# vim: set ft=i3config

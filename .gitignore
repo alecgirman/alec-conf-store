@@ -5,7 +5,6 @@
 # but sometimes I need somewhere to store some output or something idk
 .etc/
 python/
-Vundle.vim/
 modules/
 
 __pycache__/
@@ -15,3 +14,4 @@ __pycache__/
 
 docs/stuff/*
 legacy/
+node_modules/

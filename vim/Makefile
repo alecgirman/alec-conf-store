@@ -1,9 +1,17 @@
 .PHONY: uninstall install
 
-# can be vim or neovim
-TARGET=vim
+TARGET ?= neovim
+# describe (TARGET) Select the vim client you'd like to install for (vim or neovim)
+# describe (TARGET_DIR) The directory of your selected client.  You do not need to set this!
 
-# When uninstalling, DO NOT REMOVE the $TARGET_DIR
+# describe (BASE_DIR) The base install directory, this is where all of the on-load scripts are put.
+# describe (BASE_FILES) All original Ashe Vim scripts
+# describe (BASE_POSTDIR) This refers to 'after' directory, or the directory of scripts that is executed after everything else.
+# describe (COC_EXTDIR) The extension directory for Commander of Completion (COC).  This installation also configures all essential COC plugins.
+# describe (COPYCMD) Command and arguments used to copy files, in general, should expect any nymber of inputs and one final argument of a folder to put the files into.
+# describe (DIFFCMD) Command and arguments used to compare files/folders.  This command produces a list of all differences between the this copy and your local installlation.
+# describe (NODE_VERSION) The version of NodeJS that is detected on your system.
+
 ifeq (${TARGET}, vim)
 	TARGET_DIR=~/.vim
 endif
@@ -12,16 +20,22 @@ ifeq (${TARGET}, neovim)
 endif
 
 BASE_DIR = ${TARGET_DIR}/plugin/ashe
+# describe (TARGET_DIR) The directory of your selected client.  You do not need to set this!
 BASE_POSTDIR = ${TARGET_DIR}/after/plugin
 BASE_FILES = *.vim
-COC_PATH = pack/coc/start
 COC_EXTDIR = ~/.config/coc/extensions
 
-COPYCMD = cp -uv
+NODE_VERSION=''
+
+COPYCMD = cp
 DIFFCMD = diff --color -a
 
 PLUG_URL = https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
 
+describe:
+	echo $1
+
+# should only be used for testing
 all: purge
 	make TARGET=vim install
 	make TARGET=vim install-coc
@@ -36,36 +50,32 @@ install:
 	mkdir -p ${BASE_POSTDIR}
 	echo "call ConfigurePostload()" > ${BASE_POSTDIR}/ashe.vim
 
-install-coc: check-deps
-	# verify node is installed
-	mkdir -p ${COC_EXTDIR}
-	cp package.json ${COC_EXTDIR}
-	cd ${COC_EXTDIR}
-	npm install
-	#rm -rfv coc.nvim-release node_modules
-	#rm -v package-lock.json
-
+# describe 
 install-vimplug:
 	mkdir -p ${TARGET_DIR}/autoload
 	curl -fLo ${TARGET_DIR}/autoload/plug.vim ${PLUG_URL}
 
-uninstall-vimplug:
+uninstall-extplugins:
 	rm -rfv ${TARGET_DIR}/autoload/plug.vim
-
-uninstall-coc:
 	rm -rfv ${COC_EXTDIR}
 
 uninstall:
-	# must use --force or else directories that are already removed will cause it to fail
-	# which could result in files that are 'stuck' there.
 	rm -rfv ${BASE_DIR}/
 
-purge: uninstall uninstall-vimplug uninstall-coc
-	rm -rfv ${COC_PATH}/
+pull-local-snippets:
+	cp ~/.config/coc/ultisnips/ ./
+	mv ./ultisnips ./snippets
+
+purge: uninstall uninstall-extplugins
+	rm -rf ~/.config/coc
+	rm -rf ~/.vim/
 
 diffs:
-	${DIFFCMD} ./ ${BASE_DIR}/ | sed '/Only in/d'
+	${DIFFCMD} ${BASE_DIR}/ ./
 
 check-deps:
-	node --version
-	npm --version
+	NODE_LOCATION=$(shell which node)
+	NPM_VERSION=$(shell npm --version)
+	@echo "Automatically detected installed NodeJS"
+	@echo "Installed version: ${NODE_VERSION}"
+	# TODO: Check for vim/neovim

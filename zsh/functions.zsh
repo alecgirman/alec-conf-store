@@ -28,7 +28,7 @@ function clonerepo() {
     git clone $1
 }
 
-for file in $(find autoload); do
+for file in $(find ./autoload | ack '\.zsh$'); do
     source $file
 done
 
