@@ -24,3 +24,6 @@ dotsync:
 	cp -u alias.zsh ~/.zsh/
 	cp -u autoload/ ~/.zsh/autoload -r
 	@echo 'Installation complete!'
+
+# TODO: Install base  packages.  Give the option to install
+# from various package managers

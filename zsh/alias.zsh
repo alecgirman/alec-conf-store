@@ -3,7 +3,6 @@ alias keep='noglob keep' # TODO wtf does this do
 alias howdoi='howdoi -c'
 alias sed='sed -E'
 alias ack='ack -i'
-alias find='find -'
 
 # Common
 alias afind='ack -il'
