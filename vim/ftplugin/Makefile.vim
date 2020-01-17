@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 augroup FTSwapHandlers
     " this one is which you're most likely to use?
     autocmd BufRead,BufNewFile Makefile, *.mk s:swapactive
@@ -6,11 +7,10 @@ augroup end
 
 
 
-func! s:swapactive()
-    echo "Youre on a makefile"
-endf
 
+if exists('did_avex_Makefile_vim') || &cp || version < 700
+    finish
+endif
+let did_avex_Makefile_vim = 1
 
-func! s:swapinactive()
-    echo "Youre not on a makefile anymore!"
-endf
+echohl Title | echomsg "Makefile filetype vimscript sourced" | echohl None

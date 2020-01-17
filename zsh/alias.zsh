@@ -67,6 +67,7 @@ alias addfunction="$EDITOR /ashe/zsh/functions.zsh"
 alias emak="$EDITOR Makefile"
 
 # tmux
+alias tmux='tmux -2'
 alias tmls='tmux list-sessions'
 alias tma='tmux attach -t'
 
