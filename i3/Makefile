@@ -1,3 +1,10 @@
+install-auto:
+	ifeq (${HOSTNAME}, tux)
+		 make install-desktop
+	else
+		 make install-surface
+	endif
+
 install-blocks:
 	mkdir -p ~/.config/i3blocks/
 	cp -uv ./i3blocks.config ~/.config/i3blocks/config

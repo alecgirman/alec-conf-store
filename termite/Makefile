@@ -2,6 +2,14 @@
 
 # TODO: Install fonts
 
+
+install-auto:
+	ifeq (${HOSTNAME}, tux)
+		 make install-desktop
+	else
+		 make install-surface
+	endif
+
 install-desktop:
 	@echo 'Installing termite config file for desktop (smaller font)'
 	mkdir -p ~/.config/termite

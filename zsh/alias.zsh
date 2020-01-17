@@ -54,6 +54,10 @@ alias :q='echo "this isnt vim!"'
 alias start-dockerd='dockerd &> /dev/null &'
 alias ds='docker search'
 
+# systemctl
+alias start='systemctl start'
+alias stop='systemctl stop'
+alias status='systemctl status'
 # ack
 alias ap='ack --nocolor -os'
 # ack show only matches, must run ack with -o
@@ -78,12 +82,6 @@ alias fsh='du -sh'
 alias fpstat="stat --format=%a"     # file permission stat
 alias pre='head'              # preview file
 alias prel='head -n'              # preview file
-
-# find (file) ops
-
-# REPLACED BY 'find' and 'findhere'
-# alias ffile='findfile'       # defined in functions
-# alias ffir='findfileinroot'  # defined in functions
 
 alias clearcache='echo 3 > /proc/sys/vm/drop_caches'
 

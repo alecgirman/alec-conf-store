@@ -35,7 +35,7 @@ DIFFCMD = diff --color -a
 PLUG_URL = https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
 
 describe:
-	echo $1
+	echo $@
 
 # should only be used for testing
 all: purge
