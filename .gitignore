@@ -15,5 +15,3 @@ __pycache__/
 docs/stuff/*
 legacy/
 node_modules/
-
-tmp/

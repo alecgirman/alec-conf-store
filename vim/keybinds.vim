@@ -1,7 +1,7 @@
 if exists('did_keybinds_vim') || &cp || version < 700
     finish
 endif
-let did_keybinds_vim = 1
+let did_keybinds_vimdid_keybinds_vim = 1
 
 function! LoadDefaultKeybinds()
     " =======================
@@ -25,26 +25,24 @@ function! LoadDefaultKeybinds()
     " quickly turn off highlighting after a search
     noremap H :noh<CR>
 
+    nnoremap
     nnoremap gl :CocList --list<CR>
     nnoremap gls :CocList snippets<CR>
-
-    nnoremap bls :ls<CR>:b 
 
     " K by default is binded to manpages/docs
     " and that's too good of a shortcut to lose
     " TODO: F1 might do this too, try it too
     noremap L K
-    noremap oo 2ojj
 
-    " nnoremap <Up> <C-w>+
-    " nnoremap <Down> <C-w>-
-    " nnoremap <Right> <C-w>>
-    " nnoremap <Left> <C-w><
+    nnoremap <Up> <C-w>+
+    nnoremap <Down> <C-w>-
+    nnoremap <Right> <C-w>>
+    nnoremap <Left> <C-w><
 
-    " nnoremap <S-Up> 5<C-w>+
-    " nnoremap <S-Down> 5<C-w>-
-    " nnoremap <S-Right> 5<C-w>>
-    " nnoremap <S-Left> 5<C-w><
+    nnoremap <S-Up> 5<C-w>+
+    nnoremap <S-Down> 5<C-w>-
+    nnoremap <S-Right> 5<C-w>>
+    nnoremap <S-Left> 5<C-w><
 
     " Z   = Save current file
     " ZZZ = Force Quit all
@@ -69,9 +67,9 @@ function! LoadDefaultKeybinds()
     nmap <F3> :UndotreeToggle<CR>
     nmap <F4> :TagbarToggle<CR>
 
+    " noremap <Space>
     nmap <Space>c :call
-    nnoremap <Space>s :%s//g<Left><Left>
-    nnoremap <Space>r :r 
+    nnoremap <Space>r :%s//g<Left><Left>
     noremap <Space><Tab> :Tabularize /
     noremap <Space>h :help<Space>
     vnoremap <Space>h :help <C-r>"<CR>
@@ -95,5 +93,5 @@ if exists('g:is_debugging')
     call LoadDefaultKeybinds()
 endif
     
-let did_keybinds_vim = 2
+let did_keybinds_vimdid_keybinds_vim = 2
 echohl Function | echo 'Loaded script file: keybinds.vim' | echohl None
