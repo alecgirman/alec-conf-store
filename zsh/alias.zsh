@@ -54,6 +54,10 @@ alias :q='echo "this isnt vim!"'
 alias start-dockerd='dockerd &> /dev/null &'
 alias ds='docker search'
 
+# systemctl
+alias start='systemctl start'
+alias stop-'systemctl stop'
+
 # ack
 alias ap='ack --nocolor -os'
 # ack show only matches, must run ack with -o
@@ -65,6 +69,7 @@ alias addfunction="$EDITOR /ashe/zsh/functions.zsh"
 
 # im proud of this one
 alias emak="$EDITOR Makefile"
+alias testmake="make -n"
 
 # tmux
 alias tmux='tmux -2'
