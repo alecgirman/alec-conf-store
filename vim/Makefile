@@ -52,6 +52,8 @@ install:
 	mkdir -p ${BASE_POSTDIR}
 	${COPYCMD} ./ftplugin/ ${BASE_FTPLUGIN}
 	${COPYCMD} ./package.json ${COC_EXTDIR}/
+	pushd ${COC_EXTDIR}
+	npm install
 
 # describe 
 install-vimplug:
@@ -81,4 +83,4 @@ check-deps:
 	NPM_VERSION=$(shell npm --version)
 	@echo "Automatically detected installed NodeJS"
 	@echo "Installed version: ${NODE_VERSION}"
-	# TODO: Check for vim/neovim
+	# TODO: Check for vim/neovim installation

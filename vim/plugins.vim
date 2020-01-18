@@ -3,10 +3,6 @@ if exists('did_plugins_vim') || &cp || version < 700
 endif
 let did_plugins_vim = 1
 
-" Warning: the line below this changes frequently and is subject to change
-" at any moments notice, be cautions when using it in your code :)
-" colorscheme wombat256mod
-
 " Plugin key-mappings.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
 " imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -99,12 +95,14 @@ endfunction
 
 function! ConfigurePluginsPostload()
     if exists('did_asheinit_vim')
-        AirlineToggleWhitespace
-        AirlineTheme powerlineish
+        " set fallback theme"
         colo onedark
+        colo impactjs
+        AirlineTheme powerlineish
+        AirlineToggleWhitespace
         echohl Question | echo '[Post] Configured installed plugins' | echohl None
     endif
 endfunction
 
 let did_plugins_vim = 2
-echohl Function | echo 'Loaded script file: plugins.vim' | echohl None
+et chohl Function | echo 'Loaded script file: plugins.vim' | echohl None

@@ -18,6 +18,8 @@ function! ConfigureColors()
         colo default
         set bg=dark notgc
     else
+        set t_AB=[48;5;%dm
+        set t_AF=[38;5;%dm
         colo onedark
         set bg=dark t_Co=256 tgc
     endif

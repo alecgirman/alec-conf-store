@@ -26,7 +26,7 @@ function! LoadDefaultKeybinds()
     noremap H :noh<CR>
 
     nnoremap
-    nnoremap gl :CocList --list<CR>
+    nnoremap gl :CocList --normal<CR>
     nnoremap gls :CocList snippets<CR>
 
     " K by default is binded to manpages/docs
@@ -74,6 +74,7 @@ function! LoadDefaultKeybinds()
     noremap <Space>h :help<Space>
     vnoremap <Space>h :help <C-r>"<CR>
     noremap <Space>w :VimwikiUISelect<CR>
+    
     noremap <C-Space>v :call AsheToggleVirtualEdit()<CR>
     noremap <C-Space>c :call Colorizer#ColorOff()<CR>:call Colorizer#ColorToggle()<CR>
     noremap <C-Space>C :windo call Colorizer#ColorOff()<CR>:call Colorizer#ColorToggle()<CR>
@@ -89,9 +90,9 @@ function! LoadDefaultKeybinds()
     echohl None
 endfunction
 
-if exists('g:is_debugging')
+if file_readable('.vimdebug')
     call LoadDefaultKeybinds()
 endif
     
-let did_keybinds_vimdid_keybinds_vim = 2
+let did_keybinds_vim = 2
 echohl Function | echo 'Loaded script file: keybinds.vim' | echohl None
