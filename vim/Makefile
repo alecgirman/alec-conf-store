@@ -29,7 +29,7 @@ COC_EXTDIR = ~/.config/coc/extensions
 
 NODE_VERSION=''
 
-COPYCMD = cp
+COPYCMD = cp -rv
 DIFFCMD = diff --color -a
 
 PLUG_URL = https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
@@ -51,7 +51,7 @@ install:
 	${COPYCMD} ${BASE_FILES} ${BASE_DIR}/
 	mkdir -p ${BASE_POSTDIR}
 	${COPYCMD} ./ftplugin/ ${BASE_FTPLUGIN}
-	echo "call ConfigurePostload()" > ${BASE_POSTDIR}/ashe.vim
+	${COPYCMD} ./package.json ${COC_EXTDIR}/
 
 # describe 
 install-vimplug:
@@ -66,7 +66,7 @@ uninstall:
 	rm -rfv ${BASE_DIR}/
 
 pull-local-snippets:
-	cp ~/.config/coc/ultisnips/ ./
+	${COPYCMD} ~/.config/coc/ultisnips/ ./
 	mv ./ultisnips ./snippets
 
 purge: uninstall uninstall-extplugins
