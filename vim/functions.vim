@@ -1,4 +1,5 @@
 function! CDToCurrentBuf()
+
     call system("cd %:p:h")
     let s:cwd = system("pwd")
     cd s:cwd

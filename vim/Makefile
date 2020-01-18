@@ -34,16 +34,22 @@ DIFFCMD = diff --color -a
 
 PLUG_URL = https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
 
+# NOTE: No need to do anything fancy with the local wiki, like moving it or sort of sync tasks.
+# Just add the list of active wikis.  While there is a variable that you can set PRIOR to loading
+# that will preconfigure the wiki engine, it may also be opened POST load by opening one of the
+# .wiki files in it.  When Starting up, we havae many options, but here are the simplest and
+# most efficient: We either a) :edit /var/wiki/index.wiki followed by a :q, or b) :e /var/wiki/home.wiki
+# whre home.wiki is a well made 'home screen' for each new vim session.  For the sake of time, It
+# will start with using option a.
+
 describe:
 	echo $1
 
 # should only be used for testing
 all: purge
 	make TARGET=vim install
-	make TARGET=vim install-coc
 	make TARGET=vim install-vimplug
 	make TARGET=neovim install
-	make TARGET=neovim install-coc
 	make TARGET=neovim install-vimplug
 
 install:

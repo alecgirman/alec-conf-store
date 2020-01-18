@@ -6,7 +6,6 @@ let did_plugins_vim = 1
 " Plugin key-mappings.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
 " imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-" smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 " xmap <C-k>     <Plug>(neosnippet_expand_target)
 " 
 " if has('conceal')
@@ -90,6 +89,11 @@ function! ConfigurePluginsPreload()
 
     " If you want :UltiSnipsEdit to split your window.
     let g:UltiSnipsEditSplit="vertical"
+    
+    let g:vimwiki_use_mouse=1
+    let g:vimwiki_dir_link=index
+    " optional
+    let g:vimwiki_listsyms = '✗○◐●✓'
     echohl Question | echo '[Pre] Configured installed plugins' | echohl None
 endfunction
 
@@ -105,4 +109,4 @@ function! ConfigurePluginsPostload()
 endfunction
 
 let did_plugins_vim = 2
-et chohl Function | echo 'Loaded script file: plugins.vim' | echohl None
+echohl Function | echo 'Loaded script file: plugins.vim' | echohl None

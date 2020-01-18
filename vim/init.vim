@@ -91,6 +91,7 @@ function! FullInit()
     call LateInit()
 endfunction
 
+" TODO: move to autoload
 command! -nargs=0 FullInit :call FullInit()
 
 let did_asheinit_vim-2 " init complete indicator

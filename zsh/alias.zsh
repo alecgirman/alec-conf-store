@@ -60,7 +60,7 @@ alias stop-'systemctl stop'
 
 # ack
 alias ap='ack --nocolor -os'
-# ack show only matches, must run ack with -o
+# ack show only matches, must run ack with -o | ack-only-matches
 alias aom='cut -f3 -d:'
 
 # quick add alias/function
