@@ -4,7 +4,7 @@ if exists('ashe_did_keybinds_vim') || &cp || version < 700
 endif
 let ashe_did_keybinds_vim = 1
 
-function! ashe#keys#LoadDefaultKeybinds()
+function! ashe#keybinds#LoadDefaultKeybinds()
     " =======================
     " K E Y B I N D I N G S
     " =======================

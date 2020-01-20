@@ -1,5 +1,5 @@
 TARGET_DIR=~/.vim
-LOADER_DIR = ${TARGET_DIR}/plugin/ashe
+LOADER_DIR = ${TARGET_DIR}/plugin/
 BASE_FILES = *.vim
 
 COPYCMD = cp -rv
@@ -12,12 +12,13 @@ install: install-loader install-core
 install-loader:
 	# install init.vim
 	mkdir -p ${LOADER_DIR}/
-	${COPYCMD} init.vim ${LOADER_DIR}}/
+	${COPYCMD} init.vim ${LOADER_DIR}/
 
 install-core:
-	# install the rest of the files into the autoload directory
-	${COPYCMD} ${BASE_FILES} ${TARGET_DIR}/autoload/
-	rm -fv ${TARGET_DIR}/autoload/init.vim
+	# install the rest of the files into the autoload/ashe directory
+	mkdir -p ${TARGET_DIR}/autoload/ashe
+	${COPYCMD} ${BASE_FILES} ${TARGET_DIR}/autoload/ashe/
+	rm -fv ${TARGET_DIR}/autoload/ashe/init.vim
 	
 install-vimplug:
 	mkdir -p ${TARGET_DIR}/autoload

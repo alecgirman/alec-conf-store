@@ -62,29 +62,29 @@ endfunction
 
 
 
-function! SourceInternals()
-    source! ~/.vim/plugin/plugins.vim
-    source! ~/.vim/plugin/functions.vim
-    source! ~/.vim/plugin/keybinds.vim
-    source! ~/.vim/plugin/colors.vim
-endfunction
+" function! SourceInternals()
+"     source! ~/.vim/plugin/plugins.vim
+"     source! ~/.vim/plugin/functions.vim
+"     source! ~/.vim/plugin/keybinds.vim
+"     source! ~/.vim/plugin/colors.vim
+" endfunction
 
 function! ConfigurePostload()
-    call ashe#postload#ConfigurePluginsPostload()
-    call ashe#postload#LoadDefaultKeybinds()
-    call ashe#postload#ConfigureColors()
+    call ashe#postloader#ConfigurePluginsPostload()
+    call ashe#postloader#LoadDefaultKeybinds()
+    call ashe#postloader#ConfigureColors()
 endfunction
 
 function! EarlyInit()
-    call ashe#postload#SourceInternals()
-    call ashe#postload#InitCore()
-    call ashe#postload#ConfigurePluginsPreload()
+    call ashe#postloader#SourceInternals()
+    call ashe#postloader#InitCore()
+    call ashe#postloader#ConfigurePluginsPreload()
 endfunction
 
 function! LateInit()
-    call ashe#postload#InstallThirdPartyPlugins()
+    call ashe#postloader#InstallThirdPartyPlugins()
     call ConfigurePostload()
-    call ashe#postload#LoadDefaultKeybinds()
+    call ashe#postloader#LoadDefaultKeybinds()
 endfunction
 
 function! FullInit()

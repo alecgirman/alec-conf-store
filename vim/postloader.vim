@@ -12,7 +12,7 @@ let ashe_didpostload = 1
 " set t_ut=
 " set t_Co=256
 
-function! ashe#postload#ConfigureColors()
+function! ashe#postloader#ConfigureColors()
 
     " In the system console, very limited color support
     let s:ashe_colormode = 0
@@ -43,7 +43,7 @@ function! ashe#postload#ConfigureColors()
 endfunction
 
 
-function! ashe#postload#InstallThirdPartyPlugins()
+function! ashe#postloader#InstallThirdPartyPlugins()
     call plug#begin('~/.vim/plugged')
     Plug 'Shougo/neoinclude.vim'
     Plug 'vim-airline/vim-airline'
@@ -92,7 +92,7 @@ function! ashe#postload#InstallThirdPartyPlugins()
     PlugInstall!
 endfunction
 
-function! ashe#postload#ConfigurePluginsPreload()
+function! ashe#postloader#ConfigurePluginsPreload()
     let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
     let g:airline_powerline_fonts=1
     let g:airline#extensions#tabline#enabled=1
@@ -116,7 +116,7 @@ function! ashe#postload#ConfigurePluginsPreload()
     echohl Question | echomsg '[Pre] Configured installed plugins' | echohl None
 endfunction
 
-function! ashe#postload#ConfigureSnippets()
+function! ashe#postloader#ConfigureSnippets()
     let g:neosnippet#snippets_directory='/var/snippets/'
 
     " Plugin key-mappings.
@@ -150,7 +150,7 @@ function! ashe#postload#ConfigureSnippets()
     call deoplete#enable()
 endfunction
 
-function! ashe#postload#ConfigurePluginsPostload()
+function! ashe#postloader#ConfigurePluginsPostload()
     if exists('ashe_didpostload')
         " colo impactjs
         AirlineTheme powerlineish
