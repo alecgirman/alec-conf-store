@@ -32,11 +32,12 @@ function! InitCore()
     set hlsearch        " Highlight search matches
 
     set mouse=a             " Enable full mouse support
+    set mousemodel=popup  " Define the mouse model
 
-    if !has ('nvim')
+    if !has ('nvim')		" only works in vim
         set ttymouse=sgr      " Set terminal mouse input mode
-        set mousemodel=popup_setpos    " Define the mouse model
     endif
+
 
     " Editor tab settings
     set tabstop=4
@@ -59,6 +60,8 @@ endfunction
 
 "ashedir = '~/.vim'
 
+
+
 function! SourceInternals()
     source! ~/.vim/plugin/plugins.vim
     source! ~/.vim/plugin/functions.vim
@@ -67,21 +70,21 @@ function! SourceInternals()
 endfunction
 
 function! ConfigurePostload()
-    call ConfigurePluginsPostload()
-    call LoadDefaultKeybinds()
-    call ConfigureColors()
+    call ashe#postload#ConfigurePluginsPostload()
+    call ashe#postload#LoadDefaultKeybinds()
+    call ashe#postload#ConfigureColors()
 endfunction
 
 function! EarlyInit()
-    call SourceInternals()
-    call InitCore()
-    call ConfigurePluginsPreload()
+    call ashe#postload#SourceInternals()
+    call ashe#postload#InitCore()
+    call ashe#postload#ConfigurePluginsPreload()
 endfunction
 
 function! LateInit()
-    call InstallThirdPartyPlugins()
+    call ashe#postload#InstallThirdPartyPlugins()
     call ConfigurePostload()
-    call LoadDefaultKeybinds()
+    call ashe#postload#LoadDefaultKeybinds()
 endfunction
 
 function! FullInit()
@@ -92,4 +95,4 @@ endfunction
 " TODO: move to autoload
 command! -nargs=0 FullInit :call FullInit()
 
-let did_asheinit_vim-2 " init complete indicator
+let did_asheinit_vim=2 " init complete indicator

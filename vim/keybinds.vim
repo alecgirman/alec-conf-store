@@ -4,7 +4,7 @@ if exists('ashe_did_keybinds_vim') || &cp || version < 700
 endif
 let ashe_did_keybinds_vim = 1
 
-function! LoadDefaultKeybinds()
+function! ashe#keys#LoadDefaultKeybinds()
     " =======================
     " K E Y B I N D I N G S
     " =======================
@@ -91,6 +91,3 @@ function! LoadDefaultKeybinds()
     echomsg "ASHE: Loaded Default keybindings"
     echohl None
 endfunction
-
-let ashe_did_keybinds_vim = 2
-echohl Function | echomsg 'Loaded script file: keybinds.vim' | echohl None
