@@ -1,7 +1,8 @@
-if exists('did_keybinds_vim') || &cp || version < 700
+if exists('ashe_did_keybinds_vim') || &cp || version < 700
+	echomsg 'ashe_did_keybinds_vim exists in namespace'
     finish
 endif
-let did_keybinds_vimdid_keybinds_vim = 1
+let ashe_did_keybinds_vim = 1
 
 function! LoadDefaultKeybinds()
     " =======================
@@ -28,6 +29,7 @@ function! LoadDefaultKeybinds()
     nnoremap
     nnoremap gl :CocList --normal<CR>
     nnoremap gls :CocList snippets<CR>
+    nnoremap gl/ :CocList<CR>
 
     " K by default is binded to manpages/docs
     " and that's too good of a shortcut to lose
@@ -56,7 +58,7 @@ function! LoadDefaultKeybinds()
     nmap ZV :w<CR>:source %<CR>
     nmap ZT :tabclose!<CR>
 
-    " Open a terminal window
+    " Open a terminal window - keep forgetting this one exists
     noremap <Space>! :vs<CR><C-w>l:term<CR>i
 
     " Terminal mode mappings
@@ -90,9 +92,5 @@ function! LoadDefaultKeybinds()
     echohl None
 endfunction
 
-if file_readable('.vimdebug')
-    call LoadDefaultKeybinds()
-endif
-    
-let did_keybinds_vim = 2
-echohl Function | echo 'Loaded script file: keybinds.vim' | echohl None
+let ashe_did_keybinds_vim = 2
+echohl Function | echomsg 'Loaded script file: keybinds.vim' | echohl None

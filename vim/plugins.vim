@@ -1,27 +1,7 @@
-if exists('did_plugins_vim') || &cp || version < 700
+if exists('g:ashe_did_plugins_vim') || &cp || version < 700
     finish
 endif
-let did_plugins_vim = 1
-
-" Plugin key-mappings.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-" imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-" xmap <C-k>     <Plug>(neosnippet_expand_target)
-" 
-" if has('conceal')
-" 	set conceallevel=1 concealcursor=niv
-" endif
-" 
-" " Enable snipMate compatibility feature.
-" let g:neosnippet#enable_snipmate_compatibility = 1
-" 
-" " BUG: if other users use this config, they cant access /root
-" " TODO: Move into /usr/share/vim/vimfiles
-" let g:neosnippet#snippets_directory='/root/.vim/snippets/'
-" call g:deoplete#custom#option('auto_complete_delay', 200)
-" call g:deoplete#custom#option('smart_case', v:true)
-" 
-" call g:deoplete#enable()
+let g:ashe_did_plugins_vim = 1
 
 function! InstallThirdPartyPlugins()
     call plug#begin('~/.vim/plugged')
@@ -45,9 +25,6 @@ function! InstallThirdPartyPlugins()
     Plug 'ervandew/supertab'
     Plug 'plasticboy/vim-markdown'
     Plug 'mboughaba/i3config.vim'
-    Plug 'kana/vim-textobj-user'
-    Plug 'xolox/vim-misc'
-    Plug 'xolox/vim-notes'
     Plug 'vim-scripts/c.vim'
     Plug 'vimwiki/vimwiki'
     Plug 'blindFS/vim-taskwarrior' 
@@ -64,15 +41,14 @@ function! InstallThirdPartyPlugins()
     Plug 'Shougo/neosnippet-snippets'
     Plug 'Shougo/deoplete.nvim'
     Plug 'Shougo/denite.nvim'
-    Plug 'Shougo/deoppet.nvim'
     Plug 'Shougo/deol.nvim'
     Plug 'Shougo/neosnippet.vim'
     Plug 'dense-analysis/ale'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'hiphish/info.vim'
-    Plug 'reconquest/vim-pythonx'
     Plug 'SirVer/UltiSnips'
     Plug 'kien/ctrlp.vim'
+    Plug 'mileszs/ack.vim'
     PlugInstall!
 endfunction
 
@@ -82,31 +58,66 @@ function! ConfigurePluginsPreload()
     let g:airline#extensions#tabline#enabled=1
     let g:airline#extensions#tabline#show_close_button=1
     let g:miniBufExplAutoStart=0
-    " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+
     let g:UltiSnipsExpandTrigger="<C-k>"
     let g:UltiSnipsJumpForwardTrigger="<c-b>"
     let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-    " If you want :UltiSnipsEdit to split your window.
     let g:UltiSnipsEditSplit="vertical"
-    
+
+    let g:vimwiki_list = [{'path': '~/my_site/', 'path_html': '~/public_html/'}]
+    let g:vimwiki_wikidir = /var/wiki
     let g:vimwiki_use_mouse=1
-    let g:vimwiki_dir_link=index
-    " optional
+    let g:vimwiki_dir_link=index  " Default .wiki file for new directories
     let g:vimwiki_listsyms = '✗○◐●✓'
-    echohl Question | echo '[Pre] Configured installed plugins' | echohl None
+
+	" I'm not sure if I'll need to reinstall the plugins agaian but they
+	" are listed in the coc-packagelist.txt file.
+	CocEnable | CocStart
+    echohl Question | echomsg '[Pre] Configured installed plugins' | echohl None
+endfunction
+
+function! ConfigureSnippets()
+    let g:neosnippet#snippets_directory='/var/snippets/'
+
+    " Plugin key-mappings.
+    " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+    imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+    smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+    xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+    " SuperTab like snippets' behavior.
+    " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+    imap <expr><TAB>
+                \ pumvisible() ? "\<C-n>" :
+                \ neosnippet#expandable_or_jumpable() ?
+                \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+    smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+                \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+    " For conceal markers.
+    if has('conceal')
+        set conceallevel=2 concealcursor=niv
+    endif
+
+    " Enable snipMate compatibility feature.
+    let g:neosnippet#enable_snipmate_compatibility = 1
+
+    " Expand the completed snippet trigger by <CR>.
+    imap <expr><CR>
+                \ (pumvisible() && neosnippet#expandable()) ?
+                \ "\<Plug>(neosnippet_expand)" : "\<CR>"
+
+    call deoplete#enable()
 endfunction
 
 function! ConfigurePluginsPostload()
     if exists('did_asheinit_vim')
-        " set fallback theme"
-        colo onedark
-        colo impactjs
+        " colo impactjs
         AirlineTheme powerlineish
         AirlineToggleWhitespace
-        echohl Question | echo '[Post] Configured installed plugins' | echohl None
+        echohl Question | echomsg '[Post] Configured installed plugins' | echohl None
     endif
 endfunction
 
 let did_plugins_vim = 2
-echohl Function | echo 'Loaded script file: plugins.vim' | echohl None
+echohl Function | echomsg 'Loaded script file: plugins.vim' | echohl None

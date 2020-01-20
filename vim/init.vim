@@ -34,7 +34,7 @@ function! InitCore()
     set mouse=a             " Enable full mouse support
 
     if !has ('nvim')
-        set ttymouse=urxvt      " Set terminal mouse input mode
+        set ttymouse=sgr      " Set terminal mouse input mode
         set mousemodel=popup_setpos    " Define the mouse model
     endif
 
@@ -60,13 +60,11 @@ endfunction
 "ashedir = '~/.vim'
 
 function! SourceInternals()
-    source ~/.vim/plugin/ashe/plugins.vim
-    source ~/.vim/plugin/ashe/functions.vim
-    source ~/.vim/plugin/ashe/keybinds.vim
-    source ~/.vim/plugin/ashe/colors.vim
+    source! ~/.vim/plugin/plugins.vim
+    source! ~/.vim/plugin/functions.vim
+    source! ~/.vim/plugin/keybinds.vim
+    source! ~/.vim/plugin/colors.vim
 endfunction
-
-" TODO: separate colors file?
 
 function! ConfigurePostload()
     call ConfigurePluginsPostload()
