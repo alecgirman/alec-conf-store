@@ -1,15 +1,15 @@
-.PHONY: install-desktop
+PREFIX = ${HOME}/.config/termite
 
-# TODO: Install fonts
+TARGETCONFIG=/dev/null
 
-install-desktop:
-	@echo 'Installing termite config file for desktop (smaller font)'
-	mkdir -p ~/.config/termite
-	cp -v desktop.config ~/.config/termite/config
-	@echo 'Installation complete!'
-	
-install-surface:
-	@echo 'Installing termite config file for MS Surface (larger font)'
-	mkdir -p ~/.config/termite
-	cp -v surface.config ~/.config/termite/config
-	@echo 'Installation complete!'
+ifeq (${HOSTNAME}, 'workstation')
+	TARGET_CONFIG=surface.config
+else
+	TARGET_CONFIG=desktop.config
+endif
+
+install:
+	echo 'Installing termite config file for desktop (smaller font)'
+	mkdir -p ${PREFIX}
+	cp -v ${TARGET_CONFIG} ${PREFIX}/config
+	echo 'Installation complete!'
