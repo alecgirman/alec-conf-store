@@ -1,9 +1,14 @@
 .PHONY: install-desktop
 
-# TODO: Install fonts
+ELINKS_DIR = ~/.elinks
 
-install-desktop:
+install: elinks.conf bookmarks
 	@echo 'Installing elinks config file for desktop (smaller font)'
 	mkdir -p ~/.elinks
-	cp -iv elinks.conf bookmarks ~/.elinks/
-	@echo 'Installation complete!'
+	cp ${COPY_FLAGS} elinks.conf bookmarks ~/.elinks/
+
+# install-desktop:
+# 	$(info 'Installing elinks config file for desktop (smaller font)')
+# 	mkdir -p ~/.elinks
+# 	cp -iv elinks.conf bookmarks ~/.elinks/
+# 	$(info 'Installation complete!')
