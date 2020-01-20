@@ -1,3 +1,6 @@
+export ZSH='/dev/null'    # zsh:1: command not found: ashe
+
+
 if [ ! -f /tmp/.zshreload ]; then
     export LANG="en_US.UTF-8"
     #ZSH=/root/.oh-my-zsh/

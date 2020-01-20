@@ -1,98 +1,94 @@
-# command rebinds
-alias keep='noglob keep' # TODO wtf does this do
-alias howdoi='howdoi -c'
-alias sed='sed -E'
+alias ...='cd ../../'
+alias :q='echo "this isnt vim!"'
+alias a=ack
 alias ack='ack -i'
-
-# Common
+alias addalias='nvim /ashe/zsh/alias.zsh; pushd /ashe/zsh; make dotsync; popd; rlz;'
+alias addfunction='nvim /ashe/zsh/functions.zsh'
 alias afind='ack -il'
+alias aom='cut -f3 -d:'
+alias ap='ack --nocolor -os'
+alias c=cat
+alias clearcache='echo 3 > /proc/sys/vm/drop_caches'
 alias cputemp='sensors | sed -n "/^Core/p"'
 alias da='du -sch'
+alias debs-by-size='dpkg-query -Wf '\''x ${Installed-Size} ${Package} ${Status}\n'\'' | sed -ne '\''/^x  /d'\'' -e '\''/^x \(.*\) install ok installed$/s//\1/p'\'' | sort -nr'
 alias diff='diff --color=auto'
+alias dir='command ls -lSrah'
+alias ds='docker search'
+alias e=nvim
+alias egrep='egrep --color=auto'
+alias emak='nvim Makefile'
+alias f=fuck
 alias ff=firefox
+alias fpstat='stat --format=%a'
+alias fsb='du -sb'
+alias fsh='du -sh'
+alias fwatch='tail -fs'
+alias gcm='git commit -m'
+alias grep='grep --color=auto'
+alias gs='git status'
+alias help-zshglob=H-Glob
+alias howdoi='howdoi -c'
+alias i3blockconfig='nvim /ashe/i3/i3blocks.config'
+alias i3config='nvim /ashe/i3/config'
+alias insecscp='scp -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null"'
+alias insecssh='ssh -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null"'
+alias keep='noglob keep'
+alias l=ls
+alias la='command ls -la --color=auto -v'
+alias lad='command ls -d .*(/)'
+alias lc='lolcat -t'
+alias lh='command ls -hAl --color=auto -v'
+alias ll='ls -l'
+alias llog=journalctl
+alias ls='lsd -Al'
+alias lsa='ls *'
+alias lsbig='command ls -flh *(.OL[1,10])'
+alias lse='command ls -d *(/^F)'
+alias lsl='command ls -l *(@)'
+alias lsnew='command ls -rtlh *(D.om[1,10])'
+alias lsnewdir='command ls -rthdl *(/om[1,10]) .*(D/om[1,10])'
+alias lsold='command ls -rtlh *(D.Om[1,10])'
+alias lsolddir='command ls -rthdl *(/Om[1,10]) .*(D/Om[1,10])'
+alias lsrt='ls -rt'
+alias lss='command ls -l *(s,S,t)'
+alias lssmall='command ls -Srl *(.oL[1,10])'
+alias lst='ls -t'
+alias lstree='ls --tree'
+alias lstt='ls -rt'
+alias lsw='command ls -ld *(R,W,X.^ND/)'
+alias lsx='command ls -l *(*)'
+alias m=man
 alias md='mkdir -p'
-alias pacman='yay'
-alias plc='playerctl'
+alias new=modified
+alias nf=neofetch
+alias pacman=yay
+alias plc=playerctl
+alias pm=pulsemixer
+alias pre=head
+alias prel='head -n'
+alias q=exit
+alias rlz='touch /tmp/.zshreload; source ~/.zshrc'
+alias rmcdir='cd ..; rmdir $OLDPWD || cd $OLDPWD'
+alias se=simple-extract
+alias sed='sed -E'
 alias showlogs=journalctl
+alias start='systemctl start'
+alias start-dockerd='dockerd &> /dev/null &'
+alias t=touch
+alias term2iso='echo '\''Setting terminal to iso mode'\'' ; print -n '\''\e%@'\'
+alias term2utf='echo '\''Setting terminal to utf-8 mode'\''; print -n '\''\e%G'\'
+alias testmake='make -n'
 alias tl='task list'
+alias tlog='journalctl -f'
+alias tma='tmux attach -t'
+alias tmls='tmux list-sessions'
+alias tmux='tmux -2'
+alias updatealias='alias -L > /ashe/zsh/alias.zsh'
+alias url-quote='autoload -U url-quote-magic ; zle -N self-insert url-quote-magic'
+alias which-command=whence
+alias widc='weather dc'
 alias ytd=youtube-dl
 alias ytdi='youtube-dl --id'
 alias ytds='youtube-dl --default-search "ytsearch"'
-
-# one letter
-alias a='ack'
-alias c='cat'
-alias e='nvim' # edit
-alias f='fuck'
-alias m='man'
-alias q='exit'
-alias t='touch'
-
-# ls
-unalias lsd &> /dev/null
-alias l='ls'
-alias ls='lsd -Al'
-alias lsa='ls *'
-alias ll='ls -l'
-alias lst='ls -t'
-alias lstt='ls -rt'
-alias lsrt='ls -rt'
-alias lstree='ls --tree'
-
-# git
-alias gs='git status'
-alias gcm='git commit -m'
-
-# fun stuff
-alias pm='pulsemixer'
-alias nf='neofetch'
-alias widc='weather dc'
-alias lc='lolcat -t'
-alias :q='echo "this isnt vim!"'
-
-# docker
-alias start-dockerd='dockerd &> /dev/null &'
-alias ds='docker search'
-
-# systemctl
-alias start='systemctl start'
-alias stop-'systemctl stop'
-
-# ack
-alias ap='ack --nocolor -os'
-# ack show only matches, must run ack with -o | ack-only-matches
-alias aom='cut -f3 -d:'
-
-# quick add alias/function
-alias addalias="$EDITOR /ashe/zsh/alias.zsh; pushd /ashe/zsh; make dotsync; popd; rlz;"
-alias addfunction="$EDITOR /ashe/zsh/functions.zsh"
-
-# im proud of this one
-alias emak="$EDITOR Makefile"
-alias testmake="make -n"
-
-# tmux
-alias tmux='tmux -2'
-alias tmls='tmux list-sessions'
-alias tma='tmux attach -t'
-
-# file ops
-alias fwatch='tail -fs'
-alias fsb='du -sb'
-alias fsh='du -sh'
-alias fpstat="stat --format=%a"     # file permission stat
-alias pre='head'              # preview file
-alias prel='head -n'              # preview file
-
-# find (file) ops
-
-# REPLACED BY 'find' and 'findhere'
-# alias ffile='findfile'       # defined in functions
-# alias ffir='findfileinroot'  # defined in functions
-
-alias clearcache='echo 3 > /proc/sys/vm/drop_caches'
-
-alias zshconfig="$EDITOR /ashe/zsh/"
-alias i3config="$EDITOR /ashe/i3/config"
-alias i3blockconfig="$EDITOR /ashe/i3blocks/config"
-alias rlz='touch /tmp/.zshreload; source ~/.zshrc'
+alias zshconfig='nvim /ashe/zsh/'

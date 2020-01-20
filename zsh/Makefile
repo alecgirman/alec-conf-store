@@ -1,29 +1,14 @@
 PHONY: install
 
+PREFIX = ${HOME}
+
 install:
-	@echo 'Warning: this will overwrite your .zshrc.'
-	@echo 'Press Ctrl-C within the next three seconds to cancel...'
-	@sleep 3
-	cp -iuv zshrc ~/.zshrc
-	mkdir -p ~/.zsh/
-	cp -iuv components/ ~/.zsh/plugins -r
-	cp -iuv functions.zsh ~/.zsh/
-	cp -iuv vars.zsh ~/.zsh/
-	cp -iuv alias.zsh ~/.zsh/
-	cp -iuv autoload/ ~/.zsh/autoload -r
+	cp -uv zshrc ${PREFIX}/.zsh/ashe-zshloader.zsh
+	mkdir -p ${PREFIX}/.zsh/
+	cp -uv components/ ${PREFIX}/.zsh/plugins -r
+	cp -uv functions.zsh ${PREFIX}/.zsh/
+	cp -uv vars.zsh ${PREFIX}/.zsh/
+	cp -uv alias.zsh ${PREFIX}/.zsh/
+	cp -uv autoload/ ${PREFIX}/.zsh/autoload -r
+	echo "source ${PREFIX}/.zsh/ashe-zshloader.zsh" >> ${PREFIX}/.zshrc
 	@echo 'Installation complete!'
-
-# same as install just without warnings.
-# IT WILL OVERRIDE YOUR CONFIG
-dotsync:
-	cp -u zshrc ~/.zshrc
-	mkdir -p ~/.zsh/
-	cp -u components/ ~/.zsh/plugins -r
-	cp -u functions.zsh ~/.zsh/
-	cp -u vars.zsh ~/.zsh/
-	cp -u alias.zsh ~/.zsh/
-	cp -u autoload/ ~/.zsh/autoload -r
-	@echo 'Installation complete!'
-
-# TODO: Install base  packages.  Give the option to install
-# from various package managers
