@@ -11,8 +11,8 @@ install: install-loader install-core
 
 install-loader:
 	# install init.vim
-	mkdir -p ${LOADER_DIR}/
-	${COPYCMD} init.vim ${LOADER_DIR}/
+	mkdir -p ${LOADER_DIR}
+	${COPYCMD} init.vim ${LOADER_DIR}
 
 install-core:
 	# install the rest of the files into the autoload/ashe directory

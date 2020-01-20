@@ -71,7 +71,6 @@ endfunction
 
 function! ConfigurePostload()
     call ashe#postloader#ConfigurePluginsPostload()
-    call ashe#postloader#LoadDefaultKeybinds()
     call ashe#postloader#ConfigureColors()
 endfunction
 
@@ -84,7 +83,7 @@ endfunction
 function! LateInit()
     call ashe#postloader#InstallThirdPartyPlugins()
     call ConfigurePostload()
-    call ashe#postloader#LoadDefaultKeybinds()
+    call ashe#keybinds#LoadDefaultKeybinds()
 endfunction
 
 function! FullInit()
