@@ -3,11 +3,13 @@ if exists('did_asheinit_vim') || &cp || version < 700
 endif
 let did_asheinit_vim = 1
 
+
+
 function! InitCore()
     " % - current file
     " p - full path - REQUIRED see :h filename-modifiers
     " h - head of filepath
-    let g:ashe_root=expand("%:p:h") . "/" 
+    let update_directory="{{ashedir}}" 
     set showmode
     set showcmd
     set showmatch
@@ -38,7 +40,6 @@ function! InitCore()
         set ttymouse=sgr      " Set terminal mouse input mode
     endif
 
-
     " Editor tab settings
     set tabstop=4
     set shiftwidth=4
@@ -59,8 +60,6 @@ function! InitCore()
 endfunction
 
 "ashedir = '~/.vim'
-
-
 
 " function! SourceInternals()
 "     source! ~/.vim/plugin/plugins.vim
@@ -87,6 +86,7 @@ function! LateInit()
 endfunction
 
 function! FullInit()
+    call InitCore()
     call EarlyInit()
     call LateInit()
 endfunction

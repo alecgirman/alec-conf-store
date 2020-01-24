@@ -19,6 +19,8 @@ install-core:
 	mkdir -p ${TARGET_DIR}/autoload/ashe
 	${COPYCMD} ${BASE_FILES} ${TARGET_DIR}/autoload/ashe/
 	rm -fv ${TARGET_DIR}/autoload/ashe/init.vim
+	mkdir -p ${TARGET_DIR}/after/plugin
+	echo "FullInit" > ${TARGET_DIR}/after/plugin/ashe.vim
 	
 install-vimplug:
 	mkdir -p ${TARGET_DIR}/autoload

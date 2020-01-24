@@ -23,9 +23,11 @@ function! ashe#postloader#ConfigureColors()
         set bg=dark notgc
     else
         echomsg 'Detected full color support (TERM=linux)'
-        set t_AB=[48;5;%dm
-        set t_AF=[38;5;%dm
-        " colo impactjs
+
+
+	let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+	let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+        colo impactjs
         let s:ashe_colormode = 2
         set bg=dark t_Co=256 tgc
     endif
@@ -33,13 +35,12 @@ function! ashe#postloader#ConfigureColors()
     hi VertSplit gui=NONE cterm=NONE term=NONE guifg=#202020
     hi TabLineFill gui=NONE cterm=NONE term=NONE guibg=#404040
 
-
-    :hi VimwikiHeader1 guifg=#FF0000
-    :hi VimwikiHeader2 guifg=#00FF00
-    :hi VimwikiHeader3 guifg=#0000FF
-    :hi VimwikiHeader4 guifg=#FF00FF
-    :hi VimwikiHeader5 guifg=#00FFFF
-    :hi VimwikiHeader6 guifg=#FFFF00
+    hi VimwikiHeader1 ctermbg=red guifg=#FF0000
+    hi VimwikiHeader2 ctermbg=green guifg=#00FF00
+    hi VimwikiHeader3 ctermbg=blue guifg=#0000FF
+    hi VimwikiHeader4 ctermbg=magenta guifg=#FF00FF
+    hi VimwikiHeader5 ctermbg=cyan guifg=#00FFFF
+    hi VimwikiHeader6 ctermbg=yellow guifg=#FFFF00
 endfunction
 
 
@@ -104,15 +105,19 @@ function! ashe#postloader#ConfigurePluginsPreload()
     let g:UltiSnipsJumpBackwardTrigger="<c-z>"
     let g:UltiSnipsEditSplit="vertical"
 
-    let g:vimwiki_list = [{'path': '~/my_site/', 'path_html': '~/public_html/'}]
-    let g:vimwiki_wikidir = [{'path': '/var/wiki'}]
+    " let g:vimwiki_list = [{'path': '~/my_site/', 'path_html': '~/public_html/'}]
+    let g:vimwiki_list = [{'path': '/var/wiki'}]
     let g:vimwiki_use_mouse=1
     let g:vimwiki_dir_link=index  " Default .wiki file for new directories
     let g:vimwiki_listsyms = '✗○◐●✓'
+    let g:vimwiki_ext2syntax = {'.md': 'markdown',
+                  \ '.mkd': 'markdown',
+                  \ '.wiki': 'media'}
 
 	" I'm not sure if I'll need to reinstall the plugins agaian but they
 	" are listed in the coc-packagelist.txt file.
 	CocEnable | CocStart
+    call deoplete#enable()
     echohl Question | echomsg '[Pre] Configured installed plugins' | echohl None
 endfunction
 
@@ -129,10 +134,9 @@ function! ashe#postloader#ConfigureSnippets()
     " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
     imap <expr><TAB>
                 \ pumvisible() ? "\<C-n>" :
-                \ neosnippet#expandable_or_jumpable() ?
-                \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-    smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-                \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+                \ neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+    smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
     " For conceal markers.
     if has('conceal')
@@ -147,14 +151,14 @@ function! ashe#postloader#ConfigureSnippets()
                 \ (pumvisible() && neosnippet#expandable()) ?
                 \ "\<Plug>(neosnippet_expand)" : "\<CR>"
 
-    call deoplete#enable()
 endfunction
 
 function! ashe#postloader#ConfigurePluginsPostload()
     if exists('ashe_didpostload')
-        " colo impactjs
+	call ashe#postloader#ConfigureColors()
         AirlineTheme powerlineish
-        AirlineToggleWhitespace
+	    AirlineToggleWhitespace
         echohl Question | echomsg '[Post] Configured installed plugins' | echohl None
     endif
+    close
 endfunction
