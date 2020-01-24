@@ -27,7 +27,7 @@ function! ashe#postloader#ConfigureColors()
 
 	let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 	let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
-        " colo impactjs
+        colo impactjs
         let s:ashe_colormode = 2
         set bg=dark t_Co=256 tgc
     endif
@@ -134,10 +134,9 @@ function! ashe#postloader#ConfigureSnippets()
     " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
     imap <expr><TAB>
                 \ pumvisible() ? "\<C-n>" :
-                \ neosnippet#expandable_or_jumpable() ?
-                \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-    smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-                \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+                \ neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+    smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
     " For conceal markers.
     if has('conceal')
@@ -152,19 +151,13 @@ function! ashe#postloader#ConfigureSnippets()
                 \ (pumvisible() && neosnippet#expandable()) ?
                 \ "\<Plug>(neosnippet_expand)" : "\<CR>"
 
-    call deoplete#enable()
 endfunction
 
 function! ashe#postloader#ConfigurePluginsPostload()
     if exists('ashe_didpostload')
-	" Loading colors at the end so we most likely have any additional
-	" functionality needed for ideal color output, only after
-	" a call to FullInit, that is.
-	FullInit
 	call ashe#postloader#ConfigureColors()
-        colo impactjs
         AirlineTheme powerlineish
-        AirlineToggleWhitespace
+	    AirlineToggleWhitespace
         echohl Question | echomsg '[Post] Configured installed plugins' | echohl None
     endif
 endfunction
