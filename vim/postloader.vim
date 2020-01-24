@@ -160,4 +160,5 @@ function! ashe#postloader#ConfigurePluginsPostload()
 	    AirlineToggleWhitespace
         echohl Question | echomsg '[Post] Configured installed plugins' | echohl None
     endif
+    close
 endfunction
