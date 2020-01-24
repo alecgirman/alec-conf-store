@@ -18,7 +18,7 @@ if [ ! -f /tmp/.zshreload ]; then
     $POWERLEVEL9K_IGNORE_TERM_LANG=true
     $POWERLEVEL9K_IGNORE_TERM_COLORS=true
 
-    for file in $(find $plugindir | ack '\.zsh$'); do
+    for file in $(find $plugindir | ag '\.zsh$'); do
         . $file end
     done
 
@@ -32,7 +32,7 @@ if [ ! -f /tmp/.zshreload ]; then
 
     eval $(thefuck --alias)
 
-    clear
+    # clear
     alias zshconfig="$EDITOR ~/.zshrc"
     printf "$fg[blue]ZSH Initialized $fg[reset]\n"
 else
