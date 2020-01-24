@@ -7,7 +7,7 @@ function! InitCore()
     " % - current file
     " p - full path - REQUIRED see :h filename-modifiers
     " h - head of filepath
-    let g:ashe_root=expand("%:p:h") . "/" 
+    let update_directory="{{ashedir}}" 
     set showmode
     set showcmd
     set showmatch
@@ -71,7 +71,7 @@ endfunction
 
 function! ConfigurePostload()
     call ashe#postloader#ConfigurePluginsPostload()
-    " call ashe#postloader#ConfigureColors()
+    call ashe#postloader#ConfigureColors()
 endfunction
 
 function! EarlyInit()
@@ -87,6 +87,7 @@ function! LateInit()
 endfunction
 
 function! FullInit()
+    call InitCore()
     call EarlyInit()
     call LateInit()
 endfunction
