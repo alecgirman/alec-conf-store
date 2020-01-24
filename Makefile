@@ -8,6 +8,7 @@ install:
 	$(MAKE) -C termite install
 	$(MAKE) -C vim install
 	$(MAKE) -C zsh install
+	$(MAKE) -C i3 install
 
 start:
 	clear

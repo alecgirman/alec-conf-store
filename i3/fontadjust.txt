@@ -1,0 +1,1 @@
+font pango:FuraCode Nerd Font Mono SIZE

@@ -2,10 +2,10 @@ install-blocks:
 	mkdir -p ~/.config/i3blocks/
 	cp -uv ./i3blocks.config ~/.config/i3blocks/config
 
-install-surface: install-blocks
-	mkdir -p ~/.config/i3
-	cp -uv surface.config ~/.config/i3/config
+FONTSIZE=11
 
-install-desktop: install-blocks
+install: install-blocks
 	mkdir -p ~/.config/i3
-	cp -uv desktop.config ~/.config/i3/config
+	echo ${HOST}
+	cp -uv config ~/.config/i3/config
+	cat fontadjust.txt | sed 's/SIZE/${FONTSIZE}/' >> ~/.config/i3/config
