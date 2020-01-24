@@ -152,7 +152,12 @@ endfunction
 
 function! ashe#postloader#ConfigurePluginsPostload()
     if exists('ashe_didpostload')
-        " colo impactjs
+	" Loading colors at the end so we most likely have any additional
+	" functionality needed for ideal color output, only after
+	" a call to FullInit, that is.
+	FullInit
+	call ashe#postloader#ConfigureColors()
+        colo impactjs
         AirlineTheme powerlineish
         AirlineToggleWhitespace
         echohl Question | echomsg '[Post] Configured installed plugins' | echohl None

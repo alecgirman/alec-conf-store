@@ -71,7 +71,7 @@ endfunction
 
 function! ConfigurePostload()
     call ashe#postloader#ConfigurePluginsPostload()
-    call ashe#postloader#ConfigureColors()
+    " call ashe#postloader#ConfigureColors()
 endfunction
 
 function! EarlyInit()

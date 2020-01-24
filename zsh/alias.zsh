@@ -41,9 +41,10 @@ alias lc='lolcat -t'
 alias lh='command ls -hAl --color=auto -v'
 alias ll='ls -l'
 alias llog=journalctl
-alias ls='lsd -Al'
+alias ls=/usr/bin/lsd
 alias lsa='ls *'
 alias lsbig='command ls -flh *(.OL[1,10])'
+alias lsd='command ls -d *(/)'
 alias lse='command ls -d *(/^F)'
 alias lsl='command ls -l *(@)'
 alias lsnew='command ls -rtlh *(D.om[1,10])'
