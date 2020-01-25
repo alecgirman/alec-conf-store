@@ -1,1 +1,1 @@
-source /ashe/zsh/components/powerlevel9k/powerlevel9k.zsh-theme
+clear & source $(find ~ | ag 'powerlevel9k.zsh-theme')

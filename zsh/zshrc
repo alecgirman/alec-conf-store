@@ -5,10 +5,10 @@ if [ ! -f /tmp/.zshreload ]; then
 
     # Set preload vars
     # Line #1863-1864 of main theme file
-    POWERLEVEL9K_IGNORE_TERM_LANG=true
-    POWERLEVEL9K_IGNORE_TERM_COLORS=true
+    # POWERLEVEL9K_IGNORE_TERM_LANG=true
+    # POWERLEVEL9K_IGNORE_TERM_COLORS=true
 
-    for file in $(find $plugindir | ack '\.zsh$'); do
+    for file in $(find ~/.zsh/autoload/ | ack '\.zsh$'); do
         . $file end
     done
 

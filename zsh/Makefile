@@ -11,6 +11,7 @@ install: clean
 	mkdir -p ${PREFIX}/
 	${COPYDIR} autoload/ ${PREFIX}/ -r
 	${COPYDIR} plugins/ ${AUTOLOAD}/ -r
+	${COPYFILE} zshrc ${PREFIX}/${STARTFILE}
 	@echo 'Installation complete!'
 	@echo 'In addition, any scripts you put into ~/autoload/ will be automatically loaded with ZSH!'
 
