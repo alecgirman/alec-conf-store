@@ -4,8 +4,14 @@ install-blocks:
 
 FONTSIZE=11
 
-install: install-blocks
+install: clean install-blocks
 	mkdir -p ~/.config/i3
 	echo ${HOST}
 	cp -uv config ~/.config/i3/config
-	cat fontadjust.txt | sed 's/SIZE/${FONTSIZE}/' >> ~/.config/i3/config
+	sed -i 's/FONTSIZE/${FONTSIZE}/g' ~/.config/i3/config
+	sudo i3-msg restart
+
+clean: uninstall
+
+uninstall:
+	rm -rv ~/.config/i3/ ~/.config/i3blocks/
