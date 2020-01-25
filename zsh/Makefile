@@ -1,22 +1,25 @@
-PHONY: install
+PHONY: install-firsttime install
 
-PREFIX = ${HOME}
+PREFIX = ${HOME}/.zsh
+AUTOLOAD = ${PREFIX}/autoload
+COPYFILE = cp -v
+COPYDIR = cp -rv
+MACROPROC= m4
+STARTFILE=ashe-zshloader.zsh
 
-install:
-	cp -uv zshrc ${PREFIX}/.zsh/ashe-zshloader.zsh
-	mkdir -p ${PREFIX}/.zsh/autoload/ashe
-	cp -uv components/ ${PREFIX}/.zsh/plugins -r
-	cp -uv autoload/ ${PREFIX}/.zsh/autoload/ashe/ -r
-	cp -uv functions.zsh ${PREFIX}/.zsh/autoload/ashe/
-	cp -uv alias.zsh ${PREFIX}/.zsh/autoload/ashe/
-
+install: clean
+	mkdir -p ${PREFIX}/
+	cat zshrc.m4 zshrc | m4 > ${PREFIX}/${STARTFILE}
+	${COPYDIR} autoload/ ${PREFIX}/ -r
+	${COPYDIR} plugins/ ${AUTOLOAD}/ -r
 	@echo 'Installation complete!'
-	@echo 'In addition, any scripts you put into ~/.zsh/autoload/ will be automatically loaded with ZSH!'
+	@echo 'In addition, any scripts you put into ~/autoload/ will be automatically loaded with ZSH!'
 
-source-from-zshrc:
-	echo "source ${PREFIX}/.zsh/ashe-zshloader.zsh" >> ${PREFIX}/.zshrc
+install-firsttime: install
+	@echo "source ${PREFIX}/ashe-zshloader.zsh" >> ${PREFIX}rc
+	m4 zshrc.m4
 
-uninstall:
-	rm -rv ${PREFIX}/.zsh/autoload/ashe
-	rm -v ${PREFIX}/.zsh/ashe-zshloader.zsh
-	echo 'Remember to remove the line at the bottom of your zshrc file that loads this plugin.'
+clean:
+	rm -rv ${AUTOLOAD}
+	rm -v ${PREFIX}/${STARTFILE}
+	@echo 'Remember to remove the line at the bottom of your zshrc file that loads this plugin.'

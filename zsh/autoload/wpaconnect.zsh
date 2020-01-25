@@ -36,14 +36,14 @@ if [[ "$newnetwork" = "n" ]]; then
     wpa_supplicant -iwlp1s0 -c/etc/wpa_supplicant.conf
 else
     read 'ssid?Input network SSID: '
-    printf "\033[2K"
+    printf "\n"
     read 'pass?Input network password: '
     printf "\033[2K"
 
     # Get SSID and pass from user.  AT this point, we don't know if this information
     # is correct, so we wont append it to the main config, but instead, store it in a
     # temporary file and if it is correc, then well go from there.
-    let wpa_temp=$(mktemp)
+    let wpa_temp=/tmp/wpa.tmp
     wpa_passphrase $ssid $pass > $wpa_temp
 
     # we dont want the shell remembering these variables

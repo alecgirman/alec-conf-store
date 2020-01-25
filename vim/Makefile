@@ -1,24 +1,20 @@
 TARGET_DIR=~/.vim
 LOADER_DIR = ${TARGET_DIR}/plugin/
-BASE_FILES = *.vim
+# BASE_FILES = *.vim
+BASEDIRS = autoload/ ftplugin/ plugin/
 
-COPYCMD = cp -rv
+COPYFILE = cp -v
+COPYDIR = cp -rv
 DIFFCMD = diff --color -a
 
 PLUG_URL = https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
 
-install: install-loader install-core
-
-install-loader:
-	# install init.vim
-	mkdir -p ${LOADER_DIR}
-	${COPYCMD} init.vim ${LOADER_DIR}
+install: install-core
 
 install-core:
 	# install the rest of the files into the autoload/ashe directory
 	mkdir -p ${TARGET_DIR}/autoload/ashe
-	${COPYCMD} ${BASE_FILES} ${TARGET_DIR}/autoload/ashe/
-	rm -fv ${TARGET_DIR}/autoload/ashe/init.vim
+	${COPYDIR} ${BASEDIRS} ${TARGET_DIR}/
 	mkdir -p ${TARGET_DIR}/after/plugin
 	echo "FullInit" > ${TARGET_DIR}/after/plugin/ashe.vim
 	

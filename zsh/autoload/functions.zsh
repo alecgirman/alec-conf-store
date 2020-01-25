@@ -1,5 +1,5 @@
 function findfile() {
-    find | ack $@
+    find | {{GREPPRG}} $@
 }
 
 function findfileinroot() {
@@ -17,19 +17,24 @@ function weather() {
 }
 
 function clonerepo() {
-    if [[ -d $GITEXTERN ]]; then
+    if [[ -d $GITDIR ]]; then
         printf "Either your external git folder does not exist"
-        printf "or the GITEXTERN variable is not set.  You can fix"
+        printf "or the GITDIR variable is not set.  You can fix"
         printf "this by sourcing the zsh variables script.\n"
         return 1
     fi
 
-    cd $GITEXTERN
+    cd $GITDIR
     git clone $1
 }
 
-for file in $(find ./autoload | ack '\.zsh$'); do
+alias gclone='clonerepo'
+alias gc='clonerepo'  # dont interfere with gcc!
+
+# source all autoload files
+for file in $(find ./autoload | {{GREPPRG}} '\.zsh$'); do
     source $file
+    printf "$fg[green]Sourced $file\n"
 done
 
 echo "$fg[green]Functions Loaded$fg[reset]"
