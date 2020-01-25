@@ -1,7 +1,7 @@
 TARGET_DIR=~/.vim
 LOADER_DIR = ${TARGET_DIR}/plugin/
 # BASE_FILES = *.vim
-BASEDIRS = autoload/ ftplugin/ plugin/
+BASEDIRS = autoload/ plugin/
 
 COPYFILE = cp -v
 COPYDIR = cp -rv
