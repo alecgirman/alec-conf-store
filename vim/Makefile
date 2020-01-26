@@ -23,9 +23,8 @@ install-vimplug:
 	curl -fLo $(TARGET_DIR)/autoload/plug.vim $(PLUG_URL)
 
 deps:
-	# Run before: pacman -Sy git make --noconfirm; git clone https://github.com/alecgirman/ashe; cd ashe/vim;
+	# Run before: pacman -Sy git make --noconfirm; git clone https://git.io/JvqDX; cd ashe/vim;
 	pacman -S archlinux-keyring curl --noconfirm --needed
-	curl https://www.archlinux.org/mirrorlist/?country=US&protocol=http&protocol=https&ip_version=4 > /etc/pacman.d/mirrorlist
 	pacman -Syu
 	pacman -S base-devel python-pynvim --noconfirm --needed
 	pacman -S nodejs npm --needed
