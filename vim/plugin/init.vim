@@ -6,9 +6,7 @@ let did_asheinit_vim = 1
 
 
 function! InitCore()
-    " % - current file
-    " p - full path - REQUIRED see :h filename-modifiers
-    " h - head of filepath
+    " this gets set by m4 prior to being copied
     let update_directory="{{ashedir}}" 
     set showmode
     set showcmd
@@ -50,23 +48,17 @@ function! InitCore()
     " Misc settings
     set wildmenu
     set history=250
-    set viminfo='1000,<500,s100
-    set timeoutlen=500
 
-    set diffexpr+=iwhite
-    set diffexpr+=iblank
+    " in neovim this would be set shada but its
+    " backwards compatible with set viminfo
+    set viminfo='1000,<500,s100   
+    set timeoutlen=300              " set key timeout
+
+    " set diffopt=                    " clear diff settings
+    set diffopt+=iwhite,iblank      " ignore whitespace and blank lines when evaluating diff
 
     syntax on
 endfunction
-
-"ashedir = '~/.vim'
-
-" function! SourceInternals()
-"     source! ~/.vim/plugin/plugins.vim
-"     source! ~/.vim/plugin/functions.vim
-"     source! ~/.vim/plugin/keybinds.vim
-"     source! ~/.vim/plugin/colors.vim
-" endfunction
 
 function! ConfigurePostload()
     call ashe#postloader#ConfigurePluginsPostload()
@@ -91,7 +83,9 @@ function! FullInit()
     call LateInit()
 endfunction
 
-" TODO: move to autoload
 command! -nargs=0 FullInit :call FullInit()
+command! -nargs=0 EditInitScript :e /ashe/vim/plugin/init.vim
+command! -nargs=0 EditPostLoadScript :e /ashe/vim/autoload/postloader.vim
+command! -nargs=0 EditKeybinds :e /ashe/vim/autoload/keybinds.vim
 
 let did_asheinit_vim=2 " init complete indicator

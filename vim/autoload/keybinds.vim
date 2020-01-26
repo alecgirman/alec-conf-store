@@ -16,35 +16,29 @@ function! ashe#keybinds#LoadDefaultKeybinds()
     noremap J <C-d>
     noremap K <C-u>
 
-    noremap Y ^v$hy
+    " select to end of line without copying newline
+    noremap Y v$hy
 
-    noremap gl :CocList 
+    " better jumping to marks
+    map ` '
+
+    map <C-u> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>
+    map <C-d> <C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>
+
+    noremap gl :CocList --normal<CR>
+    noremap gll :CocList 
     noremap glc :CocList colors<CR>
     noremap gls :CocList snippets<CR>
     noremap glv :CocList tags<CR>
+    noremap gla :CocList actions<CR>
 
     " quickly turn off highlighting after a search
     noremap H :noh<CR>
-
-    nnoremap
-    nnoremap gl :CocList --normal<CR>
-    nnoremap gls :CocList snippets<CR>
-    nnoremap gl/ :CocList<CR>
 
     " K by default is binded to manpages/docs
     " and that's too good of a shortcut to lose
     " TODO: F1 might do this too, try it too
     noremap L K
-
-    nnoremap <Up> <C-w>+
-    nnoremap <Down> <C-w>-
-    nnoremap <Right> <C-w>>
-    nnoremap <Left> <C-w><
-
-    nnoremap <S-Up> 5<C-w>+
-    nnoremap <S-Down> 5<C-w>-
-    nnoremap <S-Right> 5<C-w>>
-    nnoremap <S-Left> 5<C-w><
 
     " Z   = Save current file
     " ZZZ = Force Quit all
@@ -78,10 +72,8 @@ function! ashe#keybinds#LoadDefaultKeybinds()
     noremap <Space>w :VimwikiUISelect<CR>
     
     noremap <C-Space>v :call AsheToggleVirtualEdit()<CR>
-    noremap <C-Space>c :call Colorizer#ColorOff()<CR>:call Colorizer#ColorToggle()<CR>
-    noremap <C-Space>C :windo call Colorizer#ColorOff()<CR>:call Colorizer#ColorToggle()<CR>
-    noremap <C-Space>cc :call Colorizer#ColorToggle()<CR>
-    noremap <C-Space>CC :windo call Colorizer#ColorToggle()<CR>
+    " noremap <C-Space>c :call Colorizer#ColorOff()<CR>:call Colorizer#ColorToggle()<CR>
+    noremap <C-Space>c :windo call Colorizer#ColorOff()<CR>:call Colorizer#ColorToggle()<CR>
 
     " I just need a shortcut for making tabs.
     " See above for a shortcut on closing tabs.

@@ -1,5 +1,5 @@
 TARGET_DIR=~/.vim
-LOADER_DIR = ${TARGET_DIR}/plugin/
+LOADER_DIR = $(TARGET_DIR)/plugin/
 # BASE_FILES = *.vim
 BASEDIRS = autoload/ plugin/
 
@@ -13,17 +13,28 @@ install: install-core
 
 install-core:
 	# install the rest of the files into the autoload/ashe directory
-	mkdir -p ${TARGET_DIR}/autoload/ashe
-	${COPYDIR} ${BASEDIRS} ${TARGET_DIR}/
-	mkdir -p ${TARGET_DIR}/after/plugin
-	echo "FullInit" > ${TARGET_DIR}/after/plugin/ashe.vim
+	mkdir -p $(TARGET_DIR)/autoload/ashe
+	$(COPYDIR) $(BASEDIRS) $(TARGET_DIR)/
+	mkdir -p $(TARGET_DIR)/after/plugin
+	echo "FullInit" > $(TARGET_DIR)/after/plugin/ashe.vim
 	
 install-vimplug:
-	mkdir -p ${TARGET_DIR}/autoload
-	curl -fLo ${TARGET_DIR}/autoload/plug.vim ${PLUG_URL}
+	mkdir -p $(TARGET_DIR)/autoload
+	curl -fLo $(TARGET_DIR)/autoload/plug.vim $(PLUG_URL)
 
-uninstall-extplugins:
-	rm -rfv ${TARGET_DIR}/autoload/plug.vim
+deps:
+	pacman -S base-devel python-pynvim --noconfirm --needed
+	mkdir -p /var/git
+	pushd /var/git
+	git clone 'https://github.com/neovim/neovim'
+	cd neovim && make distclean
+	make && make install
+	popd
+	make install
+	nvim --cmd ':FullInit'
 
 uninstall:
-	rm -rfv ${LOADER_DIR}/
+	$(DELETE) $(LOADER_DIR)/
+
+uninstall-vimplug:
+	$(DELETE) $(TARGET_DIR)/autoload/plug.vim
