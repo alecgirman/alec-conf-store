@@ -27,15 +27,10 @@ deps:
 	pacman -S archlinux-keyring curl --noconfirm --needed
 	pacman -Syu --noconfirm --needed
 	pacman -S base-devel cmake python-pynvim nodejs npm --noconfirm --needed
-	mkdir -p /var/git
-	cd /var/git/
-	pwd
 	git clone 'https://github.com/neovim/neovim'
-	cd neovim
-	make distclean
-	make
-	make install
-	cd /ashe/vim
+	make distclean -C neovim
+	make -C neovim
+	make -C neovim install
 	make install
 	nvim --cmd ':FullInit'
 
