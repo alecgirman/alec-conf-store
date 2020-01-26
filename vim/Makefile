@@ -24,16 +24,6 @@ install-vimplug:
 
 deps:
 	# Run before: pacman -Sy git make --noconfirm; git clone https://git.io/JvqDX; cd ashe/vim;
-	pacman -S archlinux-keyring --noconfirm --needed
-	pacman -Syu base-devel cmake python-pynvim nodejs npm --noconfirm --needed
-	git clone 'https://github.com/neovim/neovim'
-	make -C neovim distclean 
-	make -C neovim
-	make -C neovim install
-	mkdir -p ~/.config
-	make install
-	sln /root/.vim /root/.config/nvim
-	nvim --cmd ':FullInit'
 
 uninstall:
 	$(DELETE) $(LOADER_DIR)/
