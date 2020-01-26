@@ -24,7 +24,8 @@ install-vimplug:
 
 deps:
 	# Run before: pacman -Sy git make --noconfirm; git clone https://git.io/JvqDX; cd ashe/vim;
-	pacman -Syu archlinux-keyring curl --noconfirm --needed
+	pacman -S archlinux-keyring curl --noconfirm --needed
+	pacman -Syu --noconfirm --needed
 	pacman -S base-devel python-pynvim nodejs npm --noconfirm --needed
 	mkdir -p /var/git
 	cd /var/git
