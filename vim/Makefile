@@ -24,16 +24,14 @@ install-vimplug:
 
 deps:
 	# Run before: pacman -Sy git make --noconfirm; git clone https://git.io/JvqDX; cd ashe/vim;
-	pacman -S archlinux-keyring curl --noconfirm --needed
-	pacman -Syu
-	pacman -S base-devel python-pynvim --noconfirm --needed
-	pacman -S nodejs npm --needed
+	pacman -Syu archlinux-keyring curl --noconfirm --needed
+	pacman -S base-devel python-pynvim nodejs npm --noconfirm --needed
 	mkdir -p /var/git
-	pushd /var/git
+	cd /var/git
 	git clone 'https://github.com/neovim/neovim'
 	cd neovim && make distclean
 	make && make install
-	popd
+	cd /ashe/vim
 	make install
 	nvim --cmd ':FullInit'
 
