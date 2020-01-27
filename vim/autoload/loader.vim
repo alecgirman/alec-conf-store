@@ -1,8 +1,8 @@
 
-if exists('ashe_didpostload') 
+if exists('ashe_didload') 
     finish
 endif
-let ashe_didpostload = 1
+let ashe_didload = 1
 
 " MISC COLOR SETTINGS
 " let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
@@ -12,7 +12,73 @@ let ashe_didpostload = 1
 " set t_ut=
 " set t_Co=256
 
-function! ashe#postloader#ConfigureColors()
+
+function! ashe#loader#orchestrate()
+    call ashe#loader#loadBasicConfig()
+    call ashe#loader#ConfigurePluginsPreload()
+    call ashe#loader#InstallThirdPartyPlugins()
+    call ashe#loader#ConfigureColors()
+    call ashe#loader#ConfigureSnippets()
+    call ashe#keybinds#LoadDefaultKeybinds()
+endfunction
+
+function! ashe#loader#loadBasicConfig()
+    " this gets set by m4 prior to being copied
+    set showmode
+    set showcmd
+    set showmatch
+    set hidden
+    set autowrite
+    set autoread
+    set number
+    set relativenumber
+    set laststatus=2
+    set showtabline=2
+    set scrolloff=10
+    set nowrap
+    set completeopt=longest,menuone,preview
+    set wildmode=list:longest
+    set modeline
+    set noswapfile
+
+    " search settings
+    set ignorecase      " Ignore case in search and seek commands
+    set smartcase       " ...but only in search commands
+    set incsearch       " Perform searches and highlight matches as you're typing your search
+    set icm=nosplit     " Perform searches and highlight substitutions as you're typing substitution commands 
+    set hlsearch        " Highlight search matches
+
+    set mouse=a             " Enable full mouse support
+    set mousemodel=popup  " Define the mouse model
+
+    if !has ('nvim')		" only works in vim
+        set ttymouse=sgr      " Set terminal mouse input mode
+    endif
+
+    " Editor tab settings
+    set tabstop=4
+    set shiftwidth=4
+    set autoindent
+    set expandtab
+    set smarttab
+
+    " Misc settings
+    set wildmenu
+    set history=250
+    set undofile
+
+    " in neovim this would be set shada but its
+    " backwards compatible with set viminfo
+    set shada='1000,<500,s100   
+    set timeoutlen=300              " set key timeout
+
+    " set diffopt=                    " clear diff settings
+    set diffopt+=iwhite,iblank      " ignore whitespace and blank lines when evaluating diff
+
+    syntax on
+endfunction
+
+function! ashe#loader#ConfigureColors()
 
     " In the system console, very limited color support
     let s:ashe_colormode = 0
@@ -44,8 +110,7 @@ function! ashe#postloader#ConfigureColors()
     hi VimwikiHeader6 ctermbg=yellow guifg=#FFFF00
 endfunction
 
-
-function! ashe#postloader#InstallThirdPartyPlugins()
+function! ashe#loader#InstallThirdPartyPlugins()
     call plug#begin('~/.vim/plugged')
     Plug 'Shougo/neoinclude.vim'
     Plug 'vim-airline/vim-airline'
@@ -98,7 +163,7 @@ function! ashe#postloader#InstallThirdPartyPlugins()
     endif
 endfunction
 
-function! ashe#postloader#ConfigurePluginsPreload()
+function! ashe#loader#ConfigurePluginsPreload()
     let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
     let g:airline_powerline_fonts=1
     let g:airline#extensions#tabline#enabled=1
@@ -126,7 +191,7 @@ function! ashe#postloader#ConfigurePluginsPreload()
     echohl Question | echomsg '[Pre] Configured installed plugins' | echohl None
 endfunction
 
-function! ashe#postloader#ConfigureSnippets()
+function! ashe#loader#ConfigureSnippets()
     let g:neosnippet#snippets_directory='/var/snippets/'
 
     " Plugin key-mappings.
