@@ -48,10 +48,11 @@ function! InitCore()
     " Misc settings
     set wildmenu
     set history=250
+    set undofile
 
     " in neovim this would be set shada but its
     " backwards compatible with set viminfo
-    set viminfo='1000,<500,s100   
+    set shada='1000,<500,s100   
     set timeoutlen=300              " set key timeout
 
     " set diffopt=                    " clear diff settings
@@ -81,6 +82,7 @@ function! FullInit()
     call InitCore()
     call EarlyInit()
     call LateInit()
+    Startify
 endfunction
 
 command! -nargs=0 FullInit :call FullInit()
