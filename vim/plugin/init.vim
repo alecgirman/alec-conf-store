@@ -1,9 +1,7 @@
-if exists('did_asheinit_vim') || &cp || version < 700
+if exists('did_asheinit_vim')
     finish
 endif
 let did_asheinit_vim = 1
-
-
 
 function! InitCore()
     " this gets set by m4 prior to being copied
@@ -28,7 +26,8 @@ function! InitCore()
     " search settings
     set ignorecase      " Ignore case in search and seek commands
     set smartcase       " ...but only in search commands
-    set incsearch       " Search as were typing
+    set incsearch       " Perform searches and highlight matches as you're typing your search
+    set icm=nosplit     " Perform searches and highlight substitutions as you're typing substitution commands 
     set hlsearch        " Highlight search matches
 
     set mouse=a             " Enable full mouse support
@@ -61,28 +60,15 @@ function! InitCore()
     syntax on
 endfunction
 
-function! ConfigurePostload()
-    call ashe#postloader#ConfigurePluginsPostload()
-    call ashe#postloader#ConfigureColors()
-endfunction
-
-function! EarlyInit()
-    call ashe#postloader#SourceInternals()
-    call ashe#postloader#InitCore()
-    call ashe#postloader#ConfigurePluginsPreload()
-endfunction
-
-function! LateInit()
-    call ashe#postloader#InstallThirdPartyPlugins()
-    call ConfigurePostload()
-    call ashe#keybinds#LoadDefaultKeybinds()
-endfunction
 
 function! FullInit()
-    call InitCore()
-    call EarlyInit()
-    call LateInit()
-    Startify
+	call InitCore()
+    call ashe#postloader#ConfigurePluginsPreload()
+    call ashe#postloader#InstallThirdPartyPlugins()
+    call ashe#postloader#ConfigureColors()
+    " call AfterPluginLoad()
+    call ashe#keybinds#LoadDefaultKeybinds()
+	" exe Startify
 endfunction
 
 command! -nargs=0 FullInit :call FullInit()

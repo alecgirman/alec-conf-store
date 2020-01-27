@@ -1,14 +1,10 @@
 if exists('ashe_did_keybinds_vim') || &cp || version < 700
 	echomsg 'ashe_did_keybinds_vim exists in namespace'
-    finish
+    	finish
 endif
 let ashe_did_keybinds_vim = 1
 
 function! ashe#keybinds#LoadDefaultKeybinds()
-    " =======================
-    " K E Y B I N D I N G S
-    " =======================
-
     " easy escape
     inoremap jj <Esc>l
 
@@ -20,10 +16,7 @@ function! ashe#keybinds#LoadDefaultKeybinds()
     noremap Y v$hy
 
     " better jumping to marks
-    map ` '
-
-    map <C-u> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>
-    map <C-d> <C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>
+    noremap ` '
 
     noremap gl :CocList --normal<CR>
     noremap gll :CocList 
@@ -65,13 +58,12 @@ function! ashe#keybinds#LoadDefaultKeybinds()
 
     " noremap <Space>
     nmap <Space>c :call
-    nnoremap <Space>r :%s//g<Left><Left>
+    noremap <Space>r :%s/
     noremap <Space><Tab> :Tabularize /
     noremap <Space>h :help<Space>
-    vnoremap <Space>h :help <C-r>"<CR>
+    vnoremap <Space>h y<Esc>:help <C-r>"<CR>
     noremap <Space>w :VimwikiUISelect<CR>
     
-    noremap <C-Space>v :call AsheToggleVirtualEdit()<CR>
     " noremap <C-Space>c :call Colorizer#ColorOff()<CR>:call Colorizer#ColorToggle()<CR>
     noremap <C-Space>c :windo call Colorizer#ColorOff()<CR>:call Colorizer#ColorToggle()<CR>
 

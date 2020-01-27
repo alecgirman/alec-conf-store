@@ -18,22 +18,23 @@ function! ashe#postloader#ConfigureColors()
     let s:ashe_colormode = 0
     if system('echo $TERM') == 'linux'
         echomsg 'Detected limited color support (TERM=linux)'
-        " colo default
+        colo Dim
         let s:ashe_colormode = 1
-        set bg=dark notgc
+        set bg=dark t_Co=16 notgc
     else
-        echomsg 'Detected full color support (TERM=linux)'
-
-
-	let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-	let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+        echomsg 'Detected full color support'
+        let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+        let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
         colo impactjs
         let s:ashe_colormode = 2
         set bg=dark t_Co=256 tgc
     endif
 
-    hi VertSplit gui=NONE cterm=NONE term=NONE guifg=#202020
-    hi TabLineFill gui=NONE cterm=NONE term=NONE guibg=#404040
+    " hi VertSplit gui=NONE cterm=NONE term=NONE guifg=#202020
+    " hi TabLineFill gui=NONE cterm=NONE term=NONE guibg=#404040
+
+    AirlineTheme powerlineish
+    AirlineToggleWhitespace
 
     hi VimwikiHeader1 ctermbg=red guifg=#FF0000
     hi VimwikiHeader2 ctermbg=green guifg=#00FF00
@@ -91,6 +92,10 @@ function! ashe#postloader#InstallThirdPartyPlugins()
     Plug 'kien/ctrlp.vim'
     Plug 'mileszs/ack.vim'
     PlugInstall!
+    if g:did_asheinit_vim == 1
+        call FullInit()
+        let g:did_asheinit_vim = 2
+    endif
 endfunction
 
 function! ashe#postloader#ConfigurePluginsPreload()
@@ -116,7 +121,7 @@ function! ashe#postloader#ConfigurePluginsPreload()
 
 	" I'm not sure if I'll need to reinstall the plugins agaian but they
 	" are listed in the coc-packagelist.txt file.
-	CocEnable | CocStart
+	" CocEnable | CocStart
     call deoplete#enable()
     echohl Question | echomsg '[Pre] Configured installed plugins' | echohl None
 endfunction
@@ -151,14 +156,4 @@ function! ashe#postloader#ConfigureSnippets()
                 \ (pumvisible() && neosnippet#expandable()) ?
                 \ "\<Plug>(neosnippet_expand)" : "\<CR>"
 
-endfunction
-
-function! ashe#postloader#ConfigurePluginsPostload()
-    if exists('ashe_didpostload')
-	call ashe#postloader#ConfigureColors()
-        AirlineTheme powerlineish
-	    AirlineToggleWhitespace
-        echohl Question | echomsg '[Post] Configured installed plugins' | echohl None
-    endif
-    close
 endfunction
