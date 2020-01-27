@@ -1,35 +1,31 @@
-if [ ! -f /tmp/.zshreload ]; then
-    export LANG="en_US.UTF-8"
-    #ZSH=/root/.oh-my-zsh/
-    HYPHEN_INSENSITIVE="true"
+export LANG="en_US.UTF-8"
+#ZSH=/root/.oh-my-zsh/
+HYPHEN_INSENSITIVE="true"
 
-    # Set preload vars
-    # Line #1863-1864 of main theme file
-    # POWERLEVEL9K_IGNORE_TERM_LANG=true
-    # POWERLEVEL9K_IGNORE_TERM_COLORS=true
+# Set preload vars
+# Line #1863-1864 of main theme file
+# POWERLEVEL9K_IGNORE_TERM_LANG=true
+# POWERLEVEL9K_IGNORE_TERM_COLORS=true
 
-    for file in $(find ~/.zsh/autoload/ | ack '\.zsh$'); do
-        . $file end
-    done
+for file in $(find ~/.zsh/plugins/ | ag '\.zsh$'); do
+    source $file 
+    printf "Sourced $fg[blue]%s$fg[default]\n" $file
+done
 
-    export EDITOR='nvim'
+export EDITOR='nvim'
 
-    unsetopt correctall
+unsetopt correctall
 
-    zstyle ':completion:*' rehash true
+zstyle ':completion:*' rehash true
 
-    # Fuck: the best CLI autocomplete tool
-    # See https://www.github.com/nvbn/thefuck for more details
-    # Considering how much i hate shell scripting, im proud of the line below
-    # only executes the eval if type returns 0 (and type returns 0 if the program
-    # exists and 1 otherwise)
-    type thefuck && eval $(thefuck --alias)
+# Fuck: the best CLI autocomplete tool
+# See https://www.github.com/nvbn/thefuck for more details
+# Considering how much i hate shell scripting, im proud of the line below
+# only executes the eval if type returns 0 (and type returns 0 if the program
+# exists and 1 otherwise)
+type thefuck && eval $(thefuck --alias)
 
-    printf "$fg[blue]ZSH Initialized $fg[reset]\n"
-else
-    printf "$fg[green]ZSH $fg[bold]RELOADED$fg[reset]\n"
-fi
+printf "$fg[blue]ZSH Initialized $fg[default]\n"
 
-rm /tmp/.zshreload &> /dev/null
 # source /root/.zsh/alias.zsh
 # source /root/.zsh/functions.zsh

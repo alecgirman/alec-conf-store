@@ -1,5 +1,5 @@
 function system-boothook() {
-    if [[ "$HOST" = "workstation" ; then
+    if [[ "$HOST" = "workstation" ]]; then
         echo 'Starting wifi'
         ip link set wlp1s0 up
         wpa_supplicant -iwlp1s0 -c/etc/wpa_supplicant.conf &> /dev/null &

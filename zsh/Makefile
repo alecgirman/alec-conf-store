@@ -9,11 +9,15 @@ STARTFILE=ashe-zshloader.zsh
 
 install: clean
 	mkdir -p ${PREFIX}/
+	cat /ashe/zsh/autoload/*.zsh > ${PREFIX}/compiled.zsh
+	${COPYDIR} plugins/ ${PREFIX}/
+	${COPYFILE} zshrc ${PREFIX}/${STARTFILE}
+
+oldinstall: clean
+	mkdir -p ${PREFIX}/
 	${COPYDIR} autoload/ ${PREFIX}/
 	${COPYDIR} plugins/ ${AUTOLOAD}/
 	${COPYFILE} zshrc ${PREFIX}/${STARTFILE}
-	@echo 'Installation complete!'
-	@echo 'In addition, any scripts you put into ~/autoload/ will be automatically loaded with ZSH!'
 
 install-firsttime: install
 	echo "source ${PREFIX}/ashe-zshloader.zsh" >> ${PREFIX}/.zshrc

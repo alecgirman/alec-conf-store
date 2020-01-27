@@ -1,2 +1,2 @@
-GIT_DIR = /var/git
-EXTERN_GIT = /mnt/externssd/data/git
+export GITDIR=/var/git
+export EXTERN_GIT=/mnt/externssd/data/git

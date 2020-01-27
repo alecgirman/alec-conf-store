@@ -16,7 +16,7 @@ alias c=cat
 
 alias addalias='nvim /ashe/zsh/autoload/alias.zsh;'
 alias addfunction='nvim /ashe/zsh/autoload/functions.zsh'
-alias resync='(cd /ashe; make install)'
+alias resync='make -C /ashe install'
 
 alias clearcache='echo 3 > /proc/sys/vm/drop_caches'
 alias cputemp='sensors | sed -n "/^Core/p"'

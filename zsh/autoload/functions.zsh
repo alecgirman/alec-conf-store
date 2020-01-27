@@ -1,5 +1,5 @@
 function findfile() {
-    find | {{GREPPRG}} $@
+    find | ag $@
 }
 
 function findfileinroot() {
@@ -32,9 +32,9 @@ alias gclone='clonerepo'
 alias gc='clonerepo'  # dont interfere with gcc!
 
 # source all autoload files
-for file in $(find ./autoload | {{GREPPRG}} '\.zsh$'); do
-    source $file
-    printf "$fg[green]Sourced $file\n"
-done
+# for file in $(find ./autoload | ag '\.zsh$'); do
+#     source $file
+#     printf "$fg[green]Sourced $file\n"
+# done
 
 echo "$fg[green]Functions Loaded$fg[reset]"
