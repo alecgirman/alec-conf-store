@@ -9,7 +9,6 @@ install: clean install-blocks
 	echo ${HOST}
 	cp -uv config ~/.config/i3/config
 	sed -i 's/FONTSIZE/${FONTSIZE}/g' ~/.config/i3/config
-	sudo i3-msg restart
 
 clean: uninstall
 
