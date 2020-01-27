@@ -45,9 +45,6 @@ purge: uninstall-core uninstall-vimplug
 gitdiff:
 	$(DIFF) /ashe/vim
 
-docker-image: Dockerfile docker.sh
-	
-
 help explain:
 	@echo -e '--- Makefile targets ---\n'
 	@echo 'help/explain: Show this information again.'
