@@ -56,6 +56,8 @@ function! ashe#loader#orchestrate()
 	    Plug 'SirVer/UltiSnips'
 	    Plug 'kien/ctrlp.vim'
 	    Plug 'mileszs/ack.vim'
+        Plug 'liuchengxu/vim-clap'
+        Plug 'skywind3000/vim-quickui'
 	    PlugInstall!
 	endfunction
 	
@@ -133,7 +135,6 @@ function! ashe#loader#orchestrate()
 	    endif
 
         let g:airline#theme = 'powerlineish'
-        let g:airline#init#vim_async=1
         call airline#extensions#whitespace#disable()
 
 	    hi VimwikiHeader1 ctermbg=red guifg=#FF0000
@@ -185,14 +186,14 @@ function! ashe#loader#orchestrate()
 	    " SuperTab like snippets' behavior.
 	    " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
 	    imap <expr><TAB>
-			\ pumvisible() ? "\<C-n>" :
+			\ pumvisible() ? "\<C-k>" :
 			\ neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 	    smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 	    " For conceal markers.
 	    if has('conceal')
-		set conceallevel=2 concealcursor=niv
+            set conceallevel=2 concealcursor=nv
 	    endif
 
 	    " Enable snipMate compatibility feature.
@@ -208,7 +209,7 @@ function! ashe#loader#orchestrate()
 	call s:pluginconf()
 	call s:plugins()
     call plug#end()
-    PlugInstall
+    PlugInstall!
 	call s:initcolors()
 
 endfunction

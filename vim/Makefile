@@ -45,6 +45,12 @@ purge: uninstall-core uninstall-vimplug
 gitdiff:
 	$(DIFF) /ashe/vim
 
+build-image:
+	docker build -t neovim-srcbuild ./
+
+run-docker: build-image
+	docker run -c 12 -h neovim -it --rm neovim-srcbuild
+
 help explain:
 	@echo -e '--- Makefile targets ---\n'
 	@echo 'help/explain: Show this information again.'

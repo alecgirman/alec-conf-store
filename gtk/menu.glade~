@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.22.1 -->
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkMenu" id="mainmenu">
+    <property name="name">mainmenu</property>
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="has_focus">True</property>
+    <signal name="popped-up" handler="action_mainmenu" swapped="no"/>
+    <child>
+      <object class="GtkMenuItem" id="menuentry_app">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="label" translatable="yes">App</property>
+        <property name="use_underline">True</property>
+        <child type="submenu">
+          <object class="GtkMenu">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkMenuItem" id="menuentry_quit">
+                <property name="name">menuentry_quit</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="action_name">exit</property>
+                <property name="label" translatable="yes">Quit</property>
+                <property name="use_underline">True</property>
+                <signal name="select" handler="menuevent_quit" swapped="no"/>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <style>
+      <class name="main_menu_container"/>
+    </style>
+  </object>
+</interface>

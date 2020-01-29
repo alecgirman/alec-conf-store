@@ -1,6 +1,5 @@
 if exists('ashe_did_keybinds_vim') || &cp || version < 700
 	echomsg 'ashe_did_keybinds_vim exists in namespace'
-    	finish
 endif
 let ashe_did_keybinds_vim = 1
 
@@ -55,6 +54,8 @@ function! ashe#keybinds#LoadDefaultKeybinds()
     nmap <F2> :NERDTreeToggle<CR>
     nmap <F3> :UndotreeToggle<CR>
     nmap <F4> :TagbarToggle<CR>
+
+    nmap g<Space> :Clap<CR>
 
     " noremap <Space>
     nmap <Space>c :call

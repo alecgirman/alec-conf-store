@@ -48,6 +48,10 @@ alias gs='git status'
 alias pre=head
 alias prel='head -n'
 
+alias fastmake='make -j 12'
+alias makelocal='make install PREFIX=/usr/local'
+alias objdump='objdump --disassembler-options=intel,addr64'
+
 alias rlz='touch /tmp/.zshreload; source ~/.zshrc'
 alias jctl=journalctl
 alias start-dockerd='dockerd &> /dev/null &'

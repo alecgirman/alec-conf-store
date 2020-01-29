@@ -21,7 +21,6 @@ function system-boothook() {
 
         # TODO: a console ascii transition to white
         # then a high-mid gamma fade would look awesome!
-
         
         echo 'Starting docker daemon...'
         dockerd &> /dev/null &
