@@ -26,6 +26,7 @@ alias diff='diff --color=auto'
 alias sed='sed -E'
 alias howdoi='howdoi -c'
 alias grep='grep --color=auto -P'
+alias ccat='pygmentize'
 
 alias ds='docker search'
 alias emak='nvim Makefile'
@@ -35,19 +36,21 @@ alias fsb='du -sb'
 alias fsh='du -sh'
 alias fwatch='tail -fs'
 alias keep='noglob keep'
-alias lc='lolcat -t'
 alias md='mkdir -p'
 alias nf=neofetch
 alias pacman=yay
 alias plc=playerctl
 alias pm=pulsemixer
+alias pyg='pygmentize'
 
 alias gcm='git commit -m'
 alias gs='git status'
 
+# preview files
 alias pre=head
 alias prel='head -n'
 
+# build tools
 alias fastmake='make -j 12'
 alias makelocal='make install PREFIX=/usr/local'
 alias objdump='objdump --disassembler-options=intel,addr64'
@@ -58,6 +61,11 @@ alias start-dockerd='dockerd &> /dev/null &'
 alias tl='task list'
 alias tlog='journalctl -f'
 alias widc='weather dc'
+
+# compression
+alias tarpipe='tar -c'
+alias softxz='xz -z -2'
+alias hardxz='xz -ze -T 12 -9'
 
 alias tma='tmux attach -t'
 alias tmls='tmux list-sessions'
