@@ -1,4 +1,4 @@
-if exists('ashe_did_keybinds_vim') || &cp || version < 700
+if exists('ashe_did_keybinds_vim')
 	echomsg 'ashe_did_keybinds_vim exists in namespace'
 endif
 let ashe_did_keybinds_vim = 1
@@ -26,6 +26,11 @@ function! ashe#keybinds#LoadDefaultKeybinds()
 
     " quickly turn off highlighting after a search
     noremap H :noh<CR>
+
+    " git commands
+    nnoremap <Space>gp :CocCommand git.chunkInfo<CR>
+    nnoremap <Space>gs :CocCommand git.chunkStage<CR>
+    nnoremap <Space>gu :CocCommand git.chunkUndo<CR>
 
     " K by default is binded to manpages/docs
     " and that's too good of a shortcut to lose
@@ -55,7 +60,7 @@ function! ashe#keybinds#LoadDefaultKeybinds()
     nmap <F3> :UndotreeToggle<CR>
     nmap <F4> :TagbarToggle<CR>
 
-    nmap g<Space> :Clap<CR>
+    nmap g<Space> :Clap!<CR>
 
     " noremap <Space>
     nmap <Space>c :call
