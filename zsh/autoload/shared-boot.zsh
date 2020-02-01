@@ -23,7 +23,9 @@ function system-boothook() {
         # then a high-mid gamma fade would look awesome!
         
         echo 'Starting docker daemon...'
-        dockerd &> /dev/null &
+
+        # this line causes an error for SOME reason
+        # dockerd &> /dev/null &
         sleep 1
         neofetch
         sleep 1
