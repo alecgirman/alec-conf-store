@@ -1,22 +1,12 @@
-function findfile() {
-    find | ag $@
-}
-
-function findfileinroot() {
-    cd /
-    findfile $@
-    cd -
-}
-
-function countfiles() {
+function afunc_countfiles() {
     ls -l $@ | wc -l
 }
 
-function weather() {
+function afunc_weather() {
     curl "http://wttr.in/$1"
 }
 
-function clonerepo() {
+function afunc_gitclonerepo() {
     if [[ -d $GITDIR ]]; then
         printf "Either your external git folder does not exist"
         printf "or the GITDIR variable is not set.  You can fix"
@@ -28,13 +18,12 @@ function clonerepo() {
     git clone $1
 }
 
-alias gclone='clonerepo'
-alias gc='clonerepo'  # dont interfere with gcc!
+function afunc_savele() {
+    echo !export >> /ashe/zsh/autoload/vars.zsh
+}
 
-# source all autoload files
-# for file in $(find ./autoload | ag '\.zsh$'); do
-#     source $file
-#     printf "$fg[green]Sourced $file\n"
-# done
+function afunc_getapikey() {
+    ag "set $1 \K.*$" -o ~/.config/.apikeyrc
+}
 
 echo "$fg[green]Functions Loaded$fg[reset]"
