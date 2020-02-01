@@ -30,6 +30,7 @@ install: install-vimplug install-core
 
 uninstall-core:
 	$(DELETE) $(TARGET)/plugin/init.vim
+	$(DELETE) ~/.config/nvim
 
 uninstall-vimplug:
 	$(DELETE) $(TARGET)/autoload/plug.vim
@@ -62,3 +63,4 @@ help explain:
 	@echo 'uninstall-vimplug: Uninstalls the Plug plugin manager'
 	@echo 'uninstall: Shortcut to remove both core and vimplug components'
 	@echo 'gitdiff: Displays a diff between the local tracking directory and the latest remote commit'
+# TODO: DOCKER FILES MOVED INTO TESTS FOLDER
