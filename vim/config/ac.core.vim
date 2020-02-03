@@ -28,6 +28,7 @@ set mousemodel=popup  " Define the mouse model
 
 if !has ('nvim')		" only works in vim
 	set ttymouse=sgr      " Set terminal mouse input mode
+else
 	set icm=nosplit     " Perform searches and highlight substitutions as you're typing substitution commands 
 endif
 
@@ -51,5 +52,4 @@ set timeoutlen=300              " shorten the key timeout from the default of 50
 " set diffopt=                    " clear diff settings
 set diffopt+=iwhite,iblank      " ignore whitespace and blank lines when evaluating diff
 
-filetype plugin indent on
-syntax on
+"filetype plugin indent on

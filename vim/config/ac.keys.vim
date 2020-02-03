@@ -1,5 +1,14 @@
+" config file warp-drive: in vim, press gf on a file to jump to it
+" Core config: /ashe/vim/config/ac.core.vim
+" Keybind config: /ashe/vim/config/ac.keys.vim
+" Plugin config: /ashe/vim/config/ac.plugins.vim
+" Color config: /ashe/vim/config/ac.colors.vim
+
+" Open floating menu
+nmap g<Space> :Clap!<CR>
+
 " easy escape
-inoremap jj <Esc>l
+inoremap ljj <Esc>
 
 " quicker vertical movement 
 noremap J <C-d>
@@ -11,6 +20,7 @@ noremap Y v$hy
 " better jumping to marks
 noremap ` '
 
+" Completion utilities
 noremap gl :CocList --normal<CR>
 noremap gll :CocList 
 noremap glc :CocList colors<CR>
@@ -25,12 +35,17 @@ noremap H :noh<CR>
 nnoremap <Space>gp :CocCommand git.chunkInfo<CR>
 nnoremap <Space>gs :CocCommand git.chunkStage<CR>
 nnoremap <Space>gu :CocCommand git.chunkUndo<CR>
+nnoremap <Space>gn ]c
+nnoremap <Space>gl [c
+nnoremap <silent> <Space>gp
 
+" L -> K
 " K by default is binded to manpages/docs
 " and that's too good of a shortcut to lose
 " TODO: F1 might do this too, try it too
 noremap L K
 
+" Z commands
 " Z   = Save current file
 " ZZZ = Force Quit all
 " ZQQ = Save and Close all
@@ -43,34 +58,44 @@ nmap ZS :mksession!
 nmap ZV :w<CR>:source %<CR>
 nmap ZT :tabclose!<CR>
 
-" Open a terminal window - keep forgetting this one exists
-noremap <Space>! :vs<CR><C-w>l:term<CR>i
-
 " Terminal mode mappings
 tmap <Esc> <C-\><C-n>
 
-" Addon windows
+" Sidebars
 nmap <F2> :NERDTreeToggle<CR>
 nmap <F3> :UndotreeToggle<CR>
 nmap <F4> :TagbarToggle<CR>
 
-nmap g<Space> :Clap!<CR>
-
-" noremap <Space>
+" Unclassified space-leader bindings
 nmap <Space>c :call
 noremap <Space>r :%s/
 noremap <Space><Tab> :Tabularize /
 noremap <Space>h :help<Space>
-vnoremap <Space>h y<Esc>:help <C-r>"<CR>
+noremap <Space>h y<Esc>:help <C-r>"<CR>
 noremap <Space>w :VimwikiUISelect<CR>
 
 " noremap <C-Space>c :call Colorizer#ColorOff()<CR>:call Colorizer#ColorToggle()<CR>
 noremap <C-Space>c :windo call Colorizer#ColorOff()<CR>:call Colorizer#ColorToggle()<CR>
 
-" I just need a shortcut for making tabs.
-" See above for a shortcut on closing tabs.
+" Open a terminal window - keep forgetting this one exists
+noremap <Space>! :vs<CR><C-w>l:term<CR>i
+
+" Create new tab
 noremap <Space>t :tabnew<CR>
 
-echohl Question
-echomsg "ASHE: Loaded Default keybindings"
-echohl None
+" Insert Mode mappings
+" This section can also include abbreviations
+
+" Insert date/time
+iab <expr> ict strftime("%T")
+iab <expr> icd strftime("%D")
+imap icf ict icd
+
+iab isy <C-r>=system('')<Left><Left>
+
+imap <S-CR> 
+
+" global shortcut to comeback tho this file
+com! EditKebinds :e /root/.vim/pack/alec-config/start/alec-config/plugin/ac.keys.vim
+com! VEditKebinds :vs /root/.vim/pack/alec-config/start/alec-config/plugin/ac.keys.vim
+com! SEditKebinds :sp /root/.vim/pack/alec-config/start/alec-config/plugin/ac.keys.vim

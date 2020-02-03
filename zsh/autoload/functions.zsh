@@ -26,4 +26,19 @@ function afunc_getapikey() {
     ag "set $1 \K.*$" -o ~/.config/.apikeyrc
 }
 
+function afunc_whatis() {
+    yay -Qo "/usr/bin/$1" 2>/dev/null 1>/tmp/whatis-queryown
+    yay -Si $1 2>/dev/null 1>/tmp/whatis-queryinfo
+
+     
+
+    rm /tmp/whatis-queryown
+    rm /tmp/whatis-queryinfo
+}
+
+function afunc_getall_giturls() {
+    cat */.git/config | ag 'url'
+}
+
+    
 echo "$fg[green]Functions Loaded$fg[reset]"

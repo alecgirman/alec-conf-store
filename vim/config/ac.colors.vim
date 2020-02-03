@@ -10,7 +10,7 @@ else
 	let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 	let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 	" <<m4:hi-colorscheme>>
-	" colo onedark
+	colo deus
 	let s:ashe_colormode = 2
 	set bg=dark t_Co=256gk tgc
 endif

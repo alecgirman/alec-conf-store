@@ -19,24 +19,10 @@ let g:vimwiki_ext2syntax = {'.md': 'markdown',
 			\ '.wiki': 'media'}
 
 echohl Question | echomsg '[Pre] Plugin configuration set, ready to packadd.' | echohl None
-let g:neosnippet#snippets_directory='/var/snippets/'
 
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets' behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-" imap <expr><TAB>
-" 			\ pumvisible() ? "\<C-k>" :
-" 			\ neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-" 
-" smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-	set conceallevel=2 concealcursor=nv
-endif
+" if has('conceal')
+" 	set conceallevel=2 concealcursor=nv
+" endif
 
 " Enable snipMate compatibility feature.
 " let g:neosnippet#enable_snipmate_compatibility = 1
@@ -51,16 +37,11 @@ func! LoadAllPlugins()
 	packadd i3config.vim        
 	packadd jedi-vim            
 	packadd neoinclude.vim      
-	packadd neosnippet-snippets 
-	packadd neosnippet.vim      
 	packadd nerdtree            
-	packadd nvim-yarp           
-	         
-	packadd supertab            
+	packadd vim-colorschemes         
 	packadd svg.vim             
 	packadd tabular             
 	packadd tagbar              
-	packadd UltiSnips           
 	packadd undotree            
 	packadd unite.vim           
 	packadd vim-airline         
@@ -70,7 +51,6 @@ func! LoadAllPlugins()
 	packadd vim-commentary      
 	packadd vim-fugitive        
 	packadd vim-gitgutter       
-	packadd vim-hug-neovim-rpc  
 	packadd vim-markdown        
 	packadd vim-multiple-cursors
 	packadd vim-polyglot        
@@ -80,4 +60,18 @@ func! LoadAllPlugins()
 	packadd vim-surround        
 	packadd vim-taskwarrior     
 	packadd vimwiki             
+
+    " Handle plugin incompatibilities.
+    if has('nvim')
+        packadd UltiSnips           
+    endif
+
+    " Legacy plugin list (keeping in case theyre needed)
+    " packadd vim-hug-neovim-rpc  
+	" packadd neosnippet-snippets
+    " packadd supertab            
+	" packadd neosnippet.vim
+    " packadd nvim-yarp           
+
+    call AfterPackLoad()
 endf
