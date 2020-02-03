@@ -1,3 +1,0 @@
-create extension dir with vim -c :CocInstall coc-pairs
-vim -c ':CocInstall coc-pairs | sleep 2 | quit'
-cd ~/.config/coc

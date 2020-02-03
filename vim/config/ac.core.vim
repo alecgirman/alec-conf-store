@@ -1,3 +1,8 @@
+function GhettoPluginInstallation()
+    install_list=readfile(':
+endfunction
+
+source postinstall.vim
 set showmode		" Display the mode in the statusbar.  I don't know why you'd have this off.
 set showcmd			" Has nothing to do with showing the comand, but shows the visual selection dimensions.
 set showmatch		" Show matching pairs when your cursor is on one.
@@ -28,6 +33,8 @@ set mousemodel=popup  " Define the mouse model
 
 if !has ('nvim')		" only works in vim
 	set ttymouse=sgr      " Set terminal mouse input mode
+    call setenv('VIMRUNTIME', '/usr/share/vim/vim82')
+    syntax on
 else
 	set icm=nosplit     " Perform searches and highlight substitutions as you're typing substitution commands 
 endif

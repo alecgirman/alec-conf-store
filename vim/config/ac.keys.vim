@@ -96,6 +96,6 @@ iab isy <C-r>=system('')<Left><Left>
 imap <S-CR> 
 
 " global shortcut to comeback tho this file
-com! EditKebinds :e /root/.vim/pack/alec-config/start/alec-config/plugin/ac.keys.vim
-com! VEditKebinds :vs /root/.vim/pack/alec-config/start/alec-config/plugin/ac.keys.vim
-com! SEditKebinds :sp /root/.vim/pack/alec-config/start/alec-config/plugin/ac.keys.vim
+com! EditKebinds :e /root/.vim/pack/config/start/config/plugin/ac.keys.vim
+com! VEditKebinds :vs /root/.vim/pack/config/start/config/plugin/ac.keys.vim
+com! SEditKebinds :sp /root/.vim/pack/config/start/config/plugin/ac.keys.vim
