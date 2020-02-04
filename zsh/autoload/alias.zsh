@@ -96,7 +96,6 @@ alias pyg='pygmentize'
 alias ccat='pyg' # this was the alias I used when I used zsh's built in color output
 
 # audio
->>>>>>> Stashed changes
 alias plc=playerctl
 alias pm=pulsemixer
 alias pyg='pygmentize'
@@ -104,7 +103,9 @@ alias pyg='pygmentize'
 # git
 alias gcm='git commit -m'
 alias gs='git status'
-<<<<<<< Updated upstream
+
+alias getall_giturls='afunc_getall_giturls'
+alias gru='getall_giturls'
 
 # preview files
 alias pre=head
@@ -128,6 +129,9 @@ alias lsobj='lself'
 alias ds='docker search'
 alias dockerd='dockerd &> /dev/null &'
 
+# get information on an installed binary
+alias whatis='afunc_whatis'
+
 # taskwarrior
 alias tl='task list'
 
@@ -140,8 +144,12 @@ alias getapikey='afunc_getapikey'
 
 # compression
 alias tarpipe='tar -c'
+alias xz='xz -v'
 alias softxz='xz -z -2'
 alias hardxz='xz -ze -T 12 -9'
+
+# for now, use agfs to find the recording.
+alias arec="asciinema rec /tmp/$(mktemp -u).casts"
 
 # tmux
 alias tma='tmux attach -t'
@@ -156,5 +164,6 @@ alias ytds='youtube-dl --default-search "ytsearch"'
 alias i3blockconfig='nvim /ashe/i3blocks/config'
 alias i3config='nvim /ashe/i3/config'
 alias zshconfig='$EDITOR /ashe/zsh/'
+alias editpolybar='$EDITOR /root/.config/polybar/config'
 alias rlz='touch /tmp/.zshreload; source ~/.zshrc'
 alias savele='afunc_savele' # save last export
