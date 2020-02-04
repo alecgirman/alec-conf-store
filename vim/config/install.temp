@@ -1,27 +1,24 @@
-
-execute 'normal :CocInstall coc-pairs<CR>'
-execute 'normal :CocInstall coc-actions<CR>'
-execute 'normal :CocInstall coc-calc<CR>'
-execute 'normal :CocInstall coc-ccls<CR>'
-execute 'normal :CocInstall coc-dictionary<CR>'
-execute 'normal :CocInstall coc-docker<CR>'
-execute 'normal :CocInstall coc-emoji<CR>'
-execute 'normal :CocInstall coc-git<CR>'
-execute 'normal :CocInstall coc-github<CR>'
-execute 'normal :CocInstall coc-json<CR>'
-execute 'normal :CocInstall coc-lists<CR>'
-execute 'normal :CocInstall coc-marketplace<CR>'
-execute 'normal :CocInstall coc-omni<CR>'
-execute 'normal :CocInstall coc-pairs<CR>'
-execute 'normal :CocInstall coc-pyright<CR>'
-execute 'normal :CocInstall coc-python<CR>'
-execute 'normal :CocInstall coc-scala<CR>'
-execute 'normal :CocInstall coc-snippets<CR>'
-execute 'normal :CocInstall coc-svg<CR>'
-execute 'normal :CocInstall coc-syntax<CR>'
-execute 'normal :CocInstall coc-tabnine<CR>'
-execute 'normal :CocInstall coc-ultisnips<CR>'
-execute 'normal :CocInstall coc-vimlsp<CR>'
-execute 'normal :CocInstall coc-xml<CR>'
-
-
+:CocInstall coc-pairs
+:CocInstall coc-actions
+:CocInstall coc-calc
+:CocInstall coc-ccls
+:CocInstall coc-dictionary
+:CocInstall coc-docker
+:CocInstall coc-emoji
+:CocInstall coc-git
+:CocInstall coc-github
+:CocInstall coc-json
+:CocInstall coc-lists
+:CocInstall coc-marketplace
+:CocInstall coc-omni
+:CocInstall coc-pairs
+:CocInstall coc-pyright
+:CocInstall coc-python
+:CocInstall coc-scala
+:CocInstall coc-snippets
+:CocInstall coc-svg
+:CocInstall coc-syntax
+:CocInstall coc-tabnine
+:CocInstall coc-ultisnips
+:CocInstall coc-vimlsp
+:CocInstall coc-xml

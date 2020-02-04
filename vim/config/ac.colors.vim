@@ -2,7 +2,7 @@
 let s:ashe_colormode = 0
 if system('echo $TERM') == 'linux'
 	echomsg 'Detected limited color support (TERM=linux)'
-	" <<m4:lo-colorscheme>>
+    colo dimensions
 	let s:ashe_colormode = 1
 	set bg=dark t_Co=16 notgc
 else

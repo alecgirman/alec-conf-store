@@ -18,6 +18,8 @@ PKGAUTOCONFIRM=-y
 
 all: purge install-autoload
 
+
+
 install-config:
 	$(MAKEDIR) $(CONFIGPACKDIR)
 	cp config/* $(CONFIGPACKDIR)

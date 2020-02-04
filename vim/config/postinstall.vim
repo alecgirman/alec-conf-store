@@ -1,24 +1,48 @@
-:CocInstall coc-pairs<CR>2gs
-:CocInstall coc-actions<CR>2gs
-:CocInstall coc-calc<CR>2gs
-:CocInstall coc-ccls<CR>2gs
-:CocInstall coc-dictionary<CR>2gs
-:CocInstall coc-docker<CR>2gs
-:CocInstall coc-emoji<CR>2gs
-:CocInstall coc-git<CR>2gs
-:CocInstall coc-github<CR>2gs
-:CocInstall coc-json<CR>2gs
-:CocInstall coc-lists<CR>2gs
-:CocInstall coc-marketplace<CR>2gs
-:CocInstall coc-omni<CR>2gs
-:CocInstall coc-pairs<CR>2gs
-:CocInstall coc-pyright<CR>2gs
-:CocInstall coc-python<CR>2gs
-:CocInstall coc-scala<CR>2gs
-:CocInstall coc-snippets<CR>2gs
-:CocInstall coc-svg<CR>2gs
-:CocInstall coc-syntax<CR>2gs
-:CocInstall coc-tabnine<CR>2gs
-:CocInstall coc-ultisnips<CR>2gs
-:CocInstall coc-vimlsp<CR>2gs
-:CocInstall coc-xml<CR>2gs
+:CocInstall coc-pairs
+2gs
+:CocInstall coc-actions
+2gs
+:CocInstall coc-calc
+2gs
+:CocInstall coc-ccls
+2gs
+:CocInstall coc-dictionary
+2gs
+:CocInstall coc-docker
+2gs
+:CocInstall coc-emoji
+2gs
+:CocInstall coc-git
+2gs
+:CocInstall coc-github
+2gs
+:CocInstall coc-json
+2gs
+:CocInstall coc-lists
+2gs
+:CocInstall coc-marketplace
+2gs
+:CocInstall coc-omni
+2gs
+:CocInstall coc-pairs
+2gs
+:CocInstall coc-pyright
+2gs
+:CocInstall coc-python
+2gs
+:CocInstall coc-scala
+2gs
+:CocInstall coc-snippets
+2gs
+:CocInstall coc-svg
+2gs
+:CocInstall coc-syntax
+2gs
+:CocInstall coc-tabnine
+2gs
+:CocInstall coc-ultisnips
+2gs
+:CocInstall coc-vimlsp
+2gs
+:CocInstall coc-xml
+2gs
