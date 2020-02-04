@@ -1,6 +1,0 @@
-FROM ubuntu
-    run apt update && apt upgrade
-    run apt install git python3 nodejs npm
-    git clone https://github.com/alecgirman/ashe
-    apt install vim
-

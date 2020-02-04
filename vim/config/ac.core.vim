@@ -55,4 +55,4 @@ set timeoutlen=300              " shorten the key timeout from the default of 50
 " set diffopt=                    " clear diff settings
 set diffopt+=iwhite,iblank      " ignore whitespace and blank lines when evaluating diff
 
-"filetype plugin indent on
+filetype plugin indent on

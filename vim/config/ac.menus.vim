@@ -29,5 +29,3 @@ nmenu Surface.BrightnessMedium :!echo 5000 > /sys/class/backlight/intel_brightne
 nmenu Surface.BrightnessLow :!echo 2000 > /sys/class/backlight/intel_brightness/brightness<CR>
 
 nmenu Insert.Date <C-r>=strftime()
-
-imenu 
