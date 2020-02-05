@@ -153,7 +153,7 @@ mode "resize" {
 bindsym $prefix+r mode "resize"
 
 bar {
-    status_command polybar -cr ~/.config/polybar/config primary
+    status_command i3blocks
 }
 
 # vim: ft=i3config
