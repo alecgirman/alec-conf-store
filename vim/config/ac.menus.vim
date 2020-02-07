@@ -1,4 +1,3 @@
-/var/git/ashe/vim/config
 noremap <RightMouse> :popup! MenuSelector<CR>
 noremap gm :popup! MenuSelector<CR>
 

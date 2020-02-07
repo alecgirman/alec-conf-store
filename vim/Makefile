@@ -19,6 +19,22 @@ PKGAUTOCONFIRM=-y
 all: purge install-autoload
 
 
+MAKEDIR = mkdir -p
+COPYFILE = cp -v
+COPYDIR = cp -rv
+DIFF = git diff --color --minimal -a
+DELETE = rm -fv
+DELETEDIR = rm -rfv
+
+ROOTPACKDIR=~/.vim/pack
+CONFIGPACKDIR=$(ROOTPACKDIR)/config/start/config/plugin
+PLUGINPACKDIR=$(ROOTPACKDIR)/plugins/opt
+COCEXTDIR=~/.config/coc
+PKGREFRESH=apt update && apt upgrade
+PKGINSTALL=apt install
+PKGAUTOCONFIRM=-y
+
+all: purge install-autoload
 
 install-config:
 	$(MAKEDIR) $(CONFIGPACKDIR)

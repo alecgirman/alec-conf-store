@@ -2,6 +2,25 @@ export LANG="en_US.UTF-8"
 #ZSH=/root/.oh-my-zsh/
 HYPHEN_INSENSITIVE="true"
 
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' max-errors 3 not-numeric
+zstyle ':completion:*' menu select=1
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' verbose true
+zstyle :compinstall filename '/home/alec/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=20000
+setopt appendhistory autocd beep extendedglob
+bindkey -v
+
 # Set preload vars
 # Line #1863-1864 of main theme file
 # POWERLEVEL9K_IGNORE_TERM_LANG=true
