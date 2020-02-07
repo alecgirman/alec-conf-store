@@ -1,0 +1,405 @@
+" Press ? for help
+
+.. (up a dir)
+/
+▸ ashe/ -> /data/git/ashe/
+▸ bin/ -> /usr/bin/
+▸ boot/
+▸ data/
+▸ dev/
+▸ etc/
+▸ home/
+▸ lib/ -> /usr/lib/
+▸ lib64/ -> /usr/lib/
+▸ mnt/
+▸ opt/
+▸ proc/
+▾ root/
+  ▸ .android/
+  ▸ .AndroidStudio3.5/
+  ▸ .ansible/
+  ▸ .audacity-data/
+  ▸ .bashbullet/
+  ▸ .cache/
+  ▸ .cargo/
+  ▸ .coc/
+  ▸ .compose/
+  ▾ .config/
+    ▸ akonadi/
+    ▸ ardour5/
+    ▸ asciinema/
+    ▸ autostart-scripts/
+    ▸ autostart/
+    ▸ blender/
+    ▸ bspwm/
+    ▸ Cadence/
+    ▸ cava/
+    ▸ chromium/
+    ▸ cmus/
+    ▸ coc/
+    ▸ configstore/
+    ▸ conky/
+    ▸ csound/
+    ▸ darktable/
+    ▸ dconf/
+    ▸ discord/
+    ▸ enchant/
+    ▸ eog/
+    ▸ evolution/
+    ▸ falkTX/
+    ▸ fish/
+    ▸ fontconfig/
+    ▸ gconf/
+    ▸ gedit/
+    ▸ GIMP/
+    ▸ gnome-boxes/
+    ▸ gnome-control-center/
+    ▸ gnome-session/
+    ▸ goa-1.0/
+    ▸ gtk-2.0/
+    ▸ gtk-3.0/
+    ▸ htop/
+    ▾ i3/
+        config
+    ▸ i3blocks/
+    ▸ ibus/bus/
+    ▸ inkscape/
+    ▸ KDE/
+    ▸ Kitware/
+    ▸ LaborejoSoftwareSuite/
+    ▸ libaccounts-glib/
+    ▸ libreoffice/
+    ▸ mc/
+    ▸ Microsoft/
+    ▸ mpv/
+    ▸ nautilus/
+    ▸ neofetch/
+    ▸ nvim/ -> /root/.vim/
+    ▸ oni/
+    ▸ openAV/
+    ▸ openbox/
+    ▸ Philipp Schmieder/
+    ▸ plasma-workspace/
+    ▾ polybar/
+        config
+        oldconfig
+    ▸ procps/
+    ▸ pulse/
+    ▸ PulseEffects/
+    ▸ qastools/
+    ▸ qtile/
+    ▸ QtProject/
+    ▾ qutebrowser/
+    ▾ ranger/
+        config
+    ▸ replicode/
+    ▸ rncbc.org/
+    ▸ rosegardenmusic/
+    ▸ session/
+    ▸ sigrok/
+    ▸ smplayer/
+    ▸ smtube/
+    ▸ sonic-pi.net/
+    ▸ sonic-visualiser/
+    ▸ sxhkd/
+    ▾ TabNine/
+        tabnine_config.json
+        TabNineExample.toml
+    ▸ teams/
+    ▾ terminator/
+        config
+    ▸ termite/
+    ▸ thefuck/
+    ▸ Unknown Organization/
+    ▸ VirtualBox/
+    ▸ vis/
+    ▸ vmpk.sourceforge.net/
+    ▸ yay/
+    ▸ yelp/
+    ▸ yoshimi/
+    ▸ znt/
+      .apikeyrc
+      akregatorrc
+      arkrc
+      baloofileinformationrc
+      baloofilerc
+      blinkenrc
+      bluedevilglobalrc
+      breezerc
+      device_automounter_kcmrc
+      discoverrc
+      dleyna-renderer-service.conf
+      dleyna-server-service.conf
+      dolphinrc
+      dragonplayerrc
+      drkonqirc
+      emaildefaults
+      emailidentities
+      eventviewsrc
+      filelightrc
+      FONTLIST
+      glade.conf
+      granatierrc
+      gtkrc
+      gtkrc-2.0
+      gwenviewrc
+      hub
+      jukrc
+      k3brc
+      kactivitymanagerd-pluginsrc
+      kactivitymanagerd-statsrc
+      kactivitymanagerd-switcher
+      kactivitymanagerdrc
+      kalarmrc
+      kapptemplaterc
+      katemetainfos
+      katerc
+      kateschemarc
+      katesyntaxhighlightingrc
+      katevirc
+      kcharselectrc
+      kcmfonts
+      kcminputrc
+      kcmshell5rc
+      kconf_updaterc
+      kded5rc
+      kdedrc
+      kdeglobals
+      kdenliverc
+      kdeveloprc
+      kfontinstuirc
+      kgammarc
+      kgetrc
+      kglobalshortcutsrc
+      kgpgrc
+      khelpcenterrc
+      khotkeysrc
+      kimagemapeditorrc
+      kiorc
+      kioslaverc
+      kleopatrarc
+      kmagrc
+      kmail2rc
+      kmailsearchindexingrc
+      kmenueditrc
+      kmetainformationrc
+      kmixctrlrc
+      kmixrc
+      kmouthrc
+      kolourpaintrc
+      komparerc
+      konq_history
+      konquerorrc
+      konquestrc
+      konsolerc
+      korgacrc
+      korganizerrc
+      krdcrc
+      kritadisplayrc
+      kritarc
+      krunnerrc
+      kscreenlockerrc
+      kservicemenurc
+      ksirkrc
+      ksmserverrc
+      kspaceduelrc
+      ksplashrc
+      ksslcertificatemanager
+      ksystemlogrc
+      ktimezonedrc
+      ktnefrc
+      ktorrent_infowidgetrc
+      ktorrentrc
+      ktpcontactlistrc
+      kturtlerc
+      kwalletmanager5rc
+      kwalletrc
+      kwaverc
+      kwin_dialogsrc
+      kwinrc
+      kwinrulesrc
+      kwriterc
+      kxkbrc
+      lokalizerc
+      lskatrc
+      mimeapps.list
+      Mixxxrc
+      okularrc
+      parleyrc
+      pavucontrol.ini
+      phishingurlrc
+      picom.conf
+      pimdataexporterrc
+      plasma-locale-settings.sh
+      plasma-localerc
+      plasma-org.kde.plasma.desktop-appletsrc
+      plasmanotifyrc
+      plasmarc
+      plasmashellrc
+      powerdevilrc
+      powermanagementprofilesrc
+      QtProject.conf
+      QtQmlViewerrc
+      sddmthemeinstallerrc
+      soffice.binrc
+      Sonic Pirc
+      Sonic Visualiserrc
+      spectaclerc
+      ssr-dcarc
+      steprc
+      systemsettingsrc
+      trashrc
+      Trolltech.conf
+      umbrellorc
+      user-dirs.dirs
+      user-dirs.locale
+      VirtualBoxrc
+      webengineurlinterceptoradblockrc
+      yakuakerc
+      zoomus.conf
+  ▸ .designer/
+  ▸ .directory_history/
+  ▸ .dnote/
+  ▸ .docker/
+  ▸ .elinks/
+  ▸ .emacs.d/
+  ▸ .fltk/
+  ▸ .gnupg/
+  ▸ .gradle/
+  ▸ .helm/
+  ▸ .ipython/
+  ▸ .java/
+  ▸ .jupyter/
+  ▸ .kde4/
+  ▸ .local/
+  ▸ .mixxx/
+  ▸ .mozilla/
+  ▸ .mutt/
+  ▸ .npm/
+  ▸ .nv/
+  ▸ .otp/
+  ▸ .pki/
+  ▸ .pylint.d/
+  ▸ .ropeproject/
+  ▸ .sonic-pi/
+  ▸ .ssh/
+  ▸ .ssr/
+  ▸ .sweep/
+  ▸ .task/
+  ▸ .vim/
+  ▸ .vnc/
+  ▸ .w3m/
+  ▸ .zcompcache/
+  ▸ .zoom/
+  ▸ .zpyi/
+  ▸ .zsh/
+  ▸ action_popup_files/
+  ▸ Android/
+  ▸ AndroidStudioProjects/
+  ▸ Ariana Grande - Sweetener (2018) Mp3 (320kbps) [Hunter]/
+  ▸ Ariana Grande - thank u, next (2019) [320]/
+  ▸ cerebri/
+  ▸ cocconfig/
+  ▸ dangerouswoman/
+  ▸ december-top-100/
+  ▸ Desktop/
+  ▸ dockertest/
+  ▸ Documents/
+  ▸ Downloads/
+  ▸ ffdata/
+  ▸ gimpcfg/
+  ▸ houdini18.0/
+  ▸ laptopstuff/
+  ▸ Mail/
+  ▸ Music/
+  ▸ nspawn/
+  ▸ Pictures/
+  ▸ Public/
+  ▸ snap/
+  ▸ src/
+  ▸ Taylor Swift - Lover (2019) [FLAC]/
+  ▸ Templates/
+  ▸ Videos/
+  ▸ vimwiki/
+  ▸ vimwiki_html/
+  ▸ VirtualBox VMs/
+    .bash_history
+    .emscripten
+    .fehbg*
+    .gitconfig
+    .gtkrc-2.0
+    .lesshst
+    .NERDTreeBookmarks
+    .notmuch-config
+    .npmrc
+    .nvidia-settings-rc
+    .python_history
+    .rnd
+    .rubberband.wisdom.d
+    .sesi_licenses.pref
+    .snd_prefs_ruby
+    .sqlite_history
+    .taskrc
+    .taskrc.old
+    .tmux.conf
+    .viminfo
+    .vimrc
+    .wget-hsts
+    .Xauthority
+    .z
+    .zcompdump
+    .zdirs
+    .zsh_history
+    .zshrc
+    5
+    ackrc
+    action_popup.html
+    alec.tar
+    androidpackages
+    ashe.tar.xz
+    cairo-cpp-integration.pdf
+    filepath.txt
+    fontawesome-cheatsheet
+    fusepackages.txt
+    gccoptions.txt
+    gitchanges.cast
+    guest.tar.gz
+    hwis.zsh
+    install.sh
+    jan17updates.txt
+    jstest.js
+    keyring
+    keyring-cerebri
+    lemonbartest.py
+    ls-date.ack
+    magic-flags.txt
+    muttguide.html
+    neovim-build-deps.txt
+    nvimnightly.diff
+    oldguestmotd.md
+    onedark.vim
+    optimizationoptions.txt
+    package.vz
+    sampleemailfile.tx
+    ssdcontents.tar.gz
+    systemd-units.txt
+    tmpdata.tar.xz
+    ultisnips error
+    unneeded.txt
+    updates.txt
+    urls-to-scrape.txt
+    vectorgfx.svg
+    vim-build.mk
+    vim-makefile
+    vim9-changes.diff
+    vim9-compile-options.txt
+    wine-disassembly.xxd
+    x11-fonts.md
+    x11-fonts.txt
+▸ run/
+▸ sbin/ -> /usr/bin/
+▸ srv/
+▸ sys/
+▸ tmp/
+▸ usr/
+▸ var/

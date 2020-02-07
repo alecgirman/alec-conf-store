@@ -1,44 +1,51 @@
-export ZSH='/dev/null'    # zsh:1: command not found: ashe
+export LANG="en_US.UTF-8"
+#ZSH=/root/.oh-my-zsh/
+HYPHEN_INSENSITIVE="true"
 
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' max-errors 3 not-numeric
+zstyle ':completion:*' menu select=1
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' verbose true
+zstyle :compinstall filename '/home/alec/.zshrc'
 
-if [ ! -f /tmp/.zshreload ]; then
-    export LANG="en_US.UTF-8"
-    #ZSH=/root/.oh-my-zsh/
-    ZSH_THEME="powerlevel9k"
-    HYPHEN_INSENSITIVE="true"
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=20000
+setopt appendhistory autocd beep extendedglob
+bindkey -v
 
-    # plugins=( colorize zsh-autosuggestions zsh-syntax-highlighting you-should-use )
+# Set preload vars
+# Line #1863-1864 of main theme file
+# POWERLEVEL9K_IGNORE_TERM_LANG=true
+# POWERLEVEL9K_IGNORE_TERM_COLORS=true
 
-    # source ~/.oh-my-zsh/oh-my-zsh.sh
+for file in $(find ~/.zsh/plugins/ | ag '\.zsh$'); do
+    source $file 
+    printf "Sourced $fg[blue]%s$fg[default]\n" $file
+done
 
-    export plugindir=/ashe/zsh/components
+export EDITOR='nvim'
 
-    # Set preload vars
-    # Line #1863-1864 of main theme file
-    $POWERLEVEL9K_IGNORE_TERM_LANG=true
-    $POWERLEVEL9K_IGNORE_TERM_COLORS=true
+unsetopt correctall
 
-    for file in $(find $plugindir | ag '\.zsh$'); do
-        . $file end
-    done
+zstyle ':completion:*' rehash true
 
-    # export EDITOR='vim'
-    export EDITOR='nvim'
+# Fuck: the best CLI autocomplete tool
+# See https://www.github.com/nvbn/thefuck for more details
+# Considering how much i hate shell scripting, im proud of the line below
+# only executes the eval if type returns 0 (and type returns 0 if the program
+# exists and 1 otherwise)
+type thefuck && eval $(thefuck --alias)
+# eval "$(starship init zsh)"
+source ~/.zsh/compiled.zsh
+printf "$fg[blue]ZSH Initialized $fg[default]\n"
 
-    # unsetopt correct
-    unsetopt correctall
-
-    zstyle ':completion:*' rehash true
-
-    eval $(thefuck --alias)
-
-    # clear
-    alias zshconfig="$EDITOR ~/.zshrc"
-    printf "$fg[blue]ZSH Initialized $fg[reset]\n"
-else
-    printf "$fg[green]ZSH $fg[bold]RELOADED$fg[reset]\n"
-fi
-
-rm /tmp/.zshreload &> /dev/null
-source /root/.zsh/alias.zsh
-source /root/.zsh/functions.zsh
+# source /root/.zsh/alias.zsh
+# source /root/.zsh/functions.zsh

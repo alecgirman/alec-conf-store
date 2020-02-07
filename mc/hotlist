@@ -1,0 +1,2 @@
+ENTRY "Vim Packs" URL "/root/.vim/pack"
+ENTRY "$HOME - Root" URL "/root"

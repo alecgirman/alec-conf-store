@@ -1,7 +1,7 @@
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
+#` This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-# font pango:Fira Code Retina 11
-font pango:FuraCode Nerd Font Mono 11
+font pango:FontAwesome FONTSIZE
+font pango:FuraCode Nerd Font Mono FONTSIZE
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -13,18 +13,20 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-# Use Mouse+Mod1 to drag floating windows to their wanted position
-floating_modifier Mod1
+# Use Mouse+$prefix to drag floating windows to their wanted position
+# floating_modifier $prefix
+
+set $prefix Mod4
 
 # start a terminal
-bindsym Mod1+Return exec termite
-bindsym Mod1+Shift+Return exec konsole --hide-menubar
-bindsym Mod1+Ctrl+Return exec st
+bindsym $prefix+Return exec termite
+bindsym $prefix+Shift+Return exec konsole --hide-menubar
+bindsym $prefix+Ctrl+Return exec st
 
-bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $prefix+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # kill focused window
-bindsym Mod1+Shift+q kill
+bindsym $prefix+Shift+q kill
 
 # default_border none
 # default_floating_border none
@@ -47,52 +49,48 @@ set $down j
 set $left h
 set $right l
 
-# tart dmenu (a program launcher)
-# bindsym Mod1+d exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-bindsym Mod1+d exec --no-startup-id i3-dmenu-desktop
 
-bindsym Mod1+$left focus left
-bindsym Mod1+$down focus down
-bindsym Mod1+$up focus up
-bindsym Mod1+$right focus right
+bindsym $prefix+d exec --no-startup-id i3-dmenu-desktop
+
+bindsym $prefix+$left focus left
+bindsym $prefix+$down focus down
+bindsym $prefix+$up focus up
+bindsym $prefix+$right focus right
 
 # alternatively, you can use the cursor keys:
-bindsym Mod1+Left focus left
-bindsym Mod1+Down focus down
-bindsym Mod1+Up focus up
-bindsym Mod1+Right focus right
+bindsym $prefix+Left focus left
+bindsym $prefix+Down focus down
+bindsym $prefix+Up focus up
+bindsym $prefix+Right focus right
 
 # move focused window
-bindsym Mod1+Shift+$left move left
-bindsym Mod1+Shift+$down move down
-bindsym Mod1+Shift+$up move up
-bindsym Mod1+Shift+$right move right
+bindsym $prefix+Shift+$left move left
+bindsym $prefix+Shift+$down move down
+bindsym $prefix+Shift+$up move up
+bindsym $prefix+Shift+$right move right
 
 # alternatively, you can use the cursor keys:
-bindsym Mod1+Shift+Left move left
-bindsym Mod1+Shift+Down move down
-bindsym Mod1+Shift+Up move up
-bindsym Mod1+Shift+Right move right
+bindsym $prefix+Shift+Left move left
+bindsym $prefix+Shift+Down move down
+bindsym $prefix+Shift+Up move up
+bindsym $prefix+Shift+Right move right
 
 # split in horizontal orientation
-bindsym Mod1+b split h
+bindsym $prefix+b split h
 
 # split in vertical orientation
-bindsym Mod1+v split v
+bindsym $prefix+v split v
 
 # enter fullscreen mode for the focused container
-bindsym Mod1+f fullscreen toggle
+bindsym $prefix+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym Mod1+s layout stacking
-bindsym Mod1+w layout tabbed
-bindsym Mod1+e layout toggle split
+bindsym $prefix+s layout stacking
+bindsym $prefix+w layout tabbed
+bindsym $prefix+e layout toggle split
 
 # # toggle tiling / floating
-bindsym Mod1+Shift+space floating toggle
+bindsym $prefix+Shift+space floating toggle
 
 set $ws1 "1"
 set $ws2 "2"
@@ -106,33 +104,34 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym Mod1+1 workspace number $ws1
-bindsym Mod1+2 workspace number $ws2
-bindsym Mod1+3 workspace number $ws3
-bindsym Mod1+4 workspace number $ws4
-bindsym Mod1+5 workspace number $ws5
-bindsym Mod1+6 workspace number $ws6
-bindsym Mod1+7 workspace number $ws7
-bindsym Mod1+8 workspace number $ws8
-bindsym Mod1+9 workspace number $ws9
-bindsym Mod1+0 workspace number $ws10
+bindsym $prefix+1 workspace number $ws1
+bindsym $prefix+2 workspace number $ws2
+bindsym $prefix+3 workspace number $ws3
+bindsym $prefix+4 workspace number $ws4
+bindsym $prefix+5 workspace number $ws5
+bindsym $prefix+6 workspace number $ws6
+bindsym $prefix+7 workspace number $ws7
+bindsym $prefix+8 workspace number $ws8
+bindsym $prefix+9 workspace number $ws9
+bindsym $prefix+0 workspace number $ws10
 
 # move focused container to workspace
-bindsym Mod1+Shift+1 move container to workspace number $ws1
-bindsym Mod1+Shift+2 move container to workspace number $ws2
-bindsym Mod1+Shift+3 move container to workspace number $ws3
-bindsym Mod1+Shift+4 move container to workspace number $ws4
-bindsym Mod1+Shift+5 move container to workspace number $ws5
-bindsym Mod1+Shift+6 move container to workspace number $ws6
-bindsym Mod1+Shift+7 move container to workspace number $ws7
-bindsym Mod1+Shift+8 move container to workspace number $ws8
-bindsym Mod1+Shift+9 move container to workspace number $ws9
-bindsym Mod1+Shift+0 move container to workspace number $ws10
+bindsym $prefix+Shift+1 move container to workspace number $ws1
+bindsym $prefix+Shift+2 move container to workspace number $ws2
+bindsym $prefix+Shift+3 move container to workspace number $ws3
+bindsym $prefix+Shift+4 move container to workspace number $ws4
+bindsym $prefix+Shift+5 move container to workspace number $ws5
+bindsym $prefix+Shift+6 move container to workspace number $ws6
+bindsym $prefix+Shift+7 move container to workspace number $ws7
+bindsym $prefix+Shift+8 move container to workspace number $ws8
+bindsym $prefix+Shift+9 move container to workspace number $ws9
+bindsym $prefix+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
-bindsym Mod1+Shift+c reload
+bindsym $prefix+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym Mod1+Shift+r restart
+exec polybar -c ~/config/polybar/config main
+bindsym $prefix+Shift+r restart
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -146,17 +145,18 @@ mode "resize" {
         bindsym k resize grow height 10 px
         bindsym j resize shrink height 10 px
         bindsym l resize grow width 10 px
+exec polybar /root/.config/polybar/config main
 
-# back to normal: Enter or Escape or Mod1+r
+# back to normal: Enter or Escape or $prefix+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym Mod1+r mode "default"
+        bindsym $prefix+r mode "default"
 }
 
-bindsym Mod1+r mode "resize"
+bindsym $prefix+r mode "resize"
 
 bar {
     status_command i3blocks
 }
 
-# vim: set ft=i3config
+# vim: ft=i3config
