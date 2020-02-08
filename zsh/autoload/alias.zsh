@@ -69,6 +69,8 @@ alias clearcache='echo 3 > /proc/sys/vm/drop_caches'
 alias cleartemp='' # TODO
 alias cputemp='sensors | sed -n "/^Core/p"'
 
+alias 
+
 alias ag='ag -i'
 alias diff='diff --color=auto'
 alias sed='sed -E'
@@ -113,7 +115,8 @@ alias prel='head -n'
 
 alias gitclonerepo='afunc_gitclonerepo' # function alias
 alias gcl='gitclonerepo'
-alias gl='git log --all'
+alias gl='git log'
+alias gla='git log --all'
 alias gll='git log'
 alias glg='git log --graph --stat --all'
 

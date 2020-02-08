@@ -18,7 +18,6 @@ PKGAUTOCONFIRM=-y
 
 all: purge install-autoload
 
-
 MAKEDIR = mkdir -p
 COPYFILE = cp -v
 COPYDIR = cp -rv

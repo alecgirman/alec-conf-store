@@ -1,3 +1,5 @@
+define('GITREPO_CLONE', 'git clone https://github.com/$1/$2.git
+
 all:
 	git clone https://github.com/dense-analysis/ale.git
 	git clone https://github.com/vim-scripts/c.vim.git
