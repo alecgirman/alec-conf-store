@@ -4,8 +4,17 @@ function wpa_prompt() {
     # check if wpa_supplicant is installed
     # https://stackoverflow.com/questions/7522712/how-to-check-if-command-exists-in-a-shell-script
     if ! type "wpa_supplicant" > /dev/null; then
-        echo 'ERROR: wpa_supplicant is required to connect to a wireless network.'
-    fi
+        echo 'You must have wpa_supplicant installed to use this.'
+        echo "$(tput setaf 5)You mjsth have wpa_supplicant installed in order to use these WPA utilities.$(tput setaf 0)"
+        echo ''h
+        echo ''
+        echo ''
+        echo ''
+        echo ''
+        echo ''
+        echo ''
+        echo ''
+        echo ''
 
     ip link set up wlp1s0
 
@@ -24,7 +33,7 @@ function wpa_prompt() {
             echo 'Continuing without configuring adapter.'
         else
             echo 'Exiting: Failed to confiugre adapter.'
-            exit 1
+            exit 1 # We were unable to find the adapter and the user does not wish to continue, return 1 indicating"
         fi
     fi
 

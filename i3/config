@@ -1,4 +1,4 @@
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
+#` This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:FontAwesome FONTSIZE
 font pango:FuraCode Nerd Font Mono FONTSIZE
@@ -16,7 +16,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Use Mouse+$prefix to drag floating windows to their wanted position
 # floating_modifier $prefix
 
-set $prefix MODKEY
+set $prefix Mod4
 
 # start a terminal
 bindsym $prefix+Return exec termite
@@ -48,6 +48,7 @@ set $up k
 set $down j
 set $left h
 set $right l
+
 
 bindsym $prefix+d exec --no-startup-id i3-dmenu-desktop
 
@@ -129,6 +130,7 @@ bindsym $prefix+Shift+0 move container to workspace number $ws10
 # reload the configuration file
 bindsym $prefix+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+exec polybar -c ~/config/polybar/config main
 bindsym $prefix+Shift+r restart
 
 # resize window (you can also use the mouse for that)
@@ -143,6 +145,7 @@ mode "resize" {
         bindsym k resize grow height 10 px
         bindsym j resize shrink height 10 px
         bindsym l resize grow width 10 px
+exec polybar /root/.config/polybar/config main
 
 # back to normal: Enter or Escape or $prefix+r
         bindsym Return mode "default"

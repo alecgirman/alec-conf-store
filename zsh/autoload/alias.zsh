@@ -69,6 +69,8 @@ alias clearcache='echo 3 > /proc/sys/vm/drop_caches'
 alias cleartemp='' # TODO
 alias cputemp='sensors | sed -n "/^Core/p"'
 
+alias 
+
 alias ag='ag -i'
 alias diff='diff --color=auto'
 alias sed='sed -E'
@@ -113,7 +115,8 @@ alias prel='head -n'
 
 alias gitclonerepo='afunc_gitclonerepo' # function alias
 alias gcl='gitclonerepo'
-alias gl='git log --all'
+alias gl='git log'
+alias gla='git log --all'
 alias gll='git log'
 alias glg='git log --graph --stat --all'
 
@@ -147,6 +150,10 @@ alias tarpipe='tar -c'
 alias xz='xz -v'
 alias softxz='xz -z -2'
 alias hardxz='xz -ze -T 12 -9'
+
+alias gnome='startx /usr/bin/gnome-session'
+alias plasma='startx /usr/bin/startplasma-x11'
+alias kde='startx /usr/bin/startplasma-x11'
 
 # for now, use agfs to find the recording.
 alias arec="asciinema rec /tmp/$(mktemp -u).casts"

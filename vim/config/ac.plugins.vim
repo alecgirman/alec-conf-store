@@ -18,14 +18,18 @@ let g:vimwiki_ext2syntax = {'.md': 'markdown',
 			\ '.mkd': 'markdown',
 			\ '.wiki': 'media'}
 
-echohl Question | echomsg '[Pre] Plugin configuration set, ready to packadd.' | echohl None
+echohl Question ;| echomsg '[Pre] Plugin configuration set, ready to packadd.' | echohl None
 
-" if has('conceal')
-" 	set conceallevel=2 concealcursor=nv
-" endif
+" Concealed text is specially formatted text to be 'expanded' into diferernt
+" text within your buffer.  For example, if you make something bold in
+" markdown, you surround it like **this**.  The concealer then changes the
+" text and any new highlighting applied to it and shows that instead.  So the
+" markdown conceler would hide the asterisks.  Thats about as much as I know
+" about text concealing, 
 
-" Enable snipMate compatibility feature.
-" let g:neosnippet#enable_snipmate_compatibility = 1
+if has('conceal')
+	set conceallevel=2 concealcursor=nv
+endif
 
 func! LoadAllPlugins()
 	packadd ale                 
@@ -61,10 +65,13 @@ func! LoadAllPlugins()
 	packadd vim-taskwarrior     
 	packadd vimwiki             
 
+    packadd UltiSnips
+
+    
     " Handle plugin incompatibilities.
-    if has('nvim')
-        packadd UltiSnips           
-    endif
+    " if has('nvim')
+    "     " packadd UltiSnips           
+    " endif
 
     " Legacy plugin list (keeping in case theyre needed)
     " packadd vim-hug-neovim-rpc  

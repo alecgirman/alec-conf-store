@@ -1,4 +1,3 @@
-source postinstall.vim
 set showmode		" Display the mode in the statusbar.  I don't know why you'd have this off.
 set showcmd			" Has nothing to do with showing the comand, but shows the visual selection dimensions.
 set showmatch		" Show matching pairs when your cursor is on one.
