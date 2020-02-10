@@ -36,6 +36,7 @@ install-plugins:
 	$(PKGREFRESH)
 	$(PKGINSTALL) nodejs npm $(PKGAUTOCONFIRM)
 	$(MAKEDIR) $(COCEXTDIR)
+    cp 
 
 archlinux-install: purge
 	make install-autoload PKGINSTALL='pacman --needed -S' PKGREFRESH='pacman -Sy' PKGAUTOCONFIRM='--noconfirm'
