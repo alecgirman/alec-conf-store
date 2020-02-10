@@ -1,78 +1,101 @@
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-let g:airline_powerline_fonts=1
-let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#show_close_button=1
-let g:airline#theme = 'powerlineish'
-let g:miniBufExplAutoStart=0
+" config file warp-drive: in vim, press gf on a file to jump to it
+" Core config: /ashe/vim/config/ac.core.vim
+" Keybind config: /ashe/vim/config/ac.keys.vim
+" Plugin config: /ashe/vim/config/ac.plugins.vim
+" Color config: /ashe/vim/config/ac.colors.vim
 
-let g:UltiSnipsExpandTrigger="<C-k>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical"
+" Open floating menu
+nmap g<Space> :Clap!<CR>
 
-let g:vimwiki_list = [{'path': '/var/wiki'}] 
-let g:vimwiki_use_mouse=1
-let g:vimwiki_dir_link='index'  " Default .wiki file for new directories
-let g:vimwiki_listsyms = '✗○◐●✓'
-let g:vimwiki_ext2syntax = {'.md': 'markdown',
-			\ '.mkd': 'markdown',
-			\ '.wiki': 'media'}
+" easy escape
+inoremap ljj <Esc>
 
-echohl Question | echomsg '[Pre] Plugin configuration set, ready to packadd.' | echohl None
+" quicker vertical movement 
+noremap J <C-d>
+noremap K <C-u>
 
-" if has('conceal')
-" 	set conceallevel=2 concealcursor=nv
-" endif
+" select to end of line without copying newline
+noremap Y v$hy
 
-" Enable snipMate compatibility feature.
-" let g:neosnippet#enable_snipmate_compatibility = 1
+" better jumping to marks
+noremap ` '
 
-func! LoadAllPlugins()
-	packadd ale                 
-	packadd c.vim               
-	packadd Colorizer           
-	packadd denite.nvim         
-	packadd deol.nvim           
-	packadd emmet-vim           
-	packadd i3config.vim        
-	packadd jedi-vim            
-	packadd neoinclude.vim      
-	packadd nerdtree            
-	packadd vim-colorschemes         
-	packadd svg.vim             
-	packadd tabular             
-	packadd tagbar              
-	packadd undotree            
-	packadd unite.vim           
-	packadd vim-airline         
-	packadd vim-airline-themes  
-	packadd vim-clap            
-	packadd vim-colorschemes    
-	packadd vim-commentary      
-	packadd vim-fugitive        
-	packadd vim-gitgutter       
-	packadd vim-markdown        
-	packadd vim-multiple-cursors
-	packadd vim-polyglot        
-	packadd vim-signature       
-	packadd vim-snippets        
-	packadd vim-startify        
-	packadd vim-surround        
-	packadd vim-taskwarrior     
-	packadd vimwiki             
+" Completion utilities
+noremap gl :CocList --normal<CR>
+noremap gll :CocList 
+noremap glc :CocList colors<CR>
+noremap gls :CocList snippets<CR>
+noremap glv :CocList tags<CR>
+noremap gla :CocList actions<CR>
 
-    " Handle plugin incompatibilities.
-    if has('nvim')
-        packadd UltiSnips           
-    endif
+" quickly turn off highlighting after a search
+noremap H :noh<CR>
 
-    " Legacy plugin list (keeping in case theyre needed)
-    " packadd vim-hug-neovim-rpc  
-	" packadd neosnippet-snippets
-    " packadd supertab            
-	" packadd neosnippet.vim
-    " packadd nvim-yarp           
+" git commands
+nnoremap <Space>gp :CocCommand git.chunkInfo<CR>
+nnoremap <Space>gs :CocCommand git.chunkStage<CR>
+nnoremap <Space>gu :CocCommand git.chunkUndo<CR>
+nnoremap <Space>gn ]c
+nnoremap <Space>gl [c
+nnoremap <silent> <Space>gp
 
+" L -> K
+" K by default is binded to manpages/docs
+" and that's too good of a shortcut to lose
+" TODO: F1 might do this too, try it too
+noremap L K
 
-    call AfterPackLoad()
-endf
+" Z commands
+" Z   = Save current file
+" ZZZ = Force Quit all
+" ZQQ = Save and Close all
+" ZS  = Make Session
+nmap Z :w!<CR>
+nmap QQ :q!<CR>
+nmap ZZZ :qa!<CR>
+nmap ZZQ :wa!<CR>:qa!<CR>
+nmap ZS :mksession! 
+nmap ZV :w<CR>:source %<CR>
+nmap ZT :tabclose!<CR>
+
+" Terminal mode mappings
+tmap <Esc> <C-\><C-n>
+
+" Sidebars
+nmap <F2> :NERDTreeToggle<CR>
+nmap <F3> :UndotreeToggle<CR>
+nmap <F4> :TagbarToggle<CR>
+
+" Unclassified space-leader bindings
+nmap <Space>c :call
+noremap <Space>r :%s/
+noremap <Space><Tab> :Tabularize /
+noremap <Space>h :help<Space>
+noremap <Space>h y<Esc>:help <C-r>"<CR>
+noremap <Space>w :VimwikiUISelect<CR>
+
+" noremap <C-Space>c :call Colorizer#ColorOff()<CR>:call Colorizer#ColorToggle()<CR>
+noremap <C-Space>c :windo call Colorizer#ColorOff()<CR>:call Colorizer#ColorToggle()<CR>
+
+" Open a terminal window - keep forgetting this one exists
+noremap <Space>! :vs<CR><C-w>l:term<CR>i
+
+" Create new tab
+noremap <Space>t :tabnew<CR>
+
+" Insert Mode mappings
+" This section can also include abbreviations
+
+" Insert date/time
+iab <expr> ict strftime("%T")
+iab <expr> icd strftime("%D")
+imap icf ict icd
+
+iab isy <C-r>=system('')<Left><Left>
+
+imap <S-CR> 
+
+" global shortcut to comeback tho this file
+com! EditKebinds :e /root/.vim/pack/config/start/config/plugin/ac.keys.vim
+com! VEditKebinds :vs /root/.vim/pack/config/start/config/plugin/ac.keys.vim
+com! SEditKebinds :sp /root/.vim/pack/config/start/config/plugin/ac.keys.vim

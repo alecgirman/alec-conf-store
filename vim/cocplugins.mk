@@ -1,6 +1,6 @@
 install:
     npm install -g npm
-	vim -c ":CocInstall coc-pairs 
+	vim -- ":CocInstall coc-pairs 
 	coc-actions 
 	coc-calc 
 	coc-ccls 
