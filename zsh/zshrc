@@ -1,28 +1,51 @@
-PHONY: install-firsttime install
+export LANG="en_US.UTF-8"
+#ZSH=/root/.oh-my-zsh/
+HYPHEN_INSENSITIVE="true"
 
-ZSH = ${HOME}/.zsh
-AUTOLOAD = ${ZSH}/autoload
-COPYFILE = cp -v
-COPYDIR = cp -rv
-MACROPROC= m4
-STARTFILE=ashe-zshloader.zsh
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' max-errors 3 not-numeric
+zstyle ':completion:*' menu select=1
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' verbose true
+zstyle :compinstall filename '/home/alec/.zshrc'
 
-install: clean
-	mkdir -p ${ZSH}/
-	cat /ashe/zsh/autoload/*.zsh > ${ZSH}/compiled.zsh
-	${COPYDIR} plugins/ ${ZSH}/
-	${COPYFILE} zshrc ${HOME}/.zshrc
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=20000
+setopt appendhistory autocd beep extendedglob
+bindkey -v
 
-oldinstall: clean
-	mkdir -p ${ZSH}/
-	${COPYDIR} autoload/ ${ZSH}/
-	${COPYDIR} plugins/ ${AUTOLOAD}/
-	${COPYFILE} zshrc ${ZSH}/${STARTFILE}
+# Set preload vars
+# Line #1863-1864 of main theme file
+# POWERLEVEL9K_IGNORE_TERM_LANG=true
+# POWERLEVEL9K_IGNORE_TERM_COLORS=true
 
-install-firsttime: install
-	echo "source ${ZSH}/ashe-zshloader.zsh" >> ${HOME}/.zshrc
+for file in $(find ~/.zsh/plugins/ | ag '\.zsh$'); do
+    source $file 
+    printf "Sourced $fg[blue]%s$fg[default]\n" $file
+done
 
-clean:
-	rm -rfv ${AUTOLOAD}
-	rm -fv ${ZSH}/${STARTFILE}
-	@echo 'Remember to remove the line at the bottom of your zshrc file that loads this plugin.'
+export EDITOR='nvim'
+
+unsetopt correctall
+
+zstyle ':completion:*' rehash true
+
+# Fuck: the best CLI autocomplete tool
+# See https://www.github.com/nvbn/thefuck for more details
+# Considering how much i hate shell scripting, im proud of the line below
+# only executes the eval if type returns 0 (and type returns 0 if the program
+# exists and 1 otherwise)
+type thefuck && eval $(thefuck --alias)
+# eval "$(starship init zsh)"
+source ~/.zsh/compiled.zsh
+printf "$fg[blue]ZSH Initialized $fg[default]\n"
+
+# source /root/.zsh/alias.zsh
+# source /root/.zsh/functions.zsh
