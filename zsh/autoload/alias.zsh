@@ -151,7 +151,7 @@ alias xz='xz -v'
 alias softxz='xz -z -2'
 alias hardxz='xz -ze -T 12 -9'
 
-alias gnome='startx /usr/bin/gnome-session'
+alias gnome='startx'
 alias plasma='startx /usr/bin/startplasma-x11'
 alias kde='startx /usr/bin/startplasma-x11'
 
