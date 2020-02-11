@@ -1,6 +1,5 @@
-PACKDIR='~/.vim/pack'
+:ACKDIR='~/.vim/pack'
 PACKNAME='config'
-
 MAKEDIR = mkdir -p
 COPYFILE = cp -v
 COPYDIR = cp -rv
@@ -18,12 +17,10 @@ PKGAUTOCONFIRM=-y
 
 all: purge install-autoload
 
-MAKEDIR = mkdir -p
-COPYFILE = cp -v
-COPYDIR = cp -rv
-DIFF = git diff --color --minimal -a
-DELETE = rm -fv
-DELETEDIR = rm -rfv
+ARCHIVECREATE = tar -cf
+ARCHIVEEXTRACT = tar -xf
+COMPRESSUTIL = xz -ze -T 12
+DECOMPRESSUTIL = xz -ze -T 12
 
 ROOTPACKDIR=~/.vim/pack
 CONFIGPACKDIR=$(ROOTPACKDIR)/config/start/config/plugin
@@ -46,11 +43,28 @@ install-autoload: install-config install-plugins
 install-plugins:
 	$(MAKEDIR) $(PLUGINPACKDIR)
 	cp cloneplugins.mk $(PLUGINPACKDIR)/Makefile
-	make -C $(PLUGINPACKDIR) dist
+	make -C $(PLUGINPACKDIR) all
 	echo "call LoadAllPlugins()" > $(CONFIGPACKDIR)/init.vim
 	$(PKGREFRESH)
 	$(PKGINSTALL) nodejs npm $(PKGAUTOCONFIRM)
 	$(MAKEDIR) $(COCEXTDIR)
+
+freeze:
+	echo 'This may take a little while... if you are using xzip (default)'
+	rm -rv pack/
+	rm -rv coc/
+	mv $(ROOTPACKDIR)/ ./
+	mv $(COCEXTDIR)/ ./
+	$(ARCHIVECREATE) coc.tar coc/
+	$(ARCHIVECREATE) pack.tar pack/
+	$(COMPRESSUTIL) coc.tar 
+	$(COMPRESSUTIL) pack.tar
+
+unfreeze:
+	$(DECOMPRESSUTIL) pack.tar.xz
+	$(DECOMPRESSUTIL) coc.tar.xz
+	$(ARCHIVEEXTRACT) pack.tar $(ROOTPACKDIR)/
+	$(ARCHIVEEXTRACT) coc.tar $(COCEXTDIR)/
 
 archlinux-install: purge
 	make install-autoload PKGINSTALL='pacman --needed -S' PKGREFRESH='pacman -Sy' PKGAUTOCONFIRM='--noconfirm'
@@ -88,4 +102,4 @@ purge: uninstall uninstall-plugins
 # 	@echo 'uninstall-vimplug: Uninstalls the Plug plugin manager'
 # 	@echo 'uninstall: Shortcut to remove both core and vimplug components'
 # 	@echo 'gitdiff: Displays a diff between the local tracking directory and the latest remote commit'
-# TODO: DOCKER FILES MOVED INTO TESTS FOLDER
+
