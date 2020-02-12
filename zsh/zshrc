@@ -47,5 +47,5 @@ type thefuck && eval $(thefuck --alias)
 source ~/.zsh/compiled.zsh
 printf "$fg[blue]ZSH Initialized $fg[default]\n"
 
-# source /root/.zsh/alias.zsh
-# source /root/.zsh/functions.zsh
+source /root/.zsh/alias.zsh
+source /root/.zsh/functions.zsh

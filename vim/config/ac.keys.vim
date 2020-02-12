@@ -59,6 +59,8 @@ nmap ZV :w<CR>:source %<CR>
 nmap ZT :tabclose!<CR>
 
 " Terminal mode mappings
+" The escape button in terminal mode doesn't exit 'termianl insert' mode
+" So this awaful shortcut was made default.  I change it back to Esc.
 tmap <Esc> <C-\><C-n>
 
 " Sidebars
