@@ -1,35 +1,17 @@
 function system-boothook() {
-    if [[ "$HOST" = "workstation" ]]; then
-        echo 'Starting wifi'
-        ip link set wlp1s0 up
-        wpa_supplicant -iwlp1s0 -c/etc/wpa_supplicant.conf &> /dev/null &
-        sleep 2
+    if [[ $HOST == "workstation" ]]; then
+        printf "Should I attempt to connect to a wireless network right now?\n"
+        read -rs dowificonnect
 
-        echo 'Starting dhcpcd...'
-        dhcpcd &> /dev/null &
-        sleep 2
-
-        startx /usr/bin/i3
-    else
-        echo 'Starting dhcpcd...'
-        dhcpcd &> /dev/null &
-        sleep 2
-
-        echo 'Starting pulseaudio...'
-        pulseaudio &> /dev/null &
-        sleep 2
-
-        # TODO: a console ascii transition to white
-        # then a high-mid gamma fade would look awesome!
-        
-        echo 'Starting docker daemon...'
-
-        # this line causes an error for SOME reason
-        # dockerd &> /dev/null &
-        sleep 1
-        neofetch
-        sleep 1
-
-        startx /usr/bin/i3
+        if [[ $dowificonnect == 0 ]]; then
+            printf "Connect to\n\n"
+            printf "    -  $fg[yellow](E)xisting network$fg[default]\n"
+            printf "    -  $fg[green](N)ew network?$fg[default]\n"
+            read -rs conntype
+        fi
     fi
+    echo ''
+    ip link set wlp1s0 up
+    wpa_supplicant -iwlp1s0 -c/etc/wpa_supplicant.conf &> /dev/null &
+    sleep 2
 }
