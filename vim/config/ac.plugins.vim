@@ -67,12 +67,12 @@ func! LoadAllPlugins()
 
     " Legacy plugin list (keeping in case theyre needed)
     " packadd vim-hug-neovim-rpc  
-	" packadd neosnippet-snippets
-    " packadd supertab            
+	packadd neosnippet-snippets
+    packadd supertab            
 	" packadd neosnippet.vim
-    packadd nvim-yarp           
+    " packadd nvim-yarp           
     packadd deoplete.nvim
-    call deoplete#enable()
+    " call deoplete#enable()
 
     call AfterPackLoad()
 endf

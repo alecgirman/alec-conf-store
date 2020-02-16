@@ -27,11 +27,11 @@ set mouse=a             " Enable full mouse support
 set mousemodel=popup  " Define the mouse model
 
 if !has ('nvim')		" only works in vim
+	set icm=nosplit     " Perform searches and highlight substitutions as you're typing substitution commands 
+else
 	set ttymouse=sgr      " Set terminal mouse input mode
     call setenv('VIMRUNTIME', '/usr/share/vim/vim82')
     syntax on
-else
-	set icm=nosplit     " Perform searches and highlight substitutions as you're typing substitution commands 
 endif
 
 " Editor tab settings
