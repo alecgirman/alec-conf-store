@@ -10,7 +10,7 @@
 nmap g<Space> :Clap!<CR>
 
 " easy escape
-inoremap ljj <Esc>
+inoremap jj <Esc>
 
 " quicker vertical movement 
 noremap J <C-d>
@@ -19,11 +19,13 @@ noremap K <C-u>
 " select to end of line without copying newline
 noremap Y v$hy
 
-noremap y<Space> :echo 'yank >' | let @"=getchar()<CR>:y <CR>"<CR>
-
+noremap y<Space> :echo 'yank >'<CR>:let @"=getchar()<CR>:y <CR>"<CR>
 
 " better jumping to marks
 noremap ` '
+
+" default g~ takes a motion but tilde does not.
+noremap ~ g~
 
 " Completion utilities
 noremap gl :CocList --normal<CR>
@@ -70,8 +72,19 @@ nmap <F2> :NERDTreeToggle<CR>
 nmap <F3> :UndotreeToggle<CR>
 nmap <F4> :TagbarToggle<CR>
 
+" navigating the quickfix list
+
+" next quickfix
+noremap <Space>qn :cn<CR>
+" previous quickfix
+noremap <Space>qp :cp<CR>
+" goto quickfix entry N
+noremap <Space>qc :cc!<Space>
+" Close the quickfix lis
+noremap <Space>qx :cclose<CR>
+
 " Unclassified space-leader bindings
-nmap <Space>c :call
+noremap <Space>c :call
 noremap <Space>r :%s/
 noremap <Space><Tab> :Tabularize /
 noremap <Space>h :help<Space>

@@ -19,6 +19,3 @@ hi VimwikiHeader4 ctermbg=magenta guifg=#FF00FF
 hi VimwikiHeader5 ctermbg=cyan guifg=#00FFFF
 hi VimwikiHeader6 ctermbg=yellow guifg=#FFFF00
 
-func! AfterPackLoad()
-    call airline#extensions#whitespace#disable()
-endf
