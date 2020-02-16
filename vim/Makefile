@@ -18,9 +18,9 @@ PKGAUTOCONFIRM=-y
 all: purge install-autoload
 
 ARCHIVECREATE = tar -cf
-ARCHIVEEXTRACT = tar -xf
-COMPRESSUTIL = xz -ze -T 12
-DECOMPRESSUTIL = xz -ze -T 12
+EXTRACT = tar -xf
+COMPRESS = xz -ze -T 12
+DECOMPRESS = xz -ze -T 12
 
 ROOTPACKDIR=~/.vim/pack
 CONFIGPACKDIR=$(ROOTPACKDIR)/config/start/config/plugin
@@ -57,14 +57,14 @@ freeze:
 	mv $(COCEXTDIR)/ ./
 	$(ARCHIVECREATE) coc.tar coc/
 	$(ARCHIVECREATE) pack.tar pack/
-	$(COMPRESSUTIL) coc.tar 
-	$(COMPRESSUTIL) pack.tar
+	$(COMPRESS) coc.tar 
+	$(COMPRESS) pack.tar
 
 unfreeze:
-	$(DECOMPRESSUTIL) pack.tar.xz
-	$(DECOMPRESSUTIL) coc.tar.xz
-	$(ARCHIVEEXTRACT) pack.tar $(ROOTPACKDIR)/
-	$(ARCHIVEEXTRACT) coc.tar $(COCEXTDIR)/
+	$(DECOMPRESS) pack.tar.xz
+	$(DECOMPRESS) coc.tar.xz
+	$(EXTRACT) pack.tar $(ROOTPACKDIR)/
+	$(EXTRACT) coc.tar $(COCEXTDIR)/
 
 archlinux-install: purge
 	make install-autoload PKGINSTALL='pacman --needed -S' PKGREFRESH='pacman -Sy' PKGAUTOCONFIRM='--noconfirm'

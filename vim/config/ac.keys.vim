@@ -35,6 +35,7 @@ noremap H :noh<CR>
 nnoremap <Space>gp :CocCommand git.chunkInfo<CR>
 nnoremap <Space>gs :CocCommand git.chunkStage<CR>
 nnoremap <Space>gu :CocCommand git.chunkUndo<CR>
+nnoremap <Space><Space> :CocList commands --normal<CR>
 nnoremap <Space>gn ]c
 nnoremap <Space>gl [c
 nnoremap <silent> <Space>gp

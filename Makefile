@@ -1,6 +1,6 @@
 COPY_FLAGS := '-v'
 
-TARGETS = elinks tmux termite vim zsh 
+# TARGETS = elinks tmux termite vim zsh 
 
 install: 
 	$(MAKE) -C elinks install
