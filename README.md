@@ -1,5 +1,4 @@
-# Alec's SHell Extensions (ASHE)
+# NOOP REPOSITORY
 
-This is my personal dotfile repo.
-
-**Files here are not guaranteed to work with your machine, its hard enough to get them to work with just the two of mine.**
+**WARNING: This is the noop (non-operational) repository.  That means the changes made here are guranteed NOT to work and are likely there as a remote stash or just to**
+**sync to another device.  Just like every branch, I'm not going to tell you that you can't clone it but it would be a stupid idea.**
