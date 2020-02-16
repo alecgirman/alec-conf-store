@@ -4,11 +4,13 @@
 " Plugin config: /ashe/vim/config/ac.plugins.vim
 " Color config: /ashe/vim/config/ac.colors.vim
 
+
+     
 " Open floating menu
 nmap g<Space> :Clap!<CR>
 
 " easy escape
-inoremap ljj <Esc>
+inoremap jj <Esc>
 
 " quicker vertical movement 
 noremap J <C-d>
@@ -17,8 +19,13 @@ noremap K <C-u>
 " select to end of line without copying newline
 noremap Y v$hy
 
+noremap y<Space> :echo 'yank >'<CR>:let @"=getchar()<CR>:y <CR>"<CR>
+
 " better jumping to marks
 noremap ` '
+
+" default g~ takes a motion but tilde does not.
+noremap ~ g~
 
 " Completion utilities
 noremap gl :CocList --normal<CR>
@@ -37,7 +44,6 @@ nnoremap <Space>gs :CocCommand git.chunkStage<CR>
 nnoremap <Space>gu :CocCommand git.chunkUndo<CR>
 nnoremap <Space>gn ]c
 nnoremap <Space>gl [c
-nnoremap <silent> <Space>gp
 
 " L -> K
 " K by default is binded to manpages/docs
@@ -68,8 +74,19 @@ nmap <F2> :NERDTreeToggle<CR>
 nmap <F3> :UndotreeToggle<CR>
 nmap <F4> :TagbarToggle<CR>
 
+" navigating the quickfix list
+
+" next quickfix
+noremap <Space>qn :cn<CR>
+" previous quickfix
+noremap <Space>qp :cp<CR>
+" goto quickfix entry N
+noremap <Space>qc :cc!<Space>
+" Close the quickfix lis
+noremap <Space>qx :cclose<CR>
+
 " Unclassified space-leader bindings
-nmap <Space>c :call
+noremap <Space>c :call
 noremap <Space>r :%s/
 noremap <Space><Tab> :Tabularize /
 noremap <Space>h :help<Space>
@@ -94,10 +111,9 @@ iab <expr> icd strftime("%D")
 imap icf ict icd
 
 iab isy <C-r>=system('')<Left><Left>
+nmap ix i<C-r>=
 
-imap <S-CR> 
+" Custom tet objects can be created with `omap` (operatoro pending(
 
-" global shortcut to comeback tho this file
-com! EditKebinds :e /root/.vim/pack/config/start/config/plugin/ac.keys.vim
-com! VEditKebinds :vs /root/.vim/pack/config/start/config/plugin/ac.keys.vim
-com! SEditKebinds :sp /root/.vim/pack/config/start/config/plugin/ac.keys.vim
+" WIP:
+cnoremap <C-f> <BS><Home><Del><Del><Del><Del>function

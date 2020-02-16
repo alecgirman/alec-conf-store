@@ -1,4 +1,5 @@
 noremap <RightMouse> :popup! MenuSelector<CR>
+vnoremap <RightMouse> :popup! MenuSelector<CR>
 noremap gm :popup! MenuSelector<CR>
 
 nmenu MenuSelector.Quick :popup! Quick<CR>

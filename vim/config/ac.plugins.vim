@@ -28,10 +28,22 @@ echohl Question ;| echomsg '[Pre] Plugin configuration set, ready to packadd.' |
 " about text concealing, 
 
 if has('conceal')
+    " Show concealed symbols ininsert mode, otherwise it becomes difficult to
+    " edit files because you have no clue where your cursor is.
 	set conceallevel=2 concealcursor=nv
 endif
 
+func! AfterPackLoad()
+    call airline#extensions#whitespace#disable()
+endf
+
+func! BeforePackLoad()
+    let g:vimwiki_ext2syntax={}
+endf
+
 func! LoadAllPlugins()
+    call BeforePackLoad()
+
 	packadd ale                 
 	packadd c.vim               
 	packadd Colorizer           
@@ -67,12 +79,12 @@ func! LoadAllPlugins()
 
     " Legacy plugin list (keeping in case theyre needed)
     " packadd vim-hug-neovim-rpc  
-	" packadd neosnippet-snippets
-    " packadd supertab            
+	packadd neosnippet-snippets
+    packadd supertab            
 	" packadd neosnippet.vim
-    packadd nvim-yarp           
+    " packadd nvim-yarp           
     packadd deoplete.nvim
-    call deoplete#enable()
+    " call deoplete#enable()
 
     call AfterPackLoad()
 endf
