@@ -158,6 +158,9 @@ alias kde='startx /usr/bin/startplasma-x11'
 # for now, use agfs to find the recording.
 alias arec="asciinema rec /tmp/$(mktemp -u).casts"
 
+# launch c'hromium as root
+alias chrome='chromium --no-sandbox'
+
 # tmux
 alias tma='tmux attach -t'
 alias tmls='tmux list-sessions'
