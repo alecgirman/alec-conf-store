@@ -45,6 +45,7 @@ alias lss='/usr/bin/ls --color=auto'
 alias q=exit
 alias e=nvim
 alias c=cat
+alias k=kitty &
 
 # file management
 alias fpstat='stat --format=%a'      # file permission stat (only prints perms)

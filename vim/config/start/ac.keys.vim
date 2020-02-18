@@ -1,3 +1,5 @@
+" BUILD_TARGET: ~/.vim/pack/config/start/
+
 " config file warp-drive: in vim, press gf on a file to jump to it
 " Core config: /ashe/vim/config/ac.core.vim
 " Keybind config: /ashe/vim/config/ac.keys.vim

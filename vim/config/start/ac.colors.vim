@@ -1,3 +1,5 @@
+" BUILD_TARGET: ~/.vim/pack/config/start/
+
 " In the system console, very limited color support
 if system('echo $TERM') == 'linux'
 	echomsg 'Detected limited color support (TERM=linux)'

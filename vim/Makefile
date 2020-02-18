@@ -1,17 +1,20 @@
-#!/usr/bin/cat
-
-# THIS MAKE FILE IS NON OPERATIONAL
-# # DO NOT USE
-# THE CONTENTS OF THE MAKEFILE 
-# ARE DSPLAYED BELOW
-
 MKDIR = mkdir -p
 DELFILE = rm -fv
 DELDIR = rm -rfv
+SYMLINK = ln -s 
 
-CONFIGPACK = ~/.vim/pack/config
-PLUGINPACK = ~/.vim/pack/pluginpack
+CSTART = ~/.vim/pack/config
+PLUGINS = ~/.vim/pack/pluginpack
 
-config:
-	$(MKDIR) ~/.vim/pack/config
-	$(MKDIR) ~/.vim/pack/pluginpaco
+install-config:
+	$ $(MKDIR) $(CSTART)
+	sln $(PWD)/config/start $(CSTART)/start
+
+install-plugins:
+	# $(MKDIR) $(PLUGINS) $(PLUGINS)
+	# $(MAKE) plugins.mk
+	sln $(PWD)/plugins/start $(PLUGINS)/start 
+	sln $(PWD)/plugins/opt $(PLUGINS)/opt
+
+purge:
+	rm -rf ~/.vim
