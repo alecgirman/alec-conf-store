@@ -20,3 +20,5 @@ node_modules/
 .vimdebug
 package-lock.json
 *~ 
+
+tags
