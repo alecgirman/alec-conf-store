@@ -1,0 +1,2 @@
+[ ] research utmp and system targets
+[ ] intercept target 0 and 6 (shutdown and reboot) and trigger scripts
