@@ -42,9 +42,9 @@ alias ls='/usr/bin/lsd -A'
 alias lss='/usr/bin/ls --color=auto'
 
 # quick commands
-alias q=exit
-alias e=nvim
-alias c=cat
+alias q='exit'
+alias e='nvim'
+alias c='cat'
 
 # file management
 alias fpstat='stat --format=%a'      # file permission stat (only prints perms)
@@ -68,8 +68,6 @@ alias resync='make -C /ashe install && rlz'
 alias clearcache='echo 3 > /proc/sys/vm/drop_caches'
 alias cleartemp='' # TODO
 alias cputemp='sensors | sed -n "/^Core/p"'
-
-alias 
 
 alias ag='ag -i'
 alias diff='diff --color=auto'
@@ -109,9 +107,8 @@ alias gs='git status'
 alias getall_giturls='afunc_getall_giturls'
 alias gru='getall_giturls'
 
-# preview files
-alias pre=head
-alias prel='head -n'
+alias githubsearch='afunc_githubsearch'
+alias gss='githubsearch'
 
 alias gitclonerepo='afunc_gitclonerepo' # function alias
 alias gcl='gitclonerepo'
@@ -119,6 +116,10 @@ alias gl='git log'
 alias gla='git log --all'
 alias gll='git log'
 alias glg='git log --graph --stat --all'
+
+# preview files
+alias pre=head
+alias prel='head -n'
 
 # build tools
 alias fastmake='make -j 12'

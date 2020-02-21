@@ -1,0 +1,1 @@
+<spc>+R to substitute in all open windows:

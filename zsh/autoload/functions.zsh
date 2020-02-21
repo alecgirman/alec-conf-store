@@ -41,5 +41,5 @@ function afunc_getall_giturls() {
 }
 
 function afunc_githubsearch() {
-    googler $1 | ag 'https:..github.com/(\w\/[\w._]+(\.git)?'
+    googler "$1 github" | ag 'https:..github.com/(\w\/[\w._]+(\.git)?'
 }
