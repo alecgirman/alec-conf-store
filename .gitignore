@@ -6,7 +6,6 @@
 .etc/
 python/
 modules/
-ranger/
 
 __pycache__/
 .pytest/
@@ -19,4 +18,11 @@ node_modules/
 
 .vimdebug
 package-lock.json
-*~ 
+
+# various temporary filetypes
+*~
+*.swp
+*.swo
+
+# ctags file
+tags
