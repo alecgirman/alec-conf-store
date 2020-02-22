@@ -25,4 +25,6 @@ package-lock.json
 *.swo
 
 # ctags file
+*~ 
+
 tags

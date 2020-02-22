@@ -12,7 +12,6 @@
 
 # TODO:
 # git commit -> gc (add line editor message writing)
-# 
 
 # All aliases defined in this file should be grouped first by category, but when a category cannot
 # be defined, then group by any aspect that they have in common.
@@ -22,7 +21,6 @@
 
 # in-place command renames
 # must take first priority so other aliases can use them
-alias ag='ag -i'
 alias diff='diff --color=auto'
 alias sed='sed -E'
 alias howdoi='howdoi -c'
@@ -38,8 +36,14 @@ alias ......='cd ../../../../../'
 # ls
 alias l='/usr/bin/lsd'
 alias ll='l -l'
+alias llr='ll -R'
 alias ls='/usr/bin/lsd -A'
 alias lss='/usr/bin/ls --color=auto'
+
+# disk partitioning
+alias fd='fdisk'
+alias fdl='fdisk -l'
+alias cg='cgdisk'
 
 # quick commands
 alias q=exit
@@ -50,9 +54,12 @@ alias c=cat
 alias fpstat='stat --format=%a'      # file permission stat (only prints perms)
 alias fsb='du -sb'                   # file size - byte count
 alias fsh='du -sh'                   # file size - human readable
-alias fwatch='tail -fs'              # print contents of file when it changes
+alias fwatch='tail -fs'              # print contents of file when it changes (required argument time)
 alias pre=head                       # preview file (print first 5 lines)
 alias prel='head -n'                 # preview N lines from file
+
+# ag tools
+alias ag='noglob ag -i' 		     # ignore case by default
 alias agfs='find | ag'		     # find file
 alias agrfs='find / | ag'            # find file starting from root
 
@@ -63,8 +70,8 @@ alias ised='sed -i'
 alias :q='echo "this isnt vim!"'
 alias a=ack
 alias ack='ack -i'
-alias addalias='$EDITOR /ashe/zsh/autoload/alias.zsh; pushd /ashe/zsh; make dotsync; popd; rlz;'
-alias addfunction='$EDITOR /ashe/zsh/functions.zsh'
+alias addalias='$EDITOR /ashe/zsh/autoload/alias.zsh; source /ashe/zsh/autoload/alias.zsh'
+alias addfunction='$EDITOR /ashe/zsh/autoload/functions.zsh'
 alias resync='make -C /ashe install && rlz'
 
 # maintenance
@@ -83,9 +90,9 @@ alias howdoi='howdoi -c'
 alias grep='grep --color=auto -P'
 alias ccat='pygmentize'
 
+# Uncategorized
 alias ds='docker search'
 alias emak='$EDITOR Makefile'
-alias ff=firefox
 alias fpstat='stat --format=%a'
 alias fsb='du -sb'
 alias fsh='du -sh'
@@ -163,10 +170,11 @@ alias gnome='startx'
 alias plasma='startx /usr/bin/startplasma-x11'
 alias kde='startx /usr/bin/startplasma-x11'
 
-# for now, use agfs to find the recording.
-alias arec="asciinema rec /var/casts/$(mktemp -u).casts"
+# asciinema
+alias arec="asciinema rec /var/casts/$recname.casts"
+alias arecp="read recname; arec"
 
-# launch c'hromium as root
+# launch chromium as root
 alias chrome='chromium --no-sandbox'
 
 # tmux
@@ -181,7 +189,7 @@ alias ytds='youtube-dl --default-search "ytsearch"'
 # edit config files
 alias i3blockconfig='$EDITOR /ashe/i3blocks/config'
 alias i3config='$EDITOR /ashe/i3/config'
-alias Pshconfig='$EDITOR /ashe/zsh/'
+alias zshconfig='$EDITOR /ashe/zsh/'
 alias editpolybar='$EDITOR /root/.config/polybar/config'
 alias rlz='touch /tmp/.zshreload; source ~/.zshrc'
 alias savele='afunc_savele' # save last export
