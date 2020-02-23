@@ -60,7 +60,7 @@ alias agrfs='find / | ag'            # find file starting from root
 alias ised='sed -i'
 
 # Working with config files
-alias addalias='nvim /ashe/zsh/autoload/alias.zsh;'
+alias addalias='$EDITOR /ashe/zsh/autoload/alias.zsh;'
 alias addfunction='nvim /ashe/zsh/autoload/functions.zsh'
 alias resync='make -C /ashe install && rlz'
 

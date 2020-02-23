@@ -8,7 +8,7 @@
 nmap g<Space> :Clap!<CR>
 
 " easy escape
-inoremap ljj <Esc>
+inoremap jj <Esc>
 
 " quicker vertical movement 
 noremap J <C-d>
@@ -96,7 +96,7 @@ imap icf ict icd
 
 iab isy <C-r>=system('')<Left><Left>
 
-imap <S-CR> 
+" imap <S-CR> 
 
 " global shortcut to comeback tho this file
 com! EditKebinds :e /root/.vim/pack/config/start/config/plugin/ac.keys.vim
