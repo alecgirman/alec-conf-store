@@ -110,8 +110,12 @@ alias pyg='pygmentize'
 alias gcm='git commit -m'
 alias gs='git status'
 
+# Get all Git URLs
 alias getall_giturls='afunc_getall_giturls'
 alias gru='getall_giturls'
+
+# Yubikey
+alias yk='ykman -l INFO'
 
 # preview files
 alias pre=head
