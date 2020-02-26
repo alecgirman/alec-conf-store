@@ -134,6 +134,7 @@ alias gl='git log'
 alias gla='git log --all'
 alias gll='git log'
 alias glg='git log --graph --stat --all'
+alias glgsig='git log --graph --stat --all --show-signature'
 
 # build tools
 alias fastmake='make -j 12'
