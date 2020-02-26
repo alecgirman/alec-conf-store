@@ -7,8 +7,9 @@ CSTART = ~/.vim/pack/config
 PLUGINS = ~/.vim/pack/pluginpack
 
 install-config:
-	$ $(MKDIR) $(CSTART)
+	$(MKDIR) $(CSTART)
 	sln $(PWD)/config/start $(CSTART)/start
+	sln $(PWD)/config/opt $(CSTART)/start
 
 install-plugins:
 	# $(MKDIR) $(PLUGINS) $(PLUGINS)
