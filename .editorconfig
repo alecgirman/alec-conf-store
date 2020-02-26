@@ -1,0 +1,115 @@
+# Set project root
+root = true
+
+# Default config
+[*]
+
+# Indent settings - see rationale below`
+indent_style = space
+indent_size = 4
+tab_width = 4
+
+# Unix style line endings
+end_of_line = lf
+
+# Can't stand it
+trim_trailing_whitespace = true
+
+# This one I'm 50/50 on, so it is SUBJECT TO CHANGE
+insert_final_newline = false
+
+# Alec's Coding Style Guidelines
+# ------------------------------
+
+# Note: Some aspects I care about more than others so this is listed in order of importance.
+
+# Preamble: If contributing to a project of mine, all code must follow these guidelines in addition to
+#           any language specific guidelines.  That is, by the time the code is either a) pushed into
+#           my repository or b) when a pull request is submitted, it should adhere to these guidelines.
+#           This DOES NOT mean I am defining how you should be coding, as you can dcode however you want.
+#           You can write your code as ugly as you want and then process it prior to submission.  This
+#           is exactly what a code linter is for. 
+
+# 1. Everything needs to be documented.  That does not mean it has to be documented before pushing
+#    to Git, but it should EVENTUAALLY be documented.  In other words, undocumented code on Git should
+#    at least have an active issue requesting documentation.
+#
+# 2. ALWAYS use spaces over tabs.  Basically every modern editor can handle deleting and inserting them
+#    for you when hitting tab or deteing spaces so there is no excuse to complain about it.  Please
+#    understand that this does not mean that you cant use the tab key, just make sure your editor converts
+#    tabs to spaces, which as far as I know, every text editor except for Windows Notepad does.  If you are
+#    using Windows Notepad as your primary IDE, you have more problems than tabs vs spaces.
+#    As a general standard, I explain how to apply these settings in the Vim editor (version 8+).  In order
+#    to apply automatic tab converting in vim, use the `:set expandtab` option (abbr: `set et`)
+#        Rationale: Everyone personally uses different spaces per tab settings so a code file that uses
+#        tabs will render differently for everyone.  If spaces are used, the file will render the same.
+#
+# 3. Number of spaces per tab: I generally use 4 spaces per tab.  For me, two spaces looks too small (after
+#    all, I don't have the best vision, so this does help out those who don't see as well.  Then 8 spaces
+#    looks way too wide and reminds me of Windows Notepad.  I haven't tried any others, but I like to keep
+#    it as a power of 2.  I am not super crazy about this rule so there will be some exceptions, for example,
+#    in the numbering of these rules, because it makes the text more visually appealing, so if it makes it
+#    look better, then an exception may be made.
+#
+# 4. Maximum line width:  Both computers that I use have high resolution displays, which I take full advantage
+#    of and love when I can fit alot on one screen.  Most line width rules that others use are designed to
+#    help people that have very small displays and can only render a certain amount of text per
+#    line.  The best example of this is PEP 484 (I think?) which states that Python files should be
+#    strictly 80 lines maximum.  I have tried that configuration and it is simply too small for me.
+#    Through trial and error, as well as editing across different displays, I have come to realize 
+#    that 100 columns is the perfect amount for me.  However, I still had a problem with with fitting
+#    some text on the screen, like if the line ended with a long variable name or something, so I define
+#    the maximum line width as a soft limit and that it is perfectly fine to go over that to fit text.
+#    If possible, you should move it to the next line.  Once again, this decision should be made by
+#    judging how the text appears.  I'd rather it look good than to strictly follow guidelines.  With
+#    being said, I also place a HARD limit at 120 characters per line.  In other words, a line should
+#    NEVER have more than 120 characters.  If a case like that is reached, then it is required to use
+#    that language's manual line break (usually a backslash).  Speaking of manual line breaks, I will
+#    avoid using them at all costs because they are extremely ugly.  Languages may make exceptions to
+#    this rule, for example, HTML/XML have no hard or soft line width limitation.
+#        A note on line wrapping:  In cases where the editor can't render the entire line in the
+#        display, many opt to enable line wrapping, however, I cannot stand line wrapping.  Just scroll
+#        horizonally, its not the hardest thing in the world.
+#    I have no rule in place that states how strictly one should stick to the 100 character rule.  I'm
+#    pretty flexible with this rule, in fact I think most lines above are well over 100 characters.
+#
+# 5. Trailing whitespace (defined by whitespace at the end of the line, not to be confused with
+#    whitespace at the end of the file.): Having whitespace at the end of the line is untolerable
+#    and a sign of pure laziness.  This is big issue because when somebody hits the end key or puts in
+#    the "go to end of line" comand in their editor, ($ in vim), we dont want to land on a space.
+#
+# 6. Per language styling: This rule is simple: every language is able to override any of these rules
+#    and can define new rules that are not listed here (for example, C++ bracketing rules, which I do not
+#    define here).
+
+#    Non-standard styling rules:
+#      - These rules are not the type of rules that every project/developer would define but instead
+#        are just random quirks of mine but they should still be followed.
+
+# 8. Preferred comment character: In a language or file (*such as this editorconfig file), if you
+#    are given an option on what character to use for comments, use the pound sign (#).  This only
+#    applies if it is already built into the language, so in C/C++, please do not make a #define
+#    JUST to change the comment operator.
+
+#    Code Comment Appearance Guidelines
+#
+#    1c. The use of labels in comments is heavily reccomended.  When you know something needs to be
+#        done eventually, then add a todo label.  I don't have any set of labels defined but, but strictly
+#        speaking, a label is defined in comments by a word in all capital letters followed by a colon.
+#        Your editor should highlight these labels differently than normal comments.
+#
+#    2c. Comment and whitespace separators: You may notice how this ruleset has some whitespace between
+#        comments and sometimes just puts a comment character with no text following it.  This is used
+#        to categorize sets and to visually separate them from others.  This rule is very flexible as
+#        you may use any appealing separator, including but not limimited to, ASCII art.
+#
+#    3c. The use of ASCII art is ALLOWED and makes for a great header, but please use it appropriately
+#        and don't go overboard with it.  An exeception to that is made if the ASCII rendering is 
+#        used only to format data, such as an ASCII (data) table.  In fact, ASCII tables should be 
+#        used wherever a data table is needed.
+#
+#    4c. Comment positioning: Ultimately defined per language, but in general, comments should be put
+#        above the line in question instead of at the ene of the line.  Comments that are below the llne
+#        are forbidden.  There must also be whitespace after whatever code context that the comment
+#        is being used to annotate.  This means One comment may be grouped with a block of code, as long
+#        as there is a visual separator (usually whitespace).

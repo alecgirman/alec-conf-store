@@ -1,3 +1,5 @@
+" BUILD_TARGET: ~/.vim/pack/config/start/
+
 set showmode		" Display the mode in the statusbar.  I don't know why you'd have this off.
 set showcmd			" Has nothing to do with showing the comand, but shows the visual selection dimensions.
 set showmatch		" Show matching pairs when your cursor is on one.
@@ -14,7 +16,8 @@ set completeopt=longest,menuone,preview
 " set wildmode=list:longest
 set wildmode=full	" Neovim default, shows beautiful popup (when its not that ugly magenta one)
 set modeline 		" Evaluate modelines, allowing you to set per-file vim options from within the file itself.
-set noswapfile		" Forces files to exist only in memory and not to be cached to disk.  For me, when set to 'swapfile', trying to openA
+set swapfile		" Forces files to exist only in memory and not to be cached to disk.  For me, when set to 'swapfile', trying to openA
+set dir=~/tmp       " Sets the directory for the swap files.
 " any file results in it warning me about an existing swap file which is annoying as shit.
 
 " search settings
@@ -27,11 +30,11 @@ set mouse=a             " Enable full mouse support
 set mousemodel=popup  " Define the mouse model
 
 if !has ('nvim')		" only works in vim
+	set icm=nosplit     " Perform searches and highlight substitutions as you're typing substitution commands 
+else
 	set ttymouse=sgr      " Set terminal mouse input mode
     call setenv('VIMRUNTIME', '/usr/share/vim/vim82')
     syntax on
-else
-	set icm=nosplit     " Perform searches and highlight substitutions as you're typing substitution commands 
 endif
 
 " Editor tab settings
