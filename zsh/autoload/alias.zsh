@@ -42,19 +42,19 @@ alias lss='/usr/bin/ls --color=auto'
 
 # disk partitioning
 alias fd='fdisk'
+alias fdl='fdisk -l'
 alias cg='cgdisk'
 
 # quick commands
 alias q=exit
 alias e=$EDITOR
 alias c=cat
-alias k=kitty &
 
 # file management
 alias fpstat='stat --format=%a'      # file permission stat (only prints perms)
 alias fsb='du -sb'                   # file size - byte count
 alias fsh='du -sh'                   # file size - human readable
-alias fwatch='tail -fs'              # print contents of file when it changes
+alias fwatch='tail -fs'              # print contents of file when it changes (required argument time)
 alias pre=head                       # preview file (print first 5 lines)
 alias prel='head -n'                 # preview N lines from file
 
@@ -67,6 +67,9 @@ alias agrfs='find / | ag'            # find file starting from root
 alias ised='sed -i'
 
 # Working with config files
+alias :q='echo "this isnt vim!"'
+alias a=ack
+alias ack='ack -i'
 alias addalias='$EDITOR /ashe/zsh/autoload/alias.zsh; source /ashe/zsh/autoload/alias.zsh'
 alias addfunction='$EDITOR /ashe/zsh/autoload/functions.zsh'
 alias resync='make -C /ashe install && rlz'
@@ -76,6 +79,11 @@ alias clearcache='echo 3 > /proc/sys/vm/drop_caches'
 alias cleartemp='' # TODO
 alias cputemp='sensors | sed -n "/^Core/p"'
 
+# Commands for invoking alacritty
+alias kit='alacitty'
+alias meow='alacitty'
+
+alias ag='ag -i'
 alias diff='diff --color=auto'
 alias sed='sed -E'
 alias howdoi='howdoi -c'
@@ -121,12 +129,16 @@ alias yk='ykman -l INFO'
 alias pre=head
 alias prel='head -n'
 
+# sort directory by filesizes
+alias drs='du -csh * | sort -h'
+
 alias gitclonerepo='afunc_gitclonerepo' # function alias
 alias gcl='gitclonerepo'
 alias gl='git log'
 alias gla='git log --all'
 alias gll='git log'
 alias glg='git log --graph --stat --all'
+alias glgsig='git log --graph --stat --all --show-signature'
 
 # build tools
 alias fastmake='make -j 12'
@@ -163,8 +175,9 @@ alias gnome='startx'
 alias plasma='startx /usr/bin/startplasma-x11'
 alias kde='startx /usr/bin/startplasma-x11'
 
-# for now, use agfs to find the recording.
-alias arec="read recname; asciinema rec /var/casts/$recname.casts"
+# asciinema
+alias arec="asciinema rec /var/casts/$recname.casts"
+alias arecp="read recname; arec"
 
 # launch chromium as root
 alias chrome='chromium --no-sandbox'
