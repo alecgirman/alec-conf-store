@@ -1,20 +1,12 @@
-MKDIR = mkdir -p
-DELFILE = rm -fv
-DELDIR = rm -rfv
-SYMLINK = ln -s 
+# I will be rebuilding this from scratch
 
 CSTART = ~/.vim/pack/config
 PLUGINS = ~/.vim/pack/pluginpack
 
 install-config:
-<<<<<<< HEAD
 	$(MKDIR) $(CSTART)
 	sln $(PWD)/config/start $(CSTART)/start
 	sln $(PWD)/config/opt $(CSTART)/start
-=======
-	$ $(MKDIR) $(CSTART)/start/
-	sln $(PWD)/config/start $(CSTART)/start/plugin
->>>>>>> 2a8f866e60534a41570875e0fb349db125ba4540
 
 install-plugins:
 	$(MKDIR) $(PLUGINS)/ 

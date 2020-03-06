@@ -3,15 +3,17 @@
 " In the system console, very limited color support
 if system('echo $TERM') == 'linux'
 	echomsg 'Detected limited color support (TERM=linux)'
-    colo dimensions
+        colo Dim
+	" colo dimensions
 	set bg=dark t_Co=16 notgc
+	colo Dim2
 else
 	echomsg 'Detected full color support'
 	let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 	let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 	colo deus
-    set t_ut=
-	set bg=dark t_Co=256gk tgc
+	set t_ut=
+	set bg=dark t_Co=256 tgc
 endif
 
 hi VimwikiHeader1 ctermbg=red guifg=#FF0000
