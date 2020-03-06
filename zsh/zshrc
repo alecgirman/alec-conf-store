@@ -9,7 +9,7 @@ zstyle ':completion:*' max-errors 3 not-numeric
 zstyle ':completion:*' menu select=1
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' verbose true
-zstyle :compinstall filename '/home/alec/.zshrc'
+# zstyle :compinstall filename '/home/alec/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -47,5 +47,5 @@ type thefuck && eval $(thefuck --alias)
 source ~/.zsh/compiled.zsh
 printf "$fg[blue]ZSH Initialized $fg[default]\n"
 
-# source /root/.zsh/alias.zsh
-# source /root/.zsh/functions.zsh
+source /root/.zsh/alias.zsh
+source /root/.zsh/functions.zsh

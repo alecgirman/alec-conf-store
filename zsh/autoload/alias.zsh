@@ -12,7 +12,6 @@
 
 # TODO:
 # git commit -> gc (add line editor message writing)
-# 
 
 # All aliases defined in this file should be grouped first by category, but when a category cannot
 # be defined, then group by any aspect that they have in common.
@@ -22,7 +21,6 @@
 
 # in-place command renames
 # must take first priority so other aliases can use them
-alias ag='ag -i'
 alias diff='diff --color=auto'
 alias sed='sed -E'
 alias howdoi='howdoi -c'
@@ -38,21 +36,30 @@ alias ......='cd ../../../../../'
 # ls
 alias l='/usr/bin/lsd'
 alias ll='l -l'
+alias llr='ll -R'
 alias ls='/usr/bin/lsd -A'
 alias lss='/usr/bin/ls --color=auto'
 
+# disk partitioning
+alias fd='fdisk'
+alias fdl='fdisk -l'
+alias cg='cgdisk'
+
 # quick commands
 alias q=exit
-alias e=nvim
+alias e=$EDITOR
 alias c=cat
 
 # file management
 alias fpstat='stat --format=%a'      # file permission stat (only prints perms)
 alias fsb='du -sb'                   # file size - byte count
 alias fsh='du -sh'                   # file size - human readable
-alias fwatch='tail -fs'              # print contents of file when it changes
+alias fwatch='tail -fs'              # print contents of file when it changes (required argument time)
 alias pre=head                       # preview file (print first 5 lines)
 alias prel='head -n'                 # preview N lines from file
+
+# ag tools
+alias ag='noglob ag -i' 		     # ignore case by default
 alias agfs='find | ag'		     # find file
 alias agrfs='find / | ag'            # find file starting from root
 
@@ -60,14 +67,21 @@ alias agrfs='find / | ag'            # find file starting from root
 alias ised='sed -i'
 
 # Working with config files
-alias addalias='nvim /ashe/zsh/autoload/alias.zsh;'
-alias addfunction='nvim /ashe/zsh/autoload/functions.zsh'
+alias :q='echo "this isnt vim!"'
+alias a=ack
+alias ack='ack -i'
+alias addalias='$EDITOR /ashe/zsh/autoload/alias.zsh; source /ashe/zsh/autoload/alias.zsh'
+alias addfunction='$EDITOR /ashe/zsh/autoload/functions.zsh'
 alias resync='make -C /ashe install && rlz'
 
 # maintenance
 alias clearcache='echo 3 > /proc/sys/vm/drop_caches'
 alias cleartemp='' # TODO
 alias cputemp='sensors | sed -n "/^Core/p"'
+
+# Commands for invoking alacritty
+alias kit='alacitty'
+alias meow='alacitty'
 
 alias ag='ag -i'
 alias diff='diff --color=auto'
@@ -76,9 +90,9 @@ alias howdoi='howdoi -c'
 alias grep='grep --color=auto -P'
 alias ccat='pygmentize'
 
+# Uncategorized
 alias ds='docker search'
-alias emak='nvim Makefile'
-alias ff=firefox
+alias emak='$EDITOR Makefile'
 alias fpstat='stat --format=%a'
 alias fsb='du -sb'
 alias fsh='du -sh'
@@ -104,18 +118,27 @@ alias pyg='pygmentize'
 alias gcm='git commit -m'
 alias gs='git status'
 
+# Get all Git URLs
 alias getall_giturls='afunc_getall_giturls'
 alias gru='getall_giturls'
+
+# Yubikey
+alias yk='ykman -l INFO'
 
 # preview files
 alias pre=head
 alias prel='head -n'
 
+# sort directory by filesizes
+alias drs='du -csh * | sort -h'
+
 alias gitclonerepo='afunc_gitclonerepo' # function alias
 alias gcl='gitclonerepo'
-alias gl='git log --all'
+alias gl='git log'
+alias gla='git log --all'
 alias gll='git log'
 alias glg='git log --graph --stat --all'
+alias glgsig='git log --graph --stat --all --show-signature'
 
 # build tools
 alias fastmake='make -j 12'
@@ -148,12 +171,16 @@ alias xz='xz -v'
 alias softxz='xz -z -2'
 alias hardxz='xz -ze -T 12 -9'
 
-alias gnome='startx /usr/bin/gnome-session'
+alias gnome='startx'
 alias plasma='startx /usr/bin/startplasma-x11'
 alias kde='startx /usr/bin/startplasma-x11'
 
-# for now, use agfs to find the recording.
-alias arec="asciinema rec /tmp/$(mktemp -u).casts"
+# asciinema
+alias arec="asciinema rec /var/casts/$recname.casts"
+alias arecp="read recname; arec"
+
+# launch chromium as root
+alias chrome='chromium --no-sandbox'
 
 # tmux
 alias tma='tmux attach -t'
@@ -165,8 +192,8 @@ alias ytdi='youtube-dl --id'
 alias ytds='youtube-dl --default-search "ytsearch"'
 
 # edit config files
-alias i3blockconfig='nvim /ashe/i3blocks/config'
-alias i3config='nvim /ashe/i3/config'
+alias i3blockconfig='$EDITOR /ashe/i3blocks/config'
+alias i3config='$EDITOR /ashe/i3/config'
 alias zshconfig='$EDITOR /ashe/zsh/'
 alias editpolybar='$EDITOR /root/.config/polybar/config'
 alias rlz='touch /tmp/.zshreload; source ~/.zshrc'

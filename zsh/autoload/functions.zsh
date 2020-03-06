@@ -30,7 +30,7 @@ function afunc_whatis() {
     yay -Qo "/usr/bin/$1" 2>/dev/null 1>/tmp/whatis-queryown
     yay -Si $1 2>/dev/null 1>/tmp/whatis-queryinfo
 
-     
+    # TODO
 
     rm /tmp/whatis-queryown
     rm /tmp/whatis-queryinfo
@@ -40,5 +40,6 @@ function afunc_getall_giturls() {
     cat */.git/config | ag 'url'
 }
 
-    
-echo "$fg[green]Functions Loaded$fg[reset]"
+function afunc_githubsearch() {
+    googler $1 | ag 'https:..github.com/(\w\/[\w._]+(\.git)?'
+}
