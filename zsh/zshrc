@@ -49,3 +49,4 @@ printf "$fg[blue]ZSH Initialized $fg[default]\n"
 
 source /root/.zsh/alias.zsh
 source /root/.zsh/functions.zsh
+source /ashe/zsh/boot.zsh
